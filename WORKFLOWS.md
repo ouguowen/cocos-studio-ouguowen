@@ -8,8 +8,9 @@ Use these execution patterns when the skill is active.
 2. Name the producer, lead designer, and technical director concerns first.
 3. Start the framing documents using [TEMPLATES.md](TEMPLATES.md).
 4. Define the first-version scope and explicit non-goals.
-5. Identify the first gameplay prototype target.
-6. Refuse to jump straight into broad production without gates.
+5. If the game is level-based or content-heavy, choose the first level data model using [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md).
+6. Identify the first gameplay prototype target.
+7. Refuse to jump straight into broad production without gates.
 
 ## Building the project structure
 
@@ -55,6 +56,15 @@ Use these execution patterns when the skill is active.
 2. Open the matching template in [TEMPLATES.md](TEMPLATES.md).
 3. Fill owner, scope, gate, and acceptance sections before details.
 4. Reject document drafts that skip ownership or exit criteria.
+
+## Designing level data
+
+1. Identify the gameplay family before naming tables.
+2. Select the closest level data model in [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md).
+3. Decide whether content is fixed-authored, template-authored, pool-generated, or runtime-procedural.
+4. Define table ownership before field design.
+5. Define validation rules before production-scale content entry.
+6. Avoid forcing wave-spawn CSVs onto puzzle, quest, exploration, or narrative-heavy designs.
 
 ## Running operational reviews
 

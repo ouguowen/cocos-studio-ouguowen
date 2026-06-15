@@ -285,3 +285,53 @@ Use when one person is running multiple roles and needs discipline.
 - Do not accept a document that lacks owner, scope, or exit criteria.
 - Do not accept a feature record without named assets and approval.
 - Do not accept a release record without smoke coverage and risk disclosure.
+
+## 9. Level Data Model Selection Template
+
+Use before designing level CSVs or config tables.
+
+```md
+# Level Data Model Selection
+
+## Game Type
+
+## Primary Content Pattern
+- wave spawn
+- puzzle mechanism
+- platform segment
+- roguelite room pool
+- quest driven
+- exploration region
+- endless generator
+- economy challenge
+- hybrid
+
+## Player Progression
+- linear
+- branching
+- run-based
+- open exploration
+- endless
+
+## Main Designer-Tuned Variables
+
+## Fixed Authored Data
+
+## Generated Data
+
+## Primary Data Model
+
+## Secondary Data Model
+
+## Tables To Start With
+
+## Tables To Avoid For Now
+
+## Runtime Owner
+
+## Content Owner
+
+## Validation Requirements
+
+## Cocos Runtime Flow
+```

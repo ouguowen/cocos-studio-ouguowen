@@ -22,11 +22,12 @@ Use this skill as the operating system for a Cocos Creator 3.x game project.
 3. Identify the affected assets and ownership rules. See [OWNERSHIP.md](OWNERSHIP.md).
 4. Apply Cocos Creator 3.x engineering and architecture rules. See [COCOS_RULES.md](COCOS_RULES.md).
    For the default project blueprint, see [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md).
-5. Check stage gates and quality gates before approving work. See [QUALITY_GATES.md](QUALITY_GATES.md).
+5. If level, content, wave, map, room, puzzle, quest, or procedural data is involved, choose the correct level data model. See [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md).
+6. Check stage gates and quality gates before approving work. See [QUALITY_GATES.md](QUALITY_GATES.md).
    For execution checklists, see [CHECKLISTS.md](CHECKLISTS.md).
-6. Follow the execution pattern for the situation. See [WORKFLOWS.md](WORKFLOWS.md).
-7. If the user needs an applied pattern, use [EXAMPLES.md](EXAMPLES.md).
-8. If the user needs concrete project artifacts, use [TEMPLATES.md](TEMPLATES.md).
+7. Follow the execution pattern for the situation. See [WORKFLOWS.md](WORKFLOWS.md).
+8. If the user needs an applied pattern, use [EXAMPLES.md](EXAMPLES.md).
+9. If the user needs concrete project artifacts, use [TEMPLATES.md](TEMPLATES.md).
 
 ## Non-negotiable rules
 
@@ -35,6 +36,7 @@ Use this skill as the operating system for a Cocos Creator 3.x game project.
 - No major gameplay rule lives only in UI callbacks, animation resources, or random scene scripts.
 - No shared framework module is modified casually during production.
 - No Cocos project should rely on giant "god scripts", uncontrolled `update()` logic, or unmanaged dynamic loading.
+- No single universal level CSV should be forced onto every game type.
 
 ## When responding
 
@@ -50,3 +52,4 @@ Use this skill as the operating system for a Cocos Creator 3.x game project.
 - "Who should own this asset?" -> ownership lookup and approval path.
 - "Build the Cocos structure." -> apply the Cocos rules and stage constraints.
 - "Can we ship this?" -> quality gate and release gate review.
+- "How should levels be configured?" -> level data model selection before table design.

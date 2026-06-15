@@ -14,6 +14,7 @@ It acts more like a studio operating system for a Cocos Creator 3.x project:
 - role ownership
 - asset ownership
 - Cocos architecture rules
+- level data model selection
 - quality gates
 - release readiness
 - templates and checklists
@@ -34,6 +35,7 @@ It acts more like a studio operating system for a Cocos Creator 3.x project:
 - `OWNERSHIP.md`: asset ownership and approval rules
 - `COCOS_RULES.md`: anti-chaos rules for Cocos Creator 3.x
 - `PROJECT_STRUCTURE.md`: recommended project blueprint
+- `LEVEL_DATA_MODELS.md`: level and content data model selection
 - `QUALITY_GATES.md`: feature, slice, QA, and release gates
 - `CHECKLISTS.md`: operational review checklists
 - `WORKFLOWS.md`: execution patterns for common situations
@@ -47,6 +49,8 @@ Use this skill when you need help with any of the following:
 - "How should I start this Cocos game?"
 - "Which stage is my project in?"
 - "Who should own this prefab, UI, or config?"
+- "Which level configuration model should this game use?"
+- "Should these levels use CSV, room pools, quest graphs, puzzle states, or procedural rules?"
 - "My project is getting messy. What is wrong?"
 - "Can this build enter the next stage?"
 - "Can we ship this?"
@@ -57,8 +61,9 @@ Use this skill when you need help with any of the following:
 2. Identify the responsible role.
 3. Identify the affected assets and ownership rules.
 4. Apply the Cocos architecture and structure rules.
-5. Check gates and checklists.
-6. Produce or review the needed artifacts.
+5. Select the right level data model when content or level data is involved.
+6. Check gates and checklists.
+7. Produce or review the needed artifacts.
 
 ## Installation
 
@@ -68,10 +73,10 @@ Place the skill folder inside your local Codex skills directory:
 ~/.codex/skills/cocos-studio-ouguowen
 ```
 
-On Windows in this environment, the local path is:
+On Windows, the local path usually looks like:
 
 ```text
-C:\Users\欧国文\.codex\skills\cocos-studio-ouguowen
+C:\Users\<you>\.codex\skills\cocos-studio-ouguowen
 ```
 
 After copying or updating the skill, restart Codex so the new skill name and description are picked up reliably.
@@ -99,4 +104,4 @@ After copying or updating the skill, restart Codex so the new skill name and des
 
 ## Status
 
-This repository currently packages the first practical version of the skill, including stage logic, roles, ownership, structure rules, templates, examples, and checklists.
+This repository currently packages the first practical version of the skill, including stage logic, roles, ownership, structure rules, level data model selection, templates, examples, and checklists.
