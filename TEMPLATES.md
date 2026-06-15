@@ -335,3 +335,54 @@ Use before designing level CSVs or config tables.
 
 ## Cocos Runtime Flow
 ```
+
+## 10. Level Runtime Architecture Template
+
+Use before implementing the level system in Cocos Creator 3.x.
+
+```md
+# Level Runtime Architecture
+
+## Game Type
+
+## Selected Level Data Model
+
+## Runtime Entry Component
+
+## Config Files Used
+
+## Required Files
+
+## Config Layer
+- ConfigTypes:
+- ConfigIndex:
+- ConfigManager:
+
+## Runtime Layer
+- LevelTypes:
+- LevelRuntime:
+- LevelBuilder:
+- LevelFlowController:
+
+## Systems
+- WaveSystem:
+- SpawnSystem:
+- ObjectiveSystem:
+- RewardSystem:
+
+## Scene Bridge
+- MapPointRegistry:
+- MapPointComponent:
+
+## Actor Creation
+- EnemyFactory:
+- EnemyActor:
+
+## Event Flow
+
+## What Must Not Be Owned By LevelFlowController
+
+## QA Acceptance
+
+## Technical Director Review Notes
+```

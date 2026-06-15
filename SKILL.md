@@ -23,6 +23,7 @@ Use this skill as the operating system for a Cocos Creator 3.x game project.
 4. Apply Cocos Creator 3.x engineering and architecture rules. See [COCOS_RULES.md](COCOS_RULES.md).
    For the default project blueprint, see [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md).
 5. If level, content, wave, map, room, puzzle, quest, or procedural data is involved, choose the correct level data model. See [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md).
+   For Cocos runtime implementation boundaries, see [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md).
 6. Check stage gates and quality gates before approving work. See [QUALITY_GATES.md](QUALITY_GATES.md).
    For execution checklists, see [CHECKLISTS.md](CHECKLISTS.md).
 7. Follow the execution pattern for the situation. See [WORKFLOWS.md](WORKFLOWS.md).
@@ -37,6 +38,7 @@ Use this skill as the operating system for a Cocos Creator 3.x game project.
 - No shared framework module is modified casually during production.
 - No Cocos project should rely on giant "god scripts", uncontrolled `update()` logic, or unmanaged dynamic loading.
 - No single universal level CSV should be forced onto every game type.
+- No single `LevelManager` should own config loading, level building, wave flow, spawning, objectives, rewards, UI, and scene logic.
 
 ## When responding
 
@@ -53,3 +55,4 @@ Use this skill as the operating system for a Cocos Creator 3.x game project.
 - "Build the Cocos structure." -> apply the Cocos rules and stage constraints.
 - "Can we ship this?" -> quality gate and release gate review.
 - "How should levels be configured?" -> level data model selection before table design.
+- "How should the level system be coded?" -> level system architecture before implementation.

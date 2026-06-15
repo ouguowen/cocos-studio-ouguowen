@@ -66,6 +66,14 @@ Use these execution patterns when the skill is active.
 5. Define validation rules before production-scale content entry.
 6. Avoid forcing wave-spawn CSVs onto puzzle, quest, exploration, or narrative-heavy designs.
 
+## Implementing the level runtime
+
+1. Choose the level data model first. See [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md).
+2. Apply the runtime boundaries in [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md).
+3. Keep config, runtime state, result data, managers, systems, and factories separate.
+4. Use ordinary TypeScript classes unless the object truly needs Cocos node lifecycle.
+5. Reject designs where one `LevelManager` owns the whole level stack.
+
 ## Running operational reviews
 
 1. Select the current stage.
