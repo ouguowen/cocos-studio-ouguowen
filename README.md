@@ -15,6 +15,7 @@ It acts more like a studio operating system for a Cocos Creator 3.x project:
 - asset ownership
 - Cocos architecture rules
 - level data model selection
+- level config schemas
 - level runtime architecture
 - quality gates
 - release readiness
@@ -37,6 +38,7 @@ It acts more like a studio operating system for a Cocos Creator 3.x project:
 - `COCOS_RULES.md`: anti-chaos rules for Cocos Creator 3.x
 - `PROJECT_STRUCTURE.md`: recommended project blueprint
 - `LEVEL_DATA_MODELS.md`: level and content data model selection
+- `LEVEL_CONFIG_SCHEMAS.md`: concrete CSV/table field schemas for wave-spawn level production
 - `LEVEL_SYSTEM_ARCHITECTURE.md`: Cocos runtime architecture for level systems
 - `QUALITY_GATES.md`: feature, slice, QA, and release gates
 - `CHECKLISTS.md`: operational review checklists
@@ -52,6 +54,7 @@ Use this skill when you need help with any of the following:
 - "Which stage is my project in?"
 - "Who should own this prefab, UI, or config?"
 - "Which level configuration model should this game use?"
+- "What fields should Level.csv, Wave.csv, Spawn.csv, and EnemyGroup.csv use?"
 - "Should these levels use CSV, room pools, quest graphs, puzzle states, or procedural rules?"
 - "How should ConfigManager, LevelBuilder, WaveSystem, SpawnSystem, and ObjectiveSystem be separated?"
 - "My project is getting messy. What is wrong?"
@@ -65,9 +68,10 @@ Use this skill when you need help with any of the following:
 3. Identify the affected assets and ownership rules.
 4. Apply the Cocos architecture and structure rules.
 5. Select the right level data model when content or level data is involved.
-6. Apply level runtime architecture boundaries when implementing level systems.
-7. Check gates and checklists.
-8. Produce or review the needed artifacts.
+6. Use concrete level config schemas when CSV or spreadsheet fields are needed.
+7. Apply level runtime architecture boundaries when implementing level systems.
+8. Check gates and checklists.
+9. Produce or review the needed artifacts.
 
 ## Installation
 
@@ -108,4 +112,4 @@ After copying or updating the skill, restart Codex so the new skill name and des
 
 ## Status
 
-This repository currently packages the first practical version of the skill, including stage logic, roles, ownership, structure rules, level data model selection, level runtime architecture, templates, examples, and checklists.
+This repository currently packages the first practical version of the skill, including stage logic, roles, ownership, structure rules, level data model selection, level config schemas, level runtime architecture, templates, examples, and checklists.

@@ -386,3 +386,55 @@ Use before implementing the level system in Cocos Creator 3.x.
 
 ## Technical Director Review Notes
 ```
+
+## 11. Level Config Schema Change Template
+
+Use when adding, changing, deprecating, or removing a level config field.
+
+```md
+# Level Config Schema Change
+
+## Table
+
+## Field Name
+
+## Change Type
+- add
+- modify
+- deprecate
+- remove
+
+## Requested By
+
+## Owner
+
+## Reason
+
+## Gameplay Meaning
+
+## Data Type
+
+## Required
+
+## Allowed Values
+
+## Default Value
+
+## Affected Existing Rows
+
+## Runtime Impact
+
+## Tooling Impact
+
+## QA Impact
+
+## Validation Rule
+
+## Migration Plan
+
+## Approval
+- Lead Designer:
+- Lead Programmer:
+- Technical Director:
+- QA Lead:
+```

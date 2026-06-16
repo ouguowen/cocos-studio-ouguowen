@@ -61,10 +61,11 @@ Use these execution patterns when the skill is active.
 
 1. Identify the gameplay family before naming tables.
 2. Select the closest level data model in [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md).
-3. Decide whether content is fixed-authored, template-authored, pool-generated, or runtime-procedural.
-4. Define table ownership before field design.
-5. Define validation rules before production-scale content entry.
-6. Avoid forcing wave-spawn CSVs onto puzzle, quest, exploration, or narrative-heavy designs.
+3. If the selected model uses spreadsheet-style level data, start from [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md).
+4. Decide whether content is fixed-authored, template-authored, pool-generated, or runtime-procedural.
+5. Define table ownership before field design.
+6. Define validation rules before production-scale content entry.
+7. Avoid forcing wave-spawn CSVs onto puzzle, quest, exploration, or narrative-heavy designs.
 
 ## Implementing the level runtime
 
