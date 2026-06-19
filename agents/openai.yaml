@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cocos Studio Ouguowen"
+  short_description: "Senior system for Cocos Creator 3.x production and level config."
+  default_prompt: "Use $cocos-studio-ouguowen to plan or review a Cocos Creator 3.x game with strict roles, stages, and level-config rules."
