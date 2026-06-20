@@ -467,3 +467,83 @@ Use when adding, changing, deprecating, or removing a level config field.
 - Technical Director:
 - QA Lead:
 ```
+
+## 12. Project Memory Template
+
+Use when starting a new project, locking a milestone, or refreshing the team's stable project truth.
+
+```md
+# Project Memory
+
+## Confirmed Facts
+- Current stage:
+- Current production mode:
+- Current milestone:
+- Classified game type:
+- Primary platform:
+- Current owner map:
+
+## MVP Truth
+- One-sentence fantasy:
+- Repeated core loop:
+- Must-prove items:
+- Explicit non-goals:
+
+## Locked Decisions
+- Architecture:
+- Level or content model:
+- Platform constraints:
+- Release assumptions:
+
+## Active Assumptions
+
+## Open Questions
+
+## Accepted Risks
+
+## Blocked Items
+
+## Next Review Date
+```
+
+## 13. First Session Kickoff Template
+
+Use when the team is using this skill on a brand-new project and needs one clean starting record.
+
+```md
+# First Session Kickoff
+
+## Project Name
+
+## Current Stage
+
+## Current Production Mode
+
+## Dominant Player Action
+
+## Main Content Unit
+
+## Classified Game Type
+
+## One-Sentence Fantasy
+
+## First-Version Promise
+
+## Explicit Non-Goals
+
+## MVP Must Prove
+
+## Primary Platform Target
+
+## Top Technical Risks
+
+## Top Production Risks
+
+## Current Milestone Purpose
+
+## Next Required Documents
+- Project Memory
+- MVP Record
+- Version Roadmap Record
+- Level Data Model Selection or equivalent
+```

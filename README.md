@@ -91,6 +91,22 @@ The skill's operating order is:
 4. choose the right architecture and content model
 5. apply delivery, operations, and review gates
 
+## First session quick start
+
+If you are opening a brand-new game idea, a good first sequence is:
+
+1. `Use $cocos-studio-ouguowen. Classify this game by dominant loop and content unit.`
+2. `Use $cocos-studio-ouguowen. Define the MVP and explicit non-goals.`
+3. `Use $cocos-studio-ouguowen. Create the first project memory record.`
+4. `Use $cocos-studio-ouguowen. Build the version roadmap and next milestone proof obligation.`
+
+That sequence will usually produce:
+
+- game classification
+- MVP scope
+- stable project memory
+- milestone and version direction
+
 ## Installation
 
 Place the folder inside your Codex skills directory:

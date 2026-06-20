@@ -28,6 +28,16 @@ Use this file when the team needs stable project facts, locked assumptions, curr
 - Expire stale assumptions when the project changes.
 - Update memory after milestone, risk, scope, or platform decisions.
 
+## First memory creation order
+
+1. Record current stage and production mode.
+2. Record classified game type.
+3. Record current milestone purpose.
+4. Record MVP truth and explicit non-goals.
+5. Record platform targets and locked architecture decisions.
+6. Record accepted risks and blocked items.
+7. Record the next review date.
+
 ## Memory record
 
 ```md

@@ -140,3 +140,64 @@ Ask in this order:
 If any answer is unclear:
 
 - do not call it release-ready
+
+## Example 6: First real session on a new project
+
+Goal:
+
+- open a brand-new idea without drifting into random implementation
+
+Recommended first prompts:
+
+1. `Use $cocos-studio-ouguowen. Classify this game by dominant loop, content unit, progression shape, and monetization pressure point.`
+2. `Use $cocos-studio-ouguowen. Define the MVP for this game. Name the one-sentence fantasy, repeated loop, must-prove items, explicit non-goals, and kill conditions.`
+3. `Use $cocos-studio-ouguowen. Create a first project memory record with confirmed facts, assumptions, open questions, accepted risks, and current milestone truth.`
+4. `Use $cocos-studio-ouguowen. Build the version roadmap from idea framing to soft launch and name what the next milestone must prove.`
+
+Expected outputs:
+
+- classification record
+- MVP record
+- first project memory
+- version roadmap record
+
+Do not:
+
+- jump straight into folder creation before classification and MVP truth exist
+- start writing final gameplay systems before the first memory record exists
+
+## Example 7: Updating project memory after a milestone decision
+
+Situation:
+
+- the prototype validated the loop
+- the team is moving toward vertical slice
+
+Update order:
+
+1. move current stage from prototype to slice preparation only if the proof obligation is actually met
+2. convert old assumptions into confirmed facts or delete them
+3. add new accepted risks
+4. update current milestone truth and next review date
+
+Good prompt:
+
+`Use $cocos-studio-ouguowen. Update the project memory after prototype review. Separate confirmed facts from expired assumptions, then rewrite current milestone truth for vertical slice preparation.`
+
+## Example 8: Requesting a formal review
+
+Situation:
+
+- a feature plan looks detailed
+- the team wants to know if it is truly ready
+
+Good prompt:
+
+`Use $cocos-studio-ouguowen. Review this feature plan against stage fit, ownership fit, MVP fit, architecture fit, release risk, and quality gates. Findings first. Name blockers explicitly.`
+
+Expected review style:
+
+- findings first
+- blockers explicit
+- residual risks explicit
+- no fake approval language
