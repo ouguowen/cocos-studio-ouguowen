@@ -63,3 +63,9 @@ Use $cocos-studio-ouguowen. Apply the sequential gate protocol to this task. Nam
 ```text
 Use $cocos-studio-ouguowen. Check this task against the advancement chain map. Tell me the current chain, current step, missing prerequisites, blocked next step, and next allowed action. Do not allow step-skipping.
 ```
+
+### 10. Run first-week support
+
+```text
+Use $cocos-studio-ouguowen. Run first-week support on this live game issue set. Separate live blockers from normal backlog work, name hotfix priorities, name compensation or player-support decisions, and state the next watch owner and next review point.
+```

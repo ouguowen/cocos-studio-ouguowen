@@ -6,12 +6,14 @@ Use this file with [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) wh
 
 Follow this order:
 
-1. game classification
-2. MVP and explicit non-goals
-3. stage and production mode
-4. version purpose and milestone proof
-5. architecture baseline
-6. first module or prototype implementation
+1. provisional stage and production mode
+2. game classification
+3. MVP and explicit non-goals
+4. locked stage and production mode
+5. version purpose and milestone proof
+6. first project memory record
+7. architecture baseline
+8. first module or prototype implementation
 
 Do not:
 
@@ -24,13 +26,14 @@ Follow this order:
 
 1. module goal
 2. current stage and mode
-3. chosen direction
-4. module boundaries
-5. required runtime data
-6. required button destinations and actions
-7. layout and interaction flow
-8. runtime wiring
-9. completion check
+3. module owner and approver
+4. chosen direction
+5. module boundaries
+6. required runtime data
+7. required button destinations and actions
+8. layout and interaction flow
+9. runtime wiring
+10. completion check
 
 Do not:
 
@@ -85,13 +88,31 @@ Follow this order:
 5. rollback or hotfix path
 6. launch approval
 7. first-week watch ownership
+8. first-week triage and hotfix priorities
+9. post-launch review note and stabilization handoff
 
 Do not:
 
 - call a build release-ready before rollback exists
 - start launch without named post-launch watch ownership
 
-## 6. Recovery chain
+## 6. First-week support chain
+
+Follow this order:
+
+1. live blocker triage
+2. hotfix candidate review
+3. compensation or player-support decision
+4. focused regression and rollout safety check
+5. updated watch ownership and next-day priorities
+6. post-launch review note
+
+Do not:
+
+- mix normal feature backlog with urgent live triage
+- ship a first-week hotfix without regression and owner clarity
+
+## 7. Recovery chain
 
 Follow this order:
 

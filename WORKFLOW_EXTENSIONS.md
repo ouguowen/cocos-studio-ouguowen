@@ -27,6 +27,7 @@ Use this file only when the request is not covered by [WORKFLOWS.md](WORKFLOWS.m
 - Plan platform targets: open [PLATFORM_TARGET_RULES.md](PLATFORM_TARGET_RULES.md) before export or SDK commitments.
 - Plan rollback: open [RELEASE_ROLLBACK_PLAYBOOK.md](RELEASE_ROLLBACK_PLAYBOOK.md) before launch approval.
 - Review operations data: open [OPERATIONS_DATA_SYSTEM.md](OPERATIONS_DATA_SYSTEM.md) and separate short uplift from healthy behavior.
+- Run first-week support: apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) and [OPERATIONS_DATA_SYSTEM.md](OPERATIONS_DATA_SYSTEM.md) before normal feature work resumes.
 
 ## Governance and rescue
 

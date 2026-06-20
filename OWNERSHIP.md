@@ -177,6 +177,48 @@ Each asset class needs one primary owner, plus collaborators and an approver.
 - Approver: Technical Director
 - Notes: owns update plan, rollback strategy, and update-risk approval.
 
+## Analytics Schema and Event Contracts
+
+- Primary owner: Lead Programmer
+- Collaborators: Release / Operations Lead, Lead Designer, Gameplay Programmer
+- Approver: Technical Director
+- Notes: owns event naming contracts, dispatch rules, analytics compatibility, and schema integrity.
+
+## Remote Config and Experiment Rules
+
+- Primary owner: Release / Operations Lead
+- Collaborators: Lead Designer, Lead Programmer, Technical Director
+- Approver: Producer
+- Notes: owns live switches, experiment activation rules, rollout discipline, and business-side change control.
+
+## Server Contracts and Sync Policies
+
+- Primary owner: Lead Programmer
+- Collaborators: Technical Director, Gameplay Programmer, Release / Operations Lead
+- Approver: Technical Director
+- Notes: owns service contracts, sync policy, cloud-save merge rules, account binding safety, and protocol compatibility.
+
+## Social, Mail, and Ranking Systems
+
+- Primary owner: Gameplay Programmer
+- Collaborators: Lead Programmer, Lead Designer, Release / Operations Lead
+- Approver: Lead Programmer
+- Notes: owns player-facing social state wiring, leaderboard behavior, mail reward integration, and progression-safe interaction rules.
+
+## Player Support, Moderation, and Compensation Rules
+
+- Primary owner: Release / Operations Lead
+- Collaborators: Producer, Lead Designer, Lead Programmer, QA Lead
+- Approver: Producer
+- Notes: owns appeal routing, compensation scope, moderation operations flow, and player-facing incident response discipline.
+
+## Localization and Accessibility Rules
+
+- Primary owner: UI Programmer
+- Collaborators: Lead Designer, Art Director, Technical Director
+- Approver: Lead Programmer
+- Notes: owns localization wiring, accessibility settings behavior, and readable player-facing delivery rules.
+
 ## Store Materials
 
 - Primary owner: Release / Operations Lead

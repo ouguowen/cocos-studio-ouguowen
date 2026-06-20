@@ -40,6 +40,12 @@ Use this file when the project needs concrete "who does what now" guidance.
 - freeze change scope
 - align launch watchlist across the team
 
+### First-Week Support
+
+- review launch signals and player-facing risk daily
+- approve emergency scope cuts or hotfix priorities
+- stop random post-launch feature drift
+
 ## Lead Designer
 
 ### Project Framing
@@ -72,6 +78,11 @@ Use this file when the project needs concrete "who does what now" guidance.
 - confirm first-session experience and starting economy
 - prepare the first-week tuning watchlist
 
+### First-Week Support
+
+- review first-week progression, economy, and tutorial pain
+- prioritize the highest-value tuning actions
+
 ## Technical Director
 
 ### Project Framing
@@ -103,6 +114,11 @@ Use this file when the project needs concrete "who does what now" guidance.
 
 - confirm build safety, update safety, and rollback safety
 - stop late core changes
+
+### First-Week Support
+
+- review hotfix safety and rollback safety for live changes
+- stop unstable rescue changes from entering the live branch
 
 ## Lead Programmer
 
@@ -137,6 +153,11 @@ Use this file when the project needs concrete "who does what now" guidance.
 - lock the release candidate code path
 - support final fixes and hotfix readiness
 
+### First-Week Support
+
+- support emergency fixes without breaking the live baseline
+- review service and client hotfix integration risk
+
 ## Gameplay Programmer
 
 ### Project Framing
@@ -169,6 +190,11 @@ Use this file when the project needs concrete "who does what now" guidance.
 - protect the first-session gameplay loop
 - resolve release-blocking gameplay defects
 
+### First-Week Support
+
+- fix live gameplay blockers and progression dead-ends first
+- support safe tuning changes without destabilizing core systems
+
 ## UI Programmer
 
 ### Project Framing
@@ -198,6 +224,11 @@ Use this file when the project needs concrete "who does what now" guidance.
 
 - confirm the first-session UI chain and all key entry points
 
+### First-Week Support
+
+- fix live UI blockers, dead-end flows, and unreadable states
+- confirm hotfix UI changes do not break key entry chains
+
 ## Art Director
 
 ### Project Framing
@@ -225,6 +256,11 @@ Use this file when the project needs concrete "who does what now" guidance.
 
 - confirm in-game and store-facing visual consistency
 
+### First-Week Support
+
+- review the most visible live-facing visual defects
+- support fast correction of misleading or broken store assets when needed
+
 ## Animation Lead
 
 ### Project Framing
@@ -250,6 +286,11 @@ Use this file when the project needs concrete "who does what now" guidance.
 ### Release
 
 - confirm key first-session motion coverage and correctness
+
+### First-Week Support
+
+- fix live motion bugs that break readability or trust
+- support emergency timing corrections for core actions
 
 ## Technical Artist / VFX Lead
 
@@ -277,6 +318,11 @@ Use this file when the project needs concrete "who does what now" guidance.
 
 - confirm critical effect correctness and effect-budget safety
 
+### First-Week Support
+
+- reduce broken, noisy, or over-budget live effects quickly
+- protect performance during hotfix effect changes
+
 ## Level / Content Designer
 
 ### Project Framing
@@ -302,6 +348,11 @@ Use this file when the project needs concrete "who does what now" guidance.
 ### Release
 
 - confirm first-session and first-content-chain pacing safety
+
+### First-Week Support
+
+- review first-week drop-off points in content progression
+- fix dead space, spikes, and blocked advancement in live content
 
 ## QA Lead
 
@@ -330,6 +381,11 @@ Use this file when the project needs concrete "who does what now" guidance.
 
 - run smoke validation and issue a clear release recommendation
 
+### First-Week Support
+
+- run focused regression on hotfix builds and live-critical flows
+- keep blocker severity honest during launch pressure
+
 ## Release / Operations Lead
 
 ### Project Framing
@@ -355,3 +411,8 @@ Use this file when the project needs concrete "who does what now" guidance.
 ### Release
 
 - execute launch delivery, record release state, and feed first-week signals back to the team
+
+### First-Week Support
+
+- run the first-week triage rhythm
+- coordinate hotfix handoff, compensation decisions, and player-feedback routing

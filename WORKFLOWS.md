@@ -4,13 +4,15 @@ Use these high-frequency execution patterns first. Open [WORKFLOW_EXTENSIONS.md]
 
 ## 1. Starting a new Cocos game
 
-1. Identify production mode and stage.
+1. Set the provisional stage and mode to `Project Framing` and `Project Framing Mode` unless strong evidence says otherwise.
 2. Classify the game before choosing architecture.
 3. Lock first-version promise and explicit non-goals.
-4. Choose the first game-type template.
-5. If the game is level-heavy, choose the first level data model.
-6. Start the first-session and project-framing artifacts.
-7. Refuse to jump into broad production without gates.
+4. Lock the actual stage and production mode after classification and MVP intent are clear.
+5. Choose the first game-type template.
+6. If the game is level-heavy, choose the first level data model.
+7. Create the first project memory record.
+8. Start the first-session and project-framing artifacts.
+9. Refuse to jump into broad production without gates.
 
 ## 2. Updating project memory
 
@@ -82,11 +84,12 @@ Use these high-frequency execution patterns first. Open [WORKFLOW_EXTENSIONS.md]
 
 1. Apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md).
 2. Apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md).
-3. Confirm module goal, boundaries, data, and actions in order.
-4. Give `2` to `4` options only.
-5. Describe each option in one short sentence.
-6. After the user chooses, execute continuously until the module reaches a usable completed state.
-7. Pause only for real blockers, missing source truth, or architecture-level conflicts.
+3. Confirm module owner and approver before implementation depth increases.
+4. Confirm module goal, boundaries, data, and actions in order.
+5. Give `2` to `4` options only.
+6. Describe each option in one short sentence.
+7. After the user chooses, execute continuously until the module reaches a usable completed state.
+8. Pause only for real blockers, missing source truth, ownership gaps, or architecture-level conflicts.
 
 ## 13. Preventing step-skipping
 
@@ -96,3 +99,11 @@ Use these high-frequency execution patterns first. Open [WORKFLOW_EXTENSIONS.md]
 4. Check whether prerequisites are actually complete.
 5. If prerequisites are missing, stop advancement and repair the sequence first.
 6. Do not treat "we will fix it later" as a pass condition.
+
+## 14. Running first-week support
+
+1. Confirm the project is in `First-Week Support` or is using `Live Operations and Rescue Mode`.
+2. Review live blockers, player-facing risk, and hotfix candidates first.
+3. Separate emergency fixes from normal backlog work.
+4. Route compensation, moderation, and rollout decisions through named owners.
+5. End each cycle with updated hotfix priorities, watch ownership, and a post-launch review note.

@@ -180,6 +180,8 @@ Use these high-frequency templates first. Open [LEVEL_TEMPLATES.md](LEVEL_TEMPLA
 ## Current Production Mode
 ## Current Step
 ## Prerequisites Confirmed
+## Primary Owner
+## Approver
 ## Main Player Goal In This Module
 ## Primary Option Chosen
 ## Why This Option Was Chosen

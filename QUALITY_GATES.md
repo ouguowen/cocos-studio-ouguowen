@@ -44,6 +44,13 @@ Use these gates to decide whether work is allowed to advance.
 - Rollback or hotfix path exists.
 - Release approval is explicit.
 
+## First-Week Support Gate
+
+- Live blockers are triaged by severity and owner.
+- Hotfix candidates have rollback thinking and focused regression.
+- Compensation or player-support actions have explicit approval.
+- The next watch owner and next review point are explicit.
+
 ## PRD Approval Gate
 
 - Player problem and business goal are explicit.

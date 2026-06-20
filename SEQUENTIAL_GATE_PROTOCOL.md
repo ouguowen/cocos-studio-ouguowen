@@ -26,13 +26,14 @@ If prerequisites are missing:
 
 Use this default order unless the project has an approved special case:
 
-1. classify the game
-2. define the MVP and explicit non-goals
-3. lock stage and production mode
-4. define architecture or module boundaries
-5. define required data and ownership
-6. build the module or feature
-7. verify acceptance and gate status
+1. set the provisional stage and production mode
+2. classify the game
+3. define the MVP and explicit non-goals
+4. lock stage and production mode
+5. define architecture or module boundaries
+6. define required data, ownership, and project memory
+7. build the module or feature
+8. verify acceptance and gate status
 
 Do not reorder this casually.
 
@@ -44,12 +45,13 @@ When building one concrete module such as home page, shop page, bag page, HUD, o
 
 1. confirm the module goal
 2. confirm the current stage and production mode
-3. choose the direction or option
-4. define module boundaries and must-have blocks
-5. define required runtime data and button actions
-6. implement layout and interaction flow
-7. wire runtime data and navigation
-8. check completion standard
+3. confirm module owner and approver
+4. choose the direction or option
+5. define module boundaries and must-have blocks
+6. define required runtime data and button actions
+7. implement layout and interaction flow
+8. wire runtime data and navigation
+9. check completion standard
 
 Do not jump from direction choice straight into final layout if runtime data, actions, or module boundaries are still undefined.
 
@@ -61,6 +63,7 @@ Stop advancement when:
 - module goal is unclear
 - previous gate has not passed
 - ownership is unclear
+- approver is unclear
 - data source is unknown
 - the task conflicts with an earlier locked decision
 

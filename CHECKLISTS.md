@@ -110,7 +110,19 @@ If these are not true:
 
 - delay the launch decision
 
-## 9. Solo Studio Hat-Switch Checklist
+## 9. First-Week Support Checklist
+
+- Live blockers are sorted by severity and owner.
+- Hotfix priorities are explicit.
+- Compensation or support decisions are named and approved.
+- Focused regression has been run on live-critical flows.
+- Next watch owner and next review point are explicit.
+
+If these are not true:
+
+- do not call first-week support under control
+
+## 10. Solo Studio Hat-Switch Checklist
 
 - The current stage is named.
 - The current hat is named.
@@ -122,7 +134,7 @@ If these are not true:
 
 - the solo workflow is drifting into self-confusion
 
-## 10. MVP Scope Checklist
+## 11. MVP Scope Checklist
 
 - The one-sentence fantasy is written.
 - The repeated core loop is named.
@@ -135,7 +147,7 @@ If these are not true:
 
 - the MVP is expanding without control
 
-## 11. Game Classification Checklist
+## 12. Game Classification Checklist
 
 - Dominant repeatable player action is named.
 - Main content unit is named.
@@ -147,7 +159,7 @@ If these are not true:
 
 - architecture and data design are premature
 
-## 12. Project Memory Checklist
+## 13. Project Memory Checklist
 
 - Confirmed facts are separated from assumptions.
 - Locked decisions are explicit.
@@ -159,12 +171,13 @@ If these are not true:
 
 - the project context is drifting
 
-## 13. Sequential Advancement Checklist
+## 14. Sequential Advancement Checklist
 
 - The current step is named.
 - The previous step's required outputs exist.
 - The next step's prerequisites are already satisfied.
 - Ownership for the current step is clear.
+- Approver for the current step is clear when approval is required.
 - Missing prerequisites are treated as blockers, not notes.
 
 If these are not true:

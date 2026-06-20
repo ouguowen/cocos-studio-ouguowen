@@ -81,10 +81,10 @@ This file defines the studio roles used by the skill. In a solo studio, one pers
 
 ## Release / Operations Lead
 
-- Mission: turn internal builds into real releases and maintain external delivery discipline.
-- Responsible for: build handoff flow, channels, version records, store assets, release checklists, launch feedback loop.
+- Mission: turn internal builds into real releases and maintain post-launch delivery and response discipline.
+- Responsible for: build handoff flow, channels, version records, store assets, release checklists, launch feedback loop, first-week triage rhythm, event and compensation coordination, player-support routing.
 - Not responsible for: gameplay rules, engine architecture, feature implementation.
-- Core outputs: release packages, store-ready materials, submission checklists, launch reports.
+- Core outputs: release packages, store-ready materials, submission checklists, launch reports, first-week issue board, hotfix coordination notes.
 
 ## Studio boundary rules
 

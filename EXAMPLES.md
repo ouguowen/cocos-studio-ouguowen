@@ -284,3 +284,27 @@ Good response shape:
 - `Current step: required runtime data and button actions.`
 - `Blocked next step: layout polish.`
 - `Next allowed action: define reward data source and missing button destinations first.`
+
+## Example 12: First-week support after launch
+
+Situation:
+
+- the game is live
+- first-session drop-off rose after launch
+- one hotfix candidate and one compensation request are under discussion
+
+Correct sequence:
+
+1. identify the stage as `First-Week Support`
+2. separate live blockers from normal backlog work
+3. assign owner and severity to the hotfix candidate
+4. review compensation scope and approval path
+5. run focused regression before release of the hotfix
+6. record the next watch owner and next review point
+
+Good response shape:
+
+- `Current chain: first-week support chain.`
+- `Current step: hotfix candidate review.`
+- `Blocked next step: hotfix rollout.`
+- `Next allowed action: finish focused regression and compensation approval first.`
