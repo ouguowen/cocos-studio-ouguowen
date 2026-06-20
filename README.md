@@ -1,93 +1,111 @@
 # Cocos Studio Ouguowen
 
-`Cocos Studio Ouguowen` is a senior-level production-system skill for Cocos Creator 3.x game development.
+`Cocos Studio Ouguowen` is a senior-level production-system skill for `Cocos Creator 3.x`.
 
-It is designed for solo developers or small teams that want strong role boundaries, stage discipline, asset ownership, architecture rules, and release gates instead of ad hoc production.
+It is designed for solo developers and small teams who want to run a game project like a disciplined studio instead of drifting through ad hoc decisions.
 
-## What this skill is
+## What it does
 
-This is not only a coding skill.
+This repository is not just a coding helper. It is a production operating system for:
 
-It acts more like a studio operating system for a Cocos Creator 3.x project:
+- game classification
+- MVP scoping
+- role and authority boundaries
+- architecture and level-system planning
+- config-table design
+- release and platform control
+- live-operations and business-metrics review
+- risk escalation and formal review
 
-- stage planning
-- role ownership
-- asset ownership
-- Cocos architecture rules
-- level data model selection
-- level config schemas
-- level runtime architecture
-- quality gates
-- release readiness
-- templates and checklists
+## Module groups
 
-## Who it is for
+The skill is organized into a few major families:
 
-- solo developers wearing multiple hats
-- small game teams using Cocos Creator 3.x
-- projects that keep getting messy during prototype or production
-- developers who want a senior workflow instead of "build first, clean later"
+- Foundation and routing
+  - `SKILL.md`
+  - `MODULE_INDEX.md`
+  - `WORKFLOWS.md`
+- Roles, authority, and ownership
+  - `ROLES.md`
+  - `ROLE_STAGE_MATRIX.md`
+  - `OWNERSHIP.md`
+  - `TEAM_SENIORITY_SYSTEM.md`
+  - `COLLAB_HANDOFF_SYSTEM.md`
+- Scope and product definition
+  - `GAME_CLASSIFIER_SYSTEM.md`
+  - `GAME_TYPE_TEMPLATES.md`
+  - `MVP_PROTOTYPE_RULES.md`
+  - `VERSION_ROADMAP_SYSTEM.md`
+  - `PLAYBOOK_SYSTEM.md`
+- Architecture and content runtime
+  - `COCOS_RULES.md`
+  - `PROJECT_STRUCTURE.md`
+  - `ARCHITECTURE_TEMPLATE_SYSTEM.md`
+  - `LEVEL_DATA_MODELS.md`
+  - `LEVEL_CONFIG_SCHEMAS.md`
+  - `LEVEL_SYSTEM_ARCHITECTURE.md`
+  - `RUNTIME_TEMPLATE_ROUTER.md`
+- Delivery and operations
+  - `RELEASE_PIPELINE_SYSTEM.md`
+  - `PLATFORM_TARGET_RULES.md`
+  - `RELEASE_ROLLBACK_PLAYBOOK.md`
+  - `OPERATIONS_DATA_SYSTEM.md`
+- Governance and review
+  - `QUALITY_GATES.md`
+  - `CHECKLISTS.md`
+  - `RISK_ESCALATION_SYSTEM.md`
+  - `REVIEW_SYSTEM.md`
+  - `TECH_DEBT_REGISTER.md`
+  - `INCIDENT_POSTMORTEM_TEMPLATE.md`
 
-## Repository contents
+## Good fit
 
-- `SKILL.md`: entry point, routing rules, and non-negotiable principles
-- `ROLES.md`: studio roles and role boundaries
-- `ROLE_STAGE_MATRIX.md`: what each role does in each stage
-- `STAGES.md`: phase system from framing to release
-- `OWNERSHIP.md`: asset ownership and approval rules
-- `COCOS_RULES.md`: anti-chaos rules for Cocos Creator 3.x
-- `PROJECT_STRUCTURE.md`: recommended project blueprint
-- `LEVEL_DATA_MODELS.md`: level and content data model selection
-- `LEVEL_CONFIG_SCHEMAS.md`: concrete CSV/table field schemas for wave-spawn level production
-- `LEVEL_SYSTEM_ARCHITECTURE.md`: Cocos runtime architecture for level systems
-- `QUALITY_GATES.md`: feature, slice, QA, and release gates
-- `CHECKLISTS.md`: operational review checklists
-- `WORKFLOWS.md`: execution patterns for common situations
-- `EXAMPLES.md`: applied usage examples
-- `TEMPLATES.md`: reusable project document templates
+- serious Cocos Creator 3.x projects
+- solo developers wearing many hats
+- small teams that want senior-level structure
+- level-heavy games
+- projects that keep getting messy during prototype, production, or release
+
+## Not the main goal
+
+- generic Unity or Godot workflows
+- one-off lightweight "just write one script" requests
+- engine plugin automation for every possible editor task
 
 ## Recommended usage
 
-Use this skill when you need help with any of the following:
+Good entry prompts include:
 
-- "How should I start this Cocos game?"
-- "Which stage is my project in?"
-- "Who should own this prefab, UI, or config?"
-- "Which level configuration model should this game use?"
-- "What fields should Level.csv, Wave.csv, Spawn.csv, and EnemyGroup.csv use?"
-- "Should these levels use CSV, room pools, quest graphs, puzzle states, or procedural rules?"
-- "How should ConfigManager, LevelBuilder, WaveSystem, SpawnSystem, and ObjectiveSystem be separated?"
-- "My project is getting messy. What is wrong?"
-- "Can this build enter the next stage?"
-- "Can we ship this?"
+- `What kind of game is this really?`
+- `What should this next version actually prove?`
+- `Which architecture template fits this game?`
+- `How should levels be configured?`
+- `Can we ship this?`
+- `Review this professionally.`
 
-## Default operating order
+The skill's operating order is:
 
-1. Identify the current stage.
-2. Identify the responsible role.
-3. Identify the affected assets and ownership rules.
-4. Apply the Cocos architecture and structure rules.
-5. Select the right level data model when content or level data is involved.
-6. Use concrete level config schemas when CSV or spreadsheet fields are needed.
-7. Apply level runtime architecture boundaries when implementing level systems.
-8. Check gates and checklists.
-9. Produce or review the needed artifacts.
+1. identify mode and stage
+2. identify role, authority, and ownership
+3. classify the game and lock version purpose
+4. choose the right architecture and content model
+5. apply delivery, operations, and review gates
 
 ## Installation
 
-Place the skill folder inside your local Codex skills directory:
+Place the folder inside your Codex skills directory:
 
 ```text
 ~/.codex/skills/cocos-studio-ouguowen
 ```
 
-On Windows, the local path usually looks like:
+On Windows this is usually:
 
 ```text
 C:\Users\<you>\.codex\skills\cocos-studio-ouguowen
 ```
 
-After copying or updating the skill, restart Codex so the new skill name and description are picked up reliably.
+Restart Codex after installing or updating the skill so the metadata reloads cleanly.
 
 ## Philosophy
 
@@ -95,21 +113,5 @@ After copying or updating the skill, restart Codex so the new skill name and des
 - no undefined ownership
 - no vague stage state
 - no uncontrolled architecture drift
-- no giant god scripts as the default answer
-- no pushing to production without gates
-
-## Good fit
-
-- serious 2D Cocos projects
-- solo-dev studio workflows
-- projects that need clearer boundaries between design, programming, art, QA, and release work
-
-## Not the main goal
-
-- generic Unity or Godot workflows
-- lightweight "just give me one script" workflows
-- editor-plugin automation for every task
-
-## Status
-
-This repository currently packages the first practical version of the skill, including stage logic, roles, ownership, structure rules, level data model selection, level config schemas, level runtime architecture, templates, examples, and checklists.
+- no fake milestone claims
+- no production advancement without real gates

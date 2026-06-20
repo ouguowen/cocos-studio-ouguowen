@@ -227,6 +227,178 @@ If these are not true:
 
 - milestone reporting is hiding convergence risk
 
+## 16. MVP Scope Checklist
+
+- The one-sentence fantasy is written.
+- The repeated core loop is named.
+- The MVP proves one real return reason, not many weak ones.
+- Explicitly out-of-scope systems are listed.
+- Required systems only are named.
+- Kill conditions are written.
+
+If these are not true:
+
+- the MVP is expanding before it is proven
+
+## 17. Game Type Fit Checklist
+
+- The dominant player action is named.
+- The main content unit is named.
+- The progression structure is named.
+- The selected template matches the real loop, not just theme.
+- The chosen config model fits the template.
+
+If these are not true:
+
+- the project is forcing the wrong production pattern
+
+## 18. AI Collaboration Control Checklist
+
+- Human owner is named.
+- Review owner is named.
+- Stage and deliverable are named before AI use.
+- AI decision boundaries are explicit.
+- Suggested tests and executed tests are not mixed together.
+- Adopted AI output has been reviewed, not trusted by appearance.
+
+If these are not true:
+
+- AI usage is adding unowned risk
+
+## 19. Release Pipeline Checklist
+
+- Build lane is named explicitly.
+- Version and build identifier are recorded.
+- Source snapshot is recorded.
+- Channel and platform targets are explicit.
+- Remote-config or feature-flag dependencies are explicit.
+- Data-migration dependencies are explicit.
+- Watch owner is named.
+- Rollback path is known.
+
+If these are not true:
+
+- the release pipeline is not under control
+
+## 20. Platform Target Checklist
+
+- Primary launch platform is explicit.
+- Allowed platform differences are explicit.
+- Input model is reviewed per platform.
+- Performance target is reviewed per platform.
+- Package budget is reviewed per platform.
+- SDK, permission, and review constraints are visible.
+- Save and analytics consistency rules are explicit.
+
+If these are not true:
+
+- platform scope is still accidental
+
+## 21. Operations Data Checklist
+
+- Current business hypothesis is explicit.
+- Retention metrics are reviewed with context.
+- Monetization metrics are reviewed with trust risk.
+- Ad metrics are reviewed with fatigue risk.
+- Economy faucet and sink health are reviewed.
+- Event outcomes are checked beyond participation only.
+- Follow-up owner is named.
+
+If these are not true:
+
+- the team is reading numbers without control
+
+## 22. Ownership Authority Checklist
+
+- Role name and capability level are both explicit.
+- Core ownership below Senior Owner level is challenged, not assumed.
+- Reviewer authority matches blast radius.
+- Approval authority is explicit for release, economy, config-law, and framework work.
+- AI or junior-like assistance is not treated as final ownership.
+
+If these are not true:
+
+- authority is decorative and risk is unowned
+
+## 23. Handoff Safety Checklist
+
+- Source owner is explicit.
+- Receiving owner is explicit.
+- Review owner is explicit.
+- Included and excluded artifacts are explicit.
+- Dependency assumptions are visible.
+- Validation evidence exists.
+- Rejection conditions are explicit.
+- Unresolved work is not silently dumped downstream.
+
+If these are not true:
+
+- the handoff is not production-safe
+
+## 24. Version Roadmap Checklist
+
+- Current milestone is explicit.
+- Next milestone is explicit.
+- The current milestone has one clear proof obligation.
+- Promotion conditions are explicit.
+- Out-of-scope items are explicit.
+- Kill or delay conditions are explicit.
+- The roadmap is not pretending two different stages are the same.
+
+If these are not true:
+
+- the roadmap is decorative and not decision-safe
+
+## 25. Risk Escalation Checklist
+
+- Risk class is explicit.
+- Severity is explicit.
+- Owner is explicit.
+- Escalation authority is explicit.
+- Evidence or trigger is explicit.
+- Response path is explicit.
+- Critical risk is not continuing without written acceptance.
+
+If these are not true:
+
+- the team is carrying blind risk
+
+## 26. Game Classification Checklist
+
+- Dominant player action is explicit.
+- Main content unit is explicit.
+- Primary class is explicit.
+- Secondary class is explicit when hybrid.
+- Wrong template choices are explicitly rejected.
+
+If these are not true:
+
+- the project is routing from vibes
+
+## 27. Project Memory Checklist
+
+- Confirmed facts are separated from assumptions.
+- Current stage and milestone truth are recorded.
+- Accepted risks are recorded.
+- Stale assumptions are reviewed.
+- Memory is updated after major decisions.
+
+If these are not true:
+
+- the project is relying on conversational drift
+
+## 28. Formal Review Checklist
+
+- Review scope is explicit.
+- Findings are listed before summary.
+- Blockers are explicit.
+- Residual risk is explicit.
+- Approval status is explicit.
+
+If these are not true:
+
+- the review is not functioning as a gate
+
 ## Checklist law
 
 - A blank item is unresolved risk.

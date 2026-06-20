@@ -1,0 +1,63 @@
+# Module Index
+
+Use this file to route a request into the correct module family before loading detailed rules.
+
+## 1. Project framing and control
+
+- [PRODUCTION_MODES.md](PRODUCTION_MODES.md): how strict the team should be right now
+- [STAGES.md](STAGES.md): where the project is in time
+- [VERSION_ROADMAP_SYSTEM.md](VERSION_ROADMAP_SYSTEM.md): why the current version exists and what proves promotion
+- [PROJECT_MEMORY_SYSTEM.md](PROJECT_MEMORY_SYSTEM.md): stable project truth across sessions
+
+## 2. Roles, authority, and handoff
+
+- [ROLES.md](ROLES.md): what each role is responsible for
+- [ROLE_STAGE_MATRIX.md](ROLE_STAGE_MATRIX.md): what each role does in each stage
+- [OWNERSHIP.md](OWNERSHIP.md): who owns which asset class
+- [TEAM_SENIORITY_SYSTEM.md](TEAM_SENIORITY_SYSTEM.md): who is senior enough to own or approve work
+- [COLLAB_HANDOFF_SYSTEM.md](COLLAB_HANDOFF_SYSTEM.md): how internal, vendor, and AI-assisted handoffs must work
+- [OUTSOURCING_COLLAB_RULES.md](OUTSOURCING_COLLAB_RULES.md): external collaboration boundaries
+
+## 3. Game definition and scope
+
+- [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md): classify the game before template choice
+- [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md): select the closest genre or loop template
+- [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md): cut to the first real playable product
+- [PLAYBOOK_SYSTEM.md](PLAYBOOK_SYSTEM.md): recurring operating procedures
+- [PRD_CONSTRAINTS.md](PRD_CONSTRAINTS.md): PRD structure and red flags
+- [TASK_DECOMPOSITION_RULES.md](TASK_DECOMPOSITION_RULES.md): production-safe task splitting
+
+## 4. Architecture and content systems
+
+- [COCOS_RULES.md](COCOS_RULES.md): engineering law for Cocos Creator 3.x
+- [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md): default project layout
+- [ARCHITECTURE_TEMPLATE_SYSTEM.md](ARCHITECTURE_TEMPLATE_SYSTEM.md): choose a matching runtime blueprint family
+- [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md): choose the right content and level data model
+- [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md): concrete table fields
+- [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md): runtime implementation boundaries
+- [RUNTIME_TEMPLATE_ROUTER.md](RUNTIME_TEMPLATE_ROUTER.md): map requests to the right runtime template assets and scripts
+
+## 5. Delivery, release, and live operations
+
+- [TEST_MATRIX.md](TEST_MATRIX.md): coverage planning
+- [ACCEPTANCE_ARTIFACTS.md](ACCEPTANCE_ARTIFACTS.md): evidence before sign-off
+- [RELEASE_PIPELINE_SYSTEM.md](RELEASE_PIPELINE_SYSTEM.md): build lanes, rollout, and hotfix planning
+- [PLATFORM_TARGET_RULES.md](PLATFORM_TARGET_RULES.md): Android, iOS, web, mini-game, and package differences
+- [RELEASE_ROLLBACK_PLAYBOOK.md](RELEASE_ROLLBACK_PLAYBOOK.md): rollback discipline
+- [OPERATIONS_DATA_SYSTEM.md](OPERATIONS_DATA_SYSTEM.md): retention, monetization, ad, event, and economy review
+
+## 6. Governance, risk, and review
+
+- [QUALITY_GATES.md](QUALITY_GATES.md): promotion and approval gates
+- [CHECKLISTS.md](CHECKLISTS.md): review checklists
+- [TECH_DEBT_REGISTER.md](TECH_DEBT_REGISTER.md): debt ownership and repayment triggers
+- [COST_BUDGET_MODEL.md](COST_BUDGET_MODEL.md): cost control
+- [INCIDENT_POSTMORTEM_TEMPLATE.md](INCIDENT_POSTMORTEM_TEMPLATE.md): post-incident review
+- [MILESTONE_BURNDOWN_RULES.md](MILESTONE_BURNDOWN_RULES.md): convergence tracking
+- [RISK_ESCALATION_SYSTEM.md](RISK_ESCALATION_SYSTEM.md): when the team must stop and escalate
+- [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md): formal gate review rules
+
+## 7. AI-assisted work
+
+- [AI_COLLAB_RULES.md](AI_COLLAB_RULES.md): what AI may and may not own
+- [PROMPT_LIBRARY.md](PROMPT_LIBRARY.md): high-signal recurring prompt patterns

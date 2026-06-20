@@ -9,9 +9,76 @@ Use these execution patterns when the skill is active.
 3. If the mode and stage disagree, resolve the contradiction before giving build advice.
 4. Start the framing documents using [TEMPLATES.md](TEMPLATES.md).
 5. Define the first-version scope and explicit non-goals.
-6. If the game is level-based or content-heavy, choose the first level data model using [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md).
-7. Identify the first gameplay prototype target.
-8. Refuse to jump straight into broad production without gates.
+6. Classify the game first with [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md).
+7. If the core loop is still abstract, choose the closest baseline in [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md).
+8. If the first playable scope is still expanding, lock it with [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md).
+9. If the game is level-based or content-heavy, choose the first level data model using [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md).
+10. Identify the first gameplay prototype target.
+11. Refuse to jump straight into broad production without gates.
+
+## Classifying a game
+
+1. Open [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md).
+2. Classify by dominant repeatable player action, not theme.
+3. Name the main content unit and progression structure.
+4. Route the project to the right template family and data model.
+5. Reject architecture choice before classification is stable.
+
+## Choosing an architecture template
+
+1. Open [ARCHITECTURE_TEMPLATE_SYSTEM.md](ARCHITECTURE_TEMPLATE_SYSTEM.md).
+2. Confirm the classified game type first.
+3. Pick the lightest template family that protects the real loop.
+4. Name what systems are primary and what systems are explicitly delayed.
+5. Reject one universal skeleton for all game classes.
+
+## Updating project memory
+
+1. Open [PROJECT_MEMORY_SYSTEM.md](PROJECT_MEMORY_SYSTEM.md).
+2. Record confirmed facts, active assumptions, and open questions separately.
+3. Update memory after scope, stage, platform, risk, or version decisions.
+4. Expire stale assumptions instead of letting them linger as fake truth.
+5. Reject memory updates that mix guesses with locked facts.
+
+## Running a formal review
+
+1. Open [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md).
+2. Review against stage, ownership, classification, MVP, architecture, release, and operations fit.
+3. Report findings first.
+4. Separate blockers from follow-up improvements.
+5. Do not approve work that still fails a named gate.
+
+## Using a playbook
+
+1. Open [PLAYBOOK_SYSTEM.md](PLAYBOOK_SYSTEM.md).
+2. Match the situation to a recurring operating procedure.
+3. Name trigger, preconditions, owners, steps, and stop conditions.
+4. Prefer playbook execution over improvisation for recurring risky flows.
+5. If no playbook exists for a recurring failure pattern, create one.
+
+## Defining the MVP
+
+1. Open [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md).
+2. Name the one-sentence fantasy and repeated loop first.
+3. Name what must be proven before discussing polish or scale.
+4. Cut supporting systems until one trustworthy first-version loop remains.
+5. Record explicit kill conditions before approving expansion.
+
+## Choosing a game-type template
+
+1. Open [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md).
+2. Choose by dominant player action, not by visual theme.
+3. Name the main content unit and progression structure.
+4. Start config and runtime planning only after the closest template is selected.
+5. Reject template mismatch early instead of forcing one data model onto every idea.
+
+## Working with AI collaborators
+
+1. Open [AI_COLLAB_RULES.md](AI_COLLAB_RULES.md).
+2. Name the stage, human owner, and deliverable before prompting AI.
+3. State what AI may decide and what remains human authority.
+4. Review every adopted output against scope, ownership, and gate discipline.
+5. Reject AI-generated volume that has no accountable reviewer.
 
 ## Building the project structure
 
@@ -96,6 +163,62 @@ Use these execution patterns when the skill is active.
 2. Name rollout owner, rollback owner, trigger metrics, and watch window.
 3. Record rollback path before the launch decision.
 4. Treat missing rollback steps as a release blocker.
+
+## Planning a release pipeline
+
+1. Open [RELEASE_PIPELINE_SYSTEM.md](RELEASE_PIPELINE_SYSTEM.md).
+2. Name the build lane before discussing package or hot update details.
+3. Record version, build identifier, source snapshot, channel, and dependency assumptions.
+4. Separate submission review, rollout decision, and hotfix decision explicitly.
+5. Refuse release planning that has no watch owner, no rollback path, or no build provenance.
+
+## Planning platform targets
+
+1. Open [PLATFORM_TARGET_RULES.md](PLATFORM_TARGET_RULES.md).
+2. Name the primary launch platform before discussing optimization or SDK decisions.
+3. Record what must stay identical across platforms and what may differ.
+4. Lock package budget, performance tier, input model, and compliance dependencies per platform.
+5. Refuse "export later" thinking when platform constraints already affect scope.
+
+## Reviewing operations and business data
+
+1. Open [OPERATIONS_DATA_SYSTEM.md](OPERATIONS_DATA_SYSTEM.md).
+2. Name the stage and the current business hypothesis before reading dashboards.
+3. Review retention, monetization, ads, events, and economy as one loop.
+4. Separate temporary uplift from healthy long-term behavior.
+5. Refuse metric reviews that have no owner or no follow-up action.
+
+## Assigning ownership authority
+
+1. Open [TEAM_SENIORITY_SYSTEM.md](TEAM_SENIORITY_SYSTEM.md).
+2. Separate role name from capability level before assigning ownership.
+3. Check whether the work requires Support Contributor, Independent Implementer, Senior Owner, Lead Reviewer, or Director Approver authority.
+4. Refuse to assign core architecture, release, economy, config-law, or live-ops ownership below Senior Owner level.
+5. Record reviewer and escalation path when the executor is not the final authority.
+
+## Running a handoff
+
+1. Open [COLLAB_HANDOFF_SYSTEM.md](COLLAB_HANDOFF_SYSTEM.md).
+2. Name the source owner, receiving owner, review owner, and approver if needed.
+3. Record exactly what artifacts are included and excluded.
+4. Record dependency assumptions, integration steps, and validation evidence.
+5. Reject handoffs that dump unresolved work downstream without explicit agreement.
+
+## Planning the version roadmap
+
+1. Open [VERSION_ROADMAP_SYSTEM.md](VERSION_ROADMAP_SYSTEM.md).
+2. Name the current milestone and next milestone explicitly.
+3. State why the current milestone exists before listing features.
+4. Define proof obligation, out-of-scope items, and promotion conditions.
+5. Reject roadmap steps that do not prove anything new.
+
+## Escalating project risk
+
+1. Open [RISK_ESCALATION_SYSTEM.md](RISK_ESCALATION_SYSTEM.md).
+2. Name the risk class and severity before arguing about optimism.
+3. Name affected systems, owner, and escalation authority.
+4. Decide whether the response is mitigate, narrow scope, delay, accept explicitly, or stop.
+5. Refuse to let critical risk continue as an unwritten background assumption.
 
 ## Tracking technical debt
 

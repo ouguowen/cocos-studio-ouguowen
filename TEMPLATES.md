@@ -298,6 +298,22 @@ Use when one person is running multiple roles and needs discipline.
 - For budget planning, see [COST_BUDGET_MODEL.md](COST_BUDGET_MODEL.md).
 - For outsourcing rules, see [OUTSOURCING_COLLAB_RULES.md](OUTSOURCING_COLLAB_RULES.md).
 - For milestone burndown, see [MILESTONE_BURNDOWN_RULES.md](MILESTONE_BURNDOWN_RULES.md).
+- For MVP scope locking, see [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md).
+- For genre-starting structures, see [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md).
+- For AI teammate control, see [AI_COLLAB_RULES.md](AI_COLLAB_RULES.md).
+- For submission, rollout, and hotfix planning, see [RELEASE_PIPELINE_SYSTEM.md](RELEASE_PIPELINE_SYSTEM.md).
+- For platform-specific delivery rules, see [PLATFORM_TARGET_RULES.md](PLATFORM_TARGET_RULES.md).
+- For retention, monetization, ad, event, and economy review, see [OPERATIONS_DATA_SYSTEM.md](OPERATIONS_DATA_SYSTEM.md).
+- For ownership authority and seniority control, see [TEAM_SENIORITY_SYSTEM.md](TEAM_SENIORITY_SYSTEM.md).
+- For internal, external, and AI-assisted handoff records, see [COLLAB_HANDOFF_SYSTEM.md](COLLAB_HANDOFF_SYSTEM.md).
+- For milestone ladder and version-purpose records, see [VERSION_ROADMAP_SYSTEM.md](VERSION_ROADMAP_SYSTEM.md).
+- For risk naming, escalation, and acceptance records, see [RISK_ESCALATION_SYSTEM.md](RISK_ESCALATION_SYSTEM.md).
+- For game classification records, see [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md).
+- For repeatable operating procedures, see [PLAYBOOK_SYSTEM.md](PLAYBOOK_SYSTEM.md).
+- For architecture family selection, see [ARCHITECTURE_TEMPLATE_SYSTEM.md](ARCHITECTURE_TEMPLATE_SYSTEM.md).
+- For recurring AI request phrasing, see [PROMPT_LIBRARY.md](PROMPT_LIBRARY.md).
+- For stable project facts across sessions, see [PROJECT_MEMORY_SYSTEM.md](PROJECT_MEMORY_SYSTEM.md).
+- For formal review records, see [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md).
 
 ## 9. Level Data Model Selection Template
 

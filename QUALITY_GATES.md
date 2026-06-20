@@ -51,11 +51,101 @@ Use these gates to decide whether work is allowed to advance.
 - Systems, assets, telemetry, and rollout impact are named.
 - Acceptance criteria exist.
 
+## MVP Scope Gate
+
+- One repeated loop is clearly defined.
+- Supporting systems are cut to minimum required proof.
+- Out-of-scope items are explicit.
+- Kill conditions are written.
+
 ## Task Execution Gate
 
 - Work is decomposed into owner-clear tasks.
 - Task dependencies are visible.
 - Acceptance conditions are explicit.
+
+## AI Collaboration Gate
+
+- Human owner and review owner are explicit.
+- AI decision boundaries are explicit.
+- Adopted output has been reviewed against stage and scope.
+- AI-generated suggestions are not mislabeled as executed evidence.
+
+## Release Pipeline Gate
+
+- Build lane is explicit.
+- Build provenance is recorded.
+- Channel and platform targets are explicit.
+- Rollout and rollback paths both exist.
+- Watch ownership exists for post-launch signals.
+
+## Platform Target Gate
+
+- Primary platform is explicit.
+- Platform-specific constraints are visible.
+- Performance and package expectations exist per target.
+- SDK, permission, and compliance differences are visible.
+- Cross-platform consistency rules are explicit.
+
+## Operations Data Gate
+
+- Business hypothesis is explicit.
+- Retention, monetization, ads, and economy are reviewed together when relevant.
+- Metrics have owners and follow-up actions.
+- Short-term uplift is not confused with healthy player behavior.
+
+## Ownership Authority Gate
+
+- Ownership authority matches capability, not just title.
+- Critical work has Senior Owner or stronger ownership.
+- Reviewer and approver authority are explicit.
+- High-blast-radius work is not self-approved below the required level.
+
+## Handoff Gate
+
+- Source, receiving, and review ownership are explicit.
+- Included scope and excluded scope are explicit.
+- Integration assumptions are visible.
+- Validation evidence exists before acceptance.
+- Downstream cleanup is not being used as hidden scope transfer.
+
+## Version Roadmap Gate
+
+- The milestone purpose is explicit.
+- Promotion conditions are explicit.
+- Out-of-scope items are explicit.
+- The next milestone proves something different from the current one.
+- The roadmap supports an actual decision, not only a schedule.
+
+## Risk Escalation Gate
+
+- Serious risk is named, not implied.
+- Risk class and severity are explicit.
+- Owner and escalation authority are explicit.
+- Critical risk is either mitigated, blocked, or explicitly accepted by the right authority.
+- Advancement is not continuing on undocumented hope.
+
+## Game Classification Gate
+
+- Primary game class is explicit.
+- Hybrid status is explicit when relevant.
+- Template and data-model routing follows the classification.
+- Theme is not being used as the primary classifier.
+
+## Project Memory Gate
+
+- Current project truth is recorded.
+- Confirmed facts and assumptions are separated.
+- Accepted risks are recorded.
+- Memory is current enough to guide the next decision.
+
+## Formal Review Gate
+
+- Findings are explicit.
+- Blockers are explicit.
+- Approval status is explicit.
+- Residual risk is explicit.
+- Review is being used as a decision gate, not as theater.
 
 ## Rollback Gate
 
