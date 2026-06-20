@@ -6,29 +6,26 @@ Use this file before designing level CSVs, JSON files, spreadsheets, editor data
 
 There is no universal level CSV that fits every game.
 
-The professional workflow is:
+The correct order is:
 
-1. classify the game and content production pattern
-2. choose a data model family
-3. design tables around that model
+1. classify the game and the main content unit
+2. choose the data model family
+3. design tables around that family
 4. define validation before mass content entry
 
 CSV is only a carrier. The model matters more than the file format.
 
-## Selection questions
+## Quick selection questions
 
-Ask these before designing tables:
+- Is the content mainly combat waves, puzzle states, platform segments, room pools, quests, regions, endless generation, or economy scenarios?
+- Is progression linear, branching, run-based, open exploration, or endless?
+- Is the content hand-authored, template-authored, pool-generated, or procedural?
+- Does the designer mainly tune timing, placement, state logic, traversal rhythm, objective chains, or economy variables?
+- Does the runtime need spreadsheet data only, editor markers only, or both?
 
-- Is the level hand-authored, template-authored, pool-generated, or procedural?
-- Is the main content wave, room, puzzle, platform segment, quest, dialogue, economy, or world exploration?
-- Does the player progress linearly, branch, loop, or roam?
-- Does the designer tune enemies, timing, positions, objectives, mechanisms, rewards, or narrative states?
-- Is randomness allowed, and if yes, must it be seedable and reproducible?
-- Does the level need editor-authored scene data, spreadsheet-authored data, or both?
+## Model matrix
 
-## Model families
-
-## 1. Wave Spawn Model
+### 1. Wave Spawn Model
 
 Use for:
 
@@ -36,13 +33,11 @@ Use for:
 - arena combat
 - tower defense
 - top-down shooters
-- roguelite combat rooms
 - casual combat stages
 
-Core tables:
+Start with:
 
 - `Level.csv`
-- `LevelTemplate.csv`
 - `LevelObjective.csv`
 - `Wave.csv`
 - `Spawn.csv`
@@ -50,37 +45,21 @@ Core tables:
 - `Enemy.csv`
 - `Map.csv`
 - `MapPoint.csv`
-- `Reward.csv`
-
-Optional tables:
-
-- `Formation.csv`
-- `StarRule.csv`
-- `DropGroup.csv`
-- `LevelModifier.csv`
-
-Main ownership:
-
-- Lead Designer owns intent and balance.
-- Level Designer owns wave and placement content.
-- Gameplay Programmer owns runtime execution.
-- Lead Programmer owns schema and validation pipeline.
 
 Avoid when:
 
-- the level is primarily puzzle state, branching quest logic, or authored traversal rhythm.
+- the real content is puzzle state, traversal rhythm, or branching quest logic
 
-## 2. Puzzle Mechanism Model
+### 2. Puzzle Mechanism Model
 
 Use for:
 
 - puzzle games
 - escape-room style games
 - mechanism-heavy levels
-- logic-grid levels
 - state-machine interaction levels
 
-Core tables:
+Start with:
 
 - `PuzzleLevel.csv`
 - `PuzzleObject.csv`
@@ -88,26 +67,12 @@ Core tables:
 - `PuzzleTrigger.csv`
 - `PuzzleCondition.csv`
 - `PuzzleAction.csv`
-- `PuzzleHint.csv`
-- `PuzzleReward.csv`
-
-Key idea:
-
-- A puzzle is not a wave sequence. It is a graph of objects, states, triggers, conditions, and actions.
-
-Validation must check:
-
-- unreachable states
-- missing trigger targets
-- circular state changes without exit
-- hints pointing to missing objects
-- solved condition exists
 
 Avoid when:
 
-- the content is mostly combat timing or enemy placement.
+- the content is mostly combat timing or enemy placement
 
-## 3. Platform Segment Model
+### 3. Platform Segment Model
 
 Use for:
 
@@ -116,7 +81,7 @@ Use for:
 - rhythm traversal games
 - obstacle-course games
 
-Core tables:
+Start with:
 
 - `Level.csv`
 - `Segment.csv`
@@ -124,100 +89,58 @@ Core tables:
 - `Obstacle.csv`
 - `Pickup.csv`
 - `Checkpoint.csv`
-- `CameraTrack.csv`
-- `DifficultyCurve.csv`
-
-Key idea:
-
-- The level is a sequence of traversal segments with rhythm, obstacle density, pickup placement, and camera behavior.
-
-Validation must check:
-
-- impossible jumps
-- checkpoint spacing
-- obstacle density spikes
-- camera occlusion risk
-- pickup paths that pull the player into unfair danger
 
 Avoid when:
 
-- the level is mostly free-form exploration or room selection.
+- the game is mainly free-form exploration or room generation
 
-## 4. Roguelite Room Pool Model
+### 4. Roguelite Room Pool Model
 
 Use for:
 
 - roguelites
 - dungeon crawlers
 - room-based action games
-- replayable small-run games
+- replayable run-based games
 
-Core tables:
+Start with:
 
 - `RunRule.csv`
 - `RoomPool.csv`
 - `Room.csv`
-- `RoomTag.csv`
 - `RoomConnection.csv`
 - `EncounterPool.csv`
 - `RewardPool.csv`
-- `ModifierPool.csv`
 - `SeedRule.csv`
-
-Key idea:
-
-- The designer authors rooms and pools, while runtime generation assembles a valid run.
-
-Validation must check:
-
-- room connection compatibility
-- tag constraints
-- required room counts
-- reward economy limits
-- seed reproducibility
 
 Avoid when:
 
-- the game depends on a fixed authored level order.
+- the game depends on fixed authored level order
 
-## 5. Quest Driven Model
+### 5. Quest Driven Model
 
 Use for:
 
 - RPGs
 - narrative games
 - NPC-driven adventure games
-- games with branching objectives
+- branching objective games
 
-Core tables:
+Start with:
 
 - `Quest.csv`
 - `QuestStep.csv`
 - `Objective.csv`
 - `Dialogue.csv`
 - `NPC.csv`
-- `Trigger.csv`
 - `Condition.csv`
-- `Reward.csv`
 - `WorldState.csv`
-
-Key idea:
-
-- The level is not only a map. It is a chain or graph of objectives, world states, NPC interactions, and narrative gates.
-
-Validation must check:
-
-- unreachable quest steps
-- missing dialogue ids
-- broken condition references
-- reward duplication
-- blocked progression states
 
 Avoid when:
 
-- the content is only enemy waves and rewards.
+- the content is only waves and rewards
 
-## 6. Exploration Region Model
+### 6. Exploration Region Model
 
 Use for:
 
@@ -226,177 +149,111 @@ Use for:
 - large authored maps
 - non-linear progression games
 
-Core tables:
+Start with:
 
 - `Region.csv`
 - `Area.csv`
 - `Gate.csv`
 - `AbilityGate.csv`
-- `Pickup.csv`
 - `RouteHint.csv`
-- `Checkpoint.csv`
-- `Encounter.csv`
 - `MapReveal.csv`
-
-Key idea:
-
-- Progress is controlled by spatial gates, abilities, route discovery, and backtracking.
-
-Validation must check:
-
-- hard progression locks
-- required ability availability
-- unreachable pickups
-- missing checkpoints after difficulty spikes
-- map reveal consistency
 
 Avoid when:
 
-- content is short, linear, and parameter-driven.
+- the content is mainly isolated short stages
 
-## 7. Endless Generator Model
+### 7. Endless Generator Model
 
 Use for:
 
 - endless runners
-- endless survival
-- endless merge or casual games
-- procedural arcade loops
+- score-chasing arcade games
+- endless survival loops
 
-Core tables:
+Start with:
 
 - `GeneratorRule.csv`
-- `SegmentPool.csv`
-- `SpawnRule.csv`
+- `ChunkPool.csv`
+- `SpawnPattern.csv`
 - `DifficultyCurve.csv`
 - `RewardCurve.csv`
-- `EventPool.csv`
-- `SafetyRule.csv`
-
-Key idea:
-
-- The designer defines generation grammar, pools, curves, and safety constraints, not a fixed sequence of levels.
-
-Validation must check:
-
-- impossible generated states
-- curve spikes
-- incompatible segment joins
-- reward inflation
-- seed replay support when needed
 
 Avoid when:
 
-- every level must be fixed and handcrafted.
+- the game depends on stable hand-authored stage identity
 
-## 8. Economy Challenge Model
+### 8. Economy Challenge Model
 
 Use for:
 
-- management games
 - idle games
-- tycoon loops
-- resource puzzle stages
+- merge games
+- management challenge stages
+- economy-driven progression loops
 
-Core tables:
+Start with:
 
-- `Challenge.csv`
+- `Scenario.csv`
 - `ResourceRule.csv`
-- `ProductionRule.csv`
-- `CostCurve.csv`
 - `UpgradeRule.csv`
-- `Objective.csv`
-- `Reward.csv`
-
-Key idea:
-
-- The level is a resource and progression scenario, not a spatial or wave layout.
-
-Validation must check:
-
-- impossible cost curves
-- runaway economy loops
-- no-win states
-- reward inflation
-- payback time targets
+- `GoalRule.csv`
+- `RewardRule.csv`
 
 Avoid when:
 
-- the game is mostly action placement and timing.
+- the primary challenge is movement, combat, or traversal
 
-## Hybrid models
+## Hybrid rule
 
-Many commercial games use hybrids.
+Use one primary model and at most one secondary model.
 
 Examples:
 
-- roguelite room pool + wave spawn model
-- quest driven model + exploration region model
-- platform segment model + endless generator model
-- puzzle mechanism model + reward economy model
+- combat exploration game: primary `Exploration Region`, secondary `Wave Spawn`
+- puzzle RPG: primary `Quest Driven`, secondary `Puzzle Mechanism`
+- action roguelite: primary `Roguelite Room Pool`, secondary `Wave Spawn`
 
-Hybrid rule:
+Do not merge three or four model families into one first-version content pipeline.
 
-- choose one primary model and one secondary model
-- do not blend table families casually
-- define which model owns progression, which owns moment-to-moment content
+## Ownership baseline
 
-## Cocos implementation guidance
+- Lead Designer: gameplay intent and tuning truth
+- Level Designer: authored content and pacing
+- Gameplay Programmer: runtime execution
+- Lead Programmer: schema boundaries, validation, export pipeline
+- QA Lead: content correctness and progression safety
 
-Recommended runtime layers:
+## Validation baseline
 
-- config loading owned by Lead Programmer
-- schema validation owned by Lead Programmer
-- gameplay interpretation owned by Gameplay Programmer
-- authored content owned by Lead Designer and Level Designer
-- editor placement bridge owned by Lead Programmer and Level Designer together
+Every chosen model must validate:
 
-Recommended data flow:
-
-```text
-authored table or editor data
-  -> validation
-  -> normalized runtime config
-  -> level builder
-  -> gameplay systems
-  -> view, UI, animation, VFX
-```
-
-Do not let UI, scene shell scripts, or animation assets become the primary interpreter of level rules.
-
-## Field design rules
-
-- Use stable ids, not direct Cocos resource paths.
-- Separate config schema from config content.
-- Separate authored data from runtime state.
-- Prefer enums over free text.
-- Add `enabled` and `notes` to production-facing tables.
-- Add validation for missing ids, invalid references, circular dependencies, and impossible states.
-- Keep designer-facing tables readable.
-- Keep runtime-normalized data strict.
+- required references exist
+- progression cannot dead-end unintentionally
+- disabled content is not referenced by enabled content
+- randomness is reproducible when the game design requires it
+- runtime-critical values stay inside project-defined limits
 
 ## Decision output format
 
-When asked to design level data, respond with:
+When choosing a model, answer in this shape:
 
 ```md
-## Recommended Model
+# Level Data Model Decision
 
-## Why This Model Fits
-
+## Game Type
+## Main Content Unit
+## Progression Structure
+## Primary Data Model
+## Secondary Data Model
 ## Tables To Start With
-
 ## Tables To Avoid For Now
-
-## Ownership
-
-## Validation Rules
-
-## Cocos Runtime Flow
-
-## Risks
+## Runtime Owner
+## Content Owner
+## Main Validation Risks
 ```
 
 ## Professional warning
 
-If the game type is unclear, do not design fields first. Ask or infer the content model first.
+- Do not start table design before model choice.
+- Do not force wave-spawn tables onto puzzle, quest, or exploration-heavy games.
+- Do not let one-off exceptions dictate the whole schema.

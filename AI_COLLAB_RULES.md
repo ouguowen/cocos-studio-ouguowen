@@ -40,6 +40,7 @@ Use this file when AI is participating in design, code, content structuring, con
 - Name what the AI must not decide.
 - Ask for explicit assumptions when source truth is missing.
 - Prefer reviewable artifacts over broad brainstorming dumps.
+- For concrete modules such as home page, level page, shop page, or HUD, use short-option selection first, then continuous execution after one option is chosen.
 
 ## Review rules
 
@@ -55,6 +56,7 @@ Use this file when AI is participating in design, code, content structuring, con
 - "The answer looks professional so it must be right."
 - "No one owns this because AI wrote most of it."
 - "We can skip design review because the structure is already detailed."
+- "Ask AI again for every small UI detail after the main direction was already chosen."
 
 ## AI collaboration record
 

@@ -64,6 +64,14 @@ Use these gates to decide whether work is allowed to advance.
 - Task dependencies are visible.
 - Acceptance conditions are explicit.
 
+## Sequential Advancement Gate
+
+- The current step is explicit.
+- Required outputs from the previous step exist.
+- Prerequisites are complete, not assumed.
+- Advancement is not being justified by "we will fix it later".
+- If a blocker exists, the next required repair action is explicit.
+
 ## AI Collaboration Gate
 
 - Human owner and review owner are explicit.
@@ -180,3 +188,4 @@ Use these gates to decide whether work is allowed to advance.
 - "Mostly done" does not pass a gate.
 - If acceptance criteria are undefined, the work is not ready for approval.
 - If ownership is unclear, gate status should default to blocked.
+- If prerequisites are missing, advancement should default to blocked.

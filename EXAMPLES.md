@@ -201,3 +201,86 @@ Expected review style:
 - blockers explicit
 - residual risks explicit
 - no fake approval language
+
+## Example 9: Building a home page with short-option selection
+
+Situation:
+
+- the team is ready to build the game home page
+- the user does not want a long discussion first
+- the user wants to choose one direction and have the work continue to completion
+
+Good first response shape:
+
+- `A. Fast utility home: prioritize clear navigation and low art dependency.`
+- `B. Progression home: prioritize chapter entry, rewards, and return motivation.`
+- `C. Event home: prioritize banners, timed activities, and monetization exposure.`
+
+After the user chooses:
+
+1. restate the chosen direction in one short line
+2. build the information structure
+3. build the layout and interaction flow
+4. wire the required runtime data and button actions
+5. continue until the home page reaches a usable completed state
+
+Pause only if:
+
+- the chosen option conflicts with a locked product direction
+- required assets or product truth are missing
+- the next step would force a major architecture change
+
+Do not:
+
+- answer with long paragraphs before the options
+- offer too many choices
+- stop after one small implementation step and ask again
+
+## Example 10: Stopping a step-skipping mistake
+
+Situation:
+
+- the team wants to build the final home page layout
+- current button destinations and runtime data are not defined yet
+
+Correct response:
+
+1. name the current step as `define module boundaries and required data`
+2. mark `final layout implementation` as not yet allowed
+3. list the missing prerequisites:
+   - required runtime data
+   - button destinations
+   - completion standard
+4. continue by repairing those prerequisites first
+
+Good response shape:
+
+- `Current step: define module boundaries and data requirements.`
+- `Missing prerequisite: button actions are not defined yet.`
+- `Next allowed action: define required actions and runtime data before layout implementation.`
+
+Do not:
+
+- jump into polishing the page because the mockup is already visible
+- wire temporary logic into UI just to make the screen look complete
+
+## Example 11: Checking whether a module is allowed to advance
+
+Situation:
+
+- the team says the home page is ready for layout polish
+- reward data source and two button destinations are still undefined
+
+Correct chain check:
+
+1. identify the chain as `concrete module chain`
+2. identify the current step as `required runtime data and button actions`
+3. mark `layout polish` as blocked
+4. continue only after the missing data source and destinations are defined
+
+Good response shape:
+
+- `Current chain: concrete module chain.`
+- `Current step: required runtime data and button actions.`
+- `Blocked next step: layout polish.`
+- `Next allowed action: define reward data source and missing button destinations first.`

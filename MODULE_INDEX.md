@@ -33,8 +33,11 @@ Use this file to route a request into the correct module family before loading d
 - [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md): default project layout
 - [ARCHITECTURE_TEMPLATE_SYSTEM.md](ARCHITECTURE_TEMPLATE_SYSTEM.md): choose a matching runtime blueprint family
 - [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md): choose the right content and level data model
-- [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md): concrete table fields
-- [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md): runtime implementation boundaries
+- [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md): common wave-spawn and stage-table schemas
+- [LEVEL_CONFIG_SCHEMA_EXTENSIONS.md](LEVEL_CONFIG_SCHEMA_EXTENSIONS.md): optional support tables for wave-spawn projects
+- [LEVEL_TEMPLATES.md](LEVEL_TEMPLATES.md): level-specific design and runtime artifacts
+- [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md): core runtime implementation boundaries
+- [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md): optional advanced systems for live service or large-scope games
 - [RUNTIME_TEMPLATE_ROUTER.md](RUNTIME_TEMPLATE_ROUTER.md): map requests to the right runtime template assets and scripts
 
 ## 5. Delivery, release, and live operations
@@ -50,6 +53,7 @@ Use this file to route a request into the correct module family before loading d
 
 - [QUALITY_GATES.md](QUALITY_GATES.md): promotion and approval gates
 - [CHECKLISTS.md](CHECKLISTS.md): review checklists
+- [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md): specialist review checklists
 - [TECH_DEBT_REGISTER.md](TECH_DEBT_REGISTER.md): debt ownership and repayment triggers
 - [COST_BUDGET_MODEL.md](COST_BUDGET_MODEL.md): cost control
 - [INCIDENT_POSTMORTEM_TEMPLATE.md](INCIDENT_POSTMORTEM_TEMPLATE.md): post-incident review
@@ -61,3 +65,8 @@ Use this file to route a request into the correct module family before loading d
 
 - [AI_COLLAB_RULES.md](AI_COLLAB_RULES.md): what AI may and may not own
 - [PROMPT_LIBRARY.md](PROMPT_LIBRARY.md): high-signal recurring prompt patterns
+- [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md): short-option selection followed by continuous module execution
+- [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md): prerequisite-first advancement and anti-step-skipping control
+- [ADVANCEMENT_CHAIN_MAP.md](ADVANCEMENT_CHAIN_MAP.md): exact prerequisite chains for projects, modules, level systems, features, and release
+- [WORKFLOWS.md](WORKFLOWS.md): high-frequency execution patterns
+- [WORKFLOW_EXTENSIONS.md](WORKFLOW_EXTENSIONS.md): specialist execution patterns

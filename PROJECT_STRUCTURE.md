@@ -4,14 +4,12 @@ Use this file when defining or reviewing the default Cocos Creator 3.x project b
 
 ## Intent
 
-The structure must make it obvious:
+The structure must make four things obvious:
 
 - where gameplay truth lives
 - where UI lives
-- where presentation lives
 - where data lives
-- who owns what
-- what can scale during production without collapsing into chaos
+- who owns each layer
 
 ## Baseline directory shape
 
@@ -33,17 +31,7 @@ assets/
     common/
 
   art/
-    sprites/
-    atlases/
-    spine/
-    particles/
-    materials/
-    shaders/
-
   audio/
-    bgm/
-    sfx/
-    voice/
 
   configs/
     authored/
@@ -58,245 +46,77 @@ assets/
 
   scripts/
     core/
-      app/
-      bootstrap/
-      constants/
-      platform/
-      event/
-      utils/
-
     game/
-      systems/
-      rules/
-      state/
-      services/
-      save/
-
     data/
-      models/
-      runtime/
-      repositories/
-      config/
-
     ui/
-      framework/
-      pages/
-      panels/
-      popups/
-      hud/
-      widgets/
-      guide/
-
     view/
-      actors/
-      animation/
-      effects/
-      camera/
-      audio/
-
     resource/
-      loader/
-      bundle/
-      pool/
-      manifest/
-
     input/
-      bindings/
-      commands/
-      controllers/
-
     tools/
-      debug/
-      gm/
-      validation/
-      profiling/
 ```
 
 ## Layer ownership
 
-## `scripts/core`
+- `scripts/core`: app startup, platform glue, shared law. Owner: Lead Programmer.
+- `scripts/game`: gameplay systems, rule execution, save-facing game logic. Owner: Gameplay Programmer.
+- `scripts/data`: config schema, runtime models, repositories, mutable state containers. Owner: Lead Programmer for structure.
+- `scripts/ui`: page flow, HUD, widgets, modal logic. Owner: UI Programmer.
+- `scripts/view`: animation presenters, camera helpers, effect glue, audio presenters. Owner: Technical direction plus presentation roles.
+- `scripts/resource`: loading, pooling, bundle boundaries, manifest rules. Owner: Lead Programmer.
+- `scripts/input`: convert raw input into commands and intents. Owner: Gameplay Programmer.
+- `scripts/tools`: debug, validation, profiling, GM helpers. Owner: Lead Programmer.
 
-- Primary owner: Lead Programmer
-- Purpose: app startup, shared constants, platform glue, global utility law, event infrastructure
-- Do not put: gameplay rules, one-off feature logic, random page state
+## Layer boundaries
 
-## `scripts/game`
-
-- Primary owner: Gameplay Programmer
-- Purpose: gameplay systems, rule execution, state transitions, save-facing game logic
-- Do not put: UI-only concerns, scene-only hacks, visual-only state truth
-
-## `scripts/data`
-
-- Primary owner: Lead Programmer for structure, Gameplay Programmer for integration
-- Purpose: config schema, runtime models, repositories, mutable state containers
-- Do not put: view code, prefab access, page logic
-
-## `scripts/ui`
-
-- Primary owner: UI Programmer
-- Purpose: page framework, HUD, modal flow, widgets, guides
-- Do not put: deep gameplay rule truth, unmanaged direct writes into many systems
-
-## `scripts/view`
-
-- Primary owner: Lead Programmer for structure, Animation Lead and Technical Artist for content behavior requirements
-- Purpose: rendering helpers, animation presenters, camera helpers, effect glue, audio presenters
-- Do not put: core rule truth, economy decisions, quest progression decisions
-
-## `scripts/resource`
-
-- Primary owner: Lead Programmer
-- Purpose: load, release, pooling, bundle boundaries, manifest rules
-- Do not put: ad hoc feature-specific hacks with no release owner
-
-## `scripts/input`
-
-- Primary owner: Gameplay Programmer
-- Purpose: convert raw input into game commands and interaction intents
-- Do not put: direct mutation of unrelated runtime systems from raw device callbacks
-
-## `scripts/tools`
-
-- Primary owner: Lead Programmer
-- Purpose: debug tools, GM, validation, profiling helpers
-- Do not put: shipping-only gameplay truth
+- `core` must not become a gameplay dumping ground.
+- `game` must not hide UI-only logic or scene hacks.
+- `data` must not contain view code or prefab access.
+- `ui` must not become the owner of deep gameplay truth.
+- `view` must not become the owner of economy, quest, or progression rules.
+- `resource` must not accept ad hoc feature hacks with no release owner.
+- `input` must not directly mutate unrelated runtime systems from raw device callbacks.
 
 ## Scene blueprint
 
-## `boot`
+- `boot`: startup orchestration only
+- `login`: entry flow only
+- `lobby`: hub navigation and feature entry
+- `gameplay`: active play context
+- `result`: summary and transition flow
 
-- owns startup orchestration only
-- may initialize services, load critical config, and route the next scene
-- must not become a hidden permanent gameplay manager
+Scene shell scripts should stay thin. They host runtime flow; they do not become the whole rules engine.
 
-## `login`
+## Prefab and config rules
 
-- owns entry flow, account or guest entry decisions, and lightweight setup
-- must not contain broad game rule systems
+- Character and enemy prefabs need stable hook points and predictable hierarchy.
+- UI prefabs must separate pages, reusable widgets, and modal internals.
+- FX prefabs must declare reuse and pooling expectations.
+- `configs/authored` is human-authored source truth.
+- `configs/generated` is derived runtime data.
+- `configs/localization` must stay separate from gameplay-rule logic.
 
-## `lobby`
+## Bundle and runtime rules
 
-- owns hub navigation and top-level feature entry
-- must not accumulate gameplay truth for every system
-
-## `gameplay`
-
-- owns the active play context
-- scene shell should host the play context, not become the entire rules engine
-
-## `result`
-
-- owns summary and transition flow
-- should not mutate deep gameplay truth without explicit service boundaries
-
-## Prefab blueprint
-
-## Character prefabs
-
-- one root role per runtime actor
-- clear named child hook points:
-  - visual root
-  - hit root
-  - effect root
-  - UI anchor
-  - projectile or spawn anchor when needed
-- keep actor structure stable across the same actor family
-
-## Enemy prefabs
-
-- align hook points and state needs with gameplay systems
-- avoid one-off structure exceptions unless explicitly justified
-
-## UI prefabs
-
-- page root must map to page lifecycle rules
-- do not mix full pages, reusable widgets, and modal internals in one prefab family without naming discipline
-
-## FX prefabs
-
-- must declare expected trigger path and reuse expectations
-- must be compatible with pooling strategy when repeatedly spawned
-
-## Config blueprint
-
-## `configs/authored`
-
-- human-authored source tables
-- primary owner: Lead Designer
-
-## `configs/generated`
-
-- tool-emitted or transformed config artifacts
-- primary owner: Lead Programmer for pipeline, Lead Designer for source intent
-
-## `configs/localization`
-
-- localized player-facing strings and keyed copy
-- keep string ids stable and separate from gameplay rule logic
-
-## Bundle blueprint
-
-Use bundles to separate:
-
-- always-needed common content
-- gameplay-heavy content
-- lobby-only or menu-heavy content
-- exceptionally heavy UI or feature packages
-
-Bundle law:
-
-- every bundle must have a load owner
-- every bundle must have an unload or retention rule
-- avoid feature teams inventing new bundle logic casually
-
-## UI blueprint
-
-Recommended split:
-
-- `framework/`: base page, modal, lifecycle, navigation rules
-- `pages/`: full screens
-- `panels/`: embedded larger sections
-- `popups/`: modal overlays
-- `hud/`: in-session always-visible surfaces
-- `widgets/`: reusable controls
-- `guide/`: tutorial overlays and guidance helpers
-
-UI law:
-
-- full page flow belongs in `pages/`
-- reusable pieces belong in `widgets/`
-- tutorial systems do not own gameplay truth
-
-## Runtime state blueprint
-
-Separate clearly:
-
-- authored config values
-- runtime mutable session state
-- persisted save state
-- presentation-only state
-
-Never treat these as the same object by convenience.
+- Every bundle needs a load owner and a retention or unload rule.
+- Separate authored config, runtime mutable state, persisted save state, and presentation-only state.
+- Never treat config, runtime state, and save state as the same object by convenience.
 
 ## Naming discipline
 
-- prefer feature and intent over vague names
-- use stable, human-readable prefab and config ids
-- avoid temporary words such as `test`, `new`, `final`, `temp` in long-lived asset names
+- Prefer feature and intent over vague names.
+- Use stable human-readable prefab and config ids.
+- Avoid long-lived names such as `test`, `new`, `final`, or `temp`.
 
 ## Review questions
 
-Ask these when reviewing the structure:
-
-1. Can a new programmer tell where gameplay truth belongs
-2. Can a new UI feature be added without breaking framework law
-3. Can a heavy asset be loaded and released with clear ownership
-4. Can a prefab be reviewed without guessing its runtime purpose
-5. Can the team scale content without multiplying exceptions
+1. Can a new programmer tell where gameplay truth belongs?
+2. Can a new UI feature be added without breaking framework law?
+3. Can heavy assets be loaded and released with clear ownership?
+4. Can prefabs be reviewed without guessing their runtime purpose?
+5. Can the team scale content without multiplying exceptions?
 
 ## Structure law
 
 - A project structure exists to reduce decision chaos.
 - If a directory repeatedly becomes a dumping ground, the structure is already failing.
-- If a feature cannot fit naturally into the structure, the team must decide whether the structure or the feature design is wrong.
+- If a feature cannot fit naturally into the structure, decide whether the structure or the feature design is wrong.

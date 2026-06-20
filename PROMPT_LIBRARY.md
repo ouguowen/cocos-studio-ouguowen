@@ -39,3 +39,27 @@ Use $cocos-studio-ouguowen. Review this plan or implementation against stage, ow
 ```text
 Use $cocos-studio-ouguowen. Update the project memory with any newly locked facts, changed assumptions, accepted risks, blocked items, and current milestone truth. Separate confirmed facts from open questions.
 ```
+
+### 6. Build one concrete module
+
+```text
+Use $cocos-studio-ouguowen. Build this concrete module with the choice execution protocol. First give me 2 to 4 options only, each in one short sentence. After I choose one option, execute continuously until the module reaches a usable completed state. Pause only for real blockers, missing source truth, or architecture-level conflicts.
+```
+
+### 7. Revise an existing module
+
+```text
+Use $cocos-studio-ouguowen. Revise this existing module with the choice execution protocol. First give me 2 to 4 upgrade directions only, each in one short sentence. After I choose one direction, continue until the revised module reaches a usable completed state without stopping for minor choices.
+```
+
+### 8. Prevent step-skipping
+
+```text
+Use $cocos-studio-ouguowen. Apply the sequential gate protocol to this task. Name the current step, required prerequisites, missing prerequisites, and next allowed action. Do not let the project advance if the previous step is not actually complete.
+```
+
+### 9. Check advancement chain
+
+```text
+Use $cocos-studio-ouguowen. Check this task against the advancement chain map. Tell me the current chain, current step, missing prerequisites, blocked next step, and next allowed action. Do not allow step-skipping.
+```

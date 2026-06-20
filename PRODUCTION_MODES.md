@@ -2,21 +2,19 @@
 
 Use this file before giving process, staffing, architecture, or delivery advice.
 
-Stage answers "where the project is in time". Mode answers "how strict the team must be right now". One stage may use more than one mode for different workstreams.
+Stage answers "where the project is in time". Mode answers "how strict the team must be right now".
 
 ## Mode law
 
 - Pick the lightest mode that still protects the project.
-- Do not apply release-grade process to a one-day fun test.
-- Do not use prototype shortcuts inside formal production without naming the exception.
-- If the project is solo, mode still applies. One person changes hats; the gates do not disappear.
+- Prototype shortcuts must not leak into formal production without being named.
+- Solo development still uses modes; one person changes hats, but gates do not disappear.
 
 ## 1. Project Framing Mode
 
 Use when:
 
-- the game concept exists but the first version is not yet bounded
-- scope drift is more dangerous than delivery speed
+- the concept exists but the first version is not yet bounded
 
 Prioritize:
 
@@ -25,19 +23,13 @@ Prioritize:
 - non-goals
 - technical and production risks
 
-Allow:
-
-- rough documents
-- benchmark examples
-- high-level architecture options
-
 Refuse:
 
 - content mass production
 - final asset requests
-- broad system implementation without scope lock
+- broad implementation without scope lock
 
-Required outputs:
+Outputs:
 
 - framing document
 - first milestone
@@ -47,29 +39,22 @@ Required outputs:
 
 Use when:
 
-- the core loop must prove fun, clarity, and feasibility fast
-- a mechanic or level format is still unproven
+- the core loop or level format is still unproven
 
 Prioritize:
 
-- playable loop
-- readable feedback
+- fun
+- clarity
 - failure discovery
 - low-cost iteration
 
-Allow:
-
-- placeholder art
-- narrow one-off scenes
-- temporary code inside explicit prototype boundaries
-
 Refuse:
 
-- fake polish that hides weak gameplay
+- fake polish
 - content explosion
-- reusable framework work with no proven loop
+- framework work without a proven loop
 
-Required outputs:
+Outputs:
 
 - prototype goal
 - test plan
@@ -80,8 +65,7 @@ Required outputs:
 
 Use when:
 
-- the project must prove product-grade execution on one small slice
-- the team needs real standards before scale-up
+- the project must prove one product-grade slice before scale-up
 
 Prioritize:
 
@@ -90,30 +74,23 @@ Prioritize:
 - one polished representative flow
 - standard-setting decisions
 
-Allow:
-
-- selected polished assets
-- production-grade UI and scene flow
-- baseline content pipeline
-
 Refuse:
 
 - uncontrolled feature branching
 - large content backlogs before standards settle
 
-Required outputs:
+Outputs:
 
 - approved slice scope
 - architecture baseline
 - quality bar
-- asset and system ownership
+- ownership map
 
 ## 4. Formal Production Mode
 
 Use when:
 
-- the project is feature-building against a real version target
-- shared systems and pipelines are already approved
+- the project is building features against a real version target
 
 Prioritize:
 
@@ -122,19 +99,13 @@ Prioritize:
 - backlog order
 - defect visibility
 
-Allow:
-
-- parallel feature work
-- production asset flow
-- table-driven level/content authoring
-
 Refuse:
 
-- midstream core rewrites without formal approval
+- midstream core rewrites without approval
 - hidden feature scope
 - anonymous assets or config changes
 
-Required outputs:
+Outputs:
 
 - feature records
 - active backlog
@@ -145,53 +116,39 @@ Required outputs:
 
 Use when:
 
-- the core gameplay stack is stable enough for many levels, enemies, maps, or reward sets
-- level designers or content authors must work at scale
+- the core gameplay stack is stable enough for batch level or content creation
 
 Prioritize:
 
 - schema stability
-- batch authoring rules
 - validation coverage
-- import/export discipline
-
-Allow:
-
-- CSV or sheet authoring
-- generated JSON
-- editor-exported map points and registries
+- import and export discipline
 
 Refuse:
 
-- per-level one-off fields
+- one-off per-level fields
 - hidden logic in free text
 - manual data edits that bypass validation
 
-Required outputs:
+Outputs:
 
-- approved schema owners
+- schema owners
 - validation rules
 - runtime conversion path
-- content acceptance checklist
+- content acceptance path
 
 ## 6. Release Hardening Mode
 
 Use when:
 
-- the build is near release and risk control is more important than feature ambition
+- release risk matters more than feature ambition
 
 Prioritize:
 
 - blocker removal
 - regression control
 - performance
-- store and submission readiness
-
-Allow:
-
-- bug fixes
-- optimization
-- low-risk content corrections
+- submission readiness
 
 Refuse:
 
@@ -199,7 +156,7 @@ Refuse:
 - large design pivots
 - unreviewed shared-module edits
 
-Required outputs:
+Outputs:
 
 - blocker list
 - release candidate status
@@ -210,8 +167,7 @@ Required outputs:
 
 Use when:
 
-- the game is live
-- the codebase is drifting or a recovery effort is needed
+- the game is live or the codebase needs recovery
 
 Prioritize:
 
@@ -220,18 +176,12 @@ Prioritize:
 - ownership recovery
 - architecture triage
 
-Allow:
-
-- emergency hotfixes
-- targeted rollback
-- temporary containment actions with explicit cleanup ownership
-
 Refuse:
 
-- vague "we will clean it later" promises
+- vague cleanup promises
 - mixing rescue work with uncontrolled feature work
 
-Required outputs:
+Outputs:
 
 - incident summary
 - owner map

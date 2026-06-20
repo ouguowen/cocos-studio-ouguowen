@@ -1,6 +1,6 @@
 ---
 name: cocos-studio-ouguowen
-description: Provides a senior-level production system for Cocos Creator 3.x games, covering game classification, playbooks, architecture templates, prompt patterns, project memory, review gates, production modes, stage gates, role boundaries, asset ownership, project structure, MVP prototype rules, AI collaboration rules, release and platform targeting, operations-data loops, level data models, CSV or sheet config schemas, runtime architecture, and quality discipline. Use when planning, prototyping, classifying, scoping, structuring, staffing, reviewing, rescuing, scaling, releasing, operating, or stabilizing a Cocos Creator 3.x game, especially for solo studios, level-heavy projects, content pipelines, config-table design, anti-chaos refactors, or strict workflow control instead of ad hoc development.
+description: Senior production system for Cocos Creator 3.x game development. Use when planning, scoping, structuring, staffing, reviewing, releasing, or rescuing a Cocos project that needs strict workflow control, clear ownership, level-data discipline, and production-safe architecture instead of ad hoc development.
 ---
 
 # Cocos Studio Ouguowen
@@ -20,9 +20,12 @@ Use this skill as the operating system for a Cocos Creator 3.x game project.
 2. Identify the current production stage. See [STAGES.md](STAGES.md).
 3. Identify role, authority, and asset ownership. See [ROLES.md](ROLES.md), [ROLE_STAGE_MATRIX.md](ROLE_STAGE_MATRIX.md), [OWNERSHIP.md](OWNERSHIP.md), and [TEAM_SENIORITY_SYSTEM.md](TEAM_SENIORITY_SYSTEM.md).
 4. Route the request through [MODULE_INDEX.md](MODULE_INDEX.md).
-5. If the request needs runtime code, config integration, or subsystem baselines, use [RUNTIME_TEMPLATE_ROUTER.md](RUNTIME_TEMPLATE_ROUTER.md).
-6. If the request needs approval or advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md).
-7. Use [WORKFLOWS.md](WORKFLOWS.md) for situation-specific execution, [TEMPLATES.md](TEMPLATES.md) for artifacts, and [EXAMPLES.md](EXAMPLES.md) for applied patterns.
+5. For most requests, open [WORKFLOWS.md](WORKFLOWS.md) first. Open [WORKFLOW_EXTENSIONS.md](WORKFLOW_EXTENSIONS.md) only for specialist flows.
+6. For most project artifacts, open [TEMPLATES.md](TEMPLATES.md) first. Open [LEVEL_TEMPLATES.md](LEVEL_TEMPLATES.md) only for level-content artifacts.
+7. If the request needs runtime code or subsystem boundaries, use [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md). Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only for advanced online, monetization, live-ops, social, or compliance systems.
+8. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
+9. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
+10. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
 
 ## Non-negotiable rules
 
@@ -44,39 +47,19 @@ Use this skill as the operating system for a Cocos Creator 3.x game project.
 
 ## Common routing
 
-- "What kind of game is this really?" -> game classifier before template or MVP choice.
-- "What should this next version actually prove?" -> version roadmap system before feature listing.
-- "How should we start this game?" -> stage selection, role kickoff, first deliverables.
+- "How should we start this game?" -> stage selection, game classification, MVP, and first-session artifact.
+- "What kind of game is this really?" -> game classifier before template or architecture choice.
+- "What should this version actually prove?" -> version roadmap system before feature listing.
 - "We need a fast prototype but do not want chaos." -> production mode selection before architecture advice.
-- "Our project is getting messy." -> ownership audit, architecture audit, missing gates.
+- "Our project is getting messy." -> ownership audit, architecture audit, and missing gates.
 - "Which architecture template fits?" -> classification before architecture template choice.
-- "Who should own this asset?" -> ownership lookup and approval path.
-- "Who is senior enough to own this?" -> team seniority system before assigning authority.
-- "Build the Cocos structure." -> apply the Cocos rules and stage constraints.
+- "Build the Cocos structure." -> Cocos rules, project structure, and runtime boundaries.
+- "Build this home page / shop / bag / battle HUD." -> choice execution protocol first, then continuous execution after option selection.
+- "Do not skip steps / keep the project moving in order." -> sequential gate protocol before advancement.
 - "How should levels be configured?" -> level data model selection before table design.
-- "How should the level system be coded?" -> level system architecture and runtime template router before implementation.
+- "How should the level system be coded?" -> core level architecture before optional extensions.
 - "Can we ship this?" -> quality gate and release gate review.
-- "What fields should the level CSVs use?" -> level config schema reference.
-- "Check these CSV tables." -> run the level config validator, then report owner and fix path.
 - "Write the PRD." -> PRD constraints before drafting.
 - "Split this into tasks." -> task decomposition rules before issue writing.
-- "How do we accept this feature?" -> acceptance artifacts before sign-off.
-- "What should QA cover?" -> test matrix before approval.
-- "How do we roll back safely?" -> release rollback playbook before shipping.
-- "Track our tech debt." -> debt register before cleanup planning.
-- "Write the postmortem." -> incident postmortem template before blame-free discussion drifts.
-- "How do we budget this work?" -> cost budget model before commitment.
-- "How do we work with outsourcing?" -> outsourcing collaboration rules before vendor kickoff.
-- "Are we burning down the milestone?" -> milestone burndown rules before status reporting.
-- "What should the MVP include?" -> MVP prototype rules before adding more systems.
-- "What game template fits this idea?" -> game type templates before architecture and table design.
 - "How should we use AI on this project?" -> AI collaboration rules before delegating design or code work.
-- "How should we release this build?" -> release pipeline system before submission or rollout planning.
-- "How should this game differ by platform?" -> platform target rules before export or store planning.
-- "How do we judge retention or revenue changes?" -> operations data system before feature conclusions.
-- "How should this handoff be done?" -> collaboration handoff system before accepting delivery.
-- "Is this serious enough to stop the project?" -> risk escalation system before passive acceptance.
-- "Do we have a playbook for this?" -> playbook system before improvising.
-- "Give me the right prompt for this task." -> prompt library before ad hoc AI requests.
-- "What should we remember about this project?" -> project memory system before context drifts.
 - "Review this professionally." -> review system before acceptance.
