@@ -1,6 +1,6 @@
 # Cocos Studio Ouguowen
 
-Senior production-system skill for `Cocos Creator 3.x`.
+Senior production-system skill for `Cocos Creator 3.8.8`.
 
 This skill is for solo developers and small teams who want to build games with studio-grade structure instead of ad hoc decisions.
 
@@ -16,7 +16,7 @@ This skill is for solo developers and small teams who want to build games with s
 
 ## Best fit
 
-- serious Cocos Creator 3.x projects
+- serious Cocos Creator 3.8.8 projects
 - solo developers wearing many hats
 - small teams that want senior-level workflow control
 - level-heavy or content-heavy games

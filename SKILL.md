@@ -1,11 +1,11 @@
 ---
 name: cocos-studio-ouguowen
-description: Senior production system for Cocos Creator 3.x game development. Use when planning, scoping, structuring, staffing, reviewing, releasing, or rescuing a Cocos project that needs strict workflow control, clear ownership, level-data discipline, and production-safe architecture instead of ad hoc development.
+description: Senior production system for Cocos Creator 3.8.8 game development. Use when planning, scoping, structuring, staffing, reviewing, releasing, or rescuing a Cocos Creator 3.8.8 project that needs strict workflow control, clear ownership, level-data discipline, and production-safe architecture instead of ad hoc development.
 ---
 
 # Cocos Studio Ouguowen
 
-Use this skill as the operating system for a Cocos Creator 3.x game project.
+Use this skill as the operating system for a Cocos Creator 3.8.8 game project.
 
 ## Core stance
 
@@ -22,10 +22,11 @@ Use this skill as the operating system for a Cocos Creator 3.x game project.
 4. Route the request through [MODULE_INDEX.md](MODULE_INDEX.md).
 5. For most requests, open [WORKFLOWS.md](WORKFLOWS.md) first. Open [WORKFLOW_EXTENSIONS.md](WORKFLOW_EXTENSIONS.md) only for specialist flows.
 6. For most project artifacts, open [TEMPLATES.md](TEMPLATES.md) first. Open [LEVEL_TEMPLATES.md](LEVEL_TEMPLATES.md) only for level-content artifacts.
-7. If the request needs runtime code or subsystem boundaries, use [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md). Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only for advanced online, monetization, live-ops, social, or compliance systems.
-8. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
-9. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
-10. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
+7. If engine-version-specific advice matters, apply [COCOS_3_8_8_BASELINE.md](COCOS_3_8_8_BASELINE.md) before giving engine guidance.
+8. If the request needs runtime code or subsystem boundaries, use [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md). Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only for advanced online, monetization, live-ops, social, or compliance systems.
+9. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
+10. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
+11. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
 
 ## Non-negotiable rules
 

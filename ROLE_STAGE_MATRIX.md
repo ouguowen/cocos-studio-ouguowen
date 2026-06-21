@@ -87,7 +87,7 @@ Use this file when the project needs concrete "who does what now" guidance.
 
 ### Project Framing
 
-- decide whether Cocos Creator 3.x is the right route
+- decide whether Cocos Creator 3.8.8 is the right route
 - identify major technical and performance risks
 
 ### Gameplay Prototype

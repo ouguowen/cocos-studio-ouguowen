@@ -1,6 +1,6 @@
 # Level System Architecture
 
-Use this file when implementing a Cocos Creator 3.x level runtime from level data, CSV-derived JSON, editor-exported points, or generated config.
+Use this file when implementing a Cocos Creator 3.8.8 level runtime from level data, CSV-derived JSON, editor-exported points, or generated config.
 
 Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only when the game truly needs monetization, live ops, sync, social, compliance, or online-service layers.
 

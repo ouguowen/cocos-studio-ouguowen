@@ -29,7 +29,8 @@ Use this file to route a request into the correct module family before loading d
 
 ## 4. Architecture and content systems
 
-- [COCOS_RULES.md](COCOS_RULES.md): engineering law for Cocos Creator 3.x
+- [COCOS_3_8_8_BASELINE.md](COCOS_3_8_8_BASELINE.md): engine-version baseline for Cocos Creator 3.8.8
+- [COCOS_RULES.md](COCOS_RULES.md): engineering law for Cocos Creator 3.8.8
 - [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md): default project layout
 - [ARCHITECTURE_TEMPLATE_SYSTEM.md](ARCHITECTURE_TEMPLATE_SYSTEM.md): choose a matching runtime blueprint family
 - [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md): choose the right content and level data model

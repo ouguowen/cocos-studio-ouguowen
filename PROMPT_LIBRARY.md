@@ -19,7 +19,7 @@ Use $cocos-studio-ouguowen. Classify this game by dominant player loop, main con
 ### 2. MVP definition
 
 ```text
-Use $cocos-studio-ouguowen. Define the MVP for this Cocos Creator 3.x game. Name the one-sentence fantasy, repeated loop, must-prove items, explicit non-goals, and kill conditions. Cut support systems aggressively.
+Use $cocos-studio-ouguowen. Define the MVP for this Cocos Creator 3.8.8 game. Name the one-sentence fantasy, repeated loop, must-prove items, explicit non-goals, and kill conditions. Cut support systems aggressively.
 ```
 
 ### 3. Risk escalation

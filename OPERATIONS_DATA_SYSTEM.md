@@ -1,6 +1,6 @@
 # Operations Data System
 
-Use this file when the team is defining retention goals, monetization strategy, ad policy, event operations, economy health, or business-metrics review for a Cocos Creator 3.x game.
+Use this file when the team is defining retention goals, monetization strategy, ad policy, event operations, economy health, or business-metrics review for a Cocos Creator 3.8.8 game.
 
 ## Operations data law
 

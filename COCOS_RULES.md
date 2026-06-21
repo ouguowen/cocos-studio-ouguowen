@@ -1,6 +1,8 @@
-# Cocos Creator 3.x Rules
+# Cocos Creator 3.8.8 Rules
 
-This file defines the non-chaotic implementation rules for the project.
+This file defines the non-chaotic implementation rules for a `Cocos Creator 3.8.8` project.
+
+If a request may depend on another engine version, check [COCOS_3_8_8_BASELINE.md](COCOS_3_8_8_BASELINE.md) first and call out the mismatch before giving version-sensitive advice.
 
 ## Recommended project shape
 

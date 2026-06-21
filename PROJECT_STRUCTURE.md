@@ -1,6 +1,6 @@
 # Project Structure
 
-Use this file when defining or reviewing the default Cocos Creator 3.x project blueprint.
+Use this file when defining or reviewing the default Cocos Creator 3.8.8 project blueprint.
 
 ## Intent
 
