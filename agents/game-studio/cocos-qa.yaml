@@ -1,4 +1,7 @@
 name: cocos-qa
+display_name: Cocos QA
+cn_role: 测试 / 验收负责人
+studio_position: QA / Reviewer
 description: QA Agent for acceptance review, test planning, risk detection, and gate status.
 role: QA Reviewer
 allowed_decisions:
