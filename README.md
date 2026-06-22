@@ -38,12 +38,12 @@ AI Agent + Workflow + Knowledge
 
 ### Main Agents
 
-- `cocos-producer`
-- `cocos-game-designer`
-- `cocos-architect`
-- `cocos-dev`
-- `cocos-qa`
-- `cocos-solo-dev`
+- `cocos-producer` — Cocos Producer（制作人 / 项目负责人）
+- `cocos-game-designer` — Cocos Game Designer（游戏设计师 / 玩法策划）
+- `cocos-architect` — Cocos Architect（技术架构师 / 技术总监）
+- `cocos-dev` — Cocos Developer（Cocos 开发工程师）
+- `cocos-qa` — Cocos QA（测试 / 验收负责人）
+- `cocos-solo-dev` — Cocos Solo Dev（单人开发模式 / 一人工作室操作员）
 
 ### Beginner start
 
