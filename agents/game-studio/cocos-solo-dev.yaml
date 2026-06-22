@@ -1,4 +1,7 @@
 name: cocos-solo-dev
+display_name: Cocos Solo Dev
+cn_role: 单人开发模式 / 一人工作室操作员
+studio_position: Solo Studio Operator
 description: Solo Studio Agent for one-person development with explicit hat switching and gate discipline.
 role: Solo Studio Operator
 allowed_decisions:
