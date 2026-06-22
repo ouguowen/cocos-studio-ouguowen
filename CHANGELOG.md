@@ -2,6 +2,27 @@
 
 All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
+## v0.3.0-alpha.2 - 2026-06-22
+
+### Added
+
+- Added Cocos reference stub folder for the Attack Defense City example pack.
+- Added `MapPointComponent.ts` reference stub.
+- Added `MapPointRegistry.ts` reference stub.
+- Added `EnemyPrefabRegistry.ts` reference stub.
+- Added `LevelRuntimeFacade.ts` reference stub.
+- Added `AttackDefenseCityBootstrap.ts` reference stub.
+
+### Changed
+
+- Updated the example pack README to include the Cocos reference stub reading step.
+
+### Still not included
+
+- A directly importable Cocos Creator project.
+- Real Cocos scene and prefab files.
+- Production-ready runtime implementation.
+
 ## v0.3.0-alpha.1 - 2026-06-22
 
 ### Added
