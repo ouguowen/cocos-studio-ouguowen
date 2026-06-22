@@ -13,11 +13,13 @@ Use this example pack to test the level config validation and export pipeline, t
 1. `design/GAME_BRIEF.md`
 2. `design/MINI_GDD.md`
 3. `design/ACCEPTANCE_CRITERIA.md`
-4. `level-config/*.csv`
-5. `cocos-integration/CONFIG_TO_RUNTIME_MAPPING.md`
-6. `cocos-integration/SCENE_PREFAB_BINDING_GUIDE.md`
-7. `agent-handoff/FULL_HANDOFF_CHAIN.md`
-8. `validation/EXPECTED_OUTPUTS.md`
+4. `quick-prototype/COCOS_QUICK_PROTOTYPE_TRANSCRIPT.md`
+5. `level-config/*.csv`
+6. `cocos-integration/CONFIG_TO_RUNTIME_MAPPING.md`
+7. `cocos-integration/SCENE_PREFAB_BINDING_GUIDE.md`
+8. `agent-handoff/FULL_HANDOFF_CHAIN.md`
+9. `validation/EXPECTED_OUTPUTS.md`
+10. `validation/PASS_FAIL_EXAMPLES.md`
 
 ## Run validation
 
