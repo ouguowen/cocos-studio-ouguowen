@@ -25,6 +25,7 @@ Current capabilities:
 - Cocos Dev Story task cards
 - PASS / FAIL validation examples
 - Cocos reference stubs for first wiring shape
+- Cocos Creator setup guide and first playable checklist
 
 ## v0.3.0-alpha.1 status: Example Pack Foundation
 
@@ -58,25 +59,39 @@ Completed work:
 5. Added level runtime facade stub.
 6. Added example bootstrap stub for `city_001`.
 
+## v0.3.0-alpha.3 status: Cocos Setup Guide
+
+Primary goal:
+
+Make it easier for a beginner to reproduce the reference wiring inside Cocos Creator 3.8.8.
+
+Completed work:
+
+1. Added beginner Cocos Creator 3.8.8 setup guide.
+2. Added scene-node checklist.
+3. Added placeholder prefab naming rules.
+4. Added first playable QA checklist.
+5. Added notes that reference stubs are not a complete Cocos Creator project.
+
 Still not included:
 
 - A directly importable Cocos Creator project.
 - Real Cocos scene and prefab files.
 - Production-ready runtime implementation.
 
-## v0.3.x next target: Cocos Import And Scene Checklist
+## v0.3.x next target: Real Importable Cocos Demo Skeleton
 
 Primary goal:
 
-Make it easier for a beginner to reproduce the reference wiring inside Cocos Creator 3.8.8.
+Move from reference documentation and stubs toward a minimal Cocos Creator project skeleton that a developer can import and adapt.
 
 Planned work:
 
-1. Add a beginner Cocos import/setup guide.
-2. Add a scene-node checklist that can be copied into Cocos Creator.
-3. Add placeholder prefab naming rules.
-4. Add QA checklist for the first playable loop.
-5. Add notes about which files are reference stubs and which files are production-ready.
+1. Add a recommended Cocos project folder skeleton.
+2. Add script placement guide for `assets/scripts`.
+3. Add prefab placement guide for `assets/prefabs`.
+4. Add scene assembly checklist with screenshot placeholders.
+5. Add QA gate before claiming the demo is runnable.
 
 ## v0.4.0 target: Stronger Agent Operations
 
