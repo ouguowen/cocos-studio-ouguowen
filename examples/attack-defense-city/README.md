@@ -1,12 +1,12 @@
-# Attack Defense City Example
+# Attack Defense City Example Pack
 
-This example is a tiny MVP seed for a modern city attack-defense game.
+This is a modern city attack-defense example pack for proving the AI Game Studio workflow.
 
-It now includes design intent, level config, Cocos integration notes, Agent handoff examples, and validation expectations.
+It is not the user's final game project. It exists to show how design intent, level config, Cocos integration notes, Agent handoff examples, and validation expectations fit together.
 
 ## Purpose
 
-Use it to test the level config validation and export pipeline, then map the validated data into a Cocos Creator 3.8.8 MVP loop.
+Use this example pack to test the level config validation and export pipeline, then map the validated data into a Cocos Creator 3.8.8 MVP loop.
 
 ## Recommended reading order
 
@@ -48,7 +48,7 @@ npm run check
 ## MVP design
 
 - One city map
-- One player spawn point
+- One player/base spawn point
 - Two enemy spawn points
 - Two enemy types
 - Two waves
