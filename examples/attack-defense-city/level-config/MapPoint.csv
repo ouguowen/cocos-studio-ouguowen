@@ -1,0 +1,4 @@
+map_id,point_id,point_type,x,y,rotation,tags,enabled,notes
+map_city_001,player_spawn_city,player_spawn,120,360,0,player|base,1,Player base position
+map_city_001,enemy_spawn_left,enemy_spawn,1180,220,180,enemy|left,1,Left enemy entry
+map_city_001,enemy_spawn_right,enemy_spawn,1180,500,180,enemy|right,1,Right enemy entry
