@@ -1,0 +1,2 @@
+level_id,chapter_id,level_index,level_name,template_id,map_id,wave_group_id,objective_group_id,reward_id,star_rule_id,modifier_id,difficulty,unlock_level_id,enabled,notes
+city_001,1,1,City Gate Defense,tpl_attack_defense,map_city_001,wg_city_001,obj_city_001,reward_city_001,,,1,,1,First MVP attack-defense level

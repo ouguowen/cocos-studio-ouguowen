@@ -1,0 +1,2 @@
+objective_group_id,objective_id,objective_type,target_id,target_count,time_limit,required,enabled,notes
+obj_city_001,obj_kill_all_city_001,kill_all,,0,,1,1,Clear all enemy waves

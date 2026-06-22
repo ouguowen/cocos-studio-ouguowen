@@ -1,0 +1,3 @@
+wave_id,spawn_id,spawn_time,map_point_id,enemy_group_id,count,interval,formation_id,spawn_rule,enabled,notes
+wave_city_001,spawn_city_001,0,enemy_spawn_left,enemy_group_scout,3,0.5,,fixed,1,Left street scout group
+wave_city_002,spawn_city_002,1,enemy_spawn_right,enemy_group_raider,5,0.4,,fixed,1,Right street raider group

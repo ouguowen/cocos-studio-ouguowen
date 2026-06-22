@@ -1,0 +1,2 @@
+template_id,template_type,default_ui_rule,default_camera_rule,default_spawn_rule,default_lose_condition,time_limit,enabled,notes
+tpl_attack_defense,battle,hud_basic,camera_fixed,fixed,base_destroyed,180,1,Modern city attack-defense template

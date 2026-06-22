@@ -1,0 +1,3 @@
+enemy_id,prefab_id,enemy_type,base_hp,base_atk,move_speed,ai_type,drop_group_id,enabled,notes
+enemy_scout,prefab_enemy_scout,normal,100,10,120,walk_to_base,,1,Basic scout
+enemy_raider,prefab_enemy_raider,elite,160,16,100,walk_to_base,,1,Tougher raider

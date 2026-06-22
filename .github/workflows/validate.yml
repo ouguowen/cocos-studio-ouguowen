@@ -1,0 +1,27 @@
+name: Validate Cocos Studio Skill
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - ai-game-studio-v0.2.0
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run validation
+        run: npm run check

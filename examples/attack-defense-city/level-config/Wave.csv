@@ -1,0 +1,3 @@
+wave_group_id,wave_id,order_index,start_delay,next_wave_rule,next_wave_param,enabled,notes
+wg_city_001,wave_city_001,1,0,kill_all,,1,Opening scout wave
+wg_city_001,wave_city_002,2,2,none,,1,Final pressure wave
