@@ -1,16 +1,18 @@
-# Attack Defense City — Game Brief
+# Attack Defense City — Example Pack Brief
 
 ## Purpose
 
-This example shows how `cocos-studio-ouguowen` turns an AI Game Studio workflow into a small Cocos Creator 3.8.8 MVP target.
+This example pack shows how `cocos-studio-ouguowen` turns an AI Game Studio workflow into a small Cocos Creator 3.8.8 MVP reference.
 
-## Game concept
+It is a modern city attack-defense example pack, not a fixed final game direction.
 
-A modern city attack-defense game where the player protects a city gate from incoming enemy waves.
+## Example concept
+
+A modern city attack-defense scenario where the player protects a city gate from incoming enemy waves.
 
 ## Target player promise
 
-In the first playable version, the player should understand:
+In the first playable reference, the player should understand:
 
 - where enemies enter
 - what they are trying to destroy
@@ -32,7 +34,7 @@ prepare defense
 
 ## MVP scope
 
-The first MVP is intentionally small:
+The example MVP is intentionally small:
 
 - one map
 - one player/base position
@@ -44,7 +46,7 @@ The first MVP is intentionally small:
 
 ## Explicit non-goals
 
-Do not add these in the MVP:
+Do not treat these as part of the example pack:
 
 - full unit collection
 - gacha
