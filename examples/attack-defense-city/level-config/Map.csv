@@ -1,0 +1,2 @@
+map_id,scene_id,player_spawn_point,camera_rule,bgm_id,boundary_id,enabled,notes
+map_city_001,scene_city_battle,player_spawn_city,camera_fixed_city,bgm_city,boundary_city,1,City battle map
