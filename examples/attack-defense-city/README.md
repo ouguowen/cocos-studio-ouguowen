@@ -2,7 +2,7 @@
 
 This is a modern city attack-defense example pack for proving the AI Game Studio workflow.
 
-It is not the user's final game project. It exists to show how design intent, level config, Cocos integration notes, Agent handoff examples, validation expectations, scoped Cocos Dev Stories, and Cocos reference stubs fit together.
+It is not the user's final game project. It exists to show how design intent, level config, Cocos integration notes, Agent handoff examples, validation expectations, scoped Cocos Dev Stories, Cocos reference stubs, and Cocos setup checklists fit together.
 
 ## Purpose
 
@@ -18,13 +18,17 @@ Use this example pack to test the level config validation and export pipeline, t
 6. `cocos-integration/CONFIG_TO_RUNTIME_MAPPING.md`
 7. `cocos-integration/SCENE_PREFAB_BINDING_GUIDE.md`
 8. `cocos-reference-stub/README.md`
-9. `agent-handoff/FULL_HANDOFF_CHAIN.md`
-10. `dev-stories/STORY_001_CONFIG_PIPELINE.md`
-11. `dev-stories/STORY_002_SCENE_POINT_BINDING.md`
-12. `dev-stories/STORY_003_WAVE_SPAWN_OBJECTIVE_LOOP.md`
-13. `dev-stories/STORY_004_RESULT_REWARD_FLOW.md`
-14. `validation/EXPECTED_OUTPUTS.md`
-15. `validation/PASS_FAIL_EXAMPLES.md`
+9. `cocos-setup-guide/COCOS_CREATOR_SETUP_GUIDE.md`
+10. `cocos-setup-guide/SCENE_NODE_CHECKLIST.md`
+11. `cocos-setup-guide/PLACEHOLDER_PREFAB_RULES.md`
+12. `cocos-setup-guide/FIRST_PLAYABLE_QA_CHECKLIST.md`
+13. `agent-handoff/FULL_HANDOFF_CHAIN.md`
+14. `dev-stories/STORY_001_CONFIG_PIPELINE.md`
+15. `dev-stories/STORY_002_SCENE_POINT_BINDING.md`
+16. `dev-stories/STORY_003_WAVE_SPAWN_OBJECTIVE_LOOP.md`
+17. `dev-stories/STORY_004_RESULT_REWARD_FLOW.md`
+18. `validation/EXPECTED_OUTPUTS.md`
+19. `validation/PASS_FAIL_EXAMPLES.md`
 
 ## Run validation
 
@@ -97,3 +101,7 @@ AttackDefenseCityBootstrap
 ```
 
 These files are reference stubs, not a complete Cocos Creator project.
+
+## Cocos setup guide
+
+The `cocos-setup-guide/` folder explains how to reproduce the reference wiring inside Cocos Creator 3.8.8 with beginner-friendly setup steps, scene-node checklist, placeholder prefab rules, and first playable QA checks.
