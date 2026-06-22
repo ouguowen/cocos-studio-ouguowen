@@ -38,12 +38,12 @@ Ask Codex:
 
 ```text
 Use $cocos-studio-ouguowen.
-Run cocos-game-brief for a modern city attack-defense game.
+Run cocos-game-brief for the modern city attack-defense example pack.
 ```
 
 Expected result:
 
-- game brief
+- example pack brief
 - MVP proof
 - explicit non-goals
 - next recommended command
@@ -68,13 +68,25 @@ npm run validate:example
 npm run export:example
 ```
 
-## Step 7: Validate runtime templates
+## Step 7: Export TypeScript config types
+
+```bash
+npm run types:example
+```
+
+## Step 8: Validate runtime templates
 
 ```bash
 npm run validate:runtime
 ```
 
-## Step 8: Recommended first real workflow
+## Step 9: Run the full check
+
+```bash
+npm run check
+```
+
+## Step 10: Recommended first real workflow
 
 ```text
 cocos-game-brief
@@ -93,9 +105,10 @@ Do not start by asking AI to build the whole game.
 
 Start with:
 
-- one game type
+- one game type or one example pack
 - one map
-- one enemy family
+- one player/base point
+- one or two enemy types
 - one win rule
 - one fail rule
 - one playable loop
