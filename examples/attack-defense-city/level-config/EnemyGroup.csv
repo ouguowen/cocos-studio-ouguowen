@@ -1,0 +1,3 @@
+enemy_group_id,entry_index,enemy_id,weight,level_multiplier,hp_multiplier,atk_multiplier,enabled,notes
+enemy_group_scout,1,enemy_scout,1,1,1,1,1,Scout enemy group
+enemy_group_raider,1,enemy_raider,1,1,1.2,1.1,1,Raider enemy group
