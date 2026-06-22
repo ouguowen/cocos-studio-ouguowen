@@ -2,6 +2,35 @@
 
 All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
+## v0.3.0-alpha.1 - 2026-06-22
+
+### Added
+
+- Added Attack Defense City example pack foundation.
+- Added example pack design brief, Mini GDD, and acceptance criteria.
+- Added Cocos config-to-runtime mapping guide.
+- Added Cocos scene and prefab binding guide.
+- Added full Agent handoff chain example.
+- Added quick prototype transcript example.
+- Added PASS / FAIL validation examples.
+- Added scoped Cocos Dev Story task cards.
+- Added Cocos Dev Story issue template.
+
+### Changed
+
+- Clarified that `examples/attack-defense-city` is a modern city attack-defense example pack, not the user's fixed final game direction.
+- Updated Quick Start to use example-pack wording.
+- Updated `package.json` version to `0.3.0-alpha.1`.
+- Updated `npm run check` to include TypeScript config type generation.
+- Simplified GitHub Actions validation triggers.
+- Ignored generated example artifacts in `.gitignore`.
+
+### Still not included
+
+- A directly importable Cocos Creator project.
+- Real Cocos scene and prefab files.
+- Runtime wiring code for the example pack.
+
 ## v0.2.0 - 2026-06-22
 
 ### Added
