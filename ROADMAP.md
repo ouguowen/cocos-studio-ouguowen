@@ -24,6 +24,7 @@ Current capabilities:
 - quick prototype transcript
 - Cocos Dev Story task cards
 - PASS / FAIL validation examples
+- Cocos reference stubs for first wiring shape
 
 ## v0.3.0-alpha.1 status: Example Pack Foundation
 
@@ -42,31 +43,40 @@ Completed work:
 7. Added a new issue/story template for scoped Cocos implementation tasks.
 8. Added Cocos Dev Story task cards for the first MVP loop.
 
-Current exit criteria status:
+## v0.3.0-alpha.2 status: Cocos Reference Stub
 
-- A beginner can understand how the example config becomes a playable Cocos loop.
-- The example has design intent, config data, runtime mapping, and QA acceptance.
-- AI can run one complete workflow without mixing planning, implementation, and review roles.
+Primary goal:
+
+Move from example-pack documentation toward a small reference implementation shape that can guide real Cocos Creator integration.
+
+Completed work:
+
+1. Added Cocos reference stub folder.
+2. Added map point component stub.
+3. Added map point registry stub.
+4. Added enemy prefab registry stub.
+5. Added level runtime facade stub.
+6. Added example bootstrap stub for `city_001`.
 
 Still not included:
 
 - A directly importable Cocos Creator project.
 - Real Cocos scene and prefab files.
-- Runtime wiring code for the example pack.
+- Production-ready runtime implementation.
 
-## v0.3.x next target: Runnable Cocos Reference Stub
+## v0.3.x next target: Cocos Import And Scene Checklist
 
 Primary goal:
 
-Move from example-pack documentation toward a small reference implementation that can guide real Cocos Creator integration.
+Make it easier for a beginner to reproduce the reference wiring inside Cocos Creator 3.8.8.
 
 Planned work:
 
-1. Add Cocos runtime wiring stubs for level loading, map point binding, wave flow, objective flow, and reward flow.
-2. Add a beginner Cocos import/setup guide.
-3. Add a scene-node checklist that can be copied into Cocos Creator.
-4. Add placeholder prefab naming rules.
-5. Add QA checklist for the first playable loop.
+1. Add a beginner Cocos import/setup guide.
+2. Add a scene-node checklist that can be copied into Cocos Creator.
+3. Add placeholder prefab naming rules.
+4. Add QA checklist for the first playable loop.
+5. Add notes about which files are reference stubs and which files are production-ready.
 
 ## v0.4.0 target: Stronger Agent Operations
 
