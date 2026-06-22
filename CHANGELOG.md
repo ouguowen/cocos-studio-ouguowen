@@ -2,6 +2,29 @@
 
 All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
+## v0.3.0-alpha.4 - 2026-06-22
+
+### Added
+
+- Added Cocos demo skeleton documentation folder.
+- Added target Cocos project structure guide.
+- Added scripts placement guide.
+- Added prefabs placement guide.
+- Added scene assembly checklist.
+- Added runnable demo QA gate.
+- Added skeleton `.gitkeep` placeholders for scenes, scripts, prefabs, and config folders.
+
+### Changed
+
+- Updated the example pack README to include the demo skeleton reading steps.
+- Updated `package.json` version to `0.3.0-alpha.4`.
+
+### Still not included
+
+- A fully created Cocos Creator project.
+- Real `.scene` and `.prefab` assets created inside Cocos Creator.
+- Verified runtime execution inside the Cocos editor.
+
 ## v0.3.0-alpha.3 - 2026-06-22
 
 ### Added
