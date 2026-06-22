@@ -6,6 +6,13 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Node dependencies
+node_modules/
+
+# Generated example artifacts
+examples/attack-defense-city/generated-level-config.json
+examples/attack-defense-city/generated-config-types.ts
+
 # Temporary files
 *.tmp
 *.temp
