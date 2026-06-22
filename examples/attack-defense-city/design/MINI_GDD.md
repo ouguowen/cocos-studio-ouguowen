@@ -1,6 +1,6 @@
 # Attack Defense City — Mini GDD
 
-## Game type
+## Example pack type
 
 Dominant template:
 
@@ -8,9 +8,9 @@ Dominant template:
 Tower Defense / Lane Strategy / Attack-Defense
 ```
 
-This example is not a full tower-defense game yet. It is a small attack-defense MVP that proves wave, spawn, objective, result, and reward flow.
+This is not a full tower-defense game and not the user's fixed final project. It is a small attack-defense example pack that proves wave, spawn, objective, result, and reward flow.
 
-## Player goal
+## Player goal inside the example
 
 Protect the city gate by surviving and clearing the incoming waves.
 
@@ -20,7 +20,7 @@ Complete `city_001` by clearing all configured enemy waves.
 
 ## Lose condition
 
-The MVP data currently declares the lose condition as:
+The example data currently declares the lose condition as:
 
 ```text
 base_destroyed
@@ -75,7 +75,7 @@ Existing tables:
 
 ## MVP acceptance
 
-The MVP is acceptable when:
+The example pack is acceptable when:
 
 1. Config validates.
 2. Runtime config exports.
