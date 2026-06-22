@@ -26,6 +26,7 @@ Current capabilities:
 - PASS / FAIL validation examples
 - Cocos reference stubs for first wiring shape
 - Cocos Creator setup guide and first playable checklist
+- Cocos demo skeleton documentation and placeholder folders
 
 ## v0.3.0-alpha.1 status: Example Pack Foundation
 
@@ -73,25 +74,40 @@ Completed work:
 4. Added first playable QA checklist.
 5. Added notes that reference stubs are not a complete Cocos Creator project.
 
-Still not included:
-
-- A directly importable Cocos Creator project.
-- Real Cocos scene and prefab files.
-- Production-ready runtime implementation.
-
-## v0.3.x next target: Real Importable Cocos Demo Skeleton
+## v0.3.0-alpha.4 status: Demo Skeleton
 
 Primary goal:
 
 Move from reference documentation and stubs toward a minimal Cocos Creator project skeleton that a developer can import and adapt.
 
+Completed work:
+
+1. Added recommended Cocos project folder skeleton.
+2. Added script placement guide for `assets/scripts`.
+3. Added prefab placement guide for `assets/prefabs`.
+4. Added scene assembly checklist.
+5. Added QA gate before claiming the demo is runnable.
+6. Added placeholder folders for scenes, scripts, prefabs, and config.
+
+Still not included:
+
+- A fully created Cocos Creator project.
+- Real `.scene` and `.prefab` assets created inside Cocos Creator.
+- Verified runtime execution inside the Cocos editor.
+
+## v0.3.x next target: Cocos Demo Productionization
+
+Primary goal:
+
+Turn the skeleton into a more practical handoff package for real Cocos Creator work.
+
 Planned work:
 
-1. Add a recommended Cocos project folder skeleton.
-2. Add script placement guide for `assets/scripts`.
-3. Add prefab placement guide for `assets/prefabs`.
-4. Add scene assembly checklist with screenshot placeholders.
-5. Add QA gate before claiming the demo is runnable.
+1. Add Codex handoff prompt for creating the Cocos demo in a local Cocos Creator project.
+2. Add copy checklist for moving reference stubs into `assets/scripts`.
+3. Add manual verification log template for the first editor run.
+4. Add screenshot placeholder list for scene assembly proof.
+5. Add release note explaining demo skeleton limitations.
 
 ## v0.4.0 target: Stronger Agent Operations
 
