@@ -27,6 +27,7 @@ Current capabilities:
 - Cocos reference stubs for first wiring shape
 - Cocos Creator setup guide and first playable checklist
 - Cocos demo skeleton documentation and placeholder folders
+- local Codex handoff prompt and Cocos editor validation log template
 
 ## v0.3.0-alpha.1 status: Example Pack Foundation
 
@@ -89,25 +90,40 @@ Completed work:
 5. Added QA gate before claiming the demo is runnable.
 6. Added placeholder folders for scenes, scripts, prefabs, and config.
 
-Still not included:
-
-- A fully created Cocos Creator project.
-- Real `.scene` and `.prefab` assets created inside Cocos Creator.
-- Verified runtime execution inside the Cocos editor.
-
-## v0.3.x next target: Cocos Demo Productionization
+## v0.3.0-alpha.5 status: Demo Productionization Handoff
 
 Primary goal:
 
 Turn the skeleton into a more practical handoff package for real Cocos Creator work.
 
+Completed work:
+
+1. Added Codex handoff prompt for creating the Cocos demo in a local Cocos Creator project.
+2. Added copy checklist for moving reference stubs into `assets/scripts`.
+3. Added manual verification log template for the first editor run.
+4. Added screenshot placeholder list for scene assembly proof.
+5. Added limitation notes to prevent overclaiming demo readiness.
+
+Still not included:
+
+- A verified Cocos Editor run.
+- Actual proof screenshots.
+- Real `.scene` and `.prefab` files created inside Cocos Creator.
+
+## v0.3.x next target: Local Cocos Project Execution
+
+Primary goal:
+
+Use the handoff package inside a real local Cocos Creator 3.8.8 project and collect proof.
+
 Planned work:
 
-1. Add Codex handoff prompt for creating the Cocos demo in a local Cocos Creator project.
-2. Add copy checklist for moving reference stubs into `assets/scripts`.
-3. Add manual verification log template for the first editor run.
-4. Add screenshot placeholder list for scene assembly proof.
-5. Add release note explaining demo skeleton limitations.
+1. Create or open a local Cocos Creator 3.8.8 project.
+2. Copy/adapt reference stubs into `assets/scripts/attack-defense-city/`.
+3. Create placeholder prefabs in `assets/prefabs/enemies/`.
+4. Create `scene_city_battle` and bind inspector fields.
+5. Fill the editor run validation log.
+6. Collect screenshot proof.
 
 ## v0.4.0 target: Stronger Agent Operations
 
