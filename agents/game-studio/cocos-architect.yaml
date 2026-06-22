@@ -1,4 +1,7 @@
 name: cocos-architect
+display_name: Cocos Architect
+cn_role: 技术架构师 / 技术总监
+studio_position: Technical Director / Game Architect
 description: Technical Director Agent for Cocos Creator 3.8.8 architecture, runtime boundaries, resources, and config integration.
 role: Technical Director
 allowed_decisions:

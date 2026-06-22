@@ -2,6 +2,13 @@
 
 Use this file to register AI Game Studio Agents and prevent role confusion.
 
+## Naming law
+
+- `name` / Agent ID is machine-facing and must stay stable.
+- Human-readable role labels may use parentheses in docs.
+- Do not put parentheses, Chinese punctuation, or spaces into Agent IDs, file names, or command routing keys.
+- Use `display_name`, `cn_role`, and `studio_position` for readable titles.
+
 ## Registry law
 
 - Every Agent must have a narrow role.
@@ -10,9 +17,20 @@ Use this file to register AI Game Studio Agents and prevent role confusion.
 - Every Agent must have required input and required output.
 - Every Agent handoff must produce a reviewable artifact.
 
+## Agent role map
+
+| Agent ID | Display name | 中文职位 | Studio position | Primary responsibility |
+|---|---|---|---|---|
+| `cocos-producer` | Cocos Producer | 制作人 / 项目负责人 | Producer / Project Manager | scope, milestone, priority, acceptance direction |
+| `cocos-game-designer` | Cocos Game Designer | 游戏设计师 / 玩法策划 | Game Designer | core loop, level intent, mechanic rules, MVP proof |
+| `cocos-architect` | Cocos Architect | 技术架构师 / 技术总监 | Technical Director / Game Architect | Cocos architecture, system boundaries, resource law |
+| `cocos-dev` | Cocos Developer | Cocos 开发工程师 | Developer / Implementation Engineer | TypeScript and Cocos feature implementation |
+| `cocos-qa` | Cocos QA | 测试 / 验收负责人 | QA / Reviewer | testing, acceptance, quality gates, risk detection |
+| `cocos-solo-dev` | Cocos Solo Dev | 单人开发模式 / 一人工作室操作员 | Solo Studio Operator | fast solo workflow with explicit hat switching |
+
 ## Registered Agents
 
-### `cocos-producer`
+### `cocos-producer` — Cocos Producer（制作人 / 项目负责人）
 
 Purpose:
 
@@ -40,7 +58,7 @@ Required outputs:
 - scope lock
 - producer handoff
 
-### `cocos-game-designer`
+### `cocos-game-designer` — Cocos Game Designer（游戏设计师 / 玩法策划）
 
 Purpose:
 
@@ -69,7 +87,7 @@ Required outputs:
 - mechanic spec
 - designer handoff
 
-### `cocos-architect`
+### `cocos-architect` — Cocos Architect（技术架构师 / 技术总监）
 
 Purpose:
 
@@ -98,7 +116,7 @@ Required outputs:
 - integration constraints
 - architect handoff
 
-### `cocos-dev`
+### `cocos-dev` — Cocos Developer（Cocos 开发工程师）
 
 Purpose:
 
@@ -126,7 +144,7 @@ Required outputs:
 - validation result
 - developer handoff
 
-### `cocos-qa`
+### `cocos-qa` — Cocos QA（测试 / 验收负责人）
 
 Purpose:
 
@@ -154,7 +172,7 @@ Required outputs:
 - acceptance status
 - regression notes
 
-### `cocos-solo-dev`
+### `cocos-solo-dev` — Cocos Solo Dev（单人开发模式 / 一人工作室操作员）
 
 Purpose:
 

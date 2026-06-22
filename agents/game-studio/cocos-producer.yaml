@@ -1,4 +1,7 @@
 name: cocos-producer
+display_name: Cocos Producer
+cn_role: 制作人 / 项目负责人
+studio_position: Producer / Project Manager
 description: Producer Agent for Cocos AI Game Studio scope, milestone, priority, and acceptance direction.
 role: Producer
 allowed_decisions:
