@@ -2,44 +2,44 @@
 
 This is a modern city attack-defense example pack for proving the AI Game Studio workflow.
 
-It is not the user's final game project. It exists to show how design intent, level config, Cocos integration notes, Agent handoff examples, validation expectations, scoped Cocos Dev Stories, Cocos reference stubs, Cocos setup checklists, a demo skeleton, and local Cocos handoff proof fit together.
+It is not the user's final game project. It is a reference example that connects design intent, config data, Cocos integration notes, reference stubs, setup guides, demo skeleton docs, and local execution proof.
 
 ## Purpose
 
-Use this example pack to test the level config validation and export pipeline, then map the validated data into a Cocos Creator 3.8.8 MVP loop.
+Use this example pack to test the config validation/export pipeline, then map the validated data into a Cocos Creator 3.8.8 MVP loop.
 
-## Recommended reading order
+## Recommended reading groups
 
-1. `design/GAME_BRIEF.md`
-2. `design/MINI_GDD.md`
-3. `design/ACCEPTANCE_CRITERIA.md`
-4. `quick-prototype/COCOS_QUICK_PROTOTYPE_TRANSCRIPT.md`
-5. `level-config/*.csv`
-6. `cocos-integration/CONFIG_TO_RUNTIME_MAPPING.md`
-7. `cocos-integration/SCENE_PREFAB_BINDING_GUIDE.md`
-8. `cocos-reference-stub/README.md`
-9. `cocos-setup-guide/COCOS_CREATOR_SETUP_GUIDE.md`
-10. `cocos-setup-guide/SCENE_NODE_CHECKLIST.md`
-11. `cocos-setup-guide/PLACEHOLDER_PREFAB_RULES.md`
-12. `cocos-setup-guide/FIRST_PLAYABLE_QA_CHECKLIST.md`
-13. `cocos-demo-skeleton/README.md`
-14. `cocos-demo-skeleton/PROJECT_STRUCTURE.md`
-15. `cocos-demo-skeleton/SCRIPTS_PLACEMENT.md`
-16. `cocos-demo-skeleton/PREFABS_PLACEMENT.md`
-17. `cocos-demo-skeleton/SCENE_ASSEMBLY_CHECKLIST.md`
-18. `cocos-demo-skeleton/RUNNABLE_DEMO_QA_GATE.md`
-19. `cocos-demo-productionization/CODEX_HANDOFF_PROMPT.md`
-20. `cocos-demo-productionization/REFERENCE_STUB_COPY_CHECKLIST.md`
-21. `cocos-demo-productionization/EDITOR_RUN_VALIDATION_LOG.md`
-22. `cocos-demo-productionization/SCENE_SCREENSHOT_PROOF_LIST.md`
-23. `cocos-demo-productionization/DEMO_SKELETON_LIMITATIONS.md`
-24. `agent-handoff/FULL_HANDOFF_CHAIN.md`
-25. `dev-stories/STORY_001_CONFIG_PIPELINE.md`
-26. `dev-stories/STORY_002_SCENE_POINT_BINDING.md`
-27. `dev-stories/STORY_003_WAVE_SPAWN_OBJECTIVE_LOOP.md`
-28. `dev-stories/STORY_004_RESULT_REWARD_FLOW.md`
-29. `validation/EXPECTED_OUTPUTS.md`
-30. `validation/PASS_FAIL_EXAMPLES.md`
+### 1. Design
+
+- `design/GAME_BRIEF.md`
+- `design/MINI_GDD.md`
+- `design/ACCEPTANCE_CRITERIA.md`
+- `quick-prototype/COCOS_QUICK_PROTOTYPE_TRANSCRIPT.md`
+
+### 2. Config and validation
+
+- `level-config/*.csv`
+- `validation/EXPECTED_OUTPUTS.md`
+- `validation/PASS_FAIL_EXAMPLES.md`
+
+### 3. Cocos integration
+
+- `cocos-integration/CONFIG_TO_RUNTIME_MAPPING.md`
+- `cocos-integration/SCENE_PREFAB_BINDING_GUIDE.md`
+- `cocos-reference-stub/README.md`
+- `cocos-setup-guide/COCOS_CREATOR_SETUP_GUIDE.md`
+- `cocos-demo-skeleton/README.md`
+- `cocos-demo-productionization/CODEX_HANDOFF_PROMPT.md`
+- `local-cocos-execution/README.md`
+
+### 4. Agent workflow
+
+- `agent-handoff/FULL_HANDOFF_CHAIN.md`
+- `dev-stories/STORY_001_CONFIG_PIPELINE.md`
+- `dev-stories/STORY_002_SCENE_POINT_BINDING.md`
+- `dev-stories/STORY_003_WAVE_SPAWN_OBJECTIVE_LOOP.md`
+- `dev-stories/STORY_004_RESULT_REWARD_FLOW.md`
 
 ## Run validation
 
@@ -47,80 +47,24 @@ From the repository root:
 
 ```bash
 npm run validate:example
-```
-
-## Export runtime JSON
-
-```bash
 npm run export:example
-```
-
-## Export TypeScript types
-
-```bash
 npm run types:example
-```
-
-## Run full check
-
-```bash
 npm run check
 ```
 
-## MVP design
-
-- One city map
-- One player/base spawn point
-- Two enemy spawn points
-- Two enemy types
-- Two waves
-- One required objective: kill all enemies
-- One reward
-
 ## First Cocos target
-
-The first playable target is:
 
 ```text
 Load city_001
--> bind map points
--> spawn enemy waves
--> update objective
--> show result
--> grant reward
+-> bind configured map points
+-> create configured placeholder actors
+-> update objective state
+-> show result path
+-> grant configured reward
 ```
 
-## Dev Story order
+## Current status
 
-```text
-Story 001: Config pipeline proof
-Story 002: Scene point binding
-Story 003: Wave, spawn, objective loop
-Story 004: Result and reward flow
-```
+This example pack provides references, guides, checklists, and local execution templates.
 
-## Reference stub
-
-The `cocos-reference-stub/` folder shows a first Cocos wiring shape:
-
-```text
-MapPointComponent
-MapPointRegistry
-EnemyPrefabRegistry
-LevelRuntimeFacade
-AttackDefenseCityBootstrap
-```
-
-These files are reference stubs, not a complete Cocos Creator project.
-
-## Cocos setup guide
-
-The `cocos-setup-guide/` folder explains how to reproduce the reference wiring inside Cocos Creator 3.8.8 with beginner-friendly setup steps, scene-node checklist, placeholder prefab rules, and first playable QA checks.
-
-## Demo skeleton
-
-The `cocos-demo-skeleton/` folder provides a target Cocos project structure and QA gate for turning the example pack into a real importable demo skeleton.
-
-## Demo productionization
-
-The `cocos-demo-productionization/` folder provides the local Codex handoff prompt, copy checklist, editor run validation log, screenshot proof list, and limitation notes for moving from skeleton to a verified local Cocos demo.
+It is not yet a verified Cocos Creator project with real `.scene` and `.prefab` assets.

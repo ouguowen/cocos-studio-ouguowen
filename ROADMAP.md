@@ -28,6 +28,7 @@ Current capabilities:
 - Cocos Creator setup guide and first playable checklist
 - Cocos demo skeleton documentation and placeholder folders
 - local Codex handoff prompt and Cocos editor validation log template
+- local Windows execution steps and proof-report templates
 
 ## v0.3.0-alpha.1 status: Example Pack Foundation
 
@@ -48,10 +49,6 @@ Completed work:
 
 ## v0.3.0-alpha.2 status: Cocos Reference Stub
 
-Primary goal:
-
-Move from example-pack documentation toward a small reference implementation shape that can guide real Cocos Creator integration.
-
 Completed work:
 
 1. Added Cocos reference stub folder.
@@ -63,10 +60,6 @@ Completed work:
 
 ## v0.3.0-alpha.3 status: Cocos Setup Guide
 
-Primary goal:
-
-Make it easier for a beginner to reproduce the reference wiring inside Cocos Creator 3.8.8.
-
 Completed work:
 
 1. Added beginner Cocos Creator 3.8.8 setup guide.
@@ -76,10 +69,6 @@ Completed work:
 5. Added notes that reference stubs are not a complete Cocos Creator project.
 
 ## v0.3.0-alpha.4 status: Demo Skeleton
-
-Primary goal:
-
-Move from reference documentation and stubs toward a minimal Cocos Creator project skeleton that a developer can import and adapt.
 
 Completed work:
 
@@ -92,10 +81,6 @@ Completed work:
 
 ## v0.3.0-alpha.5 status: Demo Productionization Handoff
 
-Primary goal:
-
-Turn the skeleton into a more practical handoff package for real Cocos Creator work.
-
 Completed work:
 
 1. Added Codex handoff prompt for creating the Cocos demo in a local Cocos Creator project.
@@ -104,26 +89,42 @@ Completed work:
 4. Added screenshot placeholder list for scene assembly proof.
 5. Added limitation notes to prevent overclaiming demo readiness.
 
-Still not included:
-
-- A verified Cocos Editor run.
-- Actual proof screenshots.
-- Real `.scene` and `.prefab` files created inside Cocos Creator.
-
-## v0.3.x next target: Local Cocos Project Execution
+## v0.3.0-alpha.6 status: Local Cocos Execution Package
 
 Primary goal:
 
-Use the handoff package inside a real local Cocos Creator 3.8.8 project and collect proof.
+Prepare the user-facing local execution package for work that must happen inside a real Cocos Creator 3.8.8 project.
+
+Completed work:
+
+1. Added local Cocos execution package.
+2. Added Windows local execution steps.
+3. Added local Cocos project creation checklist.
+4. Added guide for what evidence to send back to AI.
+5. Added editor proof report template.
+6. Added blocker troubleshooting guide.
+
+Still not included:
+
+- Actual local Cocos Creator execution by the assistant.
+- Verified editor screenshots.
+- Filled proof report from a real local editor run.
+
+## v0.3.x next target: Real Local Editor Proof
+
+Primary goal:
+
+The user opens Cocos Creator 3.8.8 locally, follows the local execution package, and sends proof back for AI review.
 
 Planned work:
 
-1. Create or open a local Cocos Creator 3.8.8 project.
-2. Copy/adapt reference stubs into `assets/scripts/attack-defense-city/`.
-3. Create placeholder prefabs in `assets/prefabs/enemies/`.
-4. Create `scene_city_battle` and bind inspector fields.
-5. Fill the editor run validation log.
-6. Collect screenshot proof.
+1. Run `npm run check` locally.
+2. Create or open the local Cocos Creator 3.8.8 project.
+3. Copy/adapt reference stubs into `assets/scripts/attack-defense-city/`.
+4. Create placeholder prefabs in `assets/prefabs/enemies/`.
+5. Create `scene_city_battle` and bind inspector fields.
+6. Fill the editor proof report.
+7. Send errors, screenshots, or proof text back to AI.
 
 ## v0.4.0 target: Stronger Agent Operations
 

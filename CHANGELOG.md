@@ -2,6 +2,28 @@
 
 All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
+## v0.3.0-alpha.6 - 2026-06-22
+
+### Added
+
+- Added local Cocos execution package.
+- Added Windows local execution steps.
+- Added local Cocos project creation checklist.
+- Added guide for what evidence to send back to AI.
+- Added editor proof report template.
+- Added blocker troubleshooting guide.
+
+### Changed
+
+- Simplified example pack README into grouped reading sections.
+- Updated `package.json` version to `0.3.0-alpha.6`.
+
+### Still not included
+
+- Actual local Cocos Creator execution by the assistant.
+- Verified editor screenshots.
+- Filled proof report from a real local editor run.
+
 ## v0.3.0-alpha.5 - 2026-06-22
 
 ### Added
