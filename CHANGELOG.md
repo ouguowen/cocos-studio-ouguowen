@@ -2,6 +2,27 @@
 
 All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
+## v0.3.0-alpha.5 - 2026-06-22
+
+### Added
+
+- Added local Codex handoff prompt for creating or updating a Cocos Creator project from the example pack.
+- Added reference stub copy checklist.
+- Added Cocos editor run validation log template.
+- Added scene screenshot proof list.
+- Added demo skeleton limitations document.
+
+### Changed
+
+- Updated the example pack README to include demo productionization reading steps.
+- Updated `package.json` version to `0.3.0-alpha.5`.
+
+### Still not included
+
+- A verified Cocos Editor run.
+- Actual proof screenshots.
+- Real `.scene` and `.prefab` files created inside Cocos Creator.
+
 ## v0.3.0-alpha.4 - 2026-06-22
 
 ### Added
