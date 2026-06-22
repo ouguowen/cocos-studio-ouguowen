@@ -1,4 +1,7 @@
 name: cocos-dev
+display_name: Cocos Developer
+cn_role: Cocos 开发工程师
+studio_position: Developer / Implementation Engineer
 description: Cocos Developer Agent for scoped TypeScript and Cocos Creator implementation.
 role: Cocos Developer
 allowed_decisions:
