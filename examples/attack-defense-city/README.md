@@ -2,7 +2,7 @@
 
 This is a modern city attack-defense example pack for proving the AI Game Studio workflow.
 
-It is not the user's final game project. It exists to show how design intent, level config, Cocos integration notes, Agent handoff examples, and validation expectations fit together.
+It is not the user's final game project. It exists to show how design intent, level config, Cocos integration notes, Agent handoff examples, validation expectations, and scoped Cocos Dev Stories fit together.
 
 ## Purpose
 
@@ -18,8 +18,12 @@ Use this example pack to test the level config validation and export pipeline, t
 6. `cocos-integration/CONFIG_TO_RUNTIME_MAPPING.md`
 7. `cocos-integration/SCENE_PREFAB_BINDING_GUIDE.md`
 8. `agent-handoff/FULL_HANDOFF_CHAIN.md`
-9. `validation/EXPECTED_OUTPUTS.md`
-10. `validation/PASS_FAIL_EXAMPLES.md`
+9. `dev-stories/STORY_001_CONFIG_PIPELINE.md`
+10. `dev-stories/STORY_002_SCENE_POINT_BINDING.md`
+11. `dev-stories/STORY_003_WAVE_SPAWN_OBJECTIVE_LOOP.md`
+12. `dev-stories/STORY_004_RESULT_REWARD_FLOW.md`
+13. `validation/EXPECTED_OUTPUTS.md`
+14. `validation/PASS_FAIL_EXAMPLES.md`
 
 ## Run validation
 
@@ -68,4 +72,13 @@ Load city_001
 -> update objective
 -> show result
 -> grant reward
+```
+
+## Dev Story order
+
+```text
+Story 001: Config pipeline proof
+Story 002: Scene point binding
+Story 003: Wave, spawn, objective loop
+Story 004: Result and reward flow
 ```
