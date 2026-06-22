@@ -2,7 +2,7 @@
 
 This is a modern city attack-defense example pack for proving the AI Game Studio workflow.
 
-It is not the user's final game project. It exists to show how design intent, level config, Cocos integration notes, Agent handoff examples, validation expectations, scoped Cocos Dev Stories, Cocos reference stubs, Cocos setup checklists, and a demo skeleton fit together.
+It is not the user's final game project. It exists to show how design intent, level config, Cocos integration notes, Agent handoff examples, validation expectations, scoped Cocos Dev Stories, Cocos reference stubs, Cocos setup checklists, a demo skeleton, and local Cocos handoff proof fit together.
 
 ## Purpose
 
@@ -28,13 +28,18 @@ Use this example pack to test the level config validation and export pipeline, t
 16. `cocos-demo-skeleton/PREFABS_PLACEMENT.md`
 17. `cocos-demo-skeleton/SCENE_ASSEMBLY_CHECKLIST.md`
 18. `cocos-demo-skeleton/RUNNABLE_DEMO_QA_GATE.md`
-19. `agent-handoff/FULL_HANDOFF_CHAIN.md`
-20. `dev-stories/STORY_001_CONFIG_PIPELINE.md`
-21. `dev-stories/STORY_002_SCENE_POINT_BINDING.md`
-22. `dev-stories/STORY_003_WAVE_SPAWN_OBJECTIVE_LOOP.md`
-23. `dev-stories/STORY_004_RESULT_REWARD_FLOW.md`
-24. `validation/EXPECTED_OUTPUTS.md`
-25. `validation/PASS_FAIL_EXAMPLES.md`
+19. `cocos-demo-productionization/CODEX_HANDOFF_PROMPT.md`
+20. `cocos-demo-productionization/REFERENCE_STUB_COPY_CHECKLIST.md`
+21. `cocos-demo-productionization/EDITOR_RUN_VALIDATION_LOG.md`
+22. `cocos-demo-productionization/SCENE_SCREENSHOT_PROOF_LIST.md`
+23. `cocos-demo-productionization/DEMO_SKELETON_LIMITATIONS.md`
+24. `agent-handoff/FULL_HANDOFF_CHAIN.md`
+25. `dev-stories/STORY_001_CONFIG_PIPELINE.md`
+26. `dev-stories/STORY_002_SCENE_POINT_BINDING.md`
+27. `dev-stories/STORY_003_WAVE_SPAWN_OBJECTIVE_LOOP.md`
+28. `dev-stories/STORY_004_RESULT_REWARD_FLOW.md`
+29. `validation/EXPECTED_OUTPUTS.md`
+30. `validation/PASS_FAIL_EXAMPLES.md`
 
 ## Run validation
 
@@ -115,3 +120,7 @@ The `cocos-setup-guide/` folder explains how to reproduce the reference wiring i
 ## Demo skeleton
 
 The `cocos-demo-skeleton/` folder provides a target Cocos project structure and QA gate for turning the example pack into a real importable demo skeleton.
+
+## Demo productionization
+
+The `cocos-demo-productionization/` folder provides the local Codex handoff prompt, copy checklist, editor run validation log, screenshot proof list, and limitation notes for moving from skeleton to a verified local Cocos demo.
