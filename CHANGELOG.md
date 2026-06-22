@@ -2,6 +2,26 @@
 
 All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
+## v0.3.0-alpha.3 - 2026-06-22
+
+### Added
+
+- Added Cocos Creator 3.8.8 setup guide for the Attack Defense City example pack.
+- Added scene-node checklist.
+- Added placeholder prefab rules.
+- Added first playable QA checklist.
+
+### Changed
+
+- Updated the example pack README to include the Cocos setup guide reading steps.
+- Updated `package.json` version to `0.3.0-alpha.3`.
+
+### Still not included
+
+- A directly importable Cocos Creator project.
+- Real Cocos scene and prefab files.
+- Production-ready runtime implementation.
+
 ## v0.3.0-alpha.2 - 2026-06-22
 
 ### Added
