@@ -1,4 +1,7 @@
 name: cocos-game-designer
+display_name: Cocos Game Designer
+cn_role: 游戏设计师 / 玩法策划
+studio_position: Game Designer
 description: Game Design Agent for core loop, MVP proof, mechanics, levels, and player-facing rules.
 role: Game Designer
 allowed_decisions:
