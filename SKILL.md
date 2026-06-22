@@ -27,6 +27,7 @@ Use this skill as the operating system for a Cocos Creator 3.8.8 game project.
 9. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
 10. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
 11. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
+12. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [COMMANDS.md](COMMANDS.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [GAME_STUDIO_WORKFLOWS.md](GAME_STUDIO_WORKFLOWS.md), and [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md).
 
 ## Non-negotiable rules
 
@@ -37,6 +38,23 @@ Use this skill as the operating system for a Cocos Creator 3.8.8 game project.
 - No Cocos project should rely on giant "god scripts", uncontrolled `update()` logic, or unmanaged dynamic loading.
 - No single universal level CSV should be forced onto every game type.
 - No single `LevelManager` should own config loading, level building, wave flow, spawning, objectives, rewards, UI, and scene logic.
+
+## AI Game Studio routing
+
+Use AI Game Studio mode when the request mentions Agent teams, workflow commands, project memory, handoff logs, or studio-style production.
+
+Common command routing:
+
+- `cocos-game-brief` -> [COMMANDS.md](COMMANDS.md), [TEMPLATES.md](TEMPLATES.md), [PROJECT_MEMORY_SYSTEM.md](PROJECT_MEMORY_SYSTEM.md)
+- `cocos-classify-game` -> [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md), [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md)
+- `cocos-gdd` -> [PRD_CONSTRAINTS.md](PRD_CONSTRAINTS.md), [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md), [TEMPLATES.md](TEMPLATES.md)
+- `cocos-project-context` -> [PROJECT_MEMORY_SYSTEM.md](PROJECT_MEMORY_SYSTEM.md)
+- `cocos-game-architecture` -> [COCOS_RULES.md](COCOS_RULES.md), [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md), [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md)
+- `cocos-config-schema` -> [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md), [LEVEL_CONFIG_SCHEMA_EXTENSIONS.md](LEVEL_CONFIG_SCHEMA_EXTENSIONS.md)
+- `cocos-create-story` -> [TASK_DECOMPOSITION_RULES.md](TASK_DECOMPOSITION_RULES.md), [COMMANDS.md](COMMANDS.md)
+- `cocos-dev-story` -> [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md), [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md)
+- `cocos-code-review` -> [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md), [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md)
+- `cocos-quick-prototype` -> [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md), [QUALITY_GATES.md](QUALITY_GATES.md)
 
 ## When responding
 
@@ -64,3 +82,4 @@ Use this skill as the operating system for a Cocos Creator 3.8.8 game project.
 - "Split this into tasks." -> task decomposition rules before issue writing.
 - "How should we use AI on this project?" -> AI collaboration rules before delegating design or code work.
 - "Review this professionally." -> review system before acceptance.
+- "Run AI Game Studio mode." -> AI Game Studio system, command registry, Agent registry, handoff protocol, and audit log before execution.
