@@ -2,6 +2,24 @@
 
 All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
+## v0.3.0-alpha.7 - 2026-06-23
+
+### Changed
+
+- Clarified that the skill is a multi-game-type Cocos Creator 3.8.8 AI Game Studio, not a single attack-defense game template.
+- Clarified that the modern city attack-defense pack is the first example pack and validation sample, not the user's fixed only game direction.
+- Added provider-neutral Cocos automation policy to `SKILL.md` without binding the skill to one commercial MCP provider or a future official MCP provider.
+- Added command-level automation provider rules to `COMMANDS.md` for local Cocos execution proof.
+- Clarified in `AI_GAME_STUDIO_SYSTEM.md` that automation tools/MCP providers are execution channels, not the identity of the skill.
+- Updated `package.json` version to `0.3.0-alpha.7`.
+
+### Still not included
+
+- A provider-specific MCP protocol layer.
+- A hard dependency on any one Cocos automation plugin.
+- Cocos2d-x guidance.
+- Multi-engine support.
+
 ## v0.3.0-alpha.6 - 2026-06-22
 
 ### Added
@@ -97,7 +115,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added `MapPointRegistry.ts` reference stub.
 - Added `EnemyPrefabRegistry.ts` reference stub.
 - Added `LevelRuntimeFacade.ts` reference stub.
-- Added `AttackDefenseCityBootstrap.ts` reference stub.
+- Added example bootstrap stub for `city_001`.
 
 ### Changed
 
