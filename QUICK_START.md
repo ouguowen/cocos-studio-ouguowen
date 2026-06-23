@@ -1,6 +1,6 @@
 # Quick Start
 
-This guide is for a beginner using `cocos-studio-ouguowen` with Codex and Cocos Creator 3.8.8.
+This guide is for a beginner using `cocos-studio-ouguowen` with Codex, Cocos Creator 3.8.8, and an optional Cocos automation tool/MCP provider.
 
 ## Step 1: Put the skill in the Codex skills folder
 
@@ -32,23 +32,43 @@ Expected result:
 - Codex should ask or infer dominant loop
 - Codex should not jump directly into random code
 
-## Step 3: Try AI Game Studio mode
+## Step 3: Confirm the multi-game-type stance
 
 Ask Codex:
 
 ```text
 Use $cocos-studio-ouguowen.
-Run cocos-game-brief for the modern city attack-defense example pack.
+Explain the difference between the reusable multi-game-type Skill and the currently selected game type.
 ```
 
 Expected result:
 
-- example pack brief
-- MVP proof
+- Codex should say the Skill is not a single-game template
+- Codex should say one selected game type is used per MVP or sprint
+- Codex should not treat the modern city attack-defense example pack as the only game direction
+
+## Step 4: Try AI Game Studio mode with the current Cocos automation provider
+
+Ask Codex:
+
+```text
+Use $cocos-studio-ouguowen.
+Run cocos-game-brief for a selected Cocos Creator 3.8.8 game type.
+Current validation sample: modern city attack-defense MVP.
+Execution channel: when local Cocos Creator work is required, use the currently available Cocos Creator 3.8.8 automation tool or MCP provider.
+Do not bind the plan to one commercial MCP provider or one future official MCP provider.
+Return provider proof only when local engine work is performed: scene hierarchy, component bindings, Console logs, preview result, screenshot, or PASS / FAIL notes.
+```
+
+Expected result:
+
+- selected game type and MVP scope
+- reusable Skill scope separated from current example scope
+- automation provider treated as an execution channel
 - explicit non-goals
 - next recommended command
 
-## Step 4: Install Node dependencies
+## Step 5: Install Node dependencies
 
 From the repository root:
 
@@ -56,37 +76,37 @@ From the repository root:
 npm install
 ```
 
-## Step 5: Validate the example config
+## Step 6: Validate the example config
 
 ```bash
 npm run validate:example
 ```
 
-## Step 6: Export the example config
+## Step 7: Export the example config
 
 ```bash
 npm run export:example
 ```
 
-## Step 7: Export TypeScript config types
+## Step 8: Export TypeScript config types
 
 ```bash
 npm run types:example
 ```
 
-## Step 8: Validate runtime templates
+## Step 9: Validate runtime templates
 
 ```bash
 npm run validate:runtime
 ```
 
-## Step 9: Run the full check
+## Step 10: Run the full check
 
 ```bash
 npm run check
 ```
 
-## Step 10: Recommended first real workflow
+## Step 11: Recommended first real workflow
 
 ```text
 cocos-game-brief
@@ -99,16 +119,32 @@ cocos-game-brief
 -> cocos-code-review
 ```
 
+## Step 12: Provider-driven proof workflow
+
+Use this only after a selected game type and MVP scope exist.
+
+```text
+cocos-game-architecture
+-> cocos-create-story
+-> cocos-dev-story using current Cocos automation provider when authorized
+-> provider returns hierarchy / bindings / Console / preview proof
+-> cocos-code-review
+```
+
+If the provider is unavailable, unsupported, or fails, Codex should stop with a blocker report or fall back to manual Cocos Creator steps.
+
 ## Beginner warning
 
 Do not start by asking AI to build the whole game.
 
 Start with:
 
-- one game type or one example pack
+- one selected game type or one example pack
 - one map
 - one player/base point
 - one or two enemy types
 - one win rule
 - one fail rule
 - one playable loop
+
+Do not add unrelated engines, Cocos2d-x, provider-specific MCP protocols, or every game type at once.
