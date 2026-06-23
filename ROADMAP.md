@@ -1,6 +1,6 @@
 # Roadmap
 
-This roadmap keeps `cocos-studio-ouguowen` moving from a Cocos production-system skill toward a practical AI Game Studio for solo developers and small teams.
+This roadmap keeps `cocos-studio-ouguowen` moving from a Cocos production-system skill toward a practical multi-game-type AI Game Studio for solo developers and small teams.
 
 ## Current stable direction: v0.3.x
 
@@ -9,6 +9,8 @@ Goal:
 - Make AI Game Studio mode clear, callable, reviewable, and example-driven.
 - Keep the system useful for Cocos Creator 3.8.8 projects.
 - Preserve production discipline while making it easier for beginners to start.
+- Support multiple game types through classification and selected templates, not through one bloated universal flow.
+- Treat Cocos automation tools/MCP providers as replaceable execution channels, not as the identity of the skill.
 
 Current capabilities:
 
@@ -29,6 +31,8 @@ Current capabilities:
 - Cocos demo skeleton documentation and placeholder folders
 - local Codex handoff prompt and Cocos editor validation log template
 - local Windows execution steps and proof-report templates
+- multi-game-type scope clarification
+- provider-neutral Cocos automation execution policy
 
 ## v0.3.0-alpha.1 status: Example Pack Foundation
 
@@ -110,21 +114,45 @@ Still not included:
 - Verified editor screenshots.
 - Filled proof report from a real local editor run.
 
-## v0.3.x next target: Real Local Editor Proof
+## v0.3.0-alpha.7 status: Scope and Automation Provider Alignment
 
 Primary goal:
 
-The user opens Cocos Creator 3.8.8 locally, follows the local execution package, and sends proof back for AI review.
+Lock the skill's current direction without expanding into a large provider-specific MCP module.
+
+Completed work:
+
+1. Clarified that `cocos-studio-ouguowen` is a multi-game-type Cocos Creator 3.8.8 AI Game Studio skill.
+2. Clarified that modern city attack-defense is the first example pack, not the only game type.
+3. Added provider-neutral Cocos automation policy.
+4. Clarified that a current commercial MCP and a future official Cocos MCP are interchangeable execution providers when their capabilities fit.
+5. Kept local Cocos validation as a result gate, while allowing it to be automation-provider-driven rather than manually clicked.
+6. Avoided adding a provider-specific protocol folder or hard dependency.
+
+Still not included:
+
+- Provider-specific MCP command dialects.
+- A hard-coded commercial MCP implementation.
+- A hard-coded future official MCP implementation.
+- Cocos2d-x guidance.
+- Multi-engine support.
+
+## v0.3.x next target: Provider-Driven Local Cocos Proof
+
+Primary goal:
+
+Use the current available Cocos automation provider or manual fallback to produce proof from a real Cocos Creator 3.8.8 project without expanding the skill scope.
 
 Planned work:
 
-1. Run `npm run check` locally.
+1. Run `npm run check` locally or in CI.
 2. Create or open the local Cocos Creator 3.8.8 project.
-3. Copy/adapt reference stubs into `assets/scripts/attack-defense-city/`.
-4. Create placeholder prefabs in `assets/prefabs/enemies/`.
-5. Create `scene_city_battle` and bind inspector fields.
-6. Fill the editor proof report.
-7. Send errors, screenshots, or proof text back to AI.
+3. Use the available Cocos automation provider when authorized; otherwise use manual Cocos Creator steps.
+4. Copy/adapt reference stubs into `assets/scripts/attack-defense-city/` for the first example pack.
+5. Create placeholder prefabs in `assets/prefabs/enemies/`.
+6. Create `scene_city_battle` and bind inspector fields.
+7. Return proof: scene hierarchy, prefab/component bindings, Console output, preview result, screenshot or proof text.
+8. Fill the editor proof report only when a playable or prototype claim depends on it.
 
 ## v0.4.0 target: Stronger Agent Operations
 
@@ -157,15 +185,16 @@ Planned work:
 
 ## Long-term direction
 
-The long-term direction is not to become a single-game template.
+The long-term direction is not to become a single-game template or a provider-specific automation plugin.
 
 The goal is to become:
 
 ```text
 Cocos AI Game Studio
 = reusable production brain
-+ Cocos runtime discipline
++ Cocos Creator 3.8.8 runtime discipline
 + multi-game-type workflow
 + AI Agent collaboration protocol
 + beginner-friendly execution path
++ replaceable Cocos automation provider channel
 ```

@@ -1,11 +1,11 @@
 ---
 name: cocos-studio-ouguowen
-description: Senior production system for Cocos Creator 3.8.8 game development. Use when planning, scoping, structuring, staffing, reviewing, releasing, or rescuing a Cocos Creator 3.8.8 project that needs strict workflow control, clear ownership, level-data discipline, and production-safe architecture instead of ad hoc development.
+description: Senior production system for multi-game-type Cocos Creator 3.8.8 development. Use when planning, scoping, structuring, staffing, reviewing, releasing, rescuing, or automation-driving a Cocos Creator 3.8.8 project that needs strict workflow control, clear ownership, level-data discipline, and production-safe architecture instead of ad hoc development.
 ---
 
 # Cocos Studio Ouguowen
 
-Use this skill as the operating system for a Cocos Creator 3.8.8 game project.
+Use this skill as the operating system for Cocos Creator 3.8.8 game projects.
 
 ## Core stance
 
@@ -13,6 +13,26 @@ Use this skill as the operating system for a Cocos Creator 3.8.8 game project.
 - Do not recommend "write first, organize later".
 - Do not allow undefined ownership, vague stage status, or unreviewed architecture drift.
 - Treat a solo developer as a multi-role studio, not as a role-less workflow.
+- Treat modern city attack-defense as the first example pack, not as the user's only game direction.
+- Support multiple game types through classification and type-specific templates, not through one bloated universal flow.
+
+## Scope boundary
+
+This skill is for:
+
+- Cocos Creator 3.8.8 projects.
+- TypeScript/Cocos Creator scene, prefab, component, config, and workflow discipline.
+- Multi-game-type AI Game Studio work, including attack-defense, tower defense, card battle, story level clear, idle growth, merge/collection, and other scoped templates when selected.
+- Codex or other AI coding agents that need a controlled Cocos production brain.
+- The currently available Cocos automation tool or MCP provider when local Cocos engine operations must be executed.
+
+This skill is not for:
+
+- Cocos2d-x C++ engine guidance.
+- Multi-engine game development.
+- A single fixed game template.
+- A hard dependency on one commercial MCP plugin, one future official MCP plugin, or any provider-specific command dialect.
+- Importing the full Cocos manual into the skill.
 
 ## Default execution order
 
@@ -23,11 +43,24 @@ Use this skill as the operating system for a Cocos Creator 3.8.8 game project.
 5. For most requests, open [WORKFLOWS.md](WORKFLOWS.md) first. Open [WORKFLOW_EXTENSIONS.md](WORKFLOW_EXTENSIONS.md) only for specialist flows.
 6. For most project artifacts, open [TEMPLATES.md](TEMPLATES.md) first. Open [LEVEL_TEMPLATES.md](LEVEL_TEMPLATES.md) only for level-content artifacts.
 7. If engine-version-specific advice matters, apply [COCOS_3_8_8_BASELINE.md](COCOS_3_8_8_BASELINE.md) before giving engine guidance.
-8. If the request needs runtime code or subsystem boundaries, use [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md). Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only for advanced online, monetization, live-ops, social, or compliance systems.
-9. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
-10. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
-11. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
-12. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [COMMANDS.md](COMMANDS.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [GAME_STUDIO_WORKFLOWS.md](GAME_STUDIO_WORKFLOWS.md), and [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md).
+8. If the request needs local Cocos engine operation, resolve the current Cocos automation provider before execution. Use provider-neutral intent such as create scene, create node, add component, bind prefab, save scene, run preview, read Console, and return proof.
+9. If the request needs runtime code or subsystem boundaries, use [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md). Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only for advanced online, monetization, live-ops, social, or compliance systems.
+10. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
+11. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
+12. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
+13. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [COMMANDS.md](COMMANDS.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [GAME_STUDIO_WORKFLOWS.md](GAME_STUDIO_WORKFLOWS.md), and [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md).
+
+## Cocos automation provider policy
+
+Use this policy only when the user already has, requests, or authorizes a Cocos Creator automation tool/MCP provider.
+
+- Treat the provider as an execution channel, not as the identity of this skill.
+- Do not hard-code one commercial MCP provider, one official MCP provider, or one tool-specific command vocabulary into core instructions.
+- Prefer capability-based intents: open project, inspect hierarchy, create scene, create node, add component, set property, bind reference, create prefab, save scene, run preview, read Console, return screenshot/proof.
+- If a Cocos official automation MCP becomes available later, it may replace the current provider without changing this skill's core production logic.
+- If no automation provider is available, fall back to manual Cocos Creator steps without changing the task scope.
+- Local Cocos validation is still a result gate when runtime behavior matters, but it can be automation-provider-driven rather than manually clicked by the user.
+- Do not expand the skill with provider-specific protocol files unless the user explicitly asks for that provider to become part of the repository.
 
 ## Non-negotiable rules
 
@@ -38,10 +71,11 @@ Use this skill as the operating system for a Cocos Creator 3.8.8 game project.
 - No Cocos project should rely on giant "god scripts", uncontrolled `update()` logic, or unmanaged dynamic loading.
 - No single universal level CSV should be forced onto every game type.
 - No single `LevelManager` should own config loading, level building, wave flow, spawning, objectives, rewards, UI, and scene logic.
+- No automation provider result is accepted as complete without proof appropriate to the task: hierarchy, bindings, Console, preview output, generated files, or PASS/FAIL gate notes.
 
 ## AI Game Studio routing
 
-Use AI Game Studio mode when the request mentions Agent teams, workflow commands, project memory, handoff logs, or studio-style production.
+Use AI Game Studio mode when the request mentions Agent teams, workflow commands, project memory, handoff logs, automation providers, MCP-driven Cocos execution, or studio-style production.
 
 Common command routing:
 
@@ -63,6 +97,8 @@ Common command routing:
 - Name the responsible role when ownership matters.
 - Call out violations directly when the request would break the system.
 - Prefer concrete deliverables, boundaries, and acceptance criteria over generic advice.
+- Distinguish between the reusable multi-game-type skill and the current selected example game type.
+- Distinguish between local validation as a gate and manual clicking as an implementation detail.
 
 ## Common routing
 
@@ -72,7 +108,7 @@ Common command routing:
 - "We need a fast prototype but do not want chaos." -> production mode selection before architecture advice.
 - "Our project is getting messy." -> ownership audit, architecture audit, and missing gates.
 - "Which architecture template fits?" -> classification before architecture template choice.
-- "Build the Cocos structure." -> Cocos rules, project structure, and runtime boundaries.
+- "Build the Cocos structure." -> Cocos rules, project structure, runtime boundaries, and automation provider policy when local execution is authorized.
 - "Build this home page / shop / bag / battle HUD." -> choice execution protocol first, then continuous execution after option selection.
 - "Do not skip steps / keep the project moving in order." -> sequential gate protocol before advancement.
 - "How should levels be configured?" -> level data model selection before table design.

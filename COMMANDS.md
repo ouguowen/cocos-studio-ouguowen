@@ -9,6 +9,17 @@ Use this file as the command registry for repeatable AI Game Studio execution.
 - Commands must state what is in scope and out of scope.
 - Commands must end with either a next command or a gate decision.
 
+## Automation provider law
+
+Use these rules only when a task needs local Cocos Creator execution and the user has an available automation tool/MCP provider.
+
+- Commands may use the current Cocos automation provider as an execution channel.
+- Commands must stay provider-neutral: describe capabilities, not vendor-specific MCP command names.
+- The current commercial provider may be used, and a future Cocos official provider may replace it without changing the command meaning.
+- Required proof depends on task risk: scene hierarchy, component bindings, prefab references, Console logs, preview screenshot/result, generated files, or PASS/FAIL notes.
+- If a provider fails or lacks a capability, stop with a blocker report or fall back to manual Cocos Creator steps.
+- Do not expand scope from one selected game type into every game type during a single command.
+
 ## Pre-production commands
 
 ### `cocos-brainstorm-game`
@@ -111,6 +122,7 @@ Output:
 - resource loading plan
 - performance risks
 - forbidden shortcuts
+- automation/manual execution boundary if local Cocos operations are needed
 
 ### `cocos-config-schema`
 
@@ -153,6 +165,7 @@ Output:
 - implementation steps
 - acceptance criteria
 - QA notes
+- automation provider needs, if any
 
 ### `cocos-dev-story`
 
@@ -163,7 +176,9 @@ Output:
 - implementation summary
 - changed files
 - assumptions used
+- automation provider used or manual fallback used
 - tests or validation performed
+- proof returned: hierarchy, bindings, Console, preview, generated files, or screenshots as applicable
 - unresolved blockers
 - handoff message to QA
 
@@ -179,6 +194,7 @@ Output:
 - architecture fit
 - Cocos fit
 - config fit
+- automation/local execution evidence fit when applicable
 - acceptance decision
 
 ## Testing commands
@@ -218,10 +234,12 @@ Use when validating one mechanic quickly.
 Output:
 
 - prototype goal
+- selected game type
 - minimum systems
 - placeholder asset rules
 - success criteria
 - kill criteria
+- automation/manual proof needed for the prototype
 
 ### `cocos-quick-dev`
 
@@ -234,15 +252,8 @@ Output:
 - required data
 - implementation steps
 - acceptance check
+- automation provider proof if local Cocos execution is required
 
 ### `cocos-document-project`
 
 Use when analyzing an existing Cocos project.
-
-Output:
-
-- current structure
-- architecture risks
-- ownership gaps
-- missing validation
-- repair plan
