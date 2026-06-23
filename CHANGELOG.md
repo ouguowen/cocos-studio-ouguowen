@@ -2,6 +2,14 @@
 
 All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
+## Unreleased
+
+### Changed
+
+- Updated `QUICK_START.md` with a provider-driven AI Game Studio startup prompt.
+- Added a quick check that separates the reusable multi-game-type Skill from the currently selected game type.
+- Added a provider-driven proof workflow that treats the current Cocos automation tool/MCP provider as an execution channel.
+
 ## v0.3.0-alpha.7 - 2026-06-23
 
 ### Changed
