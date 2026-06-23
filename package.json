@@ -1,8 +1,8 @@
 {
   "name": "cocos-studio-ouguowen",
-  "version": "0.3.0-alpha.6",
+  "version": "0.3.0-alpha.7",
   "private": true,
-  "description": "AI Game Studio skill for Cocos Creator 3.8.8 workflows, agents, config validation, and runtime templates.",
+  "description": "AI Game Studio skill for multi-game-type Cocos Creator 3.8.8 workflows, agents, config validation, runtime templates, and provider-neutral local automation guidance.",
   "scripts": {
     "validate:example": "node scripts/validate-level-config.js examples/attack-defense-city/level-config",
     "export:example": "node scripts/export-level-config.js examples/attack-defense-city/level-config examples/attack-defense-city/generated-level-config.json",
