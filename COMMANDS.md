@@ -162,6 +162,27 @@ Output:
 - validation rules
 - Animation Presentation Gate decision
 
+### `cocos-production-readiness`
+
+Use before Codex starts real game implementation, opens a large development sprint, creates many Cocos scripts, builds large scene/prefab structures, or attempts to make a playable game in one pass.
+
+Output:
+
+- readiness decision: READY_FOR_IMPLEMENTATION / DESIGN_NOT_READY / RUNTIME_NOT_READY / SCOPE_TOO_LARGE / BLOCKED
+- game identity
+- MVP scope
+- numerical readiness
+- economy readiness
+- animation and presentation readiness
+- Cocos architecture readiness
+- Cocos runtime readiness
+- asset readiness
+- first implementation story
+- required proof
+- blockers
+- allowed next command
+- forbidden next actions
+
 ## Technical commands
 
 ### `cocos-project-context`
@@ -221,6 +242,7 @@ Output:
 - dependencies
 - acceptance per story
 - risk list
+- production readiness dependency if the sprint starts real game implementation
 
 ### `cocos-create-story`
 
@@ -240,6 +262,7 @@ Output:
 - numerical design dependency, if balance-sensitive values are touched
 - economy design dependency, if currencies, rewards, sinks, upgrades, ads, shops, or gacha are touched
 - animation presentation dependency, if animation states, UI motion, hit feedback, VFX, Spine, Tween, or AnimationClip are touched
+- production readiness status when the story starts real playable development
 
 ### `cocos-dev-story`
 
@@ -271,6 +294,7 @@ Output:
 - numerical design fit when values affect balance
 - economy design fit when sources, sinks, currencies, rewards, or monetization are involved
 - animation presentation fit when motion, feedback, or visual state are involved
+- production readiness fit when implementation started from a readiness decision
 - automation/local execution evidence fit when applicable
 - acceptance decision
 
@@ -323,6 +347,7 @@ Output:
 - numerical placeholder policy if stats, costs, or rewards are used
 - economy scope policy if rewards, spending, upgrades, or currencies are used
 - animation placeholder policy if feedback, UI motion, or actor states are used
+- production readiness shortcut decision if the prototype is allowed to skip full readiness
 - automation/manual proof needed for the prototype
 
 ### `cocos-quick-dev`
@@ -339,6 +364,7 @@ Output:
 - numerical design check if values are touched
 - economy design check if reward, currency, source, sink, shop, ad, or gacha logic is touched
 - animation presentation check if actor state, UI motion, hit feedback, VFX, Tween, Spine, or AnimationClip is touched
+- production readiness check if this small feature starts real game implementation
 - automation provider proof if local Cocos execution is required
 
 ### `cocos-document-project`
