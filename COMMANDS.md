@@ -77,6 +77,36 @@ Output:
 - current assumptions
 - next proof obligation
 
+### `cocos-one-shot-mvp`
+
+Use when the user wants one continuous response or Codex run to move from a broad game idea into a controlled MVP plan and first dev-ready story.
+
+This command must load [ONE_SHOT_GAME_BUILD.md](ONE_SHOT_GAME_BUILD.md) before execution.
+
+Output:
+
+- current production stage
+- responsible role
+- selected dominant game type
+- MVP scope
+- explicit non-goals
+- command chain executed
+- artifacts produced
+- readiness decision
+- first dev-ready story if allowed
+- proof returned or blocker reason
+- allowed next command
+- forbidden next actions
+
+Rules:
+
+- One-shot means one controlled chain, not one complete commercial game.
+- Do not skip `cocos-classify-game`, MVP scope, architecture, readiness, or proof gates.
+- Do not implement multiple game types in one sprint.
+- Do not start local Cocos Creator work unless the required execution provider or manual proof path is available.
+- If local engine proof is required but unavailable, return `RUNTIME_NOT_READY` or `BLOCKED` instead of claiming completion.
+- The command may create only the first dev-ready story after readiness is checked; it does not authorize unlimited implementation.
+
 ### `cocos-classify-game`
 
 Use before selecting architecture or level data models.
