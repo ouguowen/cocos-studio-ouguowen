@@ -30,7 +30,28 @@ If these are not true:
 
 - stay in prototype
 
-## 3. Vertical Slice Checklist
+## 3. Cocos Preview Visibility Checklist
+
+Use before script-runtime proof, browser-preview proof, or first playable proof.
+
+- The intended scene is the current preview scene.
+- The scene is saved before browser preview.
+- Browser preview is started from the intended scene, not an old or unrelated scene.
+- Camera is active and its visibility/culling settings include the layer that should render.
+- Canvas is active and has valid Canvas/UITransform setup for Cocos Creator 3.8.8.
+- The baseline marker node, such as a Label, is a Canvas child or otherwise reachable by the active camera.
+- The baseline marker node is active.
+- The baseline marker component is enabled.
+- The baseline marker position, scale, color, font size, and opacity are visible in the target viewport.
+- The marker is visible in the browser preview, not only in the editor Scene view.
+- If runtime logs are required but the automation provider cannot capture browser logs, that limitation is declared.
+- If the marker is not visible in the browser preview, script-runtime proof must not start.
+
+If these are not true:
+
+- mark Preview Visibility Gate as failed or blocked and do not advance to script-runtime proof
+
+## 4. Vertical Slice Checklist
 
 - Slice scope is narrow and explicit.
 - The slice covers one real end-to-end product segment.
@@ -43,7 +64,7 @@ If these are not true:
 
 - do not call it production-ready
 
-## 4. Formal Production Review Checklist
+## 5. Formal Production Review Checklist
 
 - Every major feature has a named owner.
 - New assets have ownership and approval.
@@ -57,7 +78,7 @@ If these are not true:
 
 - production is drifting and needs intervention
 
-## 5. Cocos Structure Audit Checklist
+## 6. Cocos Structure Audit Checklist
 
 - `scripts/core` contains shared law, not feature clutter.
 - `scripts/game` contains gameplay truth, not UI hacks.
@@ -70,7 +91,7 @@ If these are not true:
 
 - the architecture is already degrading
 
-## 6. QA Entry Checklist
+## 7. QA Entry Checklist
 
 - The build target is named.
 - The scope is named.
@@ -83,7 +104,7 @@ If these are not true:
 
 - QA should reject entry or mark it incomplete
 
-## 7. Release Candidate Checklist
+## 8. Release Candidate Checklist
 
 - Release scope is frozen enough to test seriously.
 - Blocker bugs are closed or formally accepted.
@@ -97,7 +118,7 @@ If these are not true:
 
 - do not call it a real release candidate
 
-## 8. Launch Checklist
+## 9. Launch Checklist
 
 - Final smoke test has been run.
 - Final build identifier is recorded.
@@ -110,7 +131,7 @@ If these are not true:
 
 - delay the launch decision
 
-## 9. First-Week Support Checklist
+## 10. First-Week Support Checklist
 
 - Live blockers are sorted by severity and owner.
 - Hotfix priorities are explicit.
@@ -122,7 +143,7 @@ If these are not true:
 
 - do not call first-week support under control
 
-## 10. Solo Studio Hat-Switch Checklist
+## 11. Solo Studio Hat-Switch Checklist
 
 - The current stage is named.
 - The current hat is named.
@@ -134,7 +155,7 @@ If these are not true:
 
 - the solo workflow is drifting into self-confusion
 
-## 11. MVP Scope Checklist
+## 12. MVP Scope Checklist
 
 - The one-sentence fantasy is written.
 - The repeated core loop is named.
@@ -147,7 +168,7 @@ If these are not true:
 
 - the MVP is expanding without control
 
-## 12. Game Classification Checklist
+## 13. Game Classification Checklist
 
 - Dominant repeatable player action is named.
 - Main content unit is named.
@@ -159,7 +180,7 @@ If these are not true:
 
 - architecture and data design are premature
 
-## 13. Project Memory Checklist
+## 14. Project Memory Checklist
 
 - Confirmed facts are separated from assumptions.
 - Locked decisions are explicit.
@@ -171,7 +192,7 @@ If these are not true:
 
 - the project context is drifting
 
-## 14. Sequential Advancement Checklist
+## 15. Sequential Advancement Checklist
 
 - The current step is named.
 - The previous step's required outputs exist.
@@ -189,3 +210,4 @@ If these are not true:
 - Do not mark a checklist as passed when ownership is still unclear.
 - Do not mark a checklist as passed when evidence is missing.
 - Do not hide blockers inside “we will polish later”.
+- Do not treat editor Scene view visibility as browser runtime visibility.
