@@ -115,6 +115,29 @@ Output:
 - validation rules
 - Numerical Design Gate decision
 
+### `cocos-economy-design`
+
+Use before writing or changing currencies, sources, sinks, rewards, upgrade costs, stamina/energy, shops, ads, gacha, inventory value, or monetization-sensitive systems.
+
+Output:
+
+- selected game type
+- current stage
+- core loop
+- return reason
+- main reward moment
+- main spend moment
+- economy scope
+- currencies
+- sources
+- sinks
+- reward cadence
+- upgrade or cost curve
+- monetization scope
+- prototype placeholder values
+- validation rules
+- Economy Design Gate decision
+
 ## Technical commands
 
 ### `cocos-project-context`
@@ -157,6 +180,7 @@ Output:
 - validation rules
 - runtime export format
 - numerical validation rules if values affect balance
+- economy validation rules if sources, sinks, currencies, or reward cadence are used
 
 ## Production commands
 
@@ -189,6 +213,7 @@ Output:
 - QA notes
 - automation provider needs, if any
 - numerical design dependency, if balance-sensitive values are touched
+- economy design dependency, if currencies, rewards, sinks, upgrades, ads, shops, or gacha are touched
 
 ### `cocos-dev-story`
 
@@ -218,6 +243,7 @@ Output:
 - Cocos fit
 - config fit
 - numerical design fit when values affect balance
+- economy design fit when sources, sinks, currencies, rewards, or monetization are involved
 - automation/local execution evidence fit when applicable
 - acceptance decision
 
@@ -236,6 +262,7 @@ Output:
 - failure signals
 - decision criteria
 - numeric signals to observe if balance is being tested
+- economy signals to observe if reward or progression is being tested
 
 ### `cocos-performance-test`
 
@@ -265,6 +292,7 @@ Output:
 - success criteria
 - kill criteria
 - numerical placeholder policy if stats, costs, or rewards are used
+- economy scope policy if rewards, spending, upgrades, or currencies are used
 - automation/manual proof needed for the prototype
 
 ### `cocos-quick-dev`
@@ -279,6 +307,7 @@ Output:
 - implementation steps
 - acceptance check
 - numerical design check if values are touched
+- economy design check if reward, currency, source, sink, shop, ad, or gacha logic is touched
 - automation provider proof if local Cocos execution is required
 
 ### `cocos-document-project`
