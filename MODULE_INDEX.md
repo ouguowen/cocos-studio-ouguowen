@@ -22,6 +22,7 @@ Use this file to route a request into the correct module family before loading d
 
 - [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md): classify the game before template choice
 - [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md): select the closest genre or loop template
+- [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md): decide whether the project is ready for real implementation, design repair, runtime repair, or scope reduction
 - [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md): define gameplay numbers, difficulty, rewards, costs, and balance rules before implementation
 - [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md): define currencies, sources, sinks, rewards, upgrades, ads, shops, gacha boundaries, and economy validation before implementation
 - [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md): define animation states, UI motion, feedback, VFX, Spine/Tween/AnimationClip boundaries, and presentation validation before implementation
