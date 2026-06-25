@@ -22,6 +22,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added `SKILL_TEST_CASES.md` with repeatable block-path and allow-path self-test cases.
 - Added `cocos-skill-self-test` command routing.
 - Added `Skill Validation Gate` to `QUALITY_GATES.md`.
+- Synchronized `SKILL_VALIDATION_LOOP.md` with the full eight-case Skill self-test set.
 
 ### Changed
 
