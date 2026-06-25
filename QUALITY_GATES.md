@@ -9,6 +9,18 @@ Use these gates to decide whether work is allowed to advance.
 - The team can name at least one fun thing and one failing thing.
 - Major unknowns are exposed, not hidden.
 
+## Preview Visibility Gate
+
+Use this gate before script-runtime proof, first-playable proof, or browser-preview acceptance.
+
+- The intended Cocos scene is the scene being previewed.
+- The scene is saved before preview.
+- Camera, Canvas, UI layer, active state, position, scale, color, and visibility have been checked when UI is expected.
+- A baseline marker such as a simple Label or visible gameplay object appears in the browser preview, not only in the editor scene view.
+- Editor hierarchy, Inspector state, and scene snapshot are supporting evidence only; they do not replace browser runtime visibility.
+- If the baseline marker is not visible in browser preview, script-runtime proof and gameplay proof must stop and report Preview Visibility Gate as failed or blocked.
+- If the automation provider cannot capture browser pixels or browser runtime logs, the limitation must be declared instead of marking runtime proof as passed.
+
 ## Vertical Slice Gate
 
 - The slice feels like a real product segment.
@@ -196,3 +208,4 @@ Use these gates to decide whether work is allowed to advance.
 - If acceptance criteria are undefined, the work is not ready for approval.
 - If ownership is unclear, gate status should default to blocked.
 - If prerequisites are missing, advancement should default to blocked.
+- If browser preview visibility is required but not proven, script-runtime and gameplay proof should default to blocked.
