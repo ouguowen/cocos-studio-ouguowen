@@ -21,6 +21,24 @@ Use this gate before script-runtime proof, first-playable proof, or browser-prev
 - If the baseline marker is not visible in browser preview, script-runtime proof and gameplay proof must stop and report Preview Visibility Gate as failed or blocked.
 - If the automation provider cannot capture browser pixels or browser runtime logs, the limitation must be declared instead of marking runtime proof as passed.
 
+## Numerical Design Gate
+
+Use this gate before implementing or changing stats, difficulty, rewards, costs, upgrades, wave timing, enemy tuning, or balance-sensitive config.
+
+- The selected game type is explicit.
+- The loop being tested is explicit.
+- The intended player feeling is written before values are generated.
+- Prototype placeholder numbers are labeled as placeholders.
+- Every balance-sensitive field has a purpose.
+- Legal ranges exist for generated or edited numeric config fields.
+- Difficulty spikes, reward inflation, and cost/reward skips have been checked.
+- No UI value or animation timing is treated as the only source of numeric truth.
+- The next implementation story cannot accidentally treat fake balance as final balance.
+
+If these are not true:
+
+- numerical work is blocked or remains prototype-only
+
 ## Vertical Slice Gate
 
 - The slice feels like a real product segment.
@@ -209,3 +227,4 @@ Use this gate before script-runtime proof, first-playable proof, or browser-prev
 - If ownership is unclear, gate status should default to blocked.
 - If prerequisites are missing, advancement should default to blocked.
 - If browser preview visibility is required but not proven, script-runtime and gameplay proof should default to blocked.
+- If balance-sensitive numbers do not have purpose and legal ranges, gameplay implementation should default to blocked or prototype-only.

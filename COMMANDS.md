@@ -94,6 +94,27 @@ Output:
 - reward model
 - validation rules
 
+### `cocos-numerical-design`
+
+Use before writing or changing gameplay values such as enemy hp, attack, movement speed, wave timing, spawn count, reward amount, unit cost, upgrade value, cooldown, difficulty, or balance-sensitive config.
+
+Output:
+
+- selected game type
+- loop being tested
+- target session length
+- target player skill
+- intended player feeling
+- player baseline
+- enemy or obstacle families
+- difficulty beats
+- resource or cost model if needed
+- reward purpose
+- prototype placeholder values
+- legal ranges
+- validation rules
+- Numerical Design Gate decision
+
 ## Technical commands
 
 ### `cocos-project-context`
@@ -135,6 +156,7 @@ Output:
 - reference rules
 - validation rules
 - runtime export format
+- numerical validation rules if values affect balance
 
 ## Production commands
 
@@ -166,6 +188,7 @@ Output:
 - acceptance criteria
 - QA notes
 - automation provider needs, if any
+- numerical design dependency, if balance-sensitive values are touched
 
 ### `cocos-dev-story`
 
@@ -194,6 +217,7 @@ Output:
 - architecture fit
 - Cocos fit
 - config fit
+- numerical design fit when values affect balance
 - automation/local execution evidence fit when applicable
 - acceptance decision
 
@@ -211,6 +235,7 @@ Output:
 - observation checklist
 - failure signals
 - decision criteria
+- numeric signals to observe if balance is being tested
 
 ### `cocos-performance-test`
 
@@ -239,6 +264,7 @@ Output:
 - placeholder asset rules
 - success criteria
 - kill criteria
+- numerical placeholder policy if stats, costs, or rewards are used
 - automation/manual proof needed for the prototype
 
 ### `cocos-quick-dev`
@@ -252,6 +278,7 @@ Output:
 - required data
 - implementation steps
 - acceptance check
+- numerical design check if values are touched
 - automation provider proof if local Cocos execution is required
 
 ### `cocos-document-project`
