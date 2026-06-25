@@ -57,6 +57,24 @@ If these are not true:
 
 - economy work is blocked or remains prototype-only
 
+## Animation Presentation Gate
+
+Use this gate before implementing or changing animation states, UI motion, hit feedback, combat VFX, death flows, skill effects, Spine, AnimationClip, Tween, particles, or audio-visual timing.
+
+- The gameplay state being represented is explicit.
+- The player-facing purpose is explicit.
+- Trigger event and exit condition are defined.
+- Presentation does not own gameplay truth.
+- Placeholder status is clear.
+- Naming and fallback behavior are defined.
+- Animation, VFX, and UI motion do not hide player input, gameplay consequence, objective progress, or reward/loss result.
+- Browser/runtime proof or a declared blocker exists when the effect must be seen in preview.
+- Performance risk is considered for repeated or dense effects.
+
+If these are not true:
+
+- animation or presentation work is blocked or remains prototype-only
+
 ## Vertical Slice Gate
 
 - The slice feels like a real product segment.
@@ -247,3 +265,4 @@ If these are not true:
 - If browser preview visibility is required but not proven, script-runtime and gameplay proof should default to blocked.
 - If balance-sensitive numbers do not have purpose and legal ranges, gameplay implementation should default to blocked or prototype-only.
 - If currencies, rewards, sources, sinks, or monetization do not have stage justification and validation rules, economy implementation should default to blocked or prototype-only.
+- If presentation owns gameplay truth or lacks trigger, exit, fallback, and runtime visibility proof when required, animation implementation should default to blocked or prototype-only.

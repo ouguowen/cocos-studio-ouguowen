@@ -138,6 +138,30 @@ Output:
 - validation rules
 - Economy Design Gate decision
 
+### `cocos-animation-design`
+
+Use before writing or changing actor animation states, UI motion, tweens, combat feedback, hit reactions, death flows, skill VFX, Spine, AnimationClip, particles, or audio-visual timing.
+
+Output:
+
+- selected game type
+- current stage
+- actor or UI element
+- gameplay state represented
+- player-facing purpose
+- trigger event
+- exit condition
+- animation, VFX, UI motion, or audio type
+- implementation method: AnimationClip, Tween, Spine, Particle, SFX, or placeholder
+- gameplay timing dependency
+- input lock rule
+- fallback behavior
+- asset naming
+- performance risk
+- placeholder status
+- validation rules
+- Animation Presentation Gate decision
+
 ## Technical commands
 
 ### `cocos-project-context`
@@ -181,6 +205,7 @@ Output:
 - runtime export format
 - numerical validation rules if values affect balance
 - economy validation rules if sources, sinks, currencies, or reward cadence are used
+- presentation validation rules if animation, VFX, or UI motion assets are config-driven
 
 ## Production commands
 
@@ -214,6 +239,7 @@ Output:
 - automation provider needs, if any
 - numerical design dependency, if balance-sensitive values are touched
 - economy design dependency, if currencies, rewards, sinks, upgrades, ads, shops, or gacha are touched
+- animation presentation dependency, if animation states, UI motion, hit feedback, VFX, Spine, Tween, or AnimationClip are touched
 
 ### `cocos-dev-story`
 
@@ -244,6 +270,7 @@ Output:
 - config fit
 - numerical design fit when values affect balance
 - economy design fit when sources, sinks, currencies, rewards, or monetization are involved
+- animation presentation fit when motion, feedback, or visual state are involved
 - automation/local execution evidence fit when applicable
 - acceptance decision
 
@@ -263,6 +290,7 @@ Output:
 - decision criteria
 - numeric signals to observe if balance is being tested
 - economy signals to observe if reward or progression is being tested
+- presentation signals to observe if readability or feedback is being tested
 
 ### `cocos-performance-test`
 
@@ -276,6 +304,7 @@ Output:
 - memory risks
 - loading risks
 - profiling plan
+- animation, VFX, and UI motion risks when presentation effects are dense or repeated
 
 ## Quick commands
 
@@ -293,6 +322,7 @@ Output:
 - kill criteria
 - numerical placeholder policy if stats, costs, or rewards are used
 - economy scope policy if rewards, spending, upgrades, or currencies are used
+- animation placeholder policy if feedback, UI motion, or actor states are used
 - automation/manual proof needed for the prototype
 
 ### `cocos-quick-dev`
@@ -308,6 +338,7 @@ Output:
 - acceptance check
 - numerical design check if values are touched
 - economy design check if reward, currency, source, sink, shop, ad, or gacha logic is touched
+- animation presentation check if actor state, UI motion, hit feedback, VFX, Tween, Spine, or AnimationClip is touched
 - automation provider proof if local Cocos execution is required
 
 ### `cocos-document-project`
