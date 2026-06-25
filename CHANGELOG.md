@@ -4,6 +4,12 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ## Unreleased
 
+### Added
+
+- Added `GAME_NUMERICAL_DESIGN.md` for gameplay stats, difficulty, rewards, costs, placeholder values, legal ranges, and balance validation rules.
+- Added `cocos-numerical-design` command routing.
+- Added `Numerical Design Gate` to `QUALITY_GATES.md`.
+
 ### Changed
 
 - Updated `QUICK_START.md` with a provider-driven AI Game Studio startup prompt.
@@ -13,6 +19,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added `Preview Visibility Gate` to `QUALITY_GATES.md`.
 - Added `Cocos Preview Visibility Checklist` to `CHECKLISTS.md`.
 - Clarified that editor Scene view visibility is not the same as browser runtime visibility.
+- Routed balance-sensitive work through numerical design before config or implementation.
 
 ## v0.3.0-alpha.7 - 2026-06-23
 
