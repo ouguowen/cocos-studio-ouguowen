@@ -44,13 +44,14 @@ This skill is not for:
 6. For most project artifacts, open [TEMPLATES.md](TEMPLATES.md) first. Open [LEVEL_TEMPLATES.md](LEVEL_TEMPLATES.md) only for level-content artifacts.
 7. If engine-version-specific advice matters, apply [COCOS_3_8_8_BASELINE.md](COCOS_3_8_8_BASELINE.md) before giving engine guidance.
 8. If the request includes gameplay stats, enemy stats, difficulty, cost, reward amount, progression speed, or balance-sensitive config, apply [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md) before implementation.
-9. If the request needs local Cocos engine operation, resolve the current Cocos automation provider before execution. Use provider-neutral intent such as create scene, create node, add component, bind prefab, save scene, run preview, read Console, and return proof.
-10. If browser preview output is required, apply the Preview Visibility Gate before script-runtime proof. Editor scene visibility does not prove browser runtime visibility.
-11. If the request needs runtime code or subsystem boundaries, use [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md). Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only for advanced online, monetization, live-ops, social, or compliance systems.
-12. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
-13. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
-14. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
-15. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [COMMANDS.md](COMMANDS.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [GAME_STUDIO_WORKFLOWS.md](GAME_STUDIO_WORKFLOWS.md), and [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md).
+9. If the request includes currencies, sources, sinks, upgrades, reward cadence, stamina, shop, ads, gacha, inventory value, progression economy, or monetization-sensitive systems, apply [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md) before implementation.
+10. If the request needs local Cocos engine operation, resolve the current Cocos automation provider before execution. Use provider-neutral intent such as create scene, create node, add component, bind prefab, save scene, run preview, read Console, and return proof.
+11. If browser preview output is required, apply the Preview Visibility Gate before script-runtime proof. Editor scene visibility does not prove browser runtime visibility.
+12. If the request needs runtime code or subsystem boundaries, use [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md). Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only for advanced online, monetization, live-ops, social, or compliance systems.
+13. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
+14. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
+15. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
+16. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [COMMANDS.md](COMMANDS.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [GAME_STUDIO_WORKFLOWS.md](GAME_STUDIO_WORKFLOWS.md), and [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md).
 
 ## Cocos automation provider policy
 
@@ -85,6 +86,17 @@ Use this law when Codex is asked to create or change enemy stats, player stats, 
 - If a number affects difficulty, progression, or reward, route through [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md).
 - Do not continue to full gameplay implementation when balance-sensitive values are random or unexplained.
 
+## Economy design law
+
+Use this law when Codex is asked to create or change currencies, source/sink loops, rewards, upgrades, stamina/energy, shops, ads, gacha, inventory value, or monetization-sensitive systems.
+
+- Do not add an economy until the core loop has a reason to produce and spend value.
+- Keep MVP economy to none, score-only, one soft currency, one reward, or one simple upgrade track unless the selected game type requires more.
+- Every currency needs a purpose, source, sink, cap or no-cap rule, persistence rule, and validation rule.
+- Monetization is not in scope unless explicitly approved by product/design ownership.
+- If economy values affect balance, apply numerical design first.
+- Do not continue to economy implementation when sources, sinks, reward cadence, and current stage justification are missing.
+
 ## Non-negotiable rules
 
 - No asset enters formal production without a defined owner, collaborators, and approver.
@@ -106,6 +118,7 @@ Common command routing:
 - `cocos-classify-game` -> [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md), [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md)
 - `cocos-gdd` -> [PRD_CONSTRAINTS.md](PRD_CONSTRAINTS.md), [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md), [TEMPLATES.md](TEMPLATES.md)
 - `cocos-numerical-design` -> [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md), [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md), [QUALITY_GATES.md](QUALITY_GATES.md)
+- `cocos-economy-design` -> [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md), [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md), [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md), [QUALITY_GATES.md](QUALITY_GATES.md)
 - `cocos-project-context` -> [PROJECT_MEMORY_SYSTEM.md](PROJECT_MEMORY_SYSTEM.md)
 - `cocos-game-architecture` -> [COCOS_RULES.md](COCOS_RULES.md), [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md), [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md)
 - `cocos-config-schema` -> [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md), [LEVEL_CONFIG_SCHEMA_EXTENSIONS.md](LEVEL_CONFIG_SCHEMA_EXTENSIONS.md)
@@ -125,10 +138,11 @@ Common command routing:
 - Distinguish between local validation as a gate and manual clicking as an implementation detail.
 - Distinguish between editor scene proof and browser runtime proof.
 - Distinguish between prototype placeholder numbers and production-ready balance.
+- Distinguish between core-loop rewards and full economy systems.
 
 ## Common routing
 
-- "How should we start this game?" -> stage selection, game classification, MVP, numerical design when values matter, and first-session artifact.
+- "How should we start this game?" -> stage selection, game classification, MVP, numerical design when values matter, economy design when reward/spend loops matter, and first-session artifact.
 - "What kind of game is this really?" -> game classifier before template or architecture choice.
 - "What should this version actually prove?" -> version roadmap system before feature listing.
 - "We need a fast prototype but do not want chaos." -> production mode selection before architecture advice.
@@ -137,6 +151,7 @@ Common command routing:
 - "Build the Cocos structure." -> Cocos rules, project structure, runtime boundaries, automation provider policy, and Preview Visibility Gate when local execution is authorized.
 - "Build this home page / shop / bag / battle HUD." -> choice execution protocol first, then continuous execution after option selection.
 - "Balance this enemy / wave / reward / cost." -> numerical design record and Numerical Design Gate before config or code changes.
+- "Design currencies / rewards / shop / ads / gacha / upgrades." -> economy design record and Economy Design Gate before implementation.
 - "Do not skip steps / keep the project moving in order." -> sequential gate protocol before advancement.
 - "How should levels be configured?" -> level data model selection before table design.
 - "How should the level system be coded?" -> core level architecture before optional extensions.
