@@ -18,6 +18,10 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added `GAME_PRODUCTION_READINESS_GATE.md` for deciding whether Codex may start real implementation, continue design repair, fix runtime readiness, reduce scope, or stop as blocked.
 - Added `cocos-production-readiness` command routing.
 - Added `Game Production Readiness Gate` to `QUALITY_GATES.md`.
+- Added `SKILL_VALIDATION_LOOP.md` for closed-loop QA of the skill itself.
+- Added `SKILL_TEST_CASES.md` with repeatable block-path and allow-path self-test cases.
+- Added `cocos-skill-self-test` command routing.
+- Added `Skill Validation Gate` to `QUALITY_GATES.md`.
 
 ### Changed
 
@@ -33,6 +37,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Routed presentation-sensitive work through animation presentation rules before implementation.
 - Routed broad game implementation through production readiness before Cocos development.
 - Updated `GAME_STUDIO_WORKFLOWS.md` so new-game and MVP workflows include production readiness before implementation.
+- Routed skill debugging and closed-loop validation through dedicated self-test cases before any game implementation.
 
 ## v0.3.0-alpha.7 - 2026-06-23
 
