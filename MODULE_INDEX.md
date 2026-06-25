@@ -22,6 +22,7 @@ Use this file to route a request into the correct module family before loading d
 
 - [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md): classify the game before template choice
 - [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md): select the closest genre or loop template
+- [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md): define gameplay numbers, difficulty, rewards, costs, and balance rules before implementation
 - [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md): cut to the first real playable product
 - [PLAYBOOK_SYSTEM.md](PLAYBOOK_SYSTEM.md): recurring operating procedures
 - [PRD_CONSTRAINTS.md](PRD_CONSTRAINTS.md): PRD structure and red flags
