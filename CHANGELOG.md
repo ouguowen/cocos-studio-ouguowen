@@ -9,6 +9,9 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added `GAME_NUMERICAL_DESIGN.md` for gameplay stats, difficulty, rewards, costs, placeholder values, legal ranges, and balance validation rules.
 - Added `cocos-numerical-design` command routing.
 - Added `Numerical Design Gate` to `QUALITY_GATES.md`.
+- Added `GAME_ECONOMY_DESIGN.md` for currencies, sources, sinks, reward cadence, upgrades, stamina/energy, ads, shops, gacha boundaries, and economy validation rules.
+- Added `cocos-economy-design` command routing.
+- Added `Economy Design Gate` to `QUALITY_GATES.md`.
 
 ### Changed
 
@@ -20,6 +23,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added `Cocos Preview Visibility Checklist` to `CHECKLISTS.md`.
 - Clarified that editor Scene view visibility is not the same as browser runtime visibility.
 - Routed balance-sensitive work through numerical design before config or implementation.
+- Routed economy-sensitive work through economy design before config or implementation.
 
 ## v0.3.0-alpha.7 - 2026-06-23
 

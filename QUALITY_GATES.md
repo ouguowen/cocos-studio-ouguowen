@@ -39,6 +39,24 @@ If these are not true:
 
 - numerical work is blocked or remains prototype-only
 
+## Economy Design Gate
+
+Use this gate before implementing or changing currencies, rewards, sources, sinks, upgrades, stamina/energy, inventory value, shops, ads, gacha, or monetization-sensitive systems.
+
+- The economy has a reason to exist in the selected game type.
+- The core loop, return reason, main reward moment, and main spend moment are explicit.
+- Each currency has a purpose, source, sink, cap or no-cap rule, and persistence rule.
+- Source and sink relationships are clear enough to explain in one minute.
+- The current production stage justifies the economy scope.
+- Monetization is explicitly in scope or out of scope.
+- Prototype economy values are labeled as placeholders.
+- Source/sink validation, reward inflation validation, upgrade affordability validation, and progression skip validation are defined when relevant.
+- Ads, shops, or gacha are not introduced before approval and product justification.
+
+If these are not true:
+
+- economy work is blocked or remains prototype-only
+
 ## Vertical Slice Gate
 
 - The slice feels like a real product segment.
@@ -228,3 +246,4 @@ If these are not true:
 - If prerequisites are missing, advancement should default to blocked.
 - If browser preview visibility is required but not proven, script-runtime and gameplay proof should default to blocked.
 - If balance-sensitive numbers do not have purpose and legal ranges, gameplay implementation should default to blocked or prototype-only.
+- If currencies, rewards, sources, sinks, or monetization do not have stage justification and validation rules, economy implementation should default to blocked or prototype-only.
