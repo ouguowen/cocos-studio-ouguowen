@@ -11,6 +11,7 @@ cocos-brainstorm-game
 -> cocos-gdd
 -> cocos-project-context
 -> cocos-game-architecture
+-> cocos-production-readiness
 -> cocos-sprint-planning
 -> cocos-create-story
 -> cocos-dev-story
@@ -21,8 +22,13 @@ Required gates:
 
 - Game Classification Gate
 - MVP Scope Gate
+- Numerical Design Gate when values matter
+- Economy Design Gate when rewards, sources, sinks, currencies, upgrades, ads, shops, or gacha matter
+- Animation Presentation Gate when feedback, UI motion, animation, VFX, Spine, Tween, or AnimationClip matter
+- Game Production Readiness Gate before broad implementation
 - Project Memory Gate
 - Architecture Gate
+- Preview Visibility Gate when browser proof matters
 - QA Gate
 
 ## Workflow 2: Fast MVP Prototype
@@ -31,6 +37,7 @@ Required gates:
 cocos-game-brief
 -> cocos-classify-game
 -> cocos-quick-prototype
+-> cocos-production-readiness when the prototype enters Cocos implementation
 -> cocos-playtest-plan
 -> cocos-code-review
 ```
@@ -41,6 +48,7 @@ Rules:
 - Do not add live operations.
 - Do not build full inventory unless required by the prototype.
 - Use placeholder assets unless visual readability blocks testing.
+- Production readiness may be a shortcut decision for a tiny prototype, but it must still name skipped gates and allowed scope.
 
 ## Workflow 3: One Concrete Module
 
@@ -58,6 +66,7 @@ Required facts before implementation:
 - required runtime data
 - required buttons/actions
 - completion standard
+- production readiness status if this module starts the first playable or broad game implementation
 
 ## Workflow 4: Existing Messy Project Rescue
 
@@ -65,6 +74,7 @@ Required facts before implementation:
 cocos-document-project
 -> cocos-project-context
 -> cocos-game-architecture
+-> cocos-production-readiness when implementation direction is unclear
 -> cocos-sprint-planning
 -> cocos-code-review
 ```
@@ -75,8 +85,9 @@ Repair order:
 2. architecture boundaries
 3. project memory
 4. config validation
-5. QA gate
-6. feature cleanup
+5. runtime visibility and proof gates
+6. QA gate
+7. feature cleanup
 
 ## Workflow 5: Solo Developer Mode
 
