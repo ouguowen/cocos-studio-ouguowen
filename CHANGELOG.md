@@ -15,6 +15,9 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added `ANIMATION_PRESENTATION_RULES.md` for actor animation states, UI motion, combat feedback, VFX, Spine/Tween/AnimationClip boundaries, and presentation validation.
 - Added `cocos-animation-design` command routing.
 - Added `Animation Presentation Gate` to `QUALITY_GATES.md`.
+- Added `GAME_PRODUCTION_READINESS_GATE.md` for deciding whether Codex may start real implementation, continue design repair, fix runtime readiness, reduce scope, or stop as blocked.
+- Added `cocos-production-readiness` command routing.
+- Added `Game Production Readiness Gate` to `QUALITY_GATES.md`.
 
 ### Changed
 
@@ -28,6 +31,8 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Routed balance-sensitive work through numerical design before config or implementation.
 - Routed economy-sensitive work through economy design before config or implementation.
 - Routed presentation-sensitive work through animation presentation rules before implementation.
+- Routed broad game implementation through production readiness before Cocos development.
+- Updated `GAME_STUDIO_WORKFLOWS.md` so new-game and MVP workflows include production readiness before implementation.
 
 ## v0.3.0-alpha.7 - 2026-06-23
 
