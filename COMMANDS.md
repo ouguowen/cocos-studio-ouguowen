@@ -20,6 +20,34 @@ Use these rules only when a task needs local Cocos Creator execution and the use
 - If a provider fails or lacks a capability, stop with a blocker report or fall back to manual Cocos Creator steps.
 - Do not expand scope from one selected game type into every game type during a single command.
 
+## Skill validation commands
+
+### `cocos-skill-self-test`
+
+Use when testing, debugging, auditing, or close-loop validating this skill itself.
+
+Output:
+
+- selected test cases
+- prompt used per test case
+- expected decision
+- actual decision
+- expected allowed command
+- actual allowed command
+- expected forbidden actions
+- actual forbidden actions
+- proof returned
+- PASS / FAIL / NEEDS_REPAIR result per case
+- drift found
+- repair required
+
+Rules:
+
+- This command is not game development.
+- Do not modify the Cocos project unless the selected test case explicitly requires local runtime proof.
+- Do not continue to implementation after a failed test case.
+- Do not call the skill validated until all required test cases pass or failed cases have repair issues.
+
 ## Pre-production commands
 
 ### `cocos-brainstorm-game`
