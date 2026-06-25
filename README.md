@@ -17,6 +17,7 @@ For a Chinese beginner entry, see [README.zh-CN.md](README.zh-CN.md).
 - Cocos Creator 3.8.8 project structure and runtime architecture
 - level data models and config-table discipline
 - provider-neutral Cocos automation proof when local engine work is required
+- local Cocos proof runbook for scene, prefab, binding, Console, and preview evidence
 - one-shot MVP chain control without skipping gates
 - release, rollback, and operations review
 - risk escalation and formal review
@@ -96,6 +97,8 @@ Do not bind the plan to one commercial MCP provider or one future official Cocos
 Return provider proof only when local engine work is performed: scene hierarchy, component bindings, Console logs, preview result, screenshot, or PASS / FAIL notes.
 ```
 
+For the detailed local proof standard, see [docs/provider-driven-local-cocos-proof.md](docs/provider-driven-local-cocos-proof.md).
+
 ## Best fit
 
 - serious Cocos Creator 3.8.8 projects
@@ -115,6 +118,7 @@ Return provider proof only when local engine work is performed: scene hierarchy,
 5. `Use $cocos-studio-ouguowen. Run cocos-game-brief for my game idea, then recommend the next command.`
 6. `Use $cocos-studio-ouguowen. Run cocos-one-shot-mvp for my game idea without skipping gates.`
 7. `Use $cocos-studio-ouguowen. Explain which Cocos automation provider capabilities are needed before local engine execution.`
+8. `Use $cocos-studio-ouguowen. Apply the provider-driven local Cocos proof runbook before claiming the scene is playable.`
 
 ## Core files
 
@@ -127,6 +131,7 @@ Return provider proof only when local engine work is performed: scene hierarchy,
 - `COMMANDS.md`: command registry
 - `ONE_SHOT_GAME_BUILD.md`: controlled one-shot MVP chain law
 - `EXAMPLE_PACK_EXPANSION_PLAN.md`: multi-game-type example pack expansion plan
+- `docs/provider-driven-local-cocos-proof.md`: local Cocos proof runbook for provider or manual execution
 - `AGENT_REGISTRY.md`: Agent roles and boundaries
 - `AGENT_HANDOFF_PROTOCOL.md`: Agent-to-Agent handoff rules
 - `LEVEL_SYSTEM_ARCHITECTURE.md`: core level runtime boundaries
