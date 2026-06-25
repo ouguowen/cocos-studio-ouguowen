@@ -9,6 +9,25 @@ Use these gates to decide whether work is allowed to advance.
 - The team can name at least one fun thing and one failing thing.
 - Major unknowns are exposed, not hidden.
 
+## Game Production Readiness Gate
+
+Use this gate before Codex starts real game implementation, opens a large development sprint, creates many Cocos scripts, builds large scene/prefab structures, or attempts to make a playable game in one pass.
+
+- Game identity is explicit: selected game type, dominant player action, core fantasy, target player, first-version promise, and non-goals.
+- MVP scope is narrow: one repeated loop, one success condition, one fail condition, one target session length, one first playable goal, and a cut list.
+- Numerical readiness exists when gameplay values matter.
+- Economy readiness exists when rewards, currencies, upgrades, shops, ads, stamina, gacha, inventory, or progression economy matter.
+- Animation and presentation readiness exists when animation, UI motion, VFX, combat feedback, Spine, Tween, AnimationClip, particles, or audio-visual timing matter.
+- Cocos architecture boundaries are clear: scene structure, script structure, runtime systems, data/config boundary, prefab ownership, resource loading plan, and forbidden shortcuts.
+- Cocos runtime readiness is proven when local implementation is authorized: target Cocos version, project open, scene saved, browser preview available, and Preview Visibility Gate passed when browser output matters.
+- Asset placeholder policy and naming policy exist.
+- First implementation story is dev-ready with expected files, data/config changes, acceptance criteria, proof requirements, and blocker criteria.
+
+If these are not true:
+
+- do not start broad implementation
+- return DESIGN_NOT_READY, RUNTIME_NOT_READY, SCOPE_TOO_LARGE, or BLOCKED instead of pretending the project is ready
+
 ## Preview Visibility Gate
 
 Use this gate before script-runtime proof, first-playable proof, or browser-preview acceptance.
@@ -266,3 +285,4 @@ If these are not true:
 - If balance-sensitive numbers do not have purpose and legal ranges, gameplay implementation should default to blocked or prototype-only.
 - If currencies, rewards, sources, sinks, or monetization do not have stage justification and validation rules, economy implementation should default to blocked or prototype-only.
 - If presentation owns gameplay truth or lacks trigger, exit, fallback, and runtime visibility proof when required, animation implementation should default to blocked or prototype-only.
+- If production readiness is not READY_FOR_IMPLEMENTATION, broad game implementation should default to blocked.
