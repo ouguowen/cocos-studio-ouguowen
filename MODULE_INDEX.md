@@ -8,6 +8,7 @@ Use this file to route a request into the correct module family before loading d
 - [STAGES.md](STAGES.md): where the project is in time
 - [VERSION_ROADMAP_SYSTEM.md](VERSION_ROADMAP_SYSTEM.md): why the current version exists and what proves promotion
 - [PROJECT_MEMORY_SYSTEM.md](PROJECT_MEMORY_SYSTEM.md): stable project truth across sessions
+- [README.zh-CN.md](README.zh-CN.md): Chinese beginner entry, safe first prompts, and beginner boundaries
 
 ## 2. Roles, authority, and handoff
 
@@ -22,6 +23,7 @@ Use this file to route a request into the correct module family before loading d
 
 - [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md): classify the game before template choice
 - [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md): select the closest genre or loop template
+- [EXAMPLE_PACK_EXPANSION_PLAN.md](EXAMPLE_PACK_EXPANSION_PLAN.md): expand example packs by selected game type without turning the skill into one universal template
 - [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md): decide whether the project is ready for real implementation, design repair, runtime repair, or scope reduction
 - [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md): define gameplay numbers, difficulty, rewards, costs, and balance rules before implementation
 - [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md): define currencies, sources, sinks, rewards, upgrades, ads, shops, gacha boundaries, and economy validation before implementation
@@ -69,6 +71,7 @@ Use this file to route a request into the correct module family before loading d
 ## 7. AI-assisted work
 
 - [AI_COLLAB_RULES.md](AI_COLLAB_RULES.md): what AI may and may not own
+- [ONE_SHOT_GAME_BUILD.md](ONE_SHOT_GAME_BUILD.md): continuous one-request MVP chain that still obeys gates and proof rules
 - [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md): closed-loop QA process for testing this skill itself
 - [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md): repeatable pass/fail test cases for skill behavior
 - [PROMPT_LIBRARY.md](PROMPT_LIBRARY.md): high-signal recurring prompt patterns
