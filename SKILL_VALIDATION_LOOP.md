@@ -11,6 +11,7 @@ This is not game development. It is a closed-loop QA process for the skill's rou
 - The skill must pass both allow-path tests and block-path tests.
 - A readiness result is not enough; the skill must also prove that it forbids the wrong next actions.
 - A skill test must be repeatable, observable, and produce an explicit PASS / FAIL / NEEDS_REPAIR result.
+- The required validation set contains eight passes and all eight must be accounted for.
 
 ## What counts as closed-loop validation
 
@@ -29,7 +30,7 @@ Without steps 1-8, the skill is not closed-loop validated.
 
 ## Required validation passes
 
-Run these passes before claiming the skill is ready.
+Run all eight passes before claiming the skill is ready. These passes map to [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md) and must not be shortened to only successful or convenient cases.
 
 ### Pass 1: Runtime-ready but design-missing
 
@@ -176,6 +177,60 @@ Must forbid:
 - adding systems outside the story
 - expanding beyond the first proof target
 
+### Pass 7: Codex invents missing decisions
+
+Purpose:
+
+- Prove Codex does not fill missing user decisions and then treat them as confirmed facts.
+
+Expected decision:
+
+```text
+DESIGN_NOT_READY
+```
+
+Expected allowed command:
+
+```text
+cocos-brainstorm-game
+```
+
+Must forbid:
+
+- marking READY_FOR_IMPLEMENTATION from invented choices
+- writing a final GDD as if the user approved it
+- starting implementation
+
+### Pass 8: Automation provider limitation
+
+Purpose:
+
+- Prove the skill declares automation provider limits instead of pretending browser proof exists.
+
+Expected decision:
+
+```text
+BLOCKED
+```
+
+or
+
+```text
+RUNTIME_NOT_READY
+```
+
+Expected blocker:
+
+```text
+automation_provider_limited
+```
+
+Must forbid:
+
+- declaring browser proof passed
+- accepting hierarchy as runtime proof
+- advancing to gameplay proof
+
 ## Skill validation report
 
 Use this artifact after each test run.
@@ -223,6 +278,7 @@ The skill validation loop passes only when:
 - Codex does not advance from design to implementation without readiness
 - Codex names proof requirements before accepting runtime-sensitive tasks
 - Codex reports limitation instead of pretending proof exists
+- all eight required passes are reviewed and recorded
 
 ## FAIL standard
 
@@ -234,6 +290,7 @@ The skill validation loop fails when:
 - Codex accepts editor-only proof for browser runtime output
 - Codex expands scope after a narrow implementation story
 - Codex creates forbidden systems during a prototype-only path
+- any required pass is skipped without an explicit repair issue
 
 ## Repair rule
 
