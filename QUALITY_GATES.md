@@ -2,6 +2,24 @@
 
 Use these gates to decide whether work is allowed to advance.
 
+## Skill Validation Gate
+
+Use this gate before claiming the skill is closed-loop validated or safe for broad game development guidance.
+
+- Skill validation uses [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md) and [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md).
+- Both allow-path tests and block-path tests have been run.
+- Each test case records expected decision, actual decision, allowed command, forbidden actions, proof, and repair status.
+- A single successful path is not treated as closed-loop validation.
+- Failed test cases stop game implementation and create a repair task.
+- Codex does not invent missing user decisions and then treat them as confirmed.
+- Codex does not accept editor-only evidence as browser runtime proof.
+- Codex does not expand beyond the allowed next command after a ready path.
+
+If these are not true:
+
+- the skill is not closed-loop validated
+- broad game implementation should remain blocked
+
 ## Prototype Gate
 
 - Core loop is playable from start to resolution.
@@ -286,3 +304,4 @@ If these are not true:
 - If currencies, rewards, sources, sinks, or monetization do not have stage justification and validation rules, economy implementation should default to blocked or prototype-only.
 - If presentation owns gameplay truth or lacks trigger, exit, fallback, and runtime visibility proof when required, animation implementation should default to blocked or prototype-only.
 - If production readiness is not READY_FOR_IMPLEMENTATION, broad game implementation should default to blocked.
+- If skill validation has not passed required self-test cases, the skill should not be called closed-loop validated.
