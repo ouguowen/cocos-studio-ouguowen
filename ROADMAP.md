@@ -37,6 +37,7 @@ Current capabilities:
 - provider-driven local Cocos proof runbook
 - Codex + Cocos automation proof guide
 - first wave spawn proof guide
+- first wave spawn runtime template
 - manual local Cocos preview/config parsing proof baseline for attack-defense-city
 - multi-game-type scope clarification
 - provider-neutral Cocos automation execution policy
@@ -268,20 +269,43 @@ Still not included:
 - Objective state proof.
 - Result path proof.
 
-## v0.3.x next target: First Wave Spawn Runtime Proof
+## v0.3.0-alpha.13 status: First Wave Spawn Runtime Template
 
 Primary goal:
 
-Implement and verify the first narrow gameplay behavior in a real Cocos Creator 3.8.8 preview.
+Provide a copyable Cocos Creator 3.8.8 runtime template that performs spawn-only proof without claiming full gameplay.
+
+Completed work:
+
+1. Added `examples/attack-defense-city/cocos-reference/CityBattleSpawnProofRuntime.ts`.
+2. Added `examples/attack-defense-city/cocos-reference/SPAWN_PROOF_RUNTIME_USAGE.md`.
+3. Implemented spawn-only runtime behavior: load config, read `config.tables.spawn`, instantiate `Enemy_Placeholder`, parent enemies under `EnemyRoot`, assign proof positions, and log spawned count.
+4. Linked the runtime template from `docs/first-wave-spawn-proof.md` and `README.md`.
+5. Preserved scope boundaries: no movement, combat, objective state, result path, economy, UI, or first playable claim.
+
+Still not included:
+
+- Actual local Cocos Creator execution of the spawn runtime template by ChatGPT.
+- Browser preview proof showing spawned enemy nodes.
+- Enemy movement proof.
+- Objective state proof.
+- Result path proof.
+
+## v0.3.x next target: First Wave Spawn Local Runtime Proof
+
+Primary goal:
+
+Run the spawn-only runtime template in a real Cocos Creator 3.8.8 preview and collect proof.
 
 Planned work:
 
-1. Update `CityBattleRuntime` to read `config.tables.spawn`.
-2. Instantiate at least one `Enemy_Placeholder` node.
-3. Parent spawned enemies under `GameRoot/EnemyRoot`.
-4. Log spawned enemy count.
-5. Show visible placeholder nodes in browser preview.
-6. Return PASS / PARTIAL PASS / FAIL / BLOCKED proof.
+1. Copy `CityBattleSpawnProofRuntime.ts` into the local Cocos project.
+2. Attach it to `GameRoot/RuntimeRoot` or a dedicated proof node.
+3. Bind `EnemyRoot`, `SpawnPoints`, `BasePoint`, and `Enemy_Placeholder.prefab`.
+4. Run browser preview.
+5. Prove console output includes `Spawn table count: 2` and `Spawned enemy count: 2`.
+6. Prove hierarchy or visual output includes `SpawnedEnemy_001` and `SpawnedEnemy_002` under `GameRoot/EnemyRoot`.
+7. Return PASS / PARTIAL PASS / FAIL / BLOCKED proof.
 
 Forbidden expansion:
 
