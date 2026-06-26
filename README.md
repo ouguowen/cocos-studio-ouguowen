@@ -18,6 +18,7 @@ For a Chinese beginner entry, see [README.zh-CN.md](README.zh-CN.md).
 - level data models and config-table discipline
 - provider-neutral Cocos automation proof when local engine work is required
 - local Cocos proof runbook for scene, prefab, binding, Console, and preview evidence
+- Codex + Cocos automation proof flow to reduce manual screenshot-driven validation
 - one-shot MVP chain control without skipping gates
 - release, rollback, and operations review
 - risk escalation and formal review
@@ -31,6 +32,7 @@ For a Chinese beginner entry, see [README.zh-CN.md](README.zh-CN.md).
 - hard-coded future official MCP commands
 - importing the full Cocos manual into the skill
 - claiming a Cocos scene or prefab is verified without local editor proof
+- pretending automation proof exists when the provider cannot return evidence
 
 ## AI Game Studio Mode
 
@@ -99,6 +101,8 @@ Return provider proof only when local engine work is performed: scene hierarchy,
 
 For the detailed local proof standard, see [docs/provider-driven-local-cocos-proof.md](docs/provider-driven-local-cocos-proof.md).
 
+For the Codex local automation proof flow, see [docs/codex-cocos-automation-proof.md](docs/codex-cocos-automation-proof.md).
+
 ## Best fit
 
 - serious Cocos Creator 3.8.8 projects
@@ -119,6 +123,7 @@ For the detailed local proof standard, see [docs/provider-driven-local-cocos-pro
 6. `Use $cocos-studio-ouguowen. Run cocos-one-shot-mvp for my game idea without skipping gates.`
 7. `Use $cocos-studio-ouguowen. Explain which Cocos automation provider capabilities are needed before local engine execution.`
 8. `Use $cocos-studio-ouguowen. Apply the provider-driven local Cocos proof runbook before claiming the scene is playable.`
+9. `Use $cocos-studio-ouguowen. Run Codex + Cocos automation proof for attack-defense-city and return PASS / FAIL / BLOCKED evidence.`
 
 ## Core files
 
@@ -132,6 +137,7 @@ For the detailed local proof standard, see [docs/provider-driven-local-cocos-pro
 - `ONE_SHOT_GAME_BUILD.md`: controlled one-shot MVP chain law
 - `EXAMPLE_PACK_EXPANSION_PLAN.md`: multi-game-type example pack expansion plan
 - `docs/provider-driven-local-cocos-proof.md`: local Cocos proof runbook for provider or manual execution
+- `docs/codex-cocos-automation-proof.md`: Codex local automation proof flow for Cocos providers
 - `AGENT_REGISTRY.md`: Agent roles and boundaries
 - `AGENT_HANDOFF_PROTOCOL.md`: Agent-to-Agent handoff rules
 - `LEVEL_SYSTEM_ARCHITECTURE.md`: core level runtime boundaries
