@@ -35,6 +35,8 @@ Current capabilities:
 - local Codex handoff prompt and Cocos editor validation log template
 - local Windows execution steps and proof-report templates
 - provider-driven local Cocos proof runbook
+- Codex + Cocos automation proof guide
+- manual local Cocos preview/config parsing proof baseline for attack-defense-city
 - multi-game-type scope clarification
 - provider-neutral Cocos automation execution policy
 
@@ -184,22 +186,84 @@ Still not included:
 - Verified `.scene` or `.prefab` assets committed to the repository.
 - A provider-specific MCP command dialect.
 
-## v0.3.x next target: Provider-Driven Local Cocos Proof
+## v0.3.0-alpha.10 status: Manual Local Cocos Proof Baseline
 
 Primary goal:
 
-Use the current available Cocos automation provider or manual fallback to produce proof from a real Cocos Creator 3.8.8 project without expanding the skill scope.
+Use real Cocos Creator 3.8.8 manual validation to prove that the first example pack can reach preview, component lifecycle, config load, and generated config parsing.
+
+Completed proof baseline:
+
+1. `npm run check` passed locally.
+2. Cocos Creator 3.8.8 project opened without blocking import errors.
+3. `scene_city_battle` was created and opened as the active scene.
+4. Minimum hierarchy was created: `Canvas`, `GameRoot`, `MapRoot`, `SpawnPoints`, `BasePoint`, `EnemyRoot`, `ProjectileRoot`, and `RuntimeRoot`.
+5. Local project folders were created under `assets/scripts`, `assets/resources/config`, and `assets/prefabs`.
+6. `level-config.json` and `generated-config-types.ts` were imported.
+7. `CityBattleRuntime` was attached to `GameRoot/RuntimeRoot`.
+8. `EnemyRoot`, `SpawnPoints`, `BasePoint`, and `Enemy_Placeholder.prefab` bindings were verified.
+9. Browser preview opened.
+10. Runtime lifecycle proof passed: `module loaded`, `onLoad`, `onEnable`, and `start`.
+11. Runtime config load proof passed: `Level config loaded`.
+12. Generated config parsing proof passed: `levels=1, waves=2, spawns=2, objectives=1`.
+
+Allowed claim:
+
+```text
+Local Cocos preview + runtime config load + generated config parsing proof passed.
+```
+
+Still not included:
+
+- First wave enemy spawn proof.
+- Enemy movement proof.
+- Objective state update proof.
+- Result path proof.
+- A complete first playable gameplay loop.
+
+## v0.3.0-alpha.11 status: Codex Automation Proof Guide
+
+Primary goal:
+
+Turn the manual local proof baseline into a Codex-ready automation guide so future local Cocos proof can be reproduced with fewer manual screenshots.
+
+Completed work:
+
+1. Added `docs/codex-cocos-automation-proof.md`.
+2. Defined required Cocos provider capabilities: version detection, project/scene access, hierarchy proof, component attachment, inspector binding, prefab proof, preview, console logs, screenshots, and failure reporting.
+3. Added the golden target for `attack-defense-city`: `scene_city_battle`, `CityBattleRuntime`, `Enemy_Placeholder.prefab`, and `level-config.json`.
+4. Added the exact required runtime console proof, including `Config summary: levels=1, waves=2, spawns=2, objectives=1`.
+5. Added a local Codex prompt for provider-driven Cocos automation.
+6. Defined PASS, FAIL, and BLOCKED criteria.
+7. Linked the guide from `README.md` and `MODULE_INDEX.md`.
+
+Still not included:
+
+- Automatic execution by ChatGPT in this conversation.
+- Provider-specific command dialects.
+- First wave spawn proof.
+- Full first playable proof.
+
+## v0.3.x next target: First Wave Spawn Proof
+
+Primary goal:
+
+Prove a narrow gameplay behavior without expanding into full combat or full game production.
 
 Planned work:
 
-1. Run `npm run check` locally or in CI.
-2. Create or open the local Cocos Creator 3.8.8 project.
-3. Use the available Cocos automation provider when authorized; otherwise use manual Cocos Creator steps.
-4. Copy/adapt reference stubs into `assets/scripts/attack-defense-city/` for the first example pack.
-5. Create placeholder prefabs in `assets/prefabs/enemies/`.
-6. Create `scene_city_battle` and bind inspector fields.
-7. Return proof: scene hierarchy, prefab/component bindings, Console output, preview result, screenshot or proof text.
-8. Fill the editor proof report only when a playable or prototype claim depends on it.
+1. Read `config.tables.spawn`.
+2. Instantiate at least one `Enemy_Placeholder` node.
+3. Parent spawned enemies under `GameRoot/EnemyRoot`.
+4. Log spawned enemy count.
+5. Show visible placeholder nodes in browser preview.
+6. Return PASS / FAIL / BLOCKED proof.
+
+Forbidden expansion:
+
+- Do not add full pathfinding yet.
+- Do not add economy, UI, combat, win/loss, shop, ads, or live ops.
+- Do not claim first playable until objective and result path proof exist.
 
 ## v0.4.0 target: Stronger Agent Operations
 
