@@ -52,6 +52,7 @@ Use this file to route a request into the correct module family before loading d
 - [TEST_MATRIX.md](TEST_MATRIX.md): coverage planning
 - [ACCEPTANCE_ARTIFACTS.md](ACCEPTANCE_ARTIFACTS.md): evidence before sign-off
 - [docs/provider-driven-local-cocos-proof.md](docs/provider-driven-local-cocos-proof.md): local Cocos proof runbook for scene, prefab, binding, Console, and preview evidence
+- [docs/codex-cocos-automation-proof.md](docs/codex-cocos-automation-proof.md): Codex local automation proof flow for Cocos provider-driven validation
 - [RELEASE_PIPELINE_SYSTEM.md](RELEASE_PIPELINE_SYSTEM.md): build lanes, rollout, and hotfix planning
 - [PLATFORM_TARGET_RULES.md](PLATFORM_TARGET_RULES.md): Android, iOS, web, mini-game, and package differences
 - [RELEASE_ROLLBACK_PLAYBOOK.md](RELEASE_ROLLBACK_PLAYBOOK.md): rollback discipline
