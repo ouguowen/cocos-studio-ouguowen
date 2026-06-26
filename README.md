@@ -107,6 +107,8 @@ For the Codex local automation proof flow, see [docs/codex-cocos-automation-proo
 
 For the first narrow gameplay proof after config parsing, see [docs/first-wave-spawn-proof.md](docs/first-wave-spawn-proof.md).
 
+For the spawn-only runtime template, see [examples/attack-defense-city/cocos-reference/CityBattleSpawnProofRuntime.ts](examples/attack-defense-city/cocos-reference/CityBattleSpawnProofRuntime.ts) and [examples/attack-defense-city/cocos-reference/SPAWN_PROOF_RUNTIME_USAGE.md](examples/attack-defense-city/cocos-reference/SPAWN_PROOF_RUNTIME_USAGE.md).
+
 ## Best fit
 
 - serious Cocos Creator 3.8.8 projects
@@ -144,6 +146,8 @@ For the first narrow gameplay proof after config parsing, see [docs/first-wave-s
 - `docs/provider-driven-local-cocos-proof.md`: local Cocos proof runbook for provider or manual execution
 - `docs/codex-cocos-automation-proof.md`: Codex local automation proof flow for Cocos providers
 - `docs/first-wave-spawn-proof.md`: first narrow gameplay proof after config parsing
+- `examples/attack-defense-city/cocos-reference/CityBattleSpawnProofRuntime.ts`: spawn-only Cocos proof runtime template
+- `examples/attack-defense-city/cocos-reference/SPAWN_PROOF_RUNTIME_USAGE.md`: local usage guide for the spawn proof runtime
 - `AGENT_REGISTRY.md`: Agent roles and boundaries
 - `AGENT_HANDOFF_PROTOCOL.md`: Agent-to-Agent handoff rules
 - `LEVEL_SYSTEM_ARCHITECTURE.md`: core level runtime boundaries

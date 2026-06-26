@@ -41,6 +41,22 @@ Bindings:
 - levelConfigPath -> config/attack-defense-city/level-config
 ```
 
+## Reference implementation
+
+A spawn-only reference runtime is available here:
+
+```text
+examples/attack-defense-city/cocos-reference/CityBattleSpawnProofRuntime.ts
+```
+
+Usage guide:
+
+```text
+examples/attack-defense-city/cocos-reference/SPAWN_PROOF_RUNTIME_USAGE.md
+```
+
+This reference script is not a full gameplay runtime. It exists only to prove prefab instantiation from `config.tables.spawn`.
+
 ## Scope
 
 Allowed in this proof:
@@ -119,8 +135,8 @@ SpawnedEnemy_002
 7. Log:
 
 ```text
-[CityBattleRuntime] Spawn table count: 2
-[CityBattleRuntime] Spawned enemy count: 2
+[CityBattleSpawnProofRuntime] Spawn table count: 2
+[CityBattleSpawnProofRuntime] Spawned enemy count: 2
 ```
 
 8. If no enemy is spawned, return a clear blocker or fail message.
@@ -130,14 +146,17 @@ SpawnedEnemy_002
 A PASS requires console output equivalent to:
 
 ```text
-[CityBattleRuntime] module loaded
-[CityBattleRuntime] onLoad
-[CityBattleRuntime] onEnable
-[CityBattleRuntime] start
-[CityBattleRuntime] Level config loaded
-[CityBattleRuntime] Config summary: levels=1, waves=2, spawns=2, objectives=1
-[CityBattleRuntime] Spawn table count: 2
-[CityBattleRuntime] Spawned enemy count: 2
+[CityBattleSpawnProofRuntime] module loaded
+[CityBattleSpawnProofRuntime] onLoad
+[CityBattleSpawnProofRuntime] onEnable
+[CityBattleSpawnProofRuntime] start
+[CityBattleSpawnProofRuntime] Level config loaded
+[CityBattleSpawnProofRuntime] Config summary: levels=1, waves=2, spawns=2, objectives=1
+[CityBattleSpawnProofRuntime] Spawn table count: 2
+[CityBattleSpawnProofRuntime] Spawned SpawnedEnemy_001 at x=-120, y=0
+[CityBattleSpawnProofRuntime] Spawned SpawnedEnemy_002 at x=-60, y=0
+[CityBattleSpawnProofRuntime] Spawned enemy count: 2
+[CityBattleSpawnProofRuntime] Spawn-only proof complete. Movement, combat, objective state, and result path are intentionally not implemented here.
 ```
 
 ## Required scene or visual proof
