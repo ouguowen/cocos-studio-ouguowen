@@ -36,6 +36,7 @@ Current capabilities:
 - local Windows execution steps and proof-report templates
 - provider-driven local Cocos proof runbook
 - Codex + Cocos automation proof guide
+- first wave spawn proof guide
 - manual local Cocos preview/config parsing proof baseline for attack-defense-city
 - multi-game-type scope clarification
 - provider-neutral Cocos automation execution policy
@@ -244,20 +245,43 @@ Still not included:
 - First wave spawn proof.
 - Full first playable proof.
 
-## v0.3.x next target: First Wave Spawn Proof
+## v0.3.0-alpha.12 status: First Wave Spawn Proof Planning
 
 Primary goal:
 
-Prove a narrow gameplay behavior without expanding into full combat or full game production.
+Define the first narrow gameplay proof after config parsing without expanding into movement, combat, objective, result, economy, UI, or first playable claims.
+
+Completed work:
+
+1. Added `docs/first-wave-spawn-proof.md`.
+2. Defined prerequisite proof: local preview, lifecycle, config load, and generated config parsing must already pass.
+3. Defined allowed scope: read `config.tables.spawn`, instantiate `Enemy_Placeholder`, parent enemies under `EnemyRoot`, log spawned count, and show visible placeholder nodes.
+4. Defined forbidden scope: pathfinding, movement, combat, objective update, win/loss, rewards, economy, UI production, and first playable claims.
+5. Defined PASS, PARTIAL PASS, FAIL, and BLOCKED criteria.
+6. Linked the guide from `README.md` and `MODULE_INDEX.md`.
+
+Still not included:
+
+- Runtime implementation of enemy spawning.
+- Browser preview proof showing spawned enemy nodes.
+- Enemy movement proof.
+- Objective state proof.
+- Result path proof.
+
+## v0.3.x next target: First Wave Spawn Runtime Proof
+
+Primary goal:
+
+Implement and verify the first narrow gameplay behavior in a real Cocos Creator 3.8.8 preview.
 
 Planned work:
 
-1. Read `config.tables.spawn`.
+1. Update `CityBattleRuntime` to read `config.tables.spawn`.
 2. Instantiate at least one `Enemy_Placeholder` node.
 3. Parent spawned enemies under `GameRoot/EnemyRoot`.
 4. Log spawned enemy count.
 5. Show visible placeholder nodes in browser preview.
-6. Return PASS / FAIL / BLOCKED proof.
+6. Return PASS / PARTIAL PASS / FAIL / BLOCKED proof.
 
 Forbidden expansion:
 

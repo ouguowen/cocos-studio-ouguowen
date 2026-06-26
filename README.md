@@ -19,6 +19,7 @@ For a Chinese beginner entry, see [README.zh-CN.md](README.zh-CN.md).
 - provider-neutral Cocos automation proof when local engine work is required
 - local Cocos proof runbook for scene, prefab, binding, Console, and preview evidence
 - Codex + Cocos automation proof flow to reduce manual screenshot-driven validation
+- first wave spawn proof boundary before full gameplay claims
 - one-shot MVP chain control without skipping gates
 - release, rollback, and operations review
 - risk escalation and formal review
@@ -33,6 +34,7 @@ For a Chinese beginner entry, see [README.zh-CN.md](README.zh-CN.md).
 - importing the full Cocos manual into the skill
 - claiming a Cocos scene or prefab is verified without local editor proof
 - pretending automation proof exists when the provider cannot return evidence
+- claiming first playable before spawn, movement, objective, and result path proof exist
 
 ## AI Game Studio Mode
 
@@ -103,6 +105,8 @@ For the detailed local proof standard, see [docs/provider-driven-local-cocos-pro
 
 For the Codex local automation proof flow, see [docs/codex-cocos-automation-proof.md](docs/codex-cocos-automation-proof.md).
 
+For the first narrow gameplay proof after config parsing, see [docs/first-wave-spawn-proof.md](docs/first-wave-spawn-proof.md).
+
 ## Best fit
 
 - serious Cocos Creator 3.8.8 projects
@@ -124,6 +128,7 @@ For the Codex local automation proof flow, see [docs/codex-cocos-automation-proo
 7. `Use $cocos-studio-ouguowen. Explain which Cocos automation provider capabilities are needed before local engine execution.`
 8. `Use $cocos-studio-ouguowen. Apply the provider-driven local Cocos proof runbook before claiming the scene is playable.`
 9. `Use $cocos-studio-ouguowen. Run Codex + Cocos automation proof for attack-defense-city and return PASS / FAIL / BLOCKED evidence.`
+10. `Use $cocos-studio-ouguowen. Run first wave spawn proof only; do not add movement, combat, objective, economy, or result path yet.`
 
 ## Core files
 
@@ -138,6 +143,7 @@ For the Codex local automation proof flow, see [docs/codex-cocos-automation-proo
 - `EXAMPLE_PACK_EXPANSION_PLAN.md`: multi-game-type example pack expansion plan
 - `docs/provider-driven-local-cocos-proof.md`: local Cocos proof runbook for provider or manual execution
 - `docs/codex-cocos-automation-proof.md`: Codex local automation proof flow for Cocos providers
+- `docs/first-wave-spawn-proof.md`: first narrow gameplay proof after config parsing
 - `AGENT_REGISTRY.md`: Agent roles and boundaries
 - `AGENT_HANDOFF_PROTOCOL.md`: Agent-to-Agent handoff rules
 - `LEVEL_SYSTEM_ARCHITECTURE.md`: core level runtime boundaries
