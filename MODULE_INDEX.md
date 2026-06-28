@@ -62,15 +62,9 @@ Use this file to route a request into the correct module family before loading d
 ## 6. Governance, risk, and review
 
 - [QUALITY_GATES.md](QUALITY_GATES.md): promotion and approval gates
+- [QUALITY_GATE_ALIGNMENT.md](QUALITY_GATE_ALIGNMENT.md): canonical alignment checklist for safety and integration gates
 - [CHECKLISTS.md](CHECKLISTS.md): review checklists
 - [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md): specialist review checklists
-- [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md): command-level allow, block, and escalation rules
-- [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md): writable-scope boundaries for Skill repos versus game projects
-- [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md): minimum approval packet before Codex writes
-- [COCOS_RESOURCE_RISK_MATRIX.md](COCOS_RESOURCE_RISK_MATRIX.md): blast-radius classification for docs, registries, scripts, scenes, prefabs, meta, and runtime code
-- [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md): required diff review before commit
-- [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md): valid proof-channel selection and runtime-proof anti-overclaim rules
-- [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md): review focus for changes to the Skill itself
 - [TECH_DEBT_REGISTER.md](TECH_DEBT_REGISTER.md): debt ownership and repayment triggers
 - [COST_BUDGET_MODEL.md](COST_BUDGET_MODEL.md): cost control
 - [INCIDENT_POSTMORTEM_TEMPLATE.md](INCIDENT_POSTMORTEM_TEMPLATE.md): post-incident review
@@ -84,10 +78,18 @@ Use this file to route a request into the correct module family before loading d
 - [ONE_SHOT_GAME_BUILD.md](ONE_SHOT_GAME_BUILD.md): continuous one-request MVP chain that still obeys gates and proof rules
 - [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md): closed-loop QA process for testing this skill itself
 - [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md): repeatable pass/fail test cases for skill behavior
-- [SKILL_SELF_TEST_MODES.md](SKILL_SELF_TEST_MODES.md): validation intensity selection for quick, standard, and release checks
-- [SKILL_EXTENDED_SAFETY_TEST_CASES.md](SKILL_EXTENDED_SAFETY_TEST_CASES.md): extra block-path and overclaim safety tests
-- [COCOS_HOOK_VALIDATION_PLAN.md](COCOS_HOOK_VALIDATION_PLAN.md): validation plan for guardrail and hook behavior
-- [COCOS_AUTOMATED_CHECKS.md](COCOS_AUTOMATED_CHECKS.md): minimum automated review pack for Skill-level changes
+- [SKILL_SELF_TEST_MODES.md](SKILL_SELF_TEST_MODES.md): self-test modes for static, routing, gate, runtime, audit, safety, diff, and Agent checks
+- [SKILL_EXTENDED_SAFETY_TEST_CASES.md](SKILL_EXTENDED_SAFETY_TEST_CASES.md): extended safety tests S01-S08
+- [COMMAND_ROUTING_ALIGNMENT.md](COMMAND_ROUTING_ALIGNMENT.md): canonical alignment checklist for safety, runtime, diff, and Agent command routing
+- [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md): command allow/block rules for AI agents
+- [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md): Cocos path-level ownership and risk rules
+- [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md): file write approval protocol
+- [COCOS_HOOK_VALIDATION_PLAN.md](COCOS_HOOK_VALIDATION_PLAN.md): hook-inspired validation plan
+- [COCOS_AUTOMATED_CHECKS.md](COCOS_AUTOMATED_CHECKS.md): automated check loop
+- [COCOS_RESOURCE_RISK_MATRIX.md](COCOS_RESOURCE_RISK_MATRIX.md): resource risk classification
+- [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md): Git diff review protocol
+- [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md): runtime proof protocol
+- [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md): Skill change review protocol
 - [SKILL_INTEGRATION_AUDIT_REPORT.md](SKILL_INTEGRATION_AUDIT_REPORT.md): integrated-scope audit artifact for Skill maintenance updates
 - [PROMPT_LIBRARY.md](PROMPT_LIBRARY.md): high-signal recurring prompt patterns
 - [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md): short-option selection followed by continuous module execution
@@ -95,3 +97,11 @@ Use this file to route a request into the correct module family before loading d
 - [ADVANCEMENT_CHAIN_MAP.md](ADVANCEMENT_CHAIN_MAP.md): exact prerequisite chains for projects, modules, level systems, features, and release
 - [WORKFLOWS.md](WORKFLOWS.md): high-frequency execution patterns
 - [WORKFLOW_EXTENSIONS.md](WORKFLOW_EXTENSIONS.md): specialist execution patterns
+
+## 8. AI Game Studio Agents
+
+- [AGENT_REGISTRY.md](AGENT_REGISTRY.md): 12-Agent Cocos Studio registry
+- [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md): Agent handoff protocol
+- [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md): AI Game Studio structure
+- [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md): Agent audit log
+- [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md): Agent message schema
