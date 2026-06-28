@@ -41,20 +41,22 @@ This skill is not for:
 3. Identify role, authority, and asset ownership. See [ROLES.md](ROLES.md), [ROLE_STAGE_MATRIX.md](ROLE_STAGE_MATRIX.md), [OWNERSHIP.md](OWNERSHIP.md), and [TEAM_SENIORITY_SYSTEM.md](TEAM_SENIORITY_SYSTEM.md).
 4. Route the request through [MODULE_INDEX.md](MODULE_INDEX.md).
 5. If the request asks to debug, audit, validate, test, or close-loop test this skill itself, apply [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md) and [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md) before any game implementation.
-6. For most requests, open [WORKFLOWS.md](WORKFLOWS.md) first. Open [WORKFLOW_EXTENSIONS.md](WORKFLOW_EXTENSIONS.md) only for specialist flows.
-7. For most project artifacts, open [TEMPLATES.md](TEMPLATES.md) first. Open [LEVEL_TEMPLATES.md](LEVEL_TEMPLATES.md) only for level-content artifacts.
-8. If engine-version-specific advice matters, apply [COCOS_3_8_8_BASELINE.md](COCOS_3_8_8_BASELINE.md) before giving engine guidance.
-9. If the request asks to start real game implementation, create a playable game, open a large implementation sprint, or let Codex build broadly, apply [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md) before implementation.
-10. If the request includes gameplay stats, enemy stats, difficulty, cost, reward amount, progression speed, or balance-sensitive config, apply [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md) before implementation.
-11. If the request includes currencies, sources, sinks, upgrades, reward cadence, stamina, shop, ads, gacha, inventory value, progression economy, or monetization-sensitive systems, apply [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md) before implementation.
-12. If the request includes animation states, UI motion, tween effects, combat feedback, hit reactions, death flows, skill VFX, Spine, AnimationClip, particles, or audio-visual timing, apply [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md) before implementation.
-13. If the request needs local Cocos engine operation, resolve the current Cocos automation provider before execution. Use provider-neutral intent such as create scene, create node, add component, bind prefab, save scene, run preview, read Console, and return proof.
-14. If browser preview output is required, apply the Preview Visibility Gate before script-runtime proof. Editor scene visibility does not prove browser runtime visibility.
-15. If the request needs runtime code or subsystem boundaries, use [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md). Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only for advanced online, monetization, live-ops, social, or compliance systems.
-16. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
-17. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
-18. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
-19. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [COMMANDS.md](COMMANDS.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [GAME_STUDIO_WORKFLOWS.md](GAME_STUDIO_WORKFLOWS.md), and [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md).
+6. If the request changes this Skill repository itself, apply [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md), [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md), [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md), [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md), and [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md) before writing files.
+7. For most requests, open [WORKFLOWS.md](WORKFLOWS.md) first. Open [WORKFLOW_EXTENSIONS.md](WORKFLOW_EXTENSIONS.md) only for specialist flows.
+8. For most project artifacts, open [TEMPLATES.md](TEMPLATES.md) first. Open [LEVEL_TEMPLATES.md](LEVEL_TEMPLATES.md) only for level-content artifacts.
+9. If engine-version-specific advice matters, apply [COCOS_3_8_8_BASELINE.md](COCOS_3_8_8_BASELINE.md) before giving engine guidance.
+10. If the request asks to start real game implementation, create a playable game, open a large implementation sprint, or let Codex build broadly, apply [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md) before implementation.
+11. If the request includes gameplay stats, enemy stats, difficulty, cost, reward amount, progression speed, or balance-sensitive config, apply [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md) before implementation.
+12. If the request includes currencies, sources, sinks, upgrades, reward cadence, stamina, shop, ads, gacha, inventory value, progression economy, or monetization-sensitive systems, apply [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md) before implementation.
+13. If the request includes animation states, UI motion, tween effects, combat feedback, hit reactions, death flows, skill VFX, Spine, AnimationClip, particles, or audio-visual timing, apply [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md) before implementation.
+14. If the request needs local Cocos engine operation, resolve the current Cocos automation provider before execution. Use provider-neutral intent such as create scene, create node, add component, bind prefab, save scene, run preview, read Console, and return proof.
+15. If browser preview output is required, apply the Preview Visibility Gate before script-runtime proof. Editor scene visibility does not prove browser runtime visibility.
+16. If the request needs runtime proof, proof-channel selection, or a distinction between docs-only audit proof and game runtime proof, apply [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md) before claiming completion.
+17. If the request needs runtime code or subsystem boundaries, use [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md). Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only for advanced online, monetization, live-ops, social, or compliance systems.
+18. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
+19. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
+20. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
+21. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [COMMANDS.md](COMMANDS.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [GAME_STUDIO_WORKFLOWS.md](GAME_STUDIO_WORKFLOWS.md), [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md), and [SKILL_INTEGRATION_AUDIT_REPORT.md](SKILL_INTEGRATION_AUDIT_REPORT.md).
 
 ## Cocos automation provider policy
 
@@ -67,6 +69,7 @@ Use this policy only when the user already has, requests, or authorizes a Cocos 
 - If no automation provider is available, fall back to manual Cocos Creator steps without changing the task scope.
 - Local Cocos validation is still a result gate when runtime behavior matters, but it can be automation-provider-driven rather than manually clicked by the user.
 - Do not expand the skill with provider-specific protocol files unless the user explicitly asks for that provider to become part of the repository.
+- Do not use provider availability to bypass [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md) or [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md).
 
 ## Skill validation law
 
@@ -77,7 +80,7 @@ Use this law when the user is testing, debugging, auditing, or trying to close-l
 - Run both block-path tests and allow-path tests.
 - A skill test must state expected decision, actual decision, allowed command, forbidden actions, proof, result, and repair needs.
 - Do not continue implementation when a skill test fails.
-- Route skill validation through [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md) and [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md).
+- Route skill validation through [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md), [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md), [SKILL_SELF_TEST_MODES.md](SKILL_SELF_TEST_MODES.md), [SKILL_EXTENDED_SAFETY_TEST_CASES.md](SKILL_EXTENDED_SAFETY_TEST_CASES.md), [COCOS_HOOK_VALIDATION_PLAN.md](COCOS_HOOK_VALIDATION_PLAN.md), and [COCOS_AUTOMATED_CHECKS.md](COCOS_AUTOMATED_CHECKS.md).
 
 ## Preview visibility law
 
@@ -157,6 +160,7 @@ Common command routing:
 - `cocos-animation-design` -> [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md), [COCOS_RULES.md](COCOS_RULES.md), [QUALITY_GATES.md](QUALITY_GATES.md)
 - `cocos-production-readiness` -> [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md), [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md), [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md), [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md), [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md), [QUALITY_GATES.md](QUALITY_GATES.md)
 - `cocos-skill-self-test` -> [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md), [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md), [QUALITY_GATES.md](QUALITY_GATES.md)
+- `cocos-skill-integration-audit` -> [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md), [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md), [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md), [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md), [SKILL_INTEGRATION_AUDIT_REPORT.md](SKILL_INTEGRATION_AUDIT_REPORT.md)
 - `cocos-project-context` -> [PROJECT_MEMORY_SYSTEM.md](PROJECT_MEMORY_SYSTEM.md)
 - `cocos-game-architecture` -> [COCOS_RULES.md](COCOS_RULES.md), [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md), [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md)
 - `cocos-config-schema` -> [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md), [LEVEL_CONFIG_SCHEMA_EXTENSIONS.md](LEVEL_CONFIG_SCHEMA_EXTENSIONS.md)

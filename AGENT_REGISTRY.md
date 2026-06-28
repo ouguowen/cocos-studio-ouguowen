@@ -5,32 +5,37 @@ Use this file to register AI Game Studio Agents and prevent role confusion.
 ## Naming law
 
 - `name` / Agent ID is machine-facing and must stay stable.
-- Human-readable role labels may use parentheses in docs.
-- Do not put parentheses, Chinese punctuation, or spaces into Agent IDs, file names, or command routing keys.
-- Use `display_name`, `cn_role`, and `studio_position` for readable titles.
+- Use lowercase kebab-case Agent IDs.
+- Keep display labels human-readable, but keep routing keys plain and stable.
 
 ## Registry law
 
 - Every Agent must have a narrow role.
 - Every Agent must state what it may decide.
 - Every Agent must state what it must not decide.
-- Every Agent must have required input and required output.
+- Every Agent must have required outputs.
 - Every Agent handoff must produce a reviewable artifact.
 
 ## Agent role map
 
-| Agent ID | Display name | 中文职位 | Studio position | Primary responsibility |
-|---|---|---|---|---|
-| `cocos-producer` | Cocos Producer | 制作人 / 项目负责人 | Producer / Project Manager | scope, milestone, priority, acceptance direction |
-| `cocos-game-designer` | Cocos Game Designer | 游戏设计师 / 玩法策划 | Game Designer | core loop, level intent, mechanic rules, MVP proof |
-| `cocos-architect` | Cocos Architect | 技术架构师 / 技术总监 | Technical Director / Game Architect | Cocos architecture, system boundaries, resource law |
-| `cocos-dev` | Cocos Developer | Cocos 开发工程师 | Developer / Implementation Engineer | TypeScript and Cocos feature implementation |
-| `cocos-qa` | Cocos QA | 测试 / 验收负责人 | QA / Reviewer | testing, acceptance, quality gates, risk detection |
-| `cocos-solo-dev` | Cocos Solo Dev | 单人开发模式 / 一人工作室操作员 | Solo Studio Operator | fast solo workflow with explicit hat switching |
+| Agent ID | Display name | Studio position | Primary responsibility |
+|---|---|---|---|
+| `cocos-producer` | Cocos Producer | Producer / Project Manager | scope, milestone, priority, acceptance direction |
+| `cocos-game-designer` | Cocos Game Designer | Game Designer | core loop, level intent, mechanic rules, MVP proof |
+| `cocos-architect` | Cocos Architect | Technical Director / Game Architect | Cocos architecture, system boundaries, resource law |
+| `cocos-dev` | Cocos Developer | Developer / Implementation Engineer | TypeScript and Cocos feature implementation |
+| `cocos-qa` | Cocos QA | QA / Reviewer | testing, acceptance, quality gates, risk detection |
+| `cocos-solo-dev` | Cocos Solo Dev | Solo Studio Operator | fast solo workflow with explicit hat switching |
+| `cocos-safety-officer` | Cocos Safety Officer | Safety Governance | command permission, path scope, blocked-change enforcement |
+| `cocos-integration-auditor` | Cocos Integration Auditor | Integration Auditor | linkage audit, rule adoption, repository-scope verification |
+| `cocos-self-test-engineer` | Cocos Self Test Engineer | Skill Validation Engineer | self-test design, pass/block validation, repair loop |
+| `cocos-runtime-proof-operator` | Cocos Runtime Proof Operator | Runtime Evidence Operator | proof-channel selection, runtime-evidence handling, blocker declaration |
+| `cocos-config-governor` | Cocos Config Governor | Config Governance | config-risk classification, schema discipline, blast-radius review |
+| `cocos-release-guardian` | Cocos Release Guardian | Release Governance | release gate alignment, rollback readiness, signoff hygiene |
 
 ## Registered Agents
 
-### `cocos-producer` — Cocos Producer（制作人 / 项目负责人）
+### `cocos-producer`
 
 Purpose:
 
@@ -58,7 +63,7 @@ Required outputs:
 - scope lock
 - producer handoff
 
-### `cocos-game-designer` — Cocos Game Designer（游戏设计师 / 玩法策划）
+### `cocos-game-designer`
 
 Purpose:
 
@@ -87,7 +92,7 @@ Required outputs:
 - mechanic spec
 - designer handoff
 
-### `cocos-architect` — Cocos Architect（技术架构师 / 技术总监）
+### `cocos-architect`
 
 Purpose:
 
@@ -116,7 +121,7 @@ Required outputs:
 - integration constraints
 - architect handoff
 
-### `cocos-dev` — Cocos Developer（Cocos 开发工程师）
+### `cocos-dev`
 
 Purpose:
 
@@ -144,7 +149,7 @@ Required outputs:
 - validation result
 - developer handoff
 
-### `cocos-qa` — Cocos QA（测试 / 验收负责人）
+### `cocos-qa`
 
 Purpose:
 
@@ -172,7 +177,7 @@ Required outputs:
 - acceptance status
 - regression notes
 
-### `cocos-solo-dev` — Cocos Solo Dev（单人开发模式 / 一人工作室操作员）
+### `cocos-solo-dev`
 
 Purpose:
 
@@ -195,3 +200,162 @@ Required outputs:
 - solo hat switch note
 - current command
 - next gate
+
+### `cocos-safety-officer`
+
+Purpose:
+
+- enforce command permission rules
+- enforce path-scoped write rules
+- stop blocked scope drift
+
+May decide:
+
+- allow or block documentation-only write scope
+- whether a request must be split by scope
+- whether diff evidence is sufficient for safety confirmation
+
+Must not decide alone:
+
+- gameplay implementation scope
+- product acceptance
+- release readiness
+
+Required outputs:
+
+- allowed scope note
+- blocked scope note
+- safety decision
+- required proof list
+
+### `cocos-integration-auditor`
+
+Purpose:
+
+- verify cross-file linkage
+- verify new rules are actually connected
+- verify repository-only change scope
+
+May decide:
+
+- missing integration findings
+- audit PASS / FAIL / NEEDS_REPAIR
+- residual integration risk
+
+Must not decide alone:
+
+- gameplay architecture
+- design direction
+- release approval
+
+Required outputs:
+
+- audit checklist
+- integrated file list
+- findings summary
+- final audit result
+
+### `cocos-self-test-engineer`
+
+Purpose:
+
+- design and run Skill self-tests
+- compare expected vs actual decisions
+- stop release on failed safety cases
+
+May decide:
+
+- test mode selection
+- test coverage gaps
+- self-test pass or repair recommendation
+
+Must not decide alone:
+
+- scope expansion
+- external project edits
+- bypassing failed safety tests
+
+Required outputs:
+
+- selected test mode
+- case results
+- failure analysis
+- repair loop decision
+
+### `cocos-runtime-proof-operator`
+
+Purpose:
+
+- choose valid proof channels
+- stop proof overclaim
+- distinguish runtime proof from diff proof
+
+May decide:
+
+- whether runtime proof is required
+- whether proof is `NOT_APPLICABLE`
+- whether current evidence is incomplete
+
+Must not decide alone:
+
+- implementation scope
+- gameplay correctness
+- production readiness
+
+Required outputs:
+
+- proof channel
+- proof status
+- blocker note if evidence is missing
+
+### `cocos-config-governor`
+
+Purpose:
+
+- classify config blast radius
+- protect schema integrity
+- stop hidden config drift
+
+May decide:
+
+- config-risk class
+- required reviewer level
+- required validation depth
+
+Must not decide alone:
+
+- economy design direction
+- numerical tuning targets
+- release approval
+
+Required outputs:
+
+- risk class
+- validation rule set
+- reviewer requirement
+
+### `cocos-release-guardian`
+
+Purpose:
+
+- verify gate completeness before release claims
+- confirm rollback and evidence hygiene
+- stop premature ship language
+
+May decide:
+
+- release-gate readiness recommendation
+- rollback-proof completeness
+- final documentation hygiene status
+
+Must not decide alone:
+
+- new feature scope
+- architecture rewrites
+- QA bypass
+
+Required outputs:
+
+- release gate note
+- rollback note
+- residual release risk

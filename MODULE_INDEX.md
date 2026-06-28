@@ -64,6 +64,13 @@ Use this file to route a request into the correct module family before loading d
 - [QUALITY_GATES.md](QUALITY_GATES.md): promotion and approval gates
 - [CHECKLISTS.md](CHECKLISTS.md): review checklists
 - [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md): specialist review checklists
+- [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md): command-level allow, block, and escalation rules
+- [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md): writable-scope boundaries for Skill repos versus game projects
+- [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md): minimum approval packet before Codex writes
+- [COCOS_RESOURCE_RISK_MATRIX.md](COCOS_RESOURCE_RISK_MATRIX.md): blast-radius classification for docs, registries, scripts, scenes, prefabs, meta, and runtime code
+- [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md): required diff review before commit
+- [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md): valid proof-channel selection and runtime-proof anti-overclaim rules
+- [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md): review focus for changes to the Skill itself
 - [TECH_DEBT_REGISTER.md](TECH_DEBT_REGISTER.md): debt ownership and repayment triggers
 - [COST_BUDGET_MODEL.md](COST_BUDGET_MODEL.md): cost control
 - [INCIDENT_POSTMORTEM_TEMPLATE.md](INCIDENT_POSTMORTEM_TEMPLATE.md): post-incident review
@@ -77,6 +84,11 @@ Use this file to route a request into the correct module family before loading d
 - [ONE_SHOT_GAME_BUILD.md](ONE_SHOT_GAME_BUILD.md): continuous one-request MVP chain that still obeys gates and proof rules
 - [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md): closed-loop QA process for testing this skill itself
 - [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md): repeatable pass/fail test cases for skill behavior
+- [SKILL_SELF_TEST_MODES.md](SKILL_SELF_TEST_MODES.md): validation intensity selection for quick, standard, and release checks
+- [SKILL_EXTENDED_SAFETY_TEST_CASES.md](SKILL_EXTENDED_SAFETY_TEST_CASES.md): extra block-path and overclaim safety tests
+- [COCOS_HOOK_VALIDATION_PLAN.md](COCOS_HOOK_VALIDATION_PLAN.md): validation plan for guardrail and hook behavior
+- [COCOS_AUTOMATED_CHECKS.md](COCOS_AUTOMATED_CHECKS.md): minimum automated review pack for Skill-level changes
+- [SKILL_INTEGRATION_AUDIT_REPORT.md](SKILL_INTEGRATION_AUDIT_REPORT.md): integrated-scope audit artifact for Skill maintenance updates
 - [PROMPT_LIBRARY.md](PROMPT_LIBRARY.md): high-signal recurring prompt patterns
 - [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md): short-option selection followed by continuous module execution
 - [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md): prerequisite-first advancement and anti-step-skipping control

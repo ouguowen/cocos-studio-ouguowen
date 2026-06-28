@@ -7,6 +7,8 @@ Use these gates to decide whether work is allowed to advance.
 Use this gate before claiming the skill is closed-loop validated or safe for broad game development guidance.
 
 - Skill validation uses [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md) and [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md).
+- Skill validation mode is selected from [SKILL_SELF_TEST_MODES.md](SKILL_SELF_TEST_MODES.md).
+- Safety-focused validation includes [SKILL_EXTENDED_SAFETY_TEST_CASES.md](SKILL_EXTENDED_SAFETY_TEST_CASES.md) and [COCOS_HOOK_VALIDATION_PLAN.md](COCOS_HOOK_VALIDATION_PLAN.md).
 - Both allow-path tests and block-path tests have been run.
 - Each test case records expected decision, actual decision, allowed command, forbidden actions, proof, and repair status.
 - A single successful path is not treated as closed-loop validation.
@@ -19,6 +21,47 @@ If these are not true:
 
 - the skill is not closed-loop validated
 - broad game implementation should remain blocked
+
+## Command Permission Gate
+
+- File-writing work applies [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md).
+- Allowed scope, blocked scope, and escalation-only scope are explicit.
+- The command does not treat local disk reachability as permission.
+
+If these are not true:
+
+- writing work is blocked
+
+## Path Scope Gate
+
+- Writable scope is explicit and reviewable.
+- Changed paths remain inside the approved repository.
+- `D:\CocosProjects\AI_Game_Studio_FirstGame`, `assets/scenes/**`, `assets/prefabs/**`, `assets/**/*.meta`, and actual game runtime code remain untouched for documentation-only tasks.
+- Path review follows [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md).
+
+If these are not true:
+
+- commit is blocked
+
+## Skill Change Review Gate
+
+- Skill-level rule changes follow [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md).
+- Safety linkage exists in `SKILL.md`, `COMMANDS.md`, `MODULE_INDEX.md`, and `QUALITY_GATES.md`.
+- Integration audit output exists in [SKILL_INTEGRATION_AUDIT_REPORT.md](SKILL_INTEGRATION_AUDIT_REPORT.md).
+
+If these are not true:
+
+- Skill update approval is blocked
+
+## Git Diff Review Gate
+
+- Diff review follows [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md).
+- `git status`, `git diff --name-only`, and `git diff --stat` have been reviewed.
+- Unexpected non-doc changes are absent.
+
+If these are not true:
+
+- commit is blocked
 
 ## Prototype Gate
 
@@ -57,6 +100,16 @@ Use this gate before script-runtime proof, first-playable proof, or browser-prev
 - Editor hierarchy, Inspector state, and scene snapshot are supporting evidence only; they do not replace browser runtime visibility.
 - If the baseline marker is not visible in browser preview, script-runtime proof and gameplay proof must stop and report Preview Visibility Gate as failed or blocked.
 - If the automation provider cannot capture browser pixels or browser runtime logs, the limitation must be declared instead of marking runtime proof as passed.
+
+## Runtime Proof Gate
+
+- Proof channel selection follows [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md).
+- Documentation-only work uses diff or audit proof, not fake runtime proof.
+- If runtime evidence is required but unavailable, the result is `BLOCKED` or `NOT_APPLICABLE`, not passed.
+
+If these are not true:
+
+- proof claims are blocked
 
 ## Numerical Design Gate
 

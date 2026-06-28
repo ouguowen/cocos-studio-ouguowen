@@ -8,6 +8,8 @@ Use this file as the command registry for repeatable AI Game Studio execution.
 - Commands must name the current stage and responsible role.
 - Commands must state what is in scope and out of scope.
 - Commands must end with either a next command or a gate decision.
+- Commands that write files must apply [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md), [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md), and [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md) before execution.
+- Commands that claim completion must provide review proof from [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md) or [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md), depending on task type.
 
 ## Automation provider law
 
@@ -47,6 +49,27 @@ Rules:
 - Do not modify the Cocos project unless the selected test case explicitly requires local runtime proof.
 - Do not continue to implementation after a failed test case.
 - Do not call the skill validated until all required test cases pass or failed cases have repair issues.
+- Use [SKILL_SELF_TEST_MODES.md](SKILL_SELF_TEST_MODES.md), [SKILL_EXTENDED_SAFETY_TEST_CASES.md](SKILL_EXTENDED_SAFETY_TEST_CASES.md), and [COCOS_HOOK_VALIDATION_PLAN.md](COCOS_HOOK_VALIDATION_PLAN.md) when the request targets Skill safety integration.
+
+### `cocos-skill-integration-audit`
+
+Use when auditing whether new Skill rules are wired into the repository and whether scope stayed inside the approved documentation boundary.
+
+Output:
+
+- audit scope
+- changed file list
+- blocked-path confirmation
+- required-doc presence result
+- Agent registry count result
+- integration findings
+- PASS / FAIL / NEEDS_REPAIR
+
+Rules:
+
+- Use [COCOS_AUTOMATED_CHECKS.md](COCOS_AUTOMATED_CHECKS.md), [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md), and [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md).
+- Block the audit if any changed file leaves the approved path scope.
+- Do not claim runtime proof for documentation-only work; use [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md).
 
 ## Pre-production commands
 
