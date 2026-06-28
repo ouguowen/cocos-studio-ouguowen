@@ -25,6 +25,7 @@ When local Cocos Creator work must be executed, the current Cocos automation too
 - No implementation begins before the required project knowledge is loaded.
 - No automation result is accepted without task-appropriate proof: scene hierarchy, component bindings, Console output, preview evidence, generated files, or PASS/FAIL notes.
 - No single example game type becomes the whole skill's identity.
+- Agent expansion must serve Cocos production closure, not role inflation.
 
 ## Game-type stance
 
@@ -45,7 +46,34 @@ Use automation only when it is available, authorized, and useful.
 - If no provider is available or a provider fails, fall back to manual Cocos Creator steps or stop with a blocker report.
 - Do not add provider-specific files, protocol layers, or command names unless the user explicitly asks for that provider to be formalized in the repository.
 
-## Default studio roles
+## 12-Agent Cocos Studio structure
+
+This is a Cocos Creator 3.8.8 focused 12-Agent Studio.
+
+It is not a 49-Agent generic Claude Code template. Agent count must serve Cocos production closure, not role inflation.
+
+### Director / Control Layer
+
+- `cocos-producer`
+- `cocos-solo-dev`
+
+### Design / Architecture / Audit Layer
+
+- `cocos-game-designer`
+- `cocos-architect`
+- `cocos-skill-auditor`
+- `cocos-config-designer`
+
+### Implementation / Validation Layer
+
+- `cocos-dev`
+- `cocos-ui-programmer`
+- `cocos-scene-builder`
+- `cocos-runtime-validator`
+- `cocos-qa`
+- `cocos-release-reviewer`
+
+## Agent role map
 
 | Agent | Studio role | Primary responsibility |
 |---|---|---|
@@ -55,6 +83,12 @@ Use automation only when it is available, authorized, and useful.
 | `cocos-dev` | Cocos Developer | TypeScript/Cocos implementation and integration |
 | `cocos-qa` | QA Reviewer | tests, acceptance, risk, gate status |
 | `cocos-solo-dev` | Solo Studio Operator | simplified one-person workflow with explicit hat switching |
+| `cocos-skill-auditor` | Skill Auditor / Process QA | rule conflicts, command routing, gate coverage, self-test status |
+| `cocos-runtime-validator` | Runtime Validator | Editor, browser preview, Console, marker, Preview Visibility Gate |
+| `cocos-ui-programmer` | UI Programmer | UI structure, HUD, buttons, panels, Labels, UI interactions |
+| `cocos-config-designer` | Config / Numerical Designer | config schema, placeholder values, legal ranges, validation rules |
+| `cocos-scene-builder` | Scene Builder / Prefab Integrator | scene nodes, prefab assembly, component binding, resource references |
+| `cocos-release-reviewer` | Release Reviewer / Final Gate Owner | release readiness, blocker summary, go/no-go recommendation |
 
 ## Default execution chain
 
@@ -68,7 +102,9 @@ idea
 -> story/task
 -> implementation
 -> automation/manual Cocos execution when required
+-> runtime validation when required
 -> QA review
+-> release review when required
 -> acceptance log
 ```
 
@@ -79,9 +115,11 @@ The current skill already has stage, production, ownership, Cocos architecture, 
 This system adds:
 
 - command-style entry points
-- Agent role registry
+- 12-Agent Cocos Studio role registry
 - handoff message schema
 - audit log discipline
+- safety and path-scope guardrails
+- extended self-test modes
 - beginner-ready example project data
 - NPM validation scripts
 - multi-game-type stance
