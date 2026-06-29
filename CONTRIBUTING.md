@@ -34,7 +34,7 @@ Good contributions include:
 - examples that prove workflow control without becoming the only template
 - documentation fixes and translation improvements
 
-Avoid contributions that:
+Avoid contributions that. Do not:
 
 - encourage agents to skip pre-write approval
 - raw-edit `.scene`, `.prefab`, `.anim`, or `.meta` files
@@ -113,6 +113,9 @@ Confirm:
 - no live game project files changed
 - no Cocos `.scene`, `.prefab`, `.meta`, runtime code, or external assets were added accidentally
 - relevant README / MODULE_INDEX / CHANGELOG links are updated
+- I ran `python scripts/validate_skill_docs.py` locally.
+- The GitHub Actions Skill Docs Validation check passes.
+- I did not introduce dangerous commands as positive instructions.
 
 ## Commit messages
 

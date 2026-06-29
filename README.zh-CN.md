@@ -118,6 +118,20 @@ cocos-game-brief
 
 如果出现未批准文件，尤其是 `.scene`、`.prefab`、`.meta`、运行时代码或外部资源，Codex 应该停止并报告。
 
+## 自动化验证
+
+仓库会通过 GitHub Actions 自动检查必需文档、链接、命令路由、安全协议和危险规则退化。
+
+每次 `push` 和 `pull_request` 会运行：
+
+```text
+python scripts/validate_skill_docs.py
+```
+
+本验证不会打开 Cocos，不会修改游戏项目，也不会验证真实浏览器预览。它只验证 Skill 文档和安全规则是否完整。
+
+详细说明见 [docs/automation-validation.md](docs/automation-validation.md)。
+
 ## Moonlight Delivery 案例
 
 Moonlight Delivery - Chapter 1 Shell 是一个成功闭环案例：

@@ -12,6 +12,7 @@ Use this file to route a request into the correct module family before loading d
 - [README.zh-CN.md](README.zh-CN.md): Chinese beginner entry, safe first prompts, and beginner boundaries
 - [docs/quickstart-first-mvp.md](docs/quickstart-first-mvp.md): first-MVP command path from idea to release review
 - [docs/open-source-roadmap.md](docs/open-source-roadmap.md): open-source polish roadmap and contribution priorities
+- [docs/automation-validation.md](docs/automation-validation.md): GitHub Actions and local Skill docs validation guide
 
 ## 2. Roles, authority, and handoff
 
@@ -109,6 +110,8 @@ Use this file to route a request into the correct module family before loading d
 - [ADVANCEMENT_CHAIN_MAP.md](ADVANCEMENT_CHAIN_MAP.md): exact prerequisite chains for projects, modules, level systems, features, and release
 - [WORKFLOWS.md](WORKFLOWS.md): high-frequency execution patterns
 - [WORKFLOW_EXTENSIONS.md](WORKFLOW_EXTENSIONS.md): specialist execution patterns
+- [scripts/validate_skill_docs.py](scripts/validate_skill_docs.py): standard-library validation script for docs, links, commands, and safety rules
+- [.github/workflows/skill-docs-validate.yml](.github/workflows/skill-docs-validate.yml): GitHub Actions workflow for Skill docs validation
 
 ## 8. AI Game Studio Agents
 

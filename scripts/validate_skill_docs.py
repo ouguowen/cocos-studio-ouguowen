@@ -1,0 +1,376 @@
+#!/usr/bin/env python3
+"""Validate Cocos Studio Ouguowen Skill documentation.
+
+This script intentionally uses only the Python standard library so it can run
+in GitHub Actions without extra dependency installation.
+"""
+
+from __future__ import annotations
+
+import os
+import re
+import subprocess
+import sys
+from pathlib import Path
+from urllib.parse import unquote
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+REQUIRED_FILES = [
+    "README.md",
+    "README.zh-CN.md",
+    "SKILL.md",
+    "COMMANDS.md",
+    "MODULE_INDEX.md",
+    "QUALITY_GATES.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "FIRST_MVP_SUCCESS_PIPELINE.md",
+    "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md",
+    "COCOS_GENERATED_META_POLICY.md",
+    "MVP_ACCEPTANCE_REPORT_TEMPLATE.md",
+    "SUCCESS_CASE_MOONLIGHT_DELIVERY.md",
+    "docs/quickstart-first-mvp.md",
+    "docs/open-source-roadmap.md",
+    "docs/automation-validation.md",
+    "examples/moonlight-delivery/README.md",
+]
+
+CONTENT_CHECKS = {
+    "README.md": [
+        "Cocos Creator 3.8.8",
+        "production-control Skill",
+        "FIRST_MVP_SUCCESS_PIPELINE.md",
+        "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md",
+        "COCOS_GENERATED_META_POLICY.md",
+        "SUCCESS_CASE_MOONLIGHT_DELIVERY.md",
+        "cocos-dev-story-prewrite",
+        "FIRST_MVP_ACCEPTED",
+    ],
+    "README.zh-CN.md": [
+        "Cocos Creator 3.8.8",
+        "不是单一游戏模板",
+        "不是某个 MCP 插件",
+        "Pre-write Approval",
+        "Preview Visibility Gate",
+        "FIRST_MVP_ACCEPTED",
+        "Moonlight Delivery",
+        "Use $cocos-studio-ouguowen",
+    ],
+    "COMMANDS.md": [
+        "cocos-asset-policy",
+        "cocos-first-implementation-story",
+        "cocos-dev-story-prewrite",
+        "cocos-dev-story",
+        "cocos-qa-review",
+        "cocos-release-review",
+        "READY_FOR_IMPLEMENTATION",
+        "PRE_WRITE_APPROVAL_REQUIRED",
+        "QA_PASS",
+        "FIRST_MVP_ACCEPTED",
+    ],
+    "SKILL.md": [
+        "FIRST_MVP_SUCCESS_PIPELINE.md",
+        "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md",
+        "COCOS_GENERATED_META_POLICY.md",
+        "Preview Visibility Gate",
+        "RUNTIME_PROOF_PROTOCOL.md",
+    ],
+    "MODULE_INDEX.md": [
+        "CONTRIBUTING.md",
+        "SECURITY.md",
+        "docs/quickstart-first-mvp.md",
+        "docs/open-source-roadmap.md",
+        "docs/automation-validation.md",
+        "examples/moonlight-delivery/README.md",
+        "FIRST_MVP_SUCCESS_PIPELINE.md",
+        "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md",
+        "COCOS_GENERATED_META_POLICY.md",
+        "MVP_ACCEPTANCE_REPORT_TEMPLATE.md",
+        "SUCCESS_CASE_MOONLIGHT_DELIVERY.md",
+    ],
+}
+
+SAFETY_CHECKS = {
+    "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md": [
+        "PRE_WRITE_APPROVAL_REQUIRED",
+        "Before explicit user confirmation",
+        "must not",
+        "modify `.meta`",
+        "commit",
+        "push",
+    ],
+    "COCOS_GENERATED_META_POLICY.md": [
+        "assets/scenes.meta",
+        "unapproved `.meta`",
+        "stop and report",
+        "user must explicitly confirm",
+        "must not raw text edit `.scene`, `.prefab`, or `.meta`",
+    ],
+    "RUNTIME_PROOF_PROTOCOL.md": [
+        "browser preview",
+        "Preview Visibility Gate",
+    ],
+    "CODEX_WRITE_APPROVAL_PROTOCOL.md": [
+        "generated `.meta`",
+    ],
+    "QUALITY_GATES.md": [
+        "Pre-write Approval Gate",
+        "Cocos Generated Meta Gate",
+        "QA Review Gate",
+        "First MVP Acceptance Gate",
+    ],
+}
+
+DANGEROUS_PHRASES = [
+    "git reset --hard",
+    "git push --force",
+    "git add .",
+    "rm -rf",
+    "raw text edit .scene",
+    "raw text edit .prefab",
+    "raw text edit .meta",
+    "skip pre-write approval",
+    "bypass pre-write approval",
+    "editor hierarchy is enough",
+]
+
+KNOWN_DEFERRED_LINK_TARGETS = {
+    # Existing command routing references this future/expected policy document,
+    # but the current open-source docs validation upgrade is not allowed to add
+    # new core policy files outside its approved scope.
+    "ASSET_POLICY.md",
+}
+
+SAFETY_NEGATIONS = [
+    "do not",
+    "don't",
+    "never",
+    "must not",
+    "forbidden",
+    "blocked",
+    "stop",
+    "not allowed",
+    "禁止",
+    "不要",
+    "不得",
+    "不能",
+    "必须停止",
+    "需要确认",
+    "only if explicitly confirms",
+    "unless the user explicitly confirms",
+    "forbidden meta behavior",
+    "avoid contributions",
+    "dangerous phrases",
+]
+
+
+def rel(path: Path) -> str:
+    return path.relative_to(ROOT).as_posix()
+
+
+def read_text(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
+
+
+def normalize_for_danger(text: str) -> str:
+    return (
+        text.lower()
+        .replace("`", "")
+        .replace("*", "")
+        .replace("_", "")
+        .replace("cocos .", ".")
+    )
+
+
+def tracked_paths() -> set[str]:
+    try:
+        result = subprocess.run(
+            ["git", "ls-files"],
+            cwd=ROOT,
+            check=True,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+    except (OSError, subprocess.CalledProcessError):
+        return set()
+    return {line.strip().replace("\\", "/") for line in result.stdout.splitlines() if line.strip()}
+
+
+def all_existing_paths() -> set[str]:
+    existing = tracked_paths()
+    for path in ROOT.rglob("*"):
+        if ".git" in path.parts:
+            continue
+        if path.is_file():
+            existing.add(rel(path))
+    return existing
+
+
+def markdown_files() -> list[Path]:
+    return sorted(path for path in ROOT.rglob("*.md") if ".git" not in path.parts)
+
+
+def pass_group(name: str) -> None:
+    print(f"PASS {name}")
+
+
+def fail_group(name: str, errors: list[str]) -> None:
+    print(f"FAIL {name}")
+    for error in errors:
+        print(f"  - {error}")
+
+
+def check_required_files_exist(existing: set[str]) -> list[str]:
+    errors = []
+    for file_name in REQUIRED_FILES:
+        if file_name not in existing and not (ROOT / file_name).exists():
+            errors.append(f"missing required file: {file_name}")
+    return errors
+
+
+def check_required_content() -> list[str]:
+    errors = []
+    for file_name, required_terms in CONTENT_CHECKS.items():
+        path = ROOT / file_name
+        if not path.exists():
+            errors.append(f"{file_name}: file missing for content check")
+            continue
+        text = read_text(path)
+        for term in required_terms:
+            if term not in text:
+                errors.append(f"{file_name}: missing required content {term!r}")
+
+    readme = read_text(ROOT / "README.md") if (ROOT / "README.md").exists() else ""
+    lower_readme = readme.lower()
+    if "full game is complete" not in lower_readme or not any(
+        phrase in lower_readme
+        for phrase in [
+            "not that the full game is complete",
+            "does not mean the full game is complete",
+            "not the full game is complete",
+        ]
+    ):
+        errors.append("README.md: missing negative full-game-complete statement")
+    return errors
+
+
+def strip_anchor(target: str) -> str:
+    return target.split("#", 1)[0]
+
+
+def is_ignored_link(target: str) -> bool:
+    stripped = target.strip()
+    return (
+        not stripped
+        or stripped.startswith("#")
+        or stripped.startswith("http://")
+        or stripped.startswith("https://")
+        or stripped.startswith("mailto:")
+    )
+
+
+def check_markdown_links(existing: set[str]) -> list[str]:
+    errors = []
+    link_re = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
+    for md_file in markdown_files():
+        text = read_text(md_file)
+        for match in link_re.finditer(text):
+            raw_target = match.group(1).strip()
+            if is_ignored_link(raw_target):
+                continue
+            target = raw_target.split()[0].strip("<>")
+            target = unquote(strip_anchor(target))
+            if is_ignored_link(target):
+                continue
+            resolved = (md_file.parent / target).resolve()
+            try:
+                relative = resolved.relative_to(ROOT).as_posix()
+            except ValueError:
+                errors.append(f"{rel(md_file)}: link escapes repository: {raw_target}")
+                continue
+            if relative not in existing and not resolved.exists():
+                if relative in KNOWN_DEFERRED_LINK_TARGETS:
+                    continue
+                errors.append(f"{rel(md_file)}: missing link target {raw_target} -> {relative}")
+    return errors
+
+
+def check_safety_rules() -> list[str]:
+    errors = []
+    for file_name, required_terms in SAFETY_CHECKS.items():
+        path = ROOT / file_name
+        if not path.exists():
+            errors.append(f"{file_name}: file missing for safety check")
+            continue
+        text = read_text(path)
+        for term in required_terms:
+            if term not in text:
+                errors.append(f"{file_name}: missing safety term {term!r}")
+
+    runtime_text = read_text(ROOT / "RUNTIME_PROOF_PROTOCOL.md")
+    runtime_lower = runtime_text.lower()
+    if "editor scene visibility is not enough" not in runtime_lower and "editor hierarchy" not in runtime_lower:
+        errors.append("RUNTIME_PROOF_PROTOCOL.md: missing editor-only proof rejection")
+
+    approval_text = read_text(ROOT / "CODEX_WRITE_APPROVAL_PROTOCOL.md").lower()
+    if "pre_write_approval_required" not in approval_text and "pre-write" not in approval_text:
+        errors.append("CODEX_WRITE_APPROVAL_PROTOCOL.md: missing pre-write approval rule")
+    if "user must explicitly approve" not in approval_text and "user confirmation" not in approval_text:
+        errors.append("CODEX_WRITE_APPROVAL_PROTOCOL.md: missing explicit user approval rule")
+    return errors
+
+
+def check_dangerous_patterns() -> list[str]:
+    errors = []
+    for md_file in markdown_files():
+        lines = read_text(md_file).splitlines()
+        normalized_lines = [normalize_for_danger(line) for line in lines]
+        for index, line in enumerate(normalized_lines):
+            for phrase in DANGEROUS_PHRASES:
+                if phrase in line:
+                    start = max(0, index - 6)
+                    end = min(len(normalized_lines), index + 7)
+                    context = "\n".join(normalized_lines[start:end])
+                    if not any(negation in context for negation in SAFETY_NEGATIONS):
+                        errors.append(
+                            f"{rel(md_file)}:{index + 1}: dangerous phrase without safety context: {phrase!r}"
+                        )
+    return errors
+
+
+def run_group(name: str, check_func) -> bool:
+    errors = check_func()
+    if errors:
+        fail_group(name, errors)
+        return False
+    pass_group(name)
+    return True
+
+
+def main() -> int:
+    print("Skill docs validation started")
+    existing = all_existing_paths()
+    checks = [
+        ("required_files_exist", lambda: check_required_files_exist(existing)),
+        ("required_content_checks", check_required_content),
+        ("markdown_link_check", lambda: check_markdown_links(existing)),
+        ("safety_rule_checks", check_safety_rules),
+        ("dangerous_pattern_checks", check_dangerous_patterns),
+    ]
+    ok = True
+    for name, check_func in checks:
+        ok = run_group(name, check_func) and ok
+    if ok:
+        print("Skill docs validation PASS")
+        return 0
+    print("Skill docs validation FAIL")
+    return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
