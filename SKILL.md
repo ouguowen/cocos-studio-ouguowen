@@ -57,6 +57,9 @@ This skill is not for:
 19. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
 20. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
 21. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [COMMANDS.md](COMMANDS.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [GAME_STUDIO_WORKFLOWS.md](GAME_STUDIO_WORKFLOWS.md), [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md), and [SKILL_INTEGRATION_AUDIT_REPORT.md](SKILL_INTEGRATION_AUDIT_REPORT.md).
+22. If a project moves from design into the first real MVP implementation, apply [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md) before starting implementation.
+23. Before `cocos-dev-story` writes scene, script, prefab, meta, or runtime files, apply [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md) and stop at `PRE_WRITE_APPROVAL_REQUIRED` until the user confirms.
+24. If Cocos Creator generates `.meta` files outside the approved diff scope, apply [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md), stop, and request user confirmation before staging or committing.
 
 ## Cocos automation provider policy
 
@@ -134,6 +137,11 @@ Use this law when Codex is asked to build a playable game, start broad implement
 - If game type, MVP scope, numerical design, economy design, presentation design, architecture, runtime proof, or first story are missing, apply [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md).
 - Do not start gameplay MVP implementation when Preview Visibility Gate is required but not passed.
 - Do not use local Cocos automation as a substitute for missing game design readiness.
+- The first real MVP path should follow [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md).
+- `READY_FOR_IMPLEMENTATION` authorizes only one approved story and must not be treated as game completion.
+- `FIRST_MVP_ACCEPTED` means the current MVP story is accepted. It does not mean the full game is complete or that scope may expand.
+- `cocos-dev-story` requires the pre-write approval protocol before file creation or modification.
+- Cocos-generated companion meta is allowed only when it is directly related to approved files/folders and is included in the approved diff scope.
 
 ## Non-negotiable rules
 
@@ -158,6 +166,7 @@ Common command routing:
 - `cocos-numerical-design` -> [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md), [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md), [QUALITY_GATES.md](QUALITY_GATES.md)
 - `cocos-economy-design` -> [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md), [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md), [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md), [QUALITY_GATES.md](QUALITY_GATES.md)
 - `cocos-animation-design` -> [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md), [COCOS_RULES.md](COCOS_RULES.md), [QUALITY_GATES.md](QUALITY_GATES.md)
+- `cocos-asset-policy` -> [ASSET_POLICY.md](ASSET_POLICY.md), [COCOS_RESOURCE_RISK_MATRIX.md](COCOS_RESOURCE_RISK_MATRIX.md), [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md)
 - `cocos-production-readiness` -> [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md), [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md), [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md), [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md), [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md), [QUALITY_GATES.md](QUALITY_GATES.md)
 - `cocos-skill-self-test` -> [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md), [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md), [QUALITY_GATES.md](QUALITY_GATES.md)
 - `cocos-skill-integration-audit` -> [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md), [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md), [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md), [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md), [SKILL_INTEGRATION_AUDIT_REPORT.md](SKILL_INTEGRATION_AUDIT_REPORT.md)
@@ -165,7 +174,11 @@ Common command routing:
 - `cocos-game-architecture` -> [COCOS_RULES.md](COCOS_RULES.md), [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md), [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md)
 - `cocos-config-schema` -> [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md), [LEVEL_CONFIG_SCHEMA_EXTENSIONS.md](LEVEL_CONFIG_SCHEMA_EXTENSIONS.md)
 - `cocos-create-story` -> [TASK_DECOMPOSITION_RULES.md](TASK_DECOMPOSITION_RULES.md), [COMMANDS.md](COMMANDS.md)
-- `cocos-dev-story` -> [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md), [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md)
+- `cocos-first-implementation-story` -> [TASK_DECOMPOSITION_RULES.md](TASK_DECOMPOSITION_RULES.md), [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md), [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md)
+- `cocos-dev-story-prewrite` -> [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md), [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md), [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md)
+- `cocos-dev-story` -> [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md), [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md), [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md), [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md), [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md)
+- `cocos-qa-review` -> [QUALITY_GATES.md](QUALITY_GATES.md), [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md), [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md)
+- `cocos-release-review` -> [QUALITY_GATES.md](QUALITY_GATES.md), [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md), [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md)
 - `cocos-code-review` -> [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md), [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md)
 - `cocos-quick-prototype` -> [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md), [QUALITY_GATES.md](QUALITY_GATES.md)
 

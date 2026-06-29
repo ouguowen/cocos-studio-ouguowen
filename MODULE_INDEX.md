@@ -25,9 +25,11 @@ Use this file to route a request into the correct module family before loading d
 - [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md): select the closest genre or loop template
 - [EXAMPLE_PACK_EXPANSION_PLAN.md](EXAMPLE_PACK_EXPANSION_PLAN.md): expand example packs by selected game type without turning the skill into one universal template
 - [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md): decide whether the project is ready for real implementation, design repair, runtime repair, or scope reduction
+- [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md): proven first-MVP command chain from brief to `FIRST_MVP_ACCEPTED`
 - [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md): define gameplay numbers, difficulty, rewards, costs, and balance rules before implementation
 - [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md): define currencies, sources, sinks, rewards, upgrades, ads, shops, gacha boundaries, and economy validation before implementation
 - [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md): define animation states, UI motion, feedback, VFX, Spine/Tween/AnimationClip boundaries, and presentation validation before implementation
+- [ASSET_POLICY.md](ASSET_POLICY.md): asset source, placeholder, import, and forbidden asset boundaries before implementation
 - [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md): cut to the first real playable product
 - [PLAYBOOK_SYSTEM.md](PLAYBOOK_SYSTEM.md): recurring operating procedures
 - [PRD_CONSTRAINTS.md](PRD_CONSTRAINTS.md): PRD structure and red flags
@@ -55,6 +57,8 @@ Use this file to route a request into the correct module family before loading d
 - [docs/codex-cocos-automation-proof.md](docs/codex-cocos-automation-proof.md): Codex local automation proof flow for Cocos provider-driven validation
 - [docs/first-wave-spawn-proof.md](docs/first-wave-spawn-proof.md): first narrow gameplay proof for spawn-only behavior after config parsing
 - [RELEASE_PIPELINE_SYSTEM.md](RELEASE_PIPELINE_SYSTEM.md): build lanes, rollout, and hotfix planning
+- [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md): `FIRST_MVP_ACCEPTANCE_REPORT.md` template and release decision vocabulary
+- [SUCCESS_CASE_MOONLIGHT_DELIVERY.md](SUCCESS_CASE_MOONLIGHT_DELIVERY.md): successful Moonlight Delivery Chapter 1 Shell pipeline case, not a universal genre template
 - [PLATFORM_TARGET_RULES.md](PLATFORM_TARGET_RULES.md): Android, iOS, web, mini-game, and package differences
 - [RELEASE_ROLLBACK_PLAYBOOK.md](RELEASE_ROLLBACK_PLAYBOOK.md): rollback discipline
 - [OPERATIONS_DATA_SYSTEM.md](OPERATIONS_DATA_SYSTEM.md): retention, monetization, ad, event, and economy review
@@ -84,6 +88,8 @@ Use this file to route a request into the correct module family before loading d
 - [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md): command allow/block rules for AI agents
 - [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md): Cocos path-level ownership and risk rules
 - [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md): file write approval protocol
+- [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md): required pre-write approval checklist for `cocos-dev-story`
+- [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md): Cocos-generated companion `.meta` approval and stop rules
 - [COCOS_HOOK_VALIDATION_PLAN.md](COCOS_HOOK_VALIDATION_PLAN.md): hook-inspired validation plan
 - [COCOS_AUTOMATED_CHECKS.md](COCOS_AUTOMATED_CHECKS.md): automated check loop
 - [COCOS_RESOURCE_RISK_MATRIX.md](COCOS_RESOURCE_RISK_MATRIX.md): resource risk classification

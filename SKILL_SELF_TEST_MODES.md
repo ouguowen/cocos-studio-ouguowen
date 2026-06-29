@@ -130,6 +130,50 @@ Block condition:
 
 - runtime success is claimed without browser marker or declared blocker
 
+## `pipeline`
+
+Purpose: Check the first-MVP path from design artifacts through pre-write approval, implementation proof, QA, and release acceptance.
+
+Required input:
+
+- selected MVP type
+- approved first implementation story
+- expected implementation file scope
+- expected generated companion meta scope
+- browser preview proof requirement
+- QA and release decisions
+
+Required test files:
+
+- `FIRST_MVP_SUCCESS_PIPELINE.md`
+- `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md`
+- `COCOS_GENERATED_META_POLICY.md`
+- `MVP_ACCEPTANCE_REPORT_TEMPLATE.md`
+- `SKILL_TEST_CASES.md`
+
+Required output:
+
+- command chain result
+- pre-write approval result
+- generated meta stop/resume result
+- browser preview proof result
+- QA decision
+- release decision
+- scope expansion check
+- PASS / FAIL / NEEDS_REPAIR
+
+Pass condition:
+
+- Test Case 09 passes and `FIRST_MVP_ACCEPTED` is limited to the current MVP only.
+
+Block condition:
+
+- implementation starts before pre-write approval
+- unapproved generated `.meta` is committed
+- browser proof is replaced by editor-only evidence
+- `QA_PASS` is skipped
+- first MVP acceptance is treated as full-game completion
+
 ## `audit`
 
 Purpose: Check scope drift, duplicated rules, missing index entries, and unsafe expansion.
@@ -260,6 +304,7 @@ Block condition:
 cocos-skill-self-test --core
 cocos-skill-self-test --safety
 cocos-skill-self-test --runtime
+cocos-skill-self-test --pipeline
 cocos-skill-self-test --diff
 cocos-skill-self-test --agent
 cocos-skill-self-test --all
@@ -268,6 +313,7 @@ cocos-skill-self-test --all
 - `--core` uses `SKILL_TEST_CASES.md`.
 - `--safety` uses `SKILL_EXTENDED_SAFETY_TEST_CASES.md`.
 - `--runtime` uses `RUNTIME_PROOF_PROTOCOL.md` and Preview Visibility Gate.
+- `--pipeline` uses `FIRST_MVP_SUCCESS_PIPELINE.md` and Test Case 09.
 - `--diff` uses `GIT_DIFF_REVIEW_PROTOCOL.md`.
 - `--agent` uses `AGENT_REGISTRY.md` and `AGENT_HANDOFF_PROTOCOL.md`.
 - `--all` runs core plus extended safety, runtime, diff, and Agent checks.
@@ -279,3 +325,4 @@ cocos-skill-self-test --all
 - Changing Agent files requires `--agent`.
 - Changing runtime proof rules requires `--runtime`.
 - Changing diff review requires `--diff`.
+- Changing first-MVP command flow, pre-write approval, generated meta policy, QA review, or release acceptance requires `--pipeline`.

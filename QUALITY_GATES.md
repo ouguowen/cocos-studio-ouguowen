@@ -63,6 +63,47 @@ If these are not true:
 
 - commit is blocked
 
+## Pre-write Approval Gate
+
+Use this gate before `cocos-dev-story` writes implementation files.
+
+- The implementation story is dev-ready.
+- Production readiness is `READY_FOR_IMPLEMENTATION`.
+- [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md) has been applied.
+- Exact files to create or modify are listed.
+- Files that must not be touched are listed.
+- Runtime validation plan is listed.
+- Rollback plan is listed.
+- Expected git diff scope is listed.
+- Cocos Creator / MCP usage plan is listed when local engine work is needed.
+- Browser preview proof plan is listed when UI or gameplay must be visible.
+- Final pre-write decision is `PRE_WRITE_APPROVAL_REQUIRED` or `PRE_WRITE_BLOCKED`.
+- The user explicitly approves before implementation begins.
+
+If these are not true:
+
+- file writes are blocked
+- scene/script/meta creation is blocked
+- commit and push are blocked
+
+## Cocos Generated Meta Gate
+
+Use this gate when Cocos Creator creates `.meta` files during implementation.
+
+- Generated `.meta` files are directly tied to approved new files or new folders.
+- Generated `.meta` paths are listed in the approved diff scope.
+- Unexpected generated `.meta` files cause Codex to stop and report.
+- User confirmation is required before adding unexpected generated `.meta` to the approved scope.
+- Unrelated `.meta` files are not modified.
+- `.scene`, `.prefab`, and `.meta` files are not raw text edited.
+- Rollback does not use `git reset --hard` unless the user explicitly confirms.
+
+If these are not true:
+
+- staging is blocked
+- commit is blocked
+- implementation must stop for user approval or repair
+
 ## Prototype Gate
 
 - Core loop is playable from start to resolution.
@@ -186,12 +227,49 @@ If these are not true:
 - Basic self-check has been done by the implementing owner.
 - Known blockers are declared instead of hidden.
 
+## QA Review Gate
+
+Use this gate after a dev story and before release review.
+
+- Tested commit is named.
+- Tested scene or entry point is named.
+- Tested script or runtime controller is named when applicable.
+- Browser preview proof is present for playable MVPs.
+- Preview Visibility Gate result is `PASS` before `QA_PASS`.
+- Acceptance criteria are checked one by one.
+- Forbidden scope is checked.
+- Git status is checked.
+- QA decision is `QA_PASS`, `QA_FAIL`, or `QA_BLOCKED`.
+
+If these are not true:
+
+- release review is blocked
+- `QA_PASS` cannot be claimed
+
 ## Release Candidate Gate
 
 - Blocking bugs are resolved or formally accepted.
 - Key flows pass regression.
 - Performance is within acceptable target range.
 - Release materials and channel information are ready.
+
+## First MVP Acceptance Gate
+
+Use this gate after `QA_PASS` when deciding whether the first MVP is accepted.
+
+- QA report exists and decision is `QA_PASS`.
+- Preview Visibility Gate is `PASS` for the current MVP.
+- Implementation commit is named.
+- Implemented scope matches the approved story.
+- Forbidden scope is absent.
+- Known limitations are listed.
+- The report states what acceptance does not mean.
+- Release decision is `FIRST_MVP_ACCEPTED`, `FIRST_MVP_NOT_ACCEPTED`, or `RELEASE_BLOCKED`.
+
+If these are not true:
+
+- first MVP acceptance is blocked
+- `FIRST_MVP_ACCEPTED` cannot be claimed
 
 ## Launch Gate
 

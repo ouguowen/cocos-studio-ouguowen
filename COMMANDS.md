@@ -243,6 +243,35 @@ Output:
 - validation rules
 - Animation Presentation Gate decision
 
+### `cocos-asset-policy`
+
+Use before implementation to decide whether final art, imported assets, audio, fonts, Spine, VFX, external assets, or placeholder-only visuals are allowed.
+
+Output:
+
+- selected game type
+- current stage
+- source presentation decision
+- asset scope decision
+- placeholder visual decision
+- UI asset decision
+- text asset decision
+- audio asset decision
+- font decision
+- external asset decision
+- naming rules
+- allowed first-version assets
+- forbidden first-version assets
+- Cocos asset path risk rules
+- validation requirements
+- Asset Policy Gate decision
+
+Rules:
+
+- This command is documentation-only unless the user explicitly authorizes asset import.
+- No external assets, final art, audio, fonts, Spine, particles, VFX, prefabs, scene files, or `.meta` files are modified during this command.
+- Route path risks through [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md).
+
 ### `cocos-production-readiness`
 
 Use before Codex starts real game implementation, opens a large development sprint, creates many Cocos scripts, builds large scene/prefab structures, or attempts to make a playable game in one pass.
@@ -345,6 +374,65 @@ Output:
 - animation presentation dependency, if animation states, UI motion, hit feedback, VFX, Spine, Tween, or AnimationClip are touched
 - production readiness status when the story starts real playable development
 
+### `cocos-first-implementation-story`
+
+Use when the project needs exactly one dev-ready first implementation story after design, numerical, economy, presentation, asset, and architecture documents exist.
+
+Output:
+
+- story date
+- source architecture
+- working title
+- implementation story name
+- story goal
+- user-facing result
+- allowed file changes for implementation
+- forbidden file changes for implementation
+- required implementation files
+- optional implementation files
+- scene requirements
+- UI requirements
+- story logic requirements
+- data requirements
+- asset requirements
+- runtime proof requirements
+- acceptance criteria
+- out-of-scope list
+- implementation risks
+- required pre-write approval checklist
+- next required command
+- final implementation story decision
+
+Rules:
+
+- This command writes story documentation only.
+- It does not create scenes, scripts, prefabs, meta files, assets, or runtime code.
+- It must keep the first story small enough for one implementation and one browser preview proof pass.
+
+### `cocos-dev-story-prewrite`
+
+Use immediately before `cocos-dev-story` when the implementation story is ready but files have not been written yet.
+
+Output:
+
+- exact files to create or modify
+- why each file is needed
+- files that must not be touched
+- runtime validation plan
+- rollback plan
+- expected git diff scope
+- Cocos Creator / MCP usage plan
+- browser preview proof plan
+- final pre-write decision: `PRE_WRITE_APPROVAL_REQUIRED` / `PRE_WRITE_BLOCKED`
+
+Rules:
+
+- Load [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md).
+- Stop at `PRE_WRITE_APPROVAL_REQUIRED` until the user explicitly approves.
+- Do not create files, modify scenes, modify scripts, modify `.meta`, commit, or push before approval.
+- Name Cocos-generated companion meta that may appear.
+- If generated meta later appears outside the approved scope, stop and apply [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md).
+
 ### `cocos-dev-story`
 
 Use when implementing a dev-ready story.
@@ -359,6 +447,17 @@ Output:
 - proof returned: hierarchy, bindings, Console, preview, generated files, or screenshots as applicable
 - unresolved blockers
 - handoff message to QA
+
+Rules:
+
+- Requires `READY_FOR_IMPLEMENTATION`.
+- Requires a user-approved Pre-write Approval Checklist from `cocos-dev-story-prewrite`.
+- Implements only the approved story and approved file list.
+- Limits changed files to the approved implementation files and approved Cocos-generated companion meta.
+- Must execute browser preview proof when the story is playable or UI-visible.
+- Must stop if unapproved files appear in `git status`, `git diff --name-only`, or `git diff --stat`.
+- Must stop and request user confirmation if Cocos generates a directly related `.meta` file that was not in the approved diff scope.
+- Must not expand into combat, economy, inventory, shop, gacha, save/load, extra chapters, external assets, or unrelated systems.
 
 ### `cocos-code-review`
 
@@ -378,6 +477,59 @@ Output:
 - production readiness fit when implementation started from a readiness decision
 - automation/local execution evidence fit when applicable
 - acceptance decision
+
+### `cocos-qa-review`
+
+Use after an implementation story has browser preview proof and before release review.
+
+Output:
+
+- QA date
+- checked commit
+- tested scene
+- tested script
+- browser preview result
+- Preview Visibility Gate result
+- acceptance criteria checklist
+- forbidden scope check
+- git status check
+- QA blockers
+- QA decision: `QA_PASS` / `QA_FAIL` / `QA_BLOCKED`
+- next required command
+
+Rules:
+
+- QA may read scene, script, and docs, and may run browser preview validation when required.
+- QA must not expand functionality.
+- QA must not modify scene, prefab, meta, runtime code, gameplay systems, or external assets.
+- `QA_PASS` requires browser-visible proof for playable MVPs.
+
+### `cocos-release-review`
+
+Use after `QA_PASS` to decide whether the current MVP is accepted.
+
+Output:
+
+- acceptance date
+- reviewed implementation commit
+- reviewed QA report
+- MVP name
+- implemented scope
+- browser preview proof summary
+- acceptance criteria result
+- forbidden scope result
+- runtime readiness result
+- release decision: `FIRST_MVP_ACCEPTED` / `FIRST_MVP_NOT_ACCEPTED` / `RELEASE_BLOCKED`
+- known limitations
+- what this release does not mean
+- recommended next step
+
+Rules:
+
+- Load [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md).
+- Release review may write acceptance documentation only.
+- Release review must not change gameplay, scene, prefab, meta, runtime code, or assets.
+- `FIRST_MVP_ACCEPTED` accepts the current MVP only and never authorizes scope expansion.
 
 ## Testing commands
 

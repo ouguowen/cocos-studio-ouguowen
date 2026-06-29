@@ -22,6 +22,36 @@ Use this file when a request touches Cocos-adjacent repositories, automation too
 - Review absolute paths for every newly added file.
 - If any changed path is not a Markdown doc in this repository, stop and audit.
 
+## Cocos-generated folder meta policy
+
+When working inside an actual Cocos game project, Cocos Creator may generate folder companion `.meta` files for newly created folders.
+
+Allowed only when directly related to the approved implementation scope:
+
+- folder companion `.meta` for a newly approved folder
+- asset companion `.meta` for a newly approved scene, script, prefab, or asset
+
+Examples from a valid first-MVP story:
+
+```text
+assets/scenes.meta
+assets/scenes/chapter_01.scene.meta
+assets/scripts.meta
+assets/scripts/story.meta
+assets/scripts/story/MoonlightDeliveryController.ts.meta
+```
+
+Rules:
+
+1. The `.meta` file must be directly related to a user-approved new file or folder.
+2. The `.meta` file must be listed in the approved diff scope before staging.
+3. Unexpected `.meta` files require a stop-and-report step.
+4. User confirmation is required before an unexpected generated `.meta` enters the approved scope.
+5. Unrelated `.meta` files remain forbidden.
+6. `.scene`, `.prefab`, and `.meta` files must not be raw text edited.
+
+See [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md).
+
 ## Block list for this repository update
 
 - `D:\CocosProjects\AI_Game_Studio_FirstGame`

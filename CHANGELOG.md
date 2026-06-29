@@ -6,6 +6,15 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Added
 
+- Added first MVP success pipeline based on Moonlight Delivery Chapter 1 Shell.
+- Added `FIRST_MVP_SUCCESS_PIPELINE.md` for the command chain from brief to `FIRST_MVP_ACCEPTED`.
+- Added `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md` for `cocos-dev-story` pre-write approval.
+- Added `COCOS_GENERATED_META_POLICY.md` for Cocos-generated companion meta review and approval.
+- Added `MVP_ACCEPTANCE_REPORT_TEMPLATE.md` for first MVP release acceptance reports.
+- Added `SUCCESS_CASE_MOONLIGHT_DELIVERY.md` as a successful pipeline case without making story games the only template.
+- Added `cocos-asset-policy`, `cocos-first-implementation-story`, `cocos-dev-story-prewrite`, `cocos-qa-review`, and `cocos-release-review` command definitions.
+- Added Pre-write Approval Gate, Cocos Generated Meta Gate, QA Review Gate, and First MVP Acceptance Gate.
+- Added first MVP pipeline success self-test coverage.
 - Added `GAME_NUMERICAL_DESIGN.md` for gameplay stats, difficulty, rewards, costs, placeholder values, legal ranges, and balance validation rules.
 - Added `cocos-numerical-design` command routing.
 - Added `Numerical Design Gate` to `QUALITY_GATES.md`.
@@ -29,6 +38,9 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Updated command routing and quality gates for QA/release closure.
+- Updated runtime proof rules so first-MVP browser preview proof must show title/objective/action/result style visibility when applicable.
+- Updated write approval and path scope rules so unapproved Cocos-generated `.meta` files require a stop-and-confirm step.
 - Updated `QUICK_START.md` with a provider-driven AI Game Studio startup prompt.
 - Added a quick check that separates the reusable multi-game-type Skill from the currently selected game type.
 - Added a provider-driven proof workflow that treats the current Cocos automation tool/MCP provider as an execution channel.
