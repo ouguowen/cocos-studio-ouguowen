@@ -1,161 +1,52 @@
 # Cocos Studio Ouguowen
 
-Senior multi-game-type AI Game Studio skill for `Cocos Creator 3.8.8`.
+Cocos Studio Ouguowen is a production-control Skill for Cocos Creator 3.8.8 AI-assisted game development.
 
-This skill is for solo developers and small teams who want to build Cocos Creator games with studio-grade structure instead of ad hoc decisions.
+It helps Codex or other AI coding agents plan, scope, validate, implement, QA, and close small Cocos Creator MVPs without drifting into uncontrolled feature growth.
 
-It is not a single-game template, not a Cocos2d-x skill, and not a provider-specific MCP plugin. It can use the currently available Cocos automation tool or MCP provider as an execution channel when local Cocos engine work is required.
+## What This Project Is
 
-For a Chinese beginner entry, see [README.zh-CN.md](README.zh-CN.md).
+- A production-control Skill for Cocos Creator 3.8.8.
+- A multi-game-type AI Game Studio workflow system.
+- A command and gate registry for AI-assisted Cocos development.
+- A safety layer for Codex or other AI coding agents.
+- A provider-neutral workflow that can use a Cocos automation provider or MCP as a replaceable execution channel.
+- A way to move from idea -> design -> first implementation story -> browser proof -> QA -> MVP acceptance.
 
-## What it covers
+## What This Project Is Not
 
-- game classification and MVP scope
-- multi-game-type template selection
-- production modes and stage control
-- role ownership and approval boundaries
-- Cocos Creator 3.8.8 project structure and runtime architecture
-- level data models and config-table discipline
-- provider-neutral Cocos automation proof when local engine work is required
-- local Cocos proof runbook for scene, prefab, binding, Console, and preview evidence
-- Codex + Cocos automation proof flow to reduce manual screenshot-driven validation
-- first wave spawn proof boundary before full gameplay claims
-- one-shot MVP chain control without skipping gates
-- release, rollback, and operations review
-- risk escalation and formal review
+- Not a single game template.
+- Not a Cocos2d-x guide.
+- Not a provider-specific MCP plugin.
+- Not a full Cocos manual.
+- Not a promise that AI can safely write scenes, prefabs, meta files, or runtime code without approval.
+- Not locked to Moonlight Delivery, attack-defense, story games, or any one genre.
 
-## What it does not cover
+## Supported Use Cases
 
-- Cocos2d-x C++ engine guidance
-- multi-engine development
-- one fixed final game template
-- hard-coded commercial MCP commands
-- hard-coded future official MCP commands
-- importing the full Cocos manual into the skill
-- claiming a Cocos scene or prefab is verified without local editor proof
-- pretending automation proof exists when the provider cannot return evidence
-- claiming first playable before spawn, movement, objective, and result path proof exist
+- Cocos Creator 3.8.8 project planning.
+- Multi-game-type MVP production.
+- Game classification before template selection.
+- GDD, numerical design, economy design, animation/presentation design, asset policy, and architecture gating.
+- First implementation story creation.
+- Pre-write approval before Codex writes files.
+- Browser preview proof through a Cocos automation provider, MCP, or manual execution path.
+- QA and release review for small MVPs.
 
-## AI Game Studio Mode
+## Quick Start
 
-This skill can be used as a lightweight AI Game Studio for Cocos Creator 3.8.8 projects.
-
-The studio is built from:
-
-```text
-AI Agent + Workflow + Knowledge
-```
-
-When a task requires local Cocos Creator execution, Codex may use the current Cocos automation tool or MCP provider. The provider is replaceable: a current commercial MCP and a future official Cocos MCP should be treated as execution providers with capabilities, not as the identity of this skill.
-
-### Main commands
-
-- `cocos-game-brief`: define concept, loop, MVP promise, and non-goals
-- `cocos-classify-game`: classify the dominant game type and content unit
-- `cocos-gdd`: create a structured Game Design Document
-- `cocos-project-context`: create or update project memory
-- `cocos-game-architecture`: design Cocos runtime architecture
-- `cocos-production-readiness`: decide if real implementation may start
-- `cocos-one-shot-mvp`: run a controlled MVP chain without skipping gates
-- `cocos-create-story`: create a dev-ready implementation story
-- `cocos-dev-story`: implement a scoped story
-- `cocos-code-review`: review implementation against gates
-- `cocos-quick-prototype`: validate one mechanic quickly
-
-### Main Agents
-
-- `cocos-producer` — Cocos Producer（制作人 / 项目负责人）
-- `cocos-game-designer` — Cocos Game Designer（游戏设计师 / 玩法策划）
-- `cocos-architect` — Cocos Architect（技术架构师 / 技术总监）
-- `cocos-dev` — Cocos Developer（Cocos 开发工程师）
-- `cocos-qa` — Cocos QA（测试 / 验收负责人）
-- `cocos-solo-dev` — Cocos Solo Dev（单人开发模式 / 一人工作室操作员）
-
-### Beginner start
+Use this prompt in Codex:
 
 ```text
 Use $cocos-studio-ouguowen.
 Run cocos-game-brief for my game idea, then recommend the next command.
 ```
 
-### One-shot MVP start
-
-Use this when the user wants continuous execution from one broad request, but still wants production logic and proof discipline.
-
-```text
-Use $cocos-studio-ouguowen.
-Run cocos-one-shot-mvp for my game idea.
-Do not skip gates.
-Stop with a blocker report if game type, MVP scope, Cocos runtime proof, or acceptance evidence is missing.
-```
-
-### Provider-driven start
-
-Use this only when a Cocos automation tool or MCP provider is available and authorized.
-
-```text
-Use $cocos-studio-ouguowen.
-Run cocos-game-brief for a selected Cocos Creator 3.8.8 game type.
-Execution channel: when local Cocos Creator work is required, use the currently available Cocos Creator 3.8.8 automation tool or MCP provider.
-Do not bind the plan to one commercial MCP provider or one future official Cocos MCP provider.
-Return provider proof only when local engine work is performed: scene hierarchy, component bindings, Console logs, preview result, screenshot, or PASS / FAIL notes.
-```
-
-For the detailed local proof standard, see [docs/provider-driven-local-cocos-proof.md](docs/provider-driven-local-cocos-proof.md).
-
-For the Codex local automation proof flow, see [docs/codex-cocos-automation-proof.md](docs/codex-cocos-automation-proof.md).
-
-For the first narrow gameplay proof after config parsing, see [docs/first-wave-spawn-proof.md](docs/first-wave-spawn-proof.md).
-
-For the spawn-only runtime template, see [examples/attack-defense-city/cocos-reference/CityBattleSpawnProofRuntime.ts](examples/attack-defense-city/cocos-reference/CityBattleSpawnProofRuntime.ts) and [examples/attack-defense-city/cocos-reference/SPAWN_PROOF_RUNTIME_USAGE.md](examples/attack-defense-city/cocos-reference/SPAWN_PROOF_RUNTIME_USAGE.md).
-
-## Best fit
-
-- serious Cocos Creator 3.8.8 projects
-- solo developers wearing many hats
-- small teams that want senior-level workflow control
-- level-heavy or content-heavy games
-- multi-type game planning where one selected game type is developed per MVP or sprint
-- projects that are getting messy during prototype, production, or release
-- projects using a Cocos automation provider as a replaceable execution channel
-
-## Recommended starting prompts
-
-1. `Use $cocos-studio-ouguowen. Classify this game by dominant loop and content unit.`
-2. `Use $cocos-studio-ouguowen. Define the MVP and explicit non-goals.`
-3. `Use $cocos-studio-ouguowen. Create the first project memory record.`
-4. `Use $cocos-studio-ouguowen. Build the version roadmap and next milestone proof obligation.`
-5. `Use $cocos-studio-ouguowen. Run cocos-game-brief for my game idea, then recommend the next command.`
-6. `Use $cocos-studio-ouguowen. Run cocos-one-shot-mvp for my game idea without skipping gates.`
-7. `Use $cocos-studio-ouguowen. Explain which Cocos automation provider capabilities are needed before local engine execution.`
-8. `Use $cocos-studio-ouguowen. Apply the provider-driven local Cocos proof runbook before claiming the scene is playable.`
-9. `Use $cocos-studio-ouguowen. Run Codex + Cocos automation proof for attack-defense-city and return PASS / FAIL / BLOCKED evidence.`
-10. `Use $cocos-studio-ouguowen. Run first wave spawn proof only; do not add movement, combat, objective, economy, or result path yet.`
-
-## Core files
-
-- `SKILL.md`: entrypoint and routing
-- `README.zh-CN.md`: Chinese beginner entry and safe first prompts
-- `MODULE_INDEX.md`: module map
-- `WORKFLOWS.md`: high-frequency execution
-- `TEMPLATES.md`: high-frequency artifacts
-- `AI_GAME_STUDIO_SYSTEM.md`: AI Game Studio system model
-- `COMMANDS.md`: command registry
-- `ONE_SHOT_GAME_BUILD.md`: controlled one-shot MVP chain law
-- `EXAMPLE_PACK_EXPANSION_PLAN.md`: multi-game-type example pack expansion plan
-- `docs/provider-driven-local-cocos-proof.md`: local Cocos proof runbook for provider or manual execution
-- `docs/codex-cocos-automation-proof.md`: Codex local automation proof flow for Cocos providers
-- `docs/first-wave-spawn-proof.md`: first narrow gameplay proof after config parsing
-- `examples/attack-defense-city/cocos-reference/CityBattleSpawnProofRuntime.ts`: spawn-only Cocos proof runtime template
-- `examples/attack-defense-city/cocos-reference/SPAWN_PROOF_RUNTIME_USAGE.md`: local usage guide for the spawn proof runtime
-- `AGENT_REGISTRY.md`: Agent roles and boundaries
-- `AGENT_HANDOFF_PROTOCOL.md`: Agent-to-Agent handoff rules
-- `LEVEL_SYSTEM_ARCHITECTURE.md`: core level runtime boundaries
-- `QUICK_START.md`: beginner installation, validation, and provider-driven start guide
+The Skill should start with a brief and recommend the next controlled command. It should not jump directly into Cocos scene or script writing.
 
 ## Installation
 
-Place the folder in your Codex skills directory:
+Place this repository in your Codex skills directory:
 
 ```text
 ~/.codex/skills/cocos-studio-ouguowen
@@ -167,4 +58,129 @@ On Windows:
 C:\Users\<you>\.codex\skills\cocos-studio-ouguowen
 ```
 
-Restart Codex after updating the skill so the metadata reloads cleanly.
+Restart Codex after installing or updating the Skill so metadata reloads cleanly.
+
+## First MVP Path
+
+For the full first-MVP path, see [docs/quickstart-first-mvp.md](docs/quickstart-first-mvp.md) and [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md).
+
+Canonical chain:
+
+```text
+cocos-game-brief
+-> cocos-classify-game
+-> cocos-gdd
+-> cocos-numerical-design
+-> cocos-economy-design
+-> cocos-animation-design
+-> cocos-asset-policy
+-> cocos-game-architecture
+-> cocos-first-implementation-story
+-> cocos-production-readiness
+-> cocos-dev-story-prewrite
+-> cocos-dev-story
+-> Preview Visibility Gate
+-> cocos-qa-review
+-> cocos-release-review
+-> FIRST_MVP_ACCEPTED
+```
+
+Important boundaries:
+
+- Documentation stages do not open Cocos Creator.
+- Implementation requires `FIRST_IMPLEMENTATION_STORY.md`.
+- `READY_FOR_IMPLEMENTATION` authorizes one story only.
+- `cocos-dev-story` must stop at pre-write approval before writing files.
+- Browser preview proof must show real visible runtime output.
+- `FIRST_MVP_ACCEPTED` means the current MVP is accepted, not that the full game is complete.
+
+## Core Commands
+
+- `cocos-game-brief`: define the game idea, target player, core fantasy, MVP promise, and non-goals.
+- `cocos-classify-game`: classify the game type by dominant action and content unit.
+- `cocos-gdd`: produce the Game Design Document.
+- `cocos-numerical-design`: decide whether gameplay numbers or balance systems are needed.
+- `cocos-economy-design`: decide whether currency, shop, inventory, rewards, ads, gacha, or monetization exist.
+- `cocos-animation-design`: decide presentation, animation, VFX, UI motion, and gameplay-truth boundaries.
+- `cocos-asset-policy`: decide placeholder/final art, audio, font, import, and external-asset boundaries.
+- `cocos-game-architecture`: define scene, script, data, asset, and runtime proof boundaries.
+- `cocos-first-implementation-story`: write the smallest dev-ready first story.
+- `cocos-production-readiness`: decide whether exactly one implementation story may start.
+- `cocos-dev-story-prewrite`: output the pre-write approval checklist and stop.
+- `cocos-dev-story`: implement only the approved story after explicit user approval.
+- `cocos-qa-review`: verify acceptance criteria and forbidden scope.
+- `cocos-release-review`: decide `FIRST_MVP_ACCEPTED`, `FIRST_MVP_NOT_ACCEPTED`, or `RELEASE_BLOCKED`.
+
+See [COMMANDS.md](COMMANDS.md) for the full command registry.
+
+## How It Prevents Unsafe AI Writes
+
+The Skill uses multiple guardrails:
+
+- [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md): AI command permission boundaries.
+- [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md): path-scope rules for Cocos projects and Skill maintenance.
+- [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md): write approval before file changes.
+- [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md): mandatory pre-write checklist before `cocos-dev-story`.
+- [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md): stop-and-confirm policy for Cocos-generated `.meta` files.
+- [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md): proof rules for browser preview and runtime claims.
+- [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md): required diff review before commit.
+
+The Skill should stop when unexpected files appear, especially Cocos `.scene`, `.prefab`, `.meta`, runtime code, or unrelated assets.
+
+## Automation Provider / MCP Position
+
+This project is not an MCP plugin.
+
+It can use a Cocos automation provider or MCP when local Cocos work is authorized, but that provider is only an execution channel. The workflow should stay provider-neutral and describe capabilities such as:
+
+- open project
+- inspect hierarchy
+- create scene
+- create nodes
+- bind components
+- save scene
+- run browser preview
+- read console
+- return screenshot or PASS/FAIL proof
+
+A current commercial MCP provider and a future official Cocos MCP should be replaceable without changing the Skill's core identity.
+
+## Example Case: Moonlight Delivery
+
+Moonlight Delivery - Chapter 1 Shell is a successful first-MVP case:
+
+- game type: `story-clear / light-interaction / narrative micro-game`
+- result: `FIRST_MVP_ACCEPTED`
+- QA result: `QA_PASS`
+- Preview Visibility Gate: `PASS`
+
+Read the case:
+
+- [SUCCESS_CASE_MOONLIGHT_DELIVERY.md](SUCCESS_CASE_MOONLIGHT_DELIVERY.md)
+- [examples/moonlight-delivery/README.md](examples/moonlight-delivery/README.md)
+
+This case proves the pipeline, not the only game genre. It should improve workflow control, not lock the Skill to story games.
+
+## Repository Map
+
+- [SKILL.md](SKILL.md): Skill entrypoint and routing law.
+- [COMMANDS.md](COMMANDS.md): command registry.
+- [MODULE_INDEX.md](MODULE_INDEX.md): module map.
+- [QUALITY_GATES.md](QUALITY_GATES.md): promotion and approval gates.
+- [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md): proven first-MVP pipeline.
+- [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md): pre-write approval protocol.
+- [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md): generated meta policy.
+- [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md): MVP acceptance report template.
+- [CONTRIBUTING.md](CONTRIBUTING.md): contribution guide.
+- [SECURITY.md](SECURITY.md): security reporting and safety policy.
+- [docs/open-source-roadmap.md](docs/open-source-roadmap.md): open-source polish roadmap.
+
+## Contributing
+
+Contributions are welcome when they preserve the Skill's safety model.
+
+Start with [CONTRIBUTING.md](CONTRIBUTING.md). Do not submit changes that encourage agents to bypass pre-write approval, raw-edit Cocos `.scene` / `.prefab` / `.meta` files, or treat browser proof as optional for playable MVPs.
+
+## License
+
+See [LICENSE](LICENSE).

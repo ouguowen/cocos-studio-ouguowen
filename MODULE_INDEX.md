@@ -8,7 +8,10 @@ Use this file to route a request into the correct module family before loading d
 - [STAGES.md](STAGES.md): where the project is in time
 - [VERSION_ROADMAP_SYSTEM.md](VERSION_ROADMAP_SYSTEM.md): why the current version exists and what proves promotion
 - [PROJECT_MEMORY_SYSTEM.md](PROJECT_MEMORY_SYSTEM.md): stable project truth across sessions
+- [README.md](README.md): English open-source entry, installation, commands, safety model, and first-MVP links
 - [README.zh-CN.md](README.zh-CN.md): Chinese beginner entry, safe first prompts, and beginner boundaries
+- [docs/quickstart-first-mvp.md](docs/quickstart-first-mvp.md): first-MVP command path from idea to release review
+- [docs/open-source-roadmap.md](docs/open-source-roadmap.md): open-source polish roadmap and contribution priorities
 
 ## 2. Roles, authority, and handoff
 
@@ -18,6 +21,8 @@ Use this file to route a request into the correct module family before loading d
 - [TEAM_SENIORITY_SYSTEM.md](TEAM_SENIORITY_SYSTEM.md): who is senior enough to own or approve work
 - [COLLAB_HANDOFF_SYSTEM.md](COLLAB_HANDOFF_SYSTEM.md): how internal, vendor, and AI-assisted handoffs must work
 - [OUTSOURCING_COLLAB_RULES.md](OUTSOURCING_COLLAB_RULES.md): external collaboration boundaries
+- [CONTRIBUTING.md](CONTRIBUTING.md): open-source contribution rules and review checklist
+- [SECURITY.md](SECURITY.md): security and AI safety reporting policy
 
 ## 3. Game definition and scope
 
@@ -59,6 +64,7 @@ Use this file to route a request into the correct module family before loading d
 - [RELEASE_PIPELINE_SYSTEM.md](RELEASE_PIPELINE_SYSTEM.md): build lanes, rollout, and hotfix planning
 - [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md): `FIRST_MVP_ACCEPTANCE_REPORT.md` template and release decision vocabulary
 - [SUCCESS_CASE_MOONLIGHT_DELIVERY.md](SUCCESS_CASE_MOONLIGHT_DELIVERY.md): successful Moonlight Delivery Chapter 1 Shell pipeline case, not a universal genre template
+- [examples/moonlight-delivery/README.md](examples/moonlight-delivery/README.md): example entry for the Moonlight Delivery success case
 - [PLATFORM_TARGET_RULES.md](PLATFORM_TARGET_RULES.md): Android, iOS, web, mini-game, and package differences
 - [RELEASE_ROLLBACK_PLAYBOOK.md](RELEASE_ROLLBACK_PLAYBOOK.md): rollback discipline
 - [OPERATIONS_DATA_SYSTEM.md](OPERATIONS_DATA_SYSTEM.md): retention, monetization, ad, event, and economy review

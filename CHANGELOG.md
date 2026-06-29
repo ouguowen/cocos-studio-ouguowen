@@ -6,6 +6,8 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Added
 
+- Added open-source polish docs: `CONTRIBUTING.md`, `SECURITY.md`, `docs/quickstart-first-mvp.md`, `docs/open-source-roadmap.md`, and `examples/moonlight-delivery/README.md`.
+- Added a Moonlight Delivery example entry that frames the case as pipeline proof, not the only game type.
 - Added first MVP success pipeline based on Moonlight Delivery Chapter 1 Shell.
 - Added `FIRST_MVP_SUCCESS_PIPELINE.md` for the command chain from brief to `FIRST_MVP_ACCEPTED`.
 - Added `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md` for `cocos-dev-story` pre-write approval.
@@ -38,6 +40,9 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Updated `README.md` to clarify project positioning, installation, core commands, safety model, automation provider stance, and first-MVP path.
+- Reworked `README.zh-CN.md` as a readable Chinese beginner entry with installation, MVP path, command list, safety model, and Moonlight Delivery case links.
+- Updated `MODULE_INDEX.md` with open-source docs, contribution/security docs, first-MVP quickstart, roadmap, and Moonlight Delivery example entry.
 - Updated command routing and quality gates for QA/release closure.
 - Updated runtime proof rules so first-MVP browser preview proof must show title/objective/action/result style visibility when applicable.
 - Updated write approval and path scope rules so unapproved Cocos-generated `.meta` files require a stop-and-confirm step.
