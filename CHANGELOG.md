@@ -46,6 +46,8 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Fixed Issue Template contact links to point to SECURITY.md, CONTRIBUTING.md, and first-MVP quickstart.
+- Updated validation script to reject generic GitHub contact links in issue template config.
 - Updated README, README.zh-CN, CONTRIBUTING, MODULE_INDEX, and automation validation docs with collaboration template and release strategy links.
 - Updated `scripts/validate_skill_docs.py` to require the collaboration templates, release strategy, and release checklist.
 - Updated README, Chinese README, MODULE_INDEX, and CONTRIBUTING with validation guidance.

@@ -155,6 +155,12 @@ CONTENT_CHECKS = {
         "git diff --name-only",
         "Changelog updated",
     ],
+    ".github/ISSUE_TEMPLATE/config.yml": [
+        "blank_issues_enabled: false",
+        "https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/SECURITY.md",
+        "https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/CONTRIBUTING.md",
+        "https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/docs/quickstart-first-mvp.md",
+    ],
 }
 
 SAFETY_CHECKS = {
@@ -320,6 +326,12 @@ def check_required_content() -> list[str]:
         ]
     ):
         errors.append("README.md: missing negative full-game-complete statement")
+
+    issue_template_config = ROOT / ".github/ISSUE_TEMPLATE/config.yml"
+    if issue_template_config.exists():
+        for line in read_text(issue_template_config).splitlines():
+            if line.strip() == "url: https://github.com/":
+                errors.append("Issue template config uses generic GitHub contact link.")
     return errors
 
 

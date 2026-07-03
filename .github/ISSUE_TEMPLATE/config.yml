@@ -1,8 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Security and private safety report
-    url: https://github.com/
-    about: Follow SECURITY.md for private vulnerability or sensitive safety reports.
+  - name: Security policy
+    url: https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/SECURITY.md
+    about: Report private vulnerabilities or sensitive AI/Cocos safety issues according to SECURITY.md.
   - name: Contribution guide
-    url: https://github.com/
-    about: Read CONTRIBUTING.md before proposing workflow, gate, or validation changes.
+    url: https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/CONTRIBUTING.md
+    about: Read contribution boundaries before proposing workflow, gate, validation, or release changes.
+  - name: First MVP quickstart
+    url: https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/docs/quickstart-first-mvp.md
+    about: Start here for the safe first-MVP workflow.

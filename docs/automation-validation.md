@@ -16,6 +16,7 @@ It protects the repository from accidental regressions such as:
 - positive instructions for dangerous commands
 - missing issue templates or pull request template
 - missing release strategy or release checklist
+- issue template config contact links that point to generic `https://github.com/` instead of real repository files
 
 ## When GitHub Actions runs
 
@@ -52,6 +53,7 @@ It checks:
 5. safety rule presence
 6. dangerous pattern context
 7. collaboration and release template presence
+8. Issue template config contact links point to real repository files
 
 ## Required files
 
