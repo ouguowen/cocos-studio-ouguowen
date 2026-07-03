@@ -1,0 +1,56 @@
+name: Feature request
+description: Propose a new Skill capability, workflow, command, gate, or documentation improvement.
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature requests should preserve the Skill as a provider-neutral, multi-game-type Cocos Creator 3.8.8 production system.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What does this improve for contributors or AI-assisted Cocos production?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the command, gate, doc, template, or validation improvement.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Command routing
+        - Quality gates
+        - Safety protocols
+        - Documentation
+        - Validation automation
+        - Example documentation
+        - Release process
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: Required proof
+      description: What local check, example, or review should prove the change works?
+      placeholder: "python scripts/validate_skill_docs.py"
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundary confirmation
+      options:
+        - label: This proposal does not make the Skill a single game template.
+          required: true
+        - label: This proposal does not bind the Skill to one Cocos automation provider or MCP dialect.
+          required: true
+        - label: This proposal does not bypass pre-write approval, browser proof, or generated `.meta` review.
+          required: true

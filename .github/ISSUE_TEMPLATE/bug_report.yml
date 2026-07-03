@@ -1,0 +1,59 @@
+name: Bug report
+description: Report a documentation, workflow, validation, or safety defect in the Skill.
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for Skill repository defects. Do not attach live Cocos project files, `.scene`, `.prefab`, or `.meta` assets.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken or unsafe?
+    validations:
+      required: true
+  - type: textarea
+    id: affected-files
+    attributes:
+      label: Affected Skill files
+      description: List docs, scripts, templates, or workflow files involved.
+      placeholder: "README.md, MODULE_INDEX.md, scripts/validate_skill_docs.py"
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - Skill documentation
+        - Skill validation script
+        - GitHub workflow or templates
+        - Example documentation
+        - Other Skill repository file
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen instead?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened?
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: This report does not require modifying a live Cocos game project.
+          required: true
+        - label: This report does not ask contributors to raw-edit `.scene`, `.prefab`, `.anim`, or `.meta` files.
+          required: true

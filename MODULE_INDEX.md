@@ -13,6 +13,8 @@ Use this file to route a request into the correct module family before loading d
 - [docs/quickstart-first-mvp.md](docs/quickstart-first-mvp.md): first-MVP command path from idea to release review
 - [docs/open-source-roadmap.md](docs/open-source-roadmap.md): open-source polish roadmap and contribution priorities
 - [docs/automation-validation.md](docs/automation-validation.md): GitHub Actions and local Skill docs validation guide
+- [docs/release-strategy.md](docs/release-strategy.md): release lanes, release gates, blockers, and post-release review
+- [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md): release readiness checklist for scope, docs, templates, validation, and release decision
 
 ## 2. Roles, authority, and handoff
 
@@ -24,6 +26,12 @@ Use this file to route a request into the correct module family before loading d
 - [OUTSOURCING_COLLAB_RULES.md](OUTSOURCING_COLLAB_RULES.md): external collaboration boundaries
 - [CONTRIBUTING.md](CONTRIBUTING.md): open-source contribution rules and review checklist
 - [SECURITY.md](SECURITY.md): security and AI safety reporting policy
+- [.github/ISSUE_TEMPLATE/bug_report.yml](.github/ISSUE_TEMPLATE/bug_report.yml): structured public bug report template
+- [.github/ISSUE_TEMPLATE/feature_request.yml](.github/ISSUE_TEMPLATE/feature_request.yml): structured feature proposal template
+- [.github/ISSUE_TEMPLATE/safety_report.yml](.github/ISSUE_TEMPLATE/safety_report.yml): public AI safety and path-scope report template
+- [.github/ISSUE_TEMPLATE/documentation.yml](.github/ISSUE_TEMPLATE/documentation.yml): documentation request template
+- [.github/ISSUE_TEMPLATE/config.yml](.github/ISSUE_TEMPLATE/config.yml): issue template routing configuration
+- [.github/pull_request_template.md](.github/pull_request_template.md): PR scope, safety, validation, and release-impact checklist
 
 ## 3. Game definition and scope
 
@@ -63,6 +71,8 @@ Use this file to route a request into the correct module family before loading d
 - [docs/codex-cocos-automation-proof.md](docs/codex-cocos-automation-proof.md): Codex local automation proof flow for Cocos provider-driven validation
 - [docs/first-wave-spawn-proof.md](docs/first-wave-spawn-proof.md): first narrow gameplay proof for spawn-only behavior after config parsing
 - [RELEASE_PIPELINE_SYSTEM.md](RELEASE_PIPELINE_SYSTEM.md): build lanes, rollout, and hotfix planning
+- [docs/release-strategy.md](docs/release-strategy.md): open-source Skill release strategy and blockers
+- [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md): final release checklist before tag or announcement
 - [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md): `FIRST_MVP_ACCEPTANCE_REPORT.md` template and release decision vocabulary
 - [SUCCESS_CASE_MOONLIGHT_DELIVERY.md](SUCCESS_CASE_MOONLIGHT_DELIVERY.md): successful Moonlight Delivery Chapter 1 Shell pipeline case, not a universal genre template
 - [examples/moonlight-delivery/README.md](examples/moonlight-delivery/README.md): example entry for the Moonlight Delivery success case

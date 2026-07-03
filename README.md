@@ -139,6 +139,18 @@ python scripts/validate_skill_docs.py
 
 See [docs/automation-validation.md](docs/automation-validation.md) for the full validation policy and local run instructions.
 
+## Collaboration and Release
+
+Open-source collaboration is routed through GitHub issue templates and the pull request template:
+
+- Bug reports: [bug_report.yml](.github/ISSUE_TEMPLATE/bug_report.yml)
+- Feature requests: [feature_request.yml](.github/ISSUE_TEMPLATE/feature_request.yml)
+- Safety reports: [safety_report.yml](.github/ISSUE_TEMPLATE/safety_report.yml)
+- Documentation requests: [documentation.yml](.github/ISSUE_TEMPLATE/documentation.yml)
+- Pull requests: [pull_request_template.md](.github/pull_request_template.md)
+
+Release planning uses [docs/release-strategy.md](docs/release-strategy.md) and [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md). A release must keep changes inside the Skill repository, pass `python scripts/validate_skill_docs.py`, update [CHANGELOG.md](CHANGELOG.md), and preserve the safety model around Cocos `.scene`, `.prefab`, `.anim`, `.meta`, browser proof, and pre-write approval.
+
 ## Automation Provider / MCP Position
 
 This project is not an MCP plugin.

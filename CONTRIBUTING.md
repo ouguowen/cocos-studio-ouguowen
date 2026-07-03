@@ -33,6 +33,8 @@ Good contributions include:
 - self-test cases for unsafe agent behavior
 - examples that prove workflow control without becoming the only template
 - documentation fixes and translation improvements
+- collaboration template improvements
+- release checklist and release strategy improvements
 
 Avoid contributions that. Do not:
 
@@ -55,6 +57,20 @@ Read:
 - [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md)
 - [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md)
 - [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md)
+- [docs/release-strategy.md](docs/release-strategy.md)
+- [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md)
+
+## Issue and pull request templates
+
+Use the GitHub templates for public collaboration:
+
+- [bug_report.yml](.github/ISSUE_TEMPLATE/bug_report.yml) for Skill defects.
+- [feature_request.yml](.github/ISSUE_TEMPLATE/feature_request.yml) for new commands, gates, docs, validation, or release process proposals.
+- [safety_report.yml](.github/ISSUE_TEMPLATE/safety_report.yml) for public AI safety and Cocos path-scope issues.
+- [documentation.yml](.github/ISSUE_TEMPLATE/documentation.yml) for missing or unclear docs.
+- [pull_request_template.md](.github/pull_request_template.md) for required PR scope, safety, validation, and release-impact checks.
+
+Private vulnerabilities or sensitive safety reports should follow [SECURITY.md](SECURITY.md), not a public issue.
 
 ## Safety rules for contributors
 
@@ -116,6 +132,12 @@ Confirm:
 - I ran `python scripts/validate_skill_docs.py` locally.
 - The GitHub Actions Skill Docs Validation check passes.
 - I did not introduce dangerous commands as positive instructions.
+
+For release-impacting changes, also confirm:
+
+- [docs/release-strategy.md](docs/release-strategy.md) still matches the release gate.
+- [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) covers any new release requirement.
+- [CHANGELOG.md](CHANGELOG.md) describes the change.
 
 ## Commit messages
 

@@ -1,0 +1,46 @@
+name: Documentation
+description: Request a documentation fix, translation improvement, missing link, or clearer example.
+title: "[Docs]: "
+labels: ["documentation", "needs-triage"]
+body:
+  - type: textarea
+    id: location
+    attributes:
+      label: Documentation location
+      description: Which file, section, command, or link needs attention?
+      placeholder: "README.md, README.zh-CN.md, docs/release-strategy.md"
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is unclear or missing?
+    validations:
+      required: true
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Suggested fix
+      description: Optional wording, link, or structure.
+    validations:
+      required: false
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation type
+      options:
+        - English README or guide
+        - Chinese README or guide
+        - Command or module index
+        - Safety protocol
+        - Release or contribution doc
+        - Example documentation
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: This request is documentation-only and does not require live Cocos project changes.
+          required: true

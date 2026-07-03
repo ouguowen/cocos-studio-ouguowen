@@ -14,6 +14,8 @@ It protects the repository from accidental regressions such as:
 - missing pre-write approval rules
 - missing generated `.meta` safety rules
 - positive instructions for dangerous commands
+- missing issue templates or pull request template
+- missing release strategy or release checklist
 
 ## When GitHub Actions runs
 
@@ -49,6 +51,7 @@ It checks:
 4. command routing references
 5. safety rule presence
 6. dangerous pattern context
+7. collaboration and release template presence
 
 ## Required files
 
@@ -70,6 +73,14 @@ The validator requires key files such as:
 - `docs/quickstart-first-mvp.md`
 - `docs/open-source-roadmap.md`
 - `docs/automation-validation.md`
+- `docs/release-strategy.md`
+- `RELEASE_CHECKLIST.md`
+- `.github/ISSUE_TEMPLATE/bug_report.yml`
+- `.github/ISSUE_TEMPLATE/feature_request.yml`
+- `.github/ISSUE_TEMPLATE/safety_report.yml`
+- `.github/ISSUE_TEMPLATE/documentation.yml`
+- `.github/ISSUE_TEMPLATE/config.yml`
+- `.github/pull_request_template.md`
 - `examples/moonlight-delivery/README.md`
 
 ## Markdown links

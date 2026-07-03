@@ -1,0 +1,54 @@
+name: Safety report
+description: Report an AI safety, path-scope, Cocos asset, proof, or permission boundary issue.
+title: "[Safety]: "
+labels: ["safety", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For private security-sensitive reports, follow SECURITY.md. Use this template for public safety/process issues that can be discussed openly.
+  - type: textarea
+    id: risk
+    attributes:
+      label: Safety risk
+      description: What unsafe behavior could this allow?
+    validations:
+      required: true
+  - type: dropdown
+    id: risk-area
+    attributes:
+      label: Risk area
+      options:
+        - Pre-write approval bypass
+        - Cocos `.scene` / `.prefab` / `.meta` handling
+        - Live game project path scope
+        - Browser preview proof
+        - Provider-specific automation drift
+        - Git diff or release review
+        - Other safety boundary
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction or trigger
+      description: What prompt, doc path, command, or workflow exposes the issue?
+    validations:
+      required: true
+  - type: textarea
+    id: expected-boundary
+    attributes:
+      label: Expected boundary
+      description: Which rule should block or redirect this behavior?
+      placeholder: "COCOS_PATH_SCOPED_RULES.md, CODEX_WRITE_APPROVAL_PROTOCOL.md"
+    validations:
+      required: true
+  - type: checkboxes
+    id: sensitive
+    attributes:
+      label: Disclosure check
+      options:
+        - label: This issue does not disclose private credentials, private project assets, or exploit details that should go through SECURITY.md.
+          required: true
+        - label: This issue does not request raw text edits to `.scene`, `.prefab`, `.anim`, or `.meta` files.
+          required: true

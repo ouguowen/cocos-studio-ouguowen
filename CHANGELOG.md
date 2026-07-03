@@ -6,6 +6,9 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Added
 
+- Added GitHub issue templates for bug reports, feature requests, safety reports, documentation requests, and issue routing config.
+- Added `.github/pull_request_template.md` with scope, safety, validation, and release-impact checks.
+- Added `docs/release-strategy.md` and `RELEASE_CHECKLIST.md` for open-source release planning and release readiness review.
 - Added GitHub Actions Skill Docs Validation workflow.
 - Added `scripts/validate_skill_docs.py` for required docs, links, command routing, and safety regression checks.
 - Added automation validation documentation.
@@ -43,6 +46,8 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Updated README, README.zh-CN, CONTRIBUTING, MODULE_INDEX, and automation validation docs with collaboration template and release strategy links.
+- Updated `scripts/validate_skill_docs.py` to require the collaboration templates, release strategy, and release checklist.
 - Updated README, Chinese README, MODULE_INDEX, and CONTRIBUTING with validation guidance.
 - Updated `README.md` to clarify project positioning, installation, core commands, safety model, automation provider stance, and first-MVP path.
 - Reworked `README.zh-CN.md` as a readable Chinese beginner entry with installation, MVP path, command list, safety model, and Moonlight Delivery case links.
