@@ -6,6 +6,8 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Added
 
+- Added `CONTEXT_LOADING_POLICY.md` to define context budgets, trigger-based loading, and anti-overload rules.
+- Added `SKILL_CONTEXT_SUMMARY.md` as the lightweight first-read memory for normal development sessions.
 - Added `SKILL_OPERATION_MODES.md` to define Fast Build Mode, Safe Gate Mode, and Audit Mode.
 - Added Developer Experience Gate and Interruption Budget Gate.
 - Added UI-Character-Action linkage system.
@@ -50,6 +52,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Updated context guidance so normal development starts with a lightweight summary and expands only by trigger.
 - Updated cocos-dev-story workflow so implementation after approved pre-write scope runs in Fast Build Mode.
 - Updated write approval and runtime proof protocols to avoid repeated confirmation and repeated proof reports during normal development.
 - Updated validation script to enforce operation mode rules.
@@ -88,17 +91,3 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 ## v0.3.0-alpha.7 - 2026-06-23
 
 ### Changed
-
-- Clarified that the skill is a multi-game-type Cocos Creator 3.8.8 AI Game Studio, not a single attack-defense game template.
-- Clarified that the modern city attack-defense pack is the first example pack and validation sample, not the user's fixed only game direction.
-- Added provider-neutral Cocos automation policy to `SKILL.md` without binding the skill to one commercial MCP provider or a future official provider.
-- Added command-level automation provider rules to `COMMANDS.md` for local Cocos execution proof.
-- Clarified in `AI_GAME_STUDIO_SYSTEM.md` that automation tools/MCP providers are execution channels, not the identity of the skill.
-- Updated `package.json` version to `0.3.0-alpha.7`.
-
-### Still not included
-
-- A provider-specific MCP protocol layer.
-- A hard dependency on any one Cocos automation plugin.
-- Cocos2d-x guidance.
-- Multi-engine support.
