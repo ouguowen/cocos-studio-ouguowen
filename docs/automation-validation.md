@@ -18,6 +18,7 @@ It protects the repository from accidental regressions such as:
 - missing release strategy or release checklist
 - missing UI, Character, Action, Animation, Skeleton, or Asset semantic linkage files
 - missing ownership rules that keep UI, animation, skeleton, prefab, and assets from owning gameplay truth
+- missing Skill Operation Modes or regression back to default audit mode or high-frequency interruption mode
 - issue template config contact links that point to generic `https://github.com/` instead of real repository files
 
 ## When GitHub Actions runs
@@ -58,6 +59,7 @@ It checks:
 8. Issue template config contact links point to real repository files
 9. UI, Character, Action, Animation, Skeleton, and Asset semantic linkage files exist
 10. core ownership rules are preserved for request-only UI, controller-owned final state, character-owned action semantics, presentation-only animation, display-only skeleton, and behavior-free assets
+11. Skill Operation Modes exist and preserve Fast Build Mode, Safe Gate Mode, Audit Mode, concise reporting, stop conditions, and interruption-budget rules
 
 ## Required files
 
@@ -69,6 +71,7 @@ The validator requires key files such as:
 - `COMMANDS.md`
 - `MODULE_INDEX.md`
 - `QUALITY_GATES.md`
+- `SKILL_OPERATION_MODES.md`
 - `UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md`
 - `CHARACTER_SYSTEM.md`
 - `UI_SYSTEM_MODEL.md`
@@ -133,12 +136,15 @@ The validator checks that core safety protocols still contain:
 - Preview Visibility Gate
 - QA and first-MVP acceptance gates
 - UI-Character Linkage Gate
+- Developer Experience Gate
+- Interruption Budget Gate
 - request-only UI input
 - controller-owned final state
 - character behavior to action-state mapping
 - animation as presentation only
 - skeleton as display only
 - assets that do not create behavior or gameplay systems
+- Fast Build / Safe Gate / Audit Mode routing so normal development does not fall back to default audit behavior or frequent user interruptions
 
 ## Dangerous pattern checks
 

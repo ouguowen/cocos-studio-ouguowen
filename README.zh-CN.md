@@ -164,3 +164,15 @@ Moonlight Delivery - Chapter 1 Shell 是一个成功闭环案例：
 - Pull Request：[pull_request_template.md](.github/pull_request_template.md)
 
 发布计划请阅读 [docs/release-strategy.md](docs/release-strategy.md)，发布前请完成 [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md)。提交前必须本地运行 `python scripts/validate_skill_docs.py` 并 PASS；发布变更也必须更新 [CHANGELOG.md](CHANGELOG.md)。
+
+## 开发体验与运行模式
+
+Skill 有三种运行模式：
+
+- Fast Build Mode
+- Safe Gate Mode
+- Audit Mode
+
+日常开发默认快速构建模式，避免不必要的频繁打断。
+
+危险操作才停止。阶段切换才走严格 Gate。Skill 自测和仓库审计才用完整审计模式。

@@ -33,6 +33,18 @@ It helps Codex or other AI coding agents plan, scope, validate, implement, QA, a
 - Browser preview proof through a Cocos automation provider, MCP, or manual execution path.
 - QA and release review for small MVPs.
 
+## Developer Experience / Operation Modes
+
+The Skill has three operation modes:
+
+- Fast Build Mode
+- Safe Gate Mode
+- Audit Mode
+
+Normal game development defaults to Fast Build Mode to avoid unnecessary interruptions.
+
+Safety gates are still enforced when risk appears. Stage transitions use Safe Gate Mode, and Skill self-tests or repository audits use Audit Mode.
+
 ## Quick Start
 
 Use this prompt in Codex:

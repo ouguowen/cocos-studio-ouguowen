@@ -24,6 +24,52 @@ Use these rules only when a task needs local Cocos Creator execution and the use
 
 ## Skill validation commands
 
+### `cocos-fast-build`
+
+Use for fast implementation of a small feature, bug fix, simple interaction, approved dev story, or approved scene/script change.
+
+Mode:
+
+- Use Fast Build Mode from [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md).
+
+Rules:
+
+- Avoid unnecessary interruption.
+- Validate internally while work remains inside the approved scope.
+- Stop only on stop conditions.
+- Report a concise result: done or blocked, changed files, preview result, validation result, commit hash if committed, and next step.
+- This command does not authorize new scene, prefab, `.meta`, runtime code, external asset, or settings changes outside an approved scope.
+
+### `cocos-safe-gate`
+
+Use for stage transitions and safety confirmation, including production readiness, pre-write approval, preview visibility gate, QA review, release review, generated meta approval, and first MVP acceptance.
+
+Mode:
+
+- Use Safe Gate Mode from [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md).
+
+Rules:
+
+- Run the relevant gate checklist.
+- Return the gate decision and next command.
+- Ask at most one confirmation per stage unless new risk appears.
+- This command does not authorize writing scene, prefab, `.meta`, runtime code, or external assets by itself.
+
+### `cocos-audit-mode`
+
+Use for Skill self-test, repo audit, safety check, release governance, validation script review, security review, or command routing audit.
+
+Mode:
+
+- Use Audit Mode from [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md).
+
+Rules:
+
+- State that the current task is in Audit Mode.
+- A detailed checklist and long report are allowed.
+- Do not use this as the default for normal game development.
+- This command does not authorize writing scene, prefab, `.meta`, runtime code, or external assets by itself.
+
 ### `cocos-skill-self-test`
 
 Use when testing, debugging, auditing, or close-loop validating this skill itself.
@@ -464,6 +510,10 @@ Rules:
 
 Use immediately before `cocos-dev-story` when the implementation story is ready but files have not been written yet.
 
+Mode:
+
+- Use Safe Gate Mode.
+
 Output:
 
 - exact files to create or modify
@@ -487,6 +537,12 @@ Rules:
 ### `cocos-dev-story`
 
 Use when implementing a dev-ready story.
+
+Mode:
+
+- After `cocos-dev-story-prewrite` approval, use Fast Build Mode for implementation inside the approved scope.
+- Pre-write Approval approves the scope; do not repeatedly ask the user inside that same scope.
+- Stop only when an unapproved file, scope expansion, preview blocker, dangerous command, unexpected generated `.meta`, or other stop condition appears.
 
 Output:
 

@@ -10,6 +10,9 @@ Use this file when a request claims runtime safety, preview proof, or execution 
 - If runtime proof is unavailable, declare `BLOCKED` or `NOT_APPLICABLE` instead of faking evidence.
 - For playable MVP acceptance, editor hierarchy, scene snapshot, or inspector state is never enough.
 - Preview Visibility Gate `PASS` is required before `QA_PASS` for a playable MVP.
+- Runtime proof should be summarized once at the end of Fast Build Mode unless preview fails.
+- Do not repeatedly report browser proof after every minor UI/node change.
+- Preview Visibility Gate remains required, but its result should be reported as concise `PASS` / `FAIL` during Fast Build implementation.
 
 ## Proof channels
 

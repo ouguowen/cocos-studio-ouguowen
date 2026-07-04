@@ -87,3 +87,12 @@ The rollback plan must say:
 Only a direct user confirmation after the checklist allows implementation to begin.
 
 If the user changes the allowed diff scope, Codex must use the newest user instruction as the active approval boundary.
+
+After `PRE_WRITE_APPROVAL_REQUIRED` is approved by the user, the implementation phase should run in Fast Build Mode.
+
+During implementation:
+
+- do not stop after every node creation
+- do not stop after every script edit
+- do not stop after every internal check
+- continue until implementation result, preview blocker, unexpected diff, or stop condition

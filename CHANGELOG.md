@@ -6,6 +6,8 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Added
 
+- Added `SKILL_OPERATION_MODES.md` to define Fast Build Mode, Safe Gate Mode, and Audit Mode.
+- Added Developer Experience Gate and Interruption Budget Gate.
 - Added UI-Character-Action linkage system.
 - Added `CHARACTER_SYSTEM.md` as the unified character behavior/action/skeleton boundary.
 - Added GitHub issue templates for bug reports, feature requests, safety reports, documentation requests, and issue routing config.
@@ -48,6 +50,9 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Updated cocos-dev-story workflow so implementation after approved pre-write scope runs in Fast Build Mode.
+- Updated write approval and runtime proof protocols to avoid repeated confirmation and repeated proof reports during normal development.
+- Updated validation script to enforce operation mode rules.
 - Updated UI, character animation, and asset semantic models with ownership and linkage rules.
 - Updated command routing, quality gates, module index, and validation script for semantic linkage checks.
 - Fixed Issue Template contact links to point to SECURITY.md, CONTRIBUTING.md, and first-MVP quickstart.

@@ -233,6 +233,44 @@ If this gate does not pass:
 - UI-character-action linkage work is blocked or remains design-only
 - implementation cannot start without production readiness and pre-write approval
 
+## Developer Experience Gate
+
+Use this gate when reviewing whether the Skill is helping normal implementation move quickly without weakening safety.
+
+PASS requires:
+
+- normal development uses Fast Build Mode
+- unnecessary interruptions are avoided
+- validation happens at meaningful milestones
+- reports are concise during implementation
+- stop conditions still stop unsafe work
+- audit mode is not used for normal development by default
+
+FAIL if any of these appear:
+
+- Codex asks for confirmation after every minor step
+- Codex generates full audit reports during every implementation step
+- Codex repeats the same gate without new risk
+- Codex blocks progress after harmless internal validation
+- Codex treats every check as a user-facing checkpoint
+- Codex skips mandatory stop conditions
+
+## Interruption Budget Gate
+
+Use this gate when checking whether confirmations and reports are paced correctly.
+
+PASS requires:
+
+- Fast Build task has no interruption unless stop condition appears
+- Safe Gate task has at most one confirmation per stage
+- Audit Mode clearly declares that it is audit mode
+
+FAIL if any of these appear:
+
+- Fast Build Mode interrupts after ordinary internal checks
+- Safe Gate Mode asks repeated confirmations for the same approved scope
+- Audit Mode is applied silently to normal implementation work
+
 ## Vertical Slice Gate
 
 - The slice feels like a real product segment.

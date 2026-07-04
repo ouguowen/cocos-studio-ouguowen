@@ -29,9 +29,21 @@ Use this file before Codex writes files in or near a Cocos workflow environment.
 - `cocos-dev-story` must stop at `PRE_WRITE_APPROVAL_REQUIRED` before implementation.
 - Apply [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md) before creating scenes, scripts, prefabs, meta files, or runtime assets.
 - The user must explicitly approve before Codex creates or modifies scene, script, prefab, `.meta`, runtime code, or asset files.
+- Pre-write Approval should approve a scope, not a single micro-action.
+- After the user approves the scope, Codex should continue inside that approved scope without repeated confirmation.
 - The approval must name the expected git diff scope.
 - The approval must name files and systems that must not be touched.
 - Codex must not commit or push before the implementation diff has been reviewed.
+
+Second approval is required only when:
+
+- a new unapproved file appears
+- generated `.meta` appears outside approved scope
+- scope expands
+- a dangerous command is needed
+- external asset import appears
+- runtime code outside approved files appears
+- Cocos project settings would change
 
 ## Generated meta approval rule
 

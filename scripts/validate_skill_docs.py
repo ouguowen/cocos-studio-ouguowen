@@ -24,6 +24,7 @@ REQUIRED_FILES = [
     "COMMANDS.md",
     "MODULE_INDEX.md",
     "QUALITY_GATES.md",
+    "SKILL_OPERATION_MODES.md",
     "UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md",
     "CHARACTER_SYSTEM.md",
     "UI_SYSTEM_MODEL.md",
@@ -56,6 +57,10 @@ CONTENT_CHECKS = {
     "README.md": [
         "Cocos Creator 3.8.8",
         "production-control Skill",
+        "Developer Experience / Operation Modes",
+        "Fast Build Mode",
+        "Safe Gate Mode",
+        "Audit Mode",
         "FIRST_MVP_SUCCESS_PIPELINE.md",
         "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md",
         "COCOS_GENERATED_META_POLICY.md",
@@ -80,6 +85,9 @@ CONTENT_CHECKS = {
         "RELEASE_CHECKLIST.md",
     ],
     "COMMANDS.md": [
+        "cocos-fast-build",
+        "cocos-safe-gate",
+        "cocos-audit-mode",
         "cocos-asset-policy",
         "cocos-first-implementation-story",
         "cocos-dev-story-prewrite",
@@ -94,6 +102,10 @@ CONTENT_CHECKS = {
         "cocos-ui-character-linkage",
     ],
     "SKILL.md": [
+        "SKILL_OPERATION_MODES.md",
+        "Fast Build Mode",
+        "Safe Gate Mode",
+        "Audit Mode",
         "FIRST_MVP_SUCCESS_PIPELINE.md",
         "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md",
         "COCOS_GENERATED_META_POLICY.md",
@@ -107,6 +119,7 @@ CONTENT_CHECKS = {
         "Do not implement UI-character-action linkage before the first implementation story and production readiness approve the scope",
     ],
     "MODULE_INDEX.md": [
+        "SKILL_OPERATION_MODES.md",
         "CONTRIBUTING.md",
         "SECURITY.md",
         "docs/quickstart-first-mvp.md",
@@ -171,6 +184,19 @@ CONTENT_CHECKS = {
         "must not introduce gameplay systems",
         "controller-owned behavior",
     ],
+    "SKILL_OPERATION_MODES.md": [
+        "Fast Build Mode",
+        "Safe Gate Mode",
+        "Audit Mode",
+        "Interruption budget",
+        "Stop conditions",
+        "Validation cadence",
+        "Reporting style",
+        "Do not use Audit Mode as the default",
+        "normal game development",
+        "STOP_FOR_APPROVAL",
+        "CONTINUE_AUTOMATICALLY",
+    ],
     "CONTRIBUTING.md": [
         ".github/ISSUE_TEMPLATE/bug_report.yml",
         ".github/ISSUE_TEMPLATE/feature_request.yml",
@@ -191,6 +217,10 @@ CONTENT_CHECKS = {
         "RELEASE_CHECKLIST.md",
         "UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md",
         "CHARACTER_SYSTEM.md",
+        "SKILL_OPERATION_MODES.md",
+        "Fast Build Mode",
+        "Safe Gate Mode",
+        "Audit Mode",
         "ownership rules",
     ],
     "docs/release-strategy.md": [
@@ -242,9 +272,13 @@ SAFETY_CHECKS = {
     "RUNTIME_PROOF_PROTOCOL.md": [
         "browser preview",
         "Preview Visibility Gate",
+        "summarized once",
+        "Fast Build Mode",
     ],
     "CODEX_WRITE_APPROVAL_PROTOCOL.md": [
         "generated `.meta`",
+        "approve a scope",
+        "without repeated confirmation",
     ],
     "QUALITY_GATES.md": [
         "Pre-write Approval Gate",
@@ -252,6 +286,12 @@ SAFETY_CHECKS = {
         "QA Review Gate",
         "First MVP Acceptance Gate",
         "UI-Character Linkage Gate",
+        "Developer Experience Gate",
+        "Interruption Budget Gate",
+    ],
+    "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md": [
+        "Fast Build Mode",
+        "do not stop after every",
     ],
 }
 
