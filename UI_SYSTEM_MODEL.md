@@ -17,6 +17,11 @@ The UI system model helps Codex and other AI agents reason about UI as a product
 ## Rules
 
 - UI must reflect gameplay truth; it must not own gameplay truth.
+- UI input is a request, not final truth.
+- UI must not own gameplay truth, completion, rewards, combat results, economy changes, or story endings.
+- Button callbacks must route into controller behavior methods.
+- UI may display character response but must not own action result.
+- UI must follow [UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md](UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md) for any character-related interaction.
 - A UI change that affects navigation, rewards, economy, combat, or progression must name its source of truth.
 - A visible UI proof must distinguish editor scene visibility from browser runtime visibility.
 - Placeholder UI is allowed only when labeled as placeholder and tied to an acceptance gate.

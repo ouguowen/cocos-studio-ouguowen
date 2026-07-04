@@ -16,6 +16,8 @@ It protects the repository from accidental regressions such as:
 - positive instructions for dangerous commands
 - missing issue templates or pull request template
 - missing release strategy or release checklist
+- missing UI, Character, Action, Animation, Skeleton, or Asset semantic linkage files
+- missing ownership rules that keep UI, animation, skeleton, prefab, and assets from owning gameplay truth
 - issue template config contact links that point to generic `https://github.com/` instead of real repository files
 
 ## When GitHub Actions runs
@@ -54,6 +56,8 @@ It checks:
 6. dangerous pattern context
 7. collaboration and release template presence
 8. Issue template config contact links point to real repository files
+9. UI, Character, Action, Animation, Skeleton, and Asset semantic linkage files exist
+10. core ownership rules are preserved for request-only UI, controller-owned final state, character-owned action semantics, presentation-only animation, display-only skeleton, and behavior-free assets
 
 ## Required files
 
@@ -65,6 +69,11 @@ The validator requires key files such as:
 - `COMMANDS.md`
 - `MODULE_INDEX.md`
 - `QUALITY_GATES.md`
+- `UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md`
+- `CHARACTER_SYSTEM.md`
+- `UI_SYSTEM_MODEL.md`
+- `CHARACTER_ANIMATION_MODEL.md`
+- `ASSET_SEMANTIC_MODEL.md`
 - `CONTRIBUTING.md`
 - `SECURITY.md`
 - `FIRST_MVP_SUCCESS_PIPELINE.md`
@@ -123,6 +132,13 @@ The validator checks that core safety protocols still contain:
 - browser preview proof
 - Preview Visibility Gate
 - QA and first-MVP acceptance gates
+- UI-Character Linkage Gate
+- request-only UI input
+- controller-owned final state
+- character behavior to action-state mapping
+- animation as presentation only
+- skeleton as display only
+- assets that do not create behavior or gameplay systems
 
 ## Dangerous pattern checks
 

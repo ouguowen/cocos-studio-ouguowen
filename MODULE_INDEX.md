@@ -55,6 +55,11 @@ Use this file to route a request into the correct module family before loading d
 - [COCOS_RULES.md](COCOS_RULES.md): engineering law for Cocos Creator 3.8.8
 - [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md): default project layout
 - [ARCHITECTURE_TEMPLATE_SYSTEM.md](ARCHITECTURE_TEMPLATE_SYSTEM.md): choose a matching runtime blueprint family
+- [UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md](UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md): UI input, behavior request, character intent, action state, animation state, visual output, and UI feedback ownership chain
+- [CHARACTER_SYSTEM.md](CHARACTER_SYSTEM.md): character identity, behavior, action state, animation state, skeleton boundary, and asset binding boundary
+- [UI_SYSTEM_MODEL.md](UI_SYSTEM_MODEL.md): UI layer, control, feedback, binding, and request-only input semantics
+- [CHARACTER_ANIMATION_MODEL.md](CHARACTER_ANIMATION_MODEL.md): character animation state, transition, event, and presentation boundaries
+- [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md): asset meaning, ownership, import boundary, and behavior-free asset semantics
 - [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md): choose the right content and level data model
 - [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md): common wave-spawn and stage-table schemas
 - [LEVEL_CONFIG_SCHEMA_EXTENSIONS.md](LEVEL_CONFIG_SCHEMA_EXTENSIONS.md): optional support tables for wave-spawn projects

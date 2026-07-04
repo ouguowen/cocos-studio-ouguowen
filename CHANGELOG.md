@@ -6,6 +6,8 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Added
 
+- Added UI-Character-Action linkage system.
+- Added `CHARACTER_SYSTEM.md` as the unified character behavior/action/skeleton boundary.
 - Added GitHub issue templates for bug reports, feature requests, safety reports, documentation requests, and issue routing config.
 - Added `.github/pull_request_template.md` with scope, safety, validation, and release-impact checks.
 - Added `docs/release-strategy.md` and `RELEASE_CHECKLIST.md` for open-source release planning and release readiness review.
@@ -46,6 +48,8 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Updated UI, character animation, and asset semantic models with ownership and linkage rules.
+- Updated command routing, quality gates, module index, and validation script for semantic linkage checks.
 - Fixed Issue Template contact links to point to SECURITY.md, CONTRIBUTING.md, and first-MVP quickstart.
 - Updated validation script to reject generic GitHub contact links in issue template config.
 - Updated README, README.zh-CN, CONTRIBUTING, MODULE_INDEX, and automation validation docs with collaboration template and release strategy links.

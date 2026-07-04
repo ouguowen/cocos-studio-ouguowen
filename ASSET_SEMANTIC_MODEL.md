@@ -18,6 +18,9 @@ The asset semantic model helps agents distinguish source assets, imported Cocos 
 ## Rules
 
 - No asset enters formal production without owner, reviewer, and approver.
+- Assets do not create behavior.
+- Imported character art, skeleton, animation clips, UI icons, and prefabs must not introduce gameplay systems by themselves.
+- Asset binding must follow controller-owned behavior and character-owned action semantics.
 - `.scene`, `.prefab`, `.anim`, and `.meta` files must not be raw text edited.
 - Generated `.meta` files require explicit diff review before staging.
 - Placeholder assets must be named and documented as placeholders.

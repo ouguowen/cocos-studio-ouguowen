@@ -206,6 +206,33 @@ If these are not true:
 
 - animation or presentation work is blocked or remains prototype-only
 
+## UI-Character Linkage Gate
+
+Use this gate before approving UI-character-action linkage, character response feedback, action-to-animation mapping, skeleton presentation, or asset-driven visual feedback.
+
+PASS requires:
+
+- UI input is request-only.
+- Controller/domain logic owns final state.
+- Character behavior maps to action state.
+- Animation only represents action state.
+- Skeleton only presents animation.
+- Asset imports do not create gameplay systems.
+- Forbidden ownership is absent.
+
+FAIL if any of these appear:
+
+- UI directly owns completion/reward/result.
+- Animation event owns gameplay result.
+- Skeleton, prefab, or asset owns final state.
+- Button callback bypasses controller logic.
+- Combat/action expansion appears without approval.
+
+If this gate does not pass:
+
+- UI-character-action linkage work is blocked or remains design-only
+- implementation cannot start without production readiness and pre-write approval
+
 ## Vertical Slice Gate
 
 - The slice feels like a real product segment.

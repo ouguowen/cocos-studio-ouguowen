@@ -243,6 +243,57 @@ Output:
 - validation rules
 - Animation Presentation Gate decision
 
+### `cocos-character-system-design`
+
+Use when defining character identity, behavior, action state, animation state, skeleton boundary, or asset binding boundary.
+
+Output:
+
+- character identity
+- character behavior
+- character action state
+- animation state
+- skeleton boundary
+- asset binding boundary
+- controller/domain source of truth
+- forbidden ownership check
+- UI-Character Linkage Gate decision
+
+Rules:
+
+- This is a design / policy command.
+- It does not authorize writing scene, prefab, meta, runtime code, or Cocos game project files.
+- It must follow [CHARACTER_SYSTEM.md](CHARACTER_SYSTEM.md), [CHARACTER_ANIMATION_MODEL.md](CHARACTER_ANIMATION_MODEL.md), [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md), and [UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md](UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md) when UI or feedback is involved.
+- Implementation still requires production readiness and pre-write approval.
+- Do not add full Spine tooling, full skeleton binding, combat, economy, inventory, shop, gacha, save/load, or multi-character action systems unless the selected game type and production readiness approve the scope.
+
+### `cocos-ui-character-linkage`
+
+Use when mapping UI input to behavior request, behavior to action state, action to animation state, and animation to UI feedback.
+
+Output:
+
+- UI input
+- behavior request
+- character intent
+- action state
+- animation state
+- visual output
+- UI feedback
+- controller/domain source of truth
+- forbidden ownership check
+- UI-Character Linkage Gate decision
+
+Rules:
+
+- This is a design / policy command.
+- It does not authorize writing scene, prefab, meta, runtime code, or Cocos game project files.
+- It must apply [UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md](UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md), [UI_SYSTEM_MODEL.md](UI_SYSTEM_MODEL.md), [CHARACTER_SYSTEM.md](CHARACTER_SYSTEM.md), [CHARACTER_ANIMATION_MODEL.md](CHARACTER_ANIMATION_MODEL.md), and [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md).
+- UI input is request-only; controller/domain logic owns final state.
+- Animation and skeleton presentation must not own gameplay result.
+- Asset imports must not create gameplay systems.
+- Implementation still requires production readiness and pre-write approval.
+
 ### `cocos-asset-policy`
 
 Use before implementation to decide whether final art, imported assets, audio, fonts, Spine, VFX, external assets, or placeholder-only visuals are allowed.

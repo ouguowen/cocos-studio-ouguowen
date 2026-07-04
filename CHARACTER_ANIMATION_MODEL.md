@@ -17,6 +17,10 @@ The character animation model keeps actor presentation aligned with gameplay sta
 ## Rules
 
 - Animation expresses state; it does not create authoritative gameplay state.
+- Animation state is downstream of character action state.
+- Animation must not own gameplay result.
+- Animation events may report presentation completion only.
+- Any behavior-to-animation mapping must follow [UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md](UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md) and [CHARACTER_SYSTEM.md](CHARACTER_SYSTEM.md).
 - Damage, death, reward grant, objective completion, and economy changes must not exist only in animation callbacks.
 - Every repeated animation needs a fallback if the clip, skeleton, particle, or asset binding is missing.
 - Placeholder animation must be labeled as placeholder and must not be mistaken for final art.
