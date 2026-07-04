@@ -6,9 +6,13 @@ This repository uses automated documentation validation to keep Cocos Studio Oug
 
 Automation validation checks that required Skill documents, command routes, safety protocols, Markdown links, and dangerous-rule guardrails remain intact.
 
+Automation validation now also checks the context loading policy and lightweight context summary so the Skill does not regress to default full-repository loading as the file set grows.
+
 It protects the repository from accidental regressions such as:
 
 - missing core docs
+- missing context loading strategy or lightweight first-read memory
+- regressions that push normal Skill usage back toward full default loading
 - broken relative Markdown links
 - missing first-MVP pipeline references
 - missing pre-write approval rules
@@ -60,6 +64,7 @@ It checks:
 9. UI, Character, Action, Animation, Skeleton, and Asset semantic linkage files exist
 10. core ownership rules are preserved for request-only UI, controller-owned final state, character-owned action semantics, presentation-only animation, display-only skeleton, and behavior-free assets
 11. Skill Operation Modes exist and preserve Fast Build Mode, Safe Gate Mode, Audit Mode, concise reporting, stop conditions, and interruption-budget rules
+12. Context Loading Policy and Skill Context Summary preserve FAST_CONTEXT, GATE_CONTEXT, AUDIT_CONTEXT, trigger-based loading, and anti-overload rules
 
 ## Required files
 
@@ -71,6 +76,8 @@ The validator requires key files such as:
 - `COMMANDS.md`
 - `MODULE_INDEX.md`
 - `QUALITY_GATES.md`
+- `CONTEXT_LOADING_POLICY.md`
+- `SKILL_CONTEXT_SUMMARY.md`
 - `SKILL_OPERATION_MODES.md`
 - `UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md`
 - `CHARACTER_SYSTEM.md`

@@ -4,6 +4,8 @@ Use this file to route a request into the correct module family before loading d
 
 ## 1. Project framing and control
 
+- [SKILL_CONTEXT_SUMMARY.md](SKILL_CONTEXT_SUMMARY.md): lightweight first-read memory
+- [CONTEXT_LOADING_POLICY.md](CONTEXT_LOADING_POLICY.md): context budget and anti-overload rules
 - [PRODUCTION_MODES.md](PRODUCTION_MODES.md): how strict the team should be right now
 - [STAGES.md](STAGES.md): where the project is in time
 - [VERSION_ROADMAP_SYSTEM.md](VERSION_ROADMAP_SYSTEM.md): why the current version exists and what proves promotion
@@ -100,6 +102,8 @@ Use this file to route a request into the correct module family before loading d
 
 ## 7. AI-assisted work
 
+- [SKILL_CONTEXT_SUMMARY.md](SKILL_CONTEXT_SUMMARY.md): lightweight first-read memory
+- [CONTEXT_LOADING_POLICY.md](CONTEXT_LOADING_POLICY.md): context budget and anti-overload rules
 - [AI_COLLAB_RULES.md](AI_COLLAB_RULES.md): what AI may and may not own
 - [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md): Fast Build, Safe Gate, and Audit Mode routing for development experience
 - [ONE_SHOT_GAME_BUILD.md](ONE_SHOT_GAME_BUILD.md): continuous one-request MVP chain that still obeys gates and proof rules

@@ -34,6 +34,23 @@ This skill is not for:
 - A hard dependency on one commercial MCP plugin, one future official MCP plugin, or any provider-specific command dialect.
 - Importing the full Cocos manual into the skill.
 
+## Context Loading routing
+
+Before applying operation modes or detailed gates, load:
+
+1. [SKILL_CONTEXT_SUMMARY.md](SKILL_CONTEXT_SUMMARY.md)
+2. [CONTEXT_LOADING_POLICY.md](CONTEXT_LOADING_POLICY.md)
+3. [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md)
+
+Then route through [MODULE_INDEX.md](MODULE_INDEX.md) only when needed.
+
+Do not load the full Skill repository by default.
+Do not load all gates, workflows, templates, agents, or semantic models during normal Fast Build Mode.
+
+- Fast Build Mode should use `FAST_CONTEXT`.
+- Safe Gate Mode should use `GATE_CONTEXT`.
+- Audit Mode may use `AUDIT_CONTEXT`.
+
 ## Operation Mode routing
 
 Before applying detailed gates, choose an operation mode from [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md).
@@ -48,32 +65,33 @@ Before applying detailed gates, choose an operation mode from [SKILL_OPERATION_M
 
 ## Default execution order
 
-1. Choose Fast Build Mode, Safe Gate Mode, or Audit Mode from [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md) before applying detailed gates.
-2. Identify the current production mode. See [PRODUCTION_MODES.md](PRODUCTION_MODES.md).
-3. Identify the current production stage. See [STAGES.md](STAGES.md).
-4. Identify role, authority, and asset ownership. See [ROLES.md](ROLES.md), [ROLE_STAGE_MATRIX.md](ROLE_STAGE_MATRIX.md), [OWNERSHIP.md](OWNERSHIP.md), and [TEAM_SENIORITY_SYSTEM.md](TEAM_SENIORITY_SYSTEM.md).
-5. Route the request through [MODULE_INDEX.md](MODULE_INDEX.md).
-6. If the request asks to debug, audit, validate, test, or close-loop test this skill itself, apply [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md) and [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md) before any game implementation.
-7. If the request changes this Skill repository itself, apply [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md), [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md), [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md), [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md), and [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md) before writing files.
-8. For most requests, open [WORKFLOWS.md](WORKFLOWS.md) first. Open [WORKFLOW_EXTENSIONS.md](WORKFLOW_EXTENSIONS.md) only for specialist flows.
-9. For most project artifacts, open [TEMPLATES.md](TEMPLATES.md) first. Open [LEVEL_TEMPLATES.md](LEVEL_TEMPLATES.md) only for level-content artifacts.
-10. If engine-version-specific advice matters, apply [COCOS_3_8_8_BASELINE.md](COCOS_3_8_8_BASELINE.md) before giving engine guidance.
-11. If the request asks to start real game implementation, create a playable game, open a large implementation sprint, or let Codex build broadly, apply [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md) before implementation.
-12. If the request includes gameplay stats, enemy stats, difficulty, cost, reward amount, progression speed, or balance-sensitive config, apply [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md) before implementation.
-13. If the request includes currencies, sources, sinks, upgrades, reward cadence, stamina, shop, ads, gacha, inventory value, progression economy, or monetization-sensitive systems, apply [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md) before implementation.
-14. If the request includes animation states, UI motion, tween effects, combat feedback, hit reactions, death flows, skill VFX, Spine, AnimationClip, particles, or audio-visual timing, apply [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md) before implementation.
-15. If the request involves UI interaction, character response, animation state, skeleton presentation, or asset-driven visual feedback, apply [UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md](UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md), [CHARACTER_SYSTEM.md](CHARACTER_SYSTEM.md), [UI_SYSTEM_MODEL.md](UI_SYSTEM_MODEL.md), [CHARACTER_ANIMATION_MODEL.md](CHARACTER_ANIMATION_MODEL.md), and [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md). Do not implement UI-character-action linkage before the first implementation story and production readiness approve the scope.
-16. If the request needs local Cocos engine operation, resolve the current Cocos automation provider before execution. Use provider-neutral intent such as create scene, create node, add component, bind prefab, save scene, run preview, read Console, and return proof.
-17. If browser preview output is required, apply the Preview Visibility Gate before script-runtime proof. Editor scene visibility does not prove browser runtime visibility.
-18. If the request needs runtime proof, proof-channel selection, or a distinction between docs-only audit proof and game runtime proof, apply [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md) before claiming completion.
-19. If the request needs runtime code or subsystem boundaries, use [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md). Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only for advanced online, monetization, live-ops, social, or compliance systems.
-20. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
-21. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
-22. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
-23. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [COMMANDS.md](COMMANDS.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [GAME_STUDIO_WORKFLOWS.md](GAME_STUDIO_WORKFLOWS.md), [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md), and [SKILL_INTEGRATION_AUDIT_REPORT.md](SKILL_INTEGRATION_AUDIT_REPORT.md).
-24. If a project moves from design into the first real MVP implementation, apply [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md) before starting implementation.
-25. Before `cocos-dev-story` writes scene, script, prefab, meta, or runtime files, apply [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md) and stop at `PRE_WRITE_APPROVAL_REQUIRED` until the user confirms.
-26. If Cocos Creator generates `.meta` files outside the approved diff scope, apply [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md), stop, and request user confirmation before staging or committing.
+1. Load lightweight context first: [SKILL_CONTEXT_SUMMARY.md](SKILL_CONTEXT_SUMMARY.md), [CONTEXT_LOADING_POLICY.md](CONTEXT_LOADING_POLICY.md), and [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md).
+2. Choose Fast Build Mode, Safe Gate Mode, or Audit Mode from [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md) before applying detailed gates.
+3. Identify the current production mode. See [PRODUCTION_MODES.md](PRODUCTION_MODES.md).
+4. Identify the current production stage. See [STAGES.md](STAGES.md).
+5. Identify role, authority, and asset ownership. See [ROLES.md](ROLES.md), [ROLE_STAGE_MATRIX.md](ROLE_STAGE_MATRIX.md), [OWNERSHIP.md](OWNERSHIP.md), and [TEAM_SENIORITY_SYSTEM.md](TEAM_SENIORITY_SYSTEM.md).
+6. Route the request through [MODULE_INDEX.md](MODULE_INDEX.md) only when the current task needs detailed module selection.
+7. If the request asks to debug, audit, validate, test, or close-loop test this skill itself, apply [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md) and [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md) before any game implementation.
+8. If the request changes this Skill repository itself, apply [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md), [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md), [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md), [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md), and [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md) before writing files.
+9. For most requests, open [WORKFLOWS.md](WORKFLOWS.md) first. Open [WORKFLOW_EXTENSIONS.md](WORKFLOW_EXTENSIONS.md) only for specialist flows.
+10. For most project artifacts, open [TEMPLATES.md](TEMPLATES.md) first. Open [LEVEL_TEMPLATES.md](LEVEL_TEMPLATES.md) only for level-content artifacts.
+11. If engine-version-specific advice matters, apply [COCOS_3_8_8_BASELINE.md](COCOS_3_8_8_BASELINE.md) before giving engine guidance.
+12. If the request asks to start real game implementation, create a playable game, open a large implementation sprint, or let Codex build broadly, apply [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md) before implementation.
+13. If the request includes gameplay stats, enemy stats, difficulty, cost, reward amount, progression speed, or balance-sensitive config, apply [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md) before implementation.
+14. If the request includes currencies, sources, sinks, upgrades, reward cadence, stamina, shop, ads, gacha, inventory value, progression economy, or monetization-sensitive systems, apply [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md) before implementation.
+15. If the request includes animation states, UI motion, tween effects, combat feedback, hit reactions, death flows, skill VFX, Spine, AnimationClip, particles, or audio-visual timing, apply [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md) before implementation.
+16. If the request involves UI interaction, character response, animation state, skeleton presentation, or asset-driven visual feedback, apply [UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md](UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md), [CHARACTER_SYSTEM.md](CHARACTER_SYSTEM.md), [UI_SYSTEM_MODEL.md](UI_SYSTEM_MODEL.md), [CHARACTER_ANIMATION_MODEL.md](CHARACTER_ANIMATION_MODEL.md), and [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md). Do not implement UI-character-action linkage before the first implementation story and production readiness approve the scope.
+17. If the request needs local Cocos engine operation, resolve the current Cocos automation provider before execution. Use provider-neutral intent such as create scene, create node, add component, bind prefab, save scene, run preview, read Console, and return proof.
+18. If browser preview output is required, apply the Preview Visibility Gate before script-runtime proof. Editor scene visibility does not prove browser runtime visibility.
+19. If the request needs runtime proof, proof-channel selection, or a distinction between docs-only audit proof and game runtime proof, apply [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md) before claiming completion.
+20. If the request needs runtime code or subsystem boundaries, use [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md). Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only for advanced online, monetization, live-ops, social, or compliance systems.
+21. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
+22. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
+23. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
+24. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [COMMANDS.md](COMMANDS.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [GAME_STUDIO_WORKFLOWS.md](GAME_STUDIO_WORKFLOWS.md), [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md), and [SKILL_INTEGRATION_AUDIT_REPORT.md](SKILL_INTEGRATION_AUDIT_REPORT.md).
+25. If a project moves from design into the first real MVP implementation, apply [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md) before starting implementation.
+26. Before `cocos-dev-story` writes scene, script, prefab, meta, or runtime files, apply [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md) and stop at `PRE_WRITE_APPROVAL_REQUIRED` until the user confirms.
+27. If Cocos Creator generates `.meta` files outside the approved diff scope, apply [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md), stop, and request user confirmation before staging or committing.
 
 ## Cocos automation provider policy
 

@@ -52,6 +52,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Integrated context loading policy and lightweight context summary into Skill routing, module index, and validation checks.
 - Updated context guidance so normal development starts with a lightweight summary and expands only by trigger.
 - Updated cocos-dev-story workflow so implementation after approved pre-write scope runs in Fast Build Mode.
 - Updated write approval and runtime proof protocols to avoid repeated confirmation and repeated proof reports during normal development.
