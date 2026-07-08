@@ -6,6 +6,10 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Added
 
+- Added `REPO_STRUCTURE_PLAN.md` for staged repository organization without moving current canonical paths.
+- Added `ASSET_POLICY.md` for placeholder, external, generated, and Cocos asset approval boundaries.
+- Added context loading behavior test cases for `FAST_CONTEXT`, `GATE_CONTEXT`, `AUDIT_CONTEXT`, `CONTEXT_OVERLOAD`, and `REDUCE_CONTEXT`.
+- Added a side-effect-free generated artifact check for package validation.
 - Added `CONTEXT_LOADING_POLICY.md` to define context budgets, trigger-based loading, and anti-overload rules.
 - Added `SKILL_CONTEXT_SUMMARY.md` as the lightweight first-read memory for normal development sessions.
 - Added `SKILL_OPERATION_MODES.md` to define Fast Build Mode, Safe Gate Mode, and Audit Mode.
@@ -52,6 +56,9 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Updated `MODULE_INDEX.md` and docs validation coverage to include the repository structure plan.
+- Updated `npm run check` so it validates generated artifacts through a temporary directory instead of writing repository outputs.
+- Updated `scripts/validate_skill_docs.py` to require `ASSET_POLICY.md`, remove the deferred asset-policy link exception, and merge duplicate pre-write safety checks.
 - Integrated context loading policy and lightweight context summary into Skill routing, module index, and validation checks.
 - Updated context guidance so normal development starts with a lightweight summary and expands only by trigger.
 - Updated cocos-dev-story workflow so implementation after approved pre-write scope runs in Fast Build Mode.

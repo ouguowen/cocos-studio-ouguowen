@@ -24,6 +24,8 @@ REQUIRED_FILES = [
     "COMMANDS.md",
     "MODULE_INDEX.md",
     "QUALITY_GATES.md",
+    "package.json",
+    "REPO_STRUCTURE_PLAN.md",
     "CONTEXT_LOADING_POLICY.md",
     "SKILL_CONTEXT_SUMMARY.md",
     "SKILL_OPERATION_MODES.md",
@@ -32,6 +34,7 @@ REQUIRED_FILES = [
     "UI_SYSTEM_MODEL.md",
     "CHARACTER_ANIMATION_MODEL.md",
     "ASSET_SEMANTIC_MODEL.md",
+    "ASSET_POLICY.md",
     "CHANGELOG.md",
     "LICENSE",
     "CONTRIBUTING.md",
@@ -46,6 +49,7 @@ REQUIRED_FILES = [
     "docs/automation-validation.md",
     "docs/release-strategy.md",
     "RELEASE_CHECKLIST.md",
+    "scripts/check-generated-artifacts.js",
     ".github/ISSUE_TEMPLATE/bug_report.yml",
     ".github/ISSUE_TEMPLATE/feature_request.yml",
     ".github/ISSUE_TEMPLATE/safety_report.yml",
@@ -103,6 +107,11 @@ CONTENT_CHECKS = {
         "cocos-character-system-design",
         "cocos-ui-character-linkage",
     ],
+    "package.json": [
+        "check:generated",
+        "scripts/check-generated-artifacts.js",
+        "npm run validate:example && npm run check:generated && npm run validate:runtime",
+    ],
     "SKILL.md": [
         "CONTEXT_LOADING_POLICY.md",
         "SKILL_CONTEXT_SUMMARY.md",
@@ -129,6 +138,7 @@ CONTENT_CHECKS = {
     "MODULE_INDEX.md": [
         "CONTEXT_LOADING_POLICY.md",
         "SKILL_CONTEXT_SUMMARY.md",
+        "REPO_STRUCTURE_PLAN.md",
         "SKILL_OPERATION_MODES.md",
         "CONTRIBUTING.md",
         "SECURITY.md",
@@ -194,6 +204,20 @@ CONTENT_CHECKS = {
         "must not introduce gameplay systems",
         "controller-owned behavior",
     ],
+    "ASSET_POLICY.md": [
+        "Assets do not create behavior",
+        "Assets must not own gameplay truth",
+        "Placeholder assets",
+        "External assets",
+        "Generated assets",
+        "source",
+        "license",
+        "owner",
+        "approver",
+        "COCOS_GENERATED_META_POLICY.md",
+        "ASSET_APPROVAL_REQUIRED",
+        "ASSET_SCOPE_BLOCKED",
+    ],
     "SKILL_OPERATION_MODES.md": [
         "Fast Build Mode",
         "Safe Gate Mode",
@@ -218,6 +242,22 @@ CONTENT_CHECKS = {
         "AUDIT_CONTEXT",
         "CONTEXT_OVERLOAD",
         "REDUCE_CONTEXT",
+    ],
+    "REPO_STRUCTURE_PLAN.md": [
+        "Current root-level paths remain canonical",
+        "Do not move files",
+        "Target directory model",
+        "core/",
+        "protocols/",
+        "production/",
+        "design/",
+        "architecture/",
+        "templates/",
+        "Phase 0: Index-first stabilization",
+        "Migration batch rules",
+        "python scripts/validate_skill_docs.py",
+        "npm run check",
+        "no game project files are modified",
     ],
     "SKILL_CONTEXT_SUMMARY.md": [
         "lightweight first-read memory",
@@ -282,6 +322,24 @@ CONTENT_CHECKS = {
         "https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/CONTRIBUTING.md",
         "https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/docs/quickstart-first-mvp.md",
     ],
+    "SKILL_TEST_CASES.md": [
+        "FAST_CONTEXT",
+        "GATE_CONTEXT",
+        "AUDIT_CONTEXT",
+        "CONTEXT_OVERLOAD",
+        "REDUCE_CONTEXT",
+        "Do not load all gates",
+        "Do not load the whole repository",
+        "Context Loading Behavior",
+    ],
+    "scripts/check-generated-artifacts.js": [
+        "mkdtempSync",
+        "os.tmpdir",
+        "scripts/export-level-config.js",
+        "scripts/export-level-types.js",
+        "Generated artifact check passed without writing repository outputs.",
+        "rmSync",
+    ],
 }
 
 SAFETY_CHECKS = {
@@ -292,6 +350,8 @@ SAFETY_CHECKS = {
         "modify `.meta`",
         "commit",
         "push",
+        "Fast Build Mode",
+        "do not stop after every",
     ],
     "COCOS_GENERATED_META_POLICY.md": [
         "assets/scenes.meta",
@@ -320,9 +380,12 @@ SAFETY_CHECKS = {
         "Developer Experience Gate",
         "Interruption Budget Gate",
     ],
-    "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md": [
-        "Fast Build Mode",
-        "do not stop after every",
+    "ASSET_POLICY.md": [
+        "Assets must not own gameplay truth",
+        "External assets require source, license, owner, approver, and import scope",
+        "Do not import external assets when ownership, license, or approval is unclear",
+        "Cocos `.scene`, `.prefab`, `.anim`, and `.meta` files must not be raw text edited",
+        "Generated assets do not bypass approval",
     ],
 }
 
@@ -339,12 +402,7 @@ DANGEROUS_PHRASES = [
     "editor hierarchy is enough",
 ]
 
-KNOWN_DEFERRED_LINK_TARGETS = {
-    # Existing command routing references this future/expected policy document,
-    # but the current open-source docs validation upgrade is not allowed to add
-    # new core policy files outside its approved scope.
-    "ASSET_POLICY.md",
-}
+KNOWN_DEFERRED_LINK_TARGETS = set()
 
 SAFETY_NEGATIONS = [
     "do not",

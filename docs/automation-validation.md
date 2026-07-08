@@ -11,6 +11,7 @@ Automation validation now also checks the context loading policy and lightweight
 It protects the repository from accidental regressions such as:
 
 - missing core docs
+- missing repository structure planning rules
 - missing context loading strategy or lightweight first-read memory
 - regressions that push normal Skill usage back toward full default loading
 - broken relative Markdown links
@@ -65,6 +66,7 @@ It checks:
 10. core ownership rules are preserved for request-only UI, controller-owned final state, character-owned action semantics, presentation-only animation, display-only skeleton, and behavior-free assets
 11. Skill Operation Modes exist and preserve Fast Build Mode, Safe Gate Mode, Audit Mode, concise reporting, stop conditions, and interruption-budget rules
 12. Context Loading Policy and Skill Context Summary preserve FAST_CONTEXT, GATE_CONTEXT, AUDIT_CONTEXT, trigger-based loading, and anti-overload rules
+13. Repository Structure Plan preserves index-first migration, current canonical paths, batch migration rules, and validation requirements
 
 ## Required files
 
@@ -76,6 +78,8 @@ The validator requires key files such as:
 - `COMMANDS.md`
 - `MODULE_INDEX.md`
 - `QUALITY_GATES.md`
+- `package.json`
+- `REPO_STRUCTURE_PLAN.md`
 - `CONTEXT_LOADING_POLICY.md`
 - `SKILL_CONTEXT_SUMMARY.md`
 - `SKILL_OPERATION_MODES.md`
@@ -96,6 +100,7 @@ The validator requires key files such as:
 - `docs/automation-validation.md`
 - `docs/release-strategy.md`
 - `RELEASE_CHECKLIST.md`
+- `scripts/check-generated-artifacts.js`
 - `.github/ISSUE_TEMPLATE/bug_report.yml`
 - `.github/ISSUE_TEMPLATE/feature_request.yml`
 - `.github/ISSUE_TEMPLATE/safety_report.yml`
@@ -201,6 +206,17 @@ Automation validation does not:
 - prove that a Cocos game runs
 
 It validates Skill documentation and safety rules only.
+
+## Side-effect-free package check
+
+`npm run check` validates the example level config, generated artifact pipeline, and runtime template without writing generated outputs into the repository.
+
+Manual generation remains available through:
+
+```text
+npm run export:example
+npm run types:example
+```
 
 ## Handling failures
 

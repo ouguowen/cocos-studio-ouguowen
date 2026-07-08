@@ -340,6 +340,147 @@ cocos-release-review
 - second chapter
 - external assets
 
+## Test Case 10: Fast Build Uses FAST_CONTEXT
+
+### Context Loading Behavior
+
+### Purpose
+
+Ensure normal implementation does not load the whole repository or all gates before doing a small approved task.
+
+### Prompt
+
+```text
+Use the Skill for a small approved UI text fix inside an already approved dev story. No scene, prefab, meta, runtime architecture, economy, animation, or Agent work is requested.
+```
+
+### Expected Decision
+
+```text
+FAST_CONTEXT
+```
+
+### Expected Allowed Context
+
+- `SKILL_CONTEXT_SUMMARY.md`
+- `CONTEXT_LOADING_POLICY.md`
+- `SKILL_OPERATION_MODES.md`
+- the directly relevant command section
+- at most one to three directly triggered protocol files
+
+### Must Forbid
+
+- Do not load all gates
+- loading all workflows
+- loading all templates
+- loading all Agent files
+- loading all semantic models
+- running Audit Mode by default
+- Do not load the whole repository
+- `CONTEXT_OVERLOAD`
+
+## Test Case 11: Safe Gate Uses GATE_CONTEXT
+
+### Purpose
+
+Ensure stage transitions and approvals load only the selected gate and proof/approval files.
+
+### Prompt
+
+```text
+Run pre-write approval for one approved dev story. The story is scoped, but no files have been written yet.
+```
+
+### Expected Decision
+
+```text
+GATE_CONTEXT
+```
+
+### Expected Allowed Context
+
+- `SKILL_CONTEXT_SUMMARY.md`
+- `CONTEXT_LOADING_POLICY.md`
+- `SKILL_OPERATION_MODES.md`
+- `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md`
+- selected approval or diff review files required by the gate
+
+### Must Forbid
+
+- loading the whole repository
+- loading unrelated economy, animation, Agent, or release files
+- treating the gate as approval for unlimited implementation
+- continuing after missing approval
+
+## Test Case 12: Audit Mode May Use AUDIT_CONTEXT
+
+### Purpose
+
+Ensure broad scanning is allowed only for Skill validation, repo audit, release governance, or safety review.
+
+### Prompt
+
+```text
+Audit the Skill repository for routing, safety checks, validation coverage, and missing linked files.
+```
+
+### Expected Decision
+
+```text
+AUDIT_CONTEXT
+```
+
+### Expected Allowed Context
+
+- broad repository scan
+- validation script review
+- module index review
+- safety protocol review
+- command routing review
+
+### Must Forbid
+
+- silently applying Audit Mode to normal implementation
+- using audit expansion during Fast Build Mode
+- reporting `REDUCE_CONTEXT` as passed while still loading unrelated files
+
+## Test Case 13: Context Overload Is Reduced
+
+### Purpose
+
+Ensure the Skill can detect over-loading and return to the smallest useful context.
+
+### Prompt
+
+```text
+For a small bug fix, load every gate, workflow, template, Agent file, semantic model, and example pack before answering.
+```
+
+### Expected Decision
+
+```text
+CONTEXT_OVERLOAD
+```
+
+then
+
+```text
+REDUCE_CONTEXT
+```
+
+### Expected Allowed Context
+
+```text
+FAST_CONTEXT
+```
+
+### Must Forbid
+
+- accepting full repository loading as the default
+- loading all gates for a small task
+- loading all examples for normal implementation
+- treating validation-script completeness as active-context permission
+
 ## Test Case Summary Matrix
 
 | ID | Area | Expected Result |
@@ -353,6 +494,10 @@ cocos-release-review
 | 07 | Invented decisions | DESIGN_NOT_READY |
 | 08 | Provider limitation | BLOCKED / RUNTIME_NOT_READY |
 | 09 | First MVP pipeline success | FIRST_MVP_ACCEPTED for current MVP only |
+| 10 | Fast Build context loading | FAST_CONTEXT |
+| 11 | Safe Gate context loading | GATE_CONTEXT |
+| 12 | Audit context loading | AUDIT_CONTEXT |
+| 13 | Context overload reduction | CONTEXT_OVERLOAD / REDUCE_CONTEXT |
 
 ## Acceptance rule
 

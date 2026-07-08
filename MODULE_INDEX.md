@@ -6,6 +6,7 @@ Use this file to route a request into the correct module family before loading d
 
 - [SKILL_CONTEXT_SUMMARY.md](SKILL_CONTEXT_SUMMARY.md): lightweight first-read memory
 - [CONTEXT_LOADING_POLICY.md](CONTEXT_LOADING_POLICY.md): context budget and anti-overload rules
+- [REPO_STRUCTURE_PLAN.md](REPO_STRUCTURE_PLAN.md): staged repository organization plan that keeps current paths canonical until migration batches are approved
 - [PRODUCTION_MODES.md](PRODUCTION_MODES.md): how strict the team should be right now
 - [STAGES.md](STAGES.md): where the project is in time
 - [VERSION_ROADMAP_SYSTEM.md](VERSION_ROADMAP_SYSTEM.md): why the current version exists and what proves promotion
