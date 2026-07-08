@@ -161,7 +161,7 @@ Open-source collaboration is routed through GitHub issue templates and the pull 
 - Documentation requests: [documentation.yml](.github/ISSUE_TEMPLATE/documentation.yml)
 - Pull requests: [pull_request_template.md](.github/pull_request_template.md)
 
-Release planning uses [docs/release-strategy.md](docs/release-strategy.md) and [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md). A release must keep changes inside the Skill repository, pass `python scripts/validate_skill_docs.py`, update [CHANGELOG.md](CHANGELOG.md), and preserve the safety model around Cocos `.scene`, `.prefab`, `.anim`, `.meta`, browser proof, and pre-write approval.
+Release planning uses [docs/release/strategy.md](docs/release/strategy.md) and [docs/release/checklist.md](docs/release/checklist.md). A release must keep changes inside the Skill repository, pass `python scripts/validate_skill_docs.py`, update [CHANGELOG.md](CHANGELOG.md), and preserve the safety model around Cocos `.scene`, `.prefab`, `.anim`, `.meta`, browser proof, and pre-write approval.
 
 ## Automation Provider / MCP Position
 
@@ -209,7 +209,7 @@ This case proves the pipeline, not the only game genre. It should improve workfl
 - [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md): MVP acceptance report template.
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution guide.
 - [SECURITY.md](SECURITY.md): security reporting and safety policy.
-- [docs/open-source-roadmap.md](docs/open-source-roadmap.md): open-source polish roadmap.
+- [docs/open-source/roadmap.md](docs/open-source/roadmap.md): open-source polish roadmap.
 - [docs/automation-validation.md](docs/automation-validation.md): automated docs and safety validation.
 
 ## Contributing

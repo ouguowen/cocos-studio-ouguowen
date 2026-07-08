@@ -152,7 +152,7 @@ Moonlight Delivery - Chapter 1 Shell 是一个成功闭环案例：
 
 - 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)
 - 安全报告：[SECURITY.md](SECURITY.md)
-- 开源路线图：[docs/open-source-roadmap.md](docs/open-source-roadmap.md)
+- 开源路线图：[docs/open-source/roadmap.md](docs/open-source/roadmap.md)
 ## 协作与发布
 
 公开协作请使用 GitHub 模板：
@@ -163,7 +163,7 @@ Moonlight Delivery - Chapter 1 Shell 是一个成功闭环案例：
 - 文档请求：[documentation.yml](.github/ISSUE_TEMPLATE/documentation.yml)
 - Pull Request：[pull_request_template.md](.github/pull_request_template.md)
 
-发布计划请阅读 [docs/release-strategy.md](docs/release-strategy.md)，发布前请完成 [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md)。提交前必须本地运行 `python scripts/validate_skill_docs.py` 并 PASS；发布变更也必须更新 [CHANGELOG.md](CHANGELOG.md)。
+发布计划请阅读 [docs/release/strategy.md](docs/release/strategy.md)，发布前请完成 [docs/release/checklist.md](docs/release/checklist.md)。提交前必须本地运行 `python scripts/validate_skill_docs.py` 并 PASS；发布变更也必须更新 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 开发体验与运行模式
 

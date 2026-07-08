@@ -26,7 +26,7 @@ Before a release candidate is accepted:
 1. Scope must be limited to the Skill repository.
 2. `python scripts/validate_skill_docs.py` must pass locally.
 3. `git diff --name-only` must be reviewed for forbidden paths.
-4. `RELEASE_CHECKLIST.md` must be completed or explicitly marked not applicable for the release.
+4. `checklist.md` must be completed or explicitly marked not applicable for the release.
 5. `CHANGELOG.md` must describe added, changed, fixed, or safety-impacting work.
 6. New public collaboration surfaces must be linked from README, CONTRIBUTING, MODULE_INDEX, and automation validation docs when relevant.
 

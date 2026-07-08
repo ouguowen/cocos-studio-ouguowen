@@ -57,8 +57,8 @@ Read:
 - [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md)
 - [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md)
 - [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md)
-- [docs/release-strategy.md](docs/release-strategy.md)
-- [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md)
+- [docs/release/strategy.md](docs/release/strategy.md)
+- [docs/release/checklist.md](docs/release/checklist.md)
 
 ## Issue and pull request templates
 
@@ -135,8 +135,8 @@ Confirm:
 
 For release-impacting changes, also confirm:
 
-- [docs/release-strategy.md](docs/release-strategy.md) still matches the release gate.
-- [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) covers any new release requirement.
+- [docs/release/strategy.md](docs/release/strategy.md) still matches the release gate.
+- [docs/release/checklist.md](docs/release/checklist.md) covers any new release requirement.
 - [CHANGELOG.md](CHANGELOG.md) describes the change.
 
 ## Commit messages

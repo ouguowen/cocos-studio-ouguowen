@@ -18,11 +18,11 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added `CHARACTER_SYSTEM.md` as the unified character behavior/action/skeleton boundary.
 - Added GitHub issue templates for bug reports, feature requests, safety reports, documentation requests, and issue routing config.
 - Added `.github/pull_request_template.md` with scope, safety, validation, and release-impact checks.
-- Added `docs/release-strategy.md` and `RELEASE_CHECKLIST.md` for open-source release planning and release readiness review.
+- Added `docs/release/strategy.md` and `docs/release/checklist.md` for open-source release planning and release readiness review.
 - Added GitHub Actions Skill Docs Validation workflow.
 - Added `scripts/validate_skill_docs.py` for required docs, links, command routing, and safety regression checks.
 - Added automation validation documentation.
-- Added open-source polish docs: `CONTRIBUTING.md`, `SECURITY.md`, `docs/quickstart-first-mvp.md`, `docs/open-source-roadmap.md`, and `examples/moonlight-delivery/README.md`.
+- Added open-source polish docs: `CONTRIBUTING.md`, `SECURITY.md`, `docs/quickstart-first-mvp.md`, `docs/open-source/roadmap.md`, and `examples/moonlight-delivery/README.md`.
 - Added a Moonlight Delivery example entry that frames the case as pipeline proof, not the only game type.
 - Added first MVP success pipeline based on Moonlight Delivery Chapter 1 Shell.
 - Added `FIRST_MVP_SUCCESS_PIPELINE.md` for the command chain from brief to `FIRST_MVP_ACCEPTED`.
@@ -56,6 +56,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Migrated open-source roadmap and release docs into staged `docs/open-source/` and `docs/release/` folders.
 - Updated `MODULE_INDEX.md` and docs validation coverage to include the repository structure plan.
 - Updated `npm run check` so it validates generated artifacts through a temporary directory instead of writing repository outputs.
 - Updated `scripts/validate_skill_docs.py` to require `ASSET_POLICY.md`, remove the deferred asset-policy link exception, and merge duplicate pre-write safety checks.

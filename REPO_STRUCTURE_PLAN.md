@@ -173,7 +173,7 @@ Future home for reusable non-runtime artifacts:
 
 ### Phase 0: Index-first stabilization
 
-Status: current phase.
+Status: completed.
 
 - Keep all existing file paths unchanged.
 - Add this plan to [MODULE_INDEX.md](MODULE_INDEX.md).
@@ -182,7 +182,15 @@ Status: current phase.
 
 ### Phase 1: Low-risk documentation migration
 
+Status: in progress.
+
 Move only small documentation groups after validation coverage exists.
+
+Completed batch 1:
+
+- `docs/open-source-roadmap.md` -> `docs/open-source/roadmap.md`
+- `docs/release-strategy.md` -> `docs/release/strategy.md`
+- `RELEASE_CHECKLIST.md` -> `docs/release/checklist.md`
 
 Allowed candidates:
 

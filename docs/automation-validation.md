@@ -96,10 +96,10 @@ The validator requires key files such as:
 - `MVP_ACCEPTANCE_REPORT_TEMPLATE.md`
 - `SUCCESS_CASE_MOONLIGHT_DELIVERY.md`
 - `docs/quickstart-first-mvp.md`
-- `docs/open-source-roadmap.md`
+- `docs/open-source/roadmap.md`
 - `docs/automation-validation.md`
-- `docs/release-strategy.md`
-- `RELEASE_CHECKLIST.md`
+- `docs/release/strategy.md`
+- `docs/release/checklist.md`
 - `scripts/check-generated-artifacts.js`
 - `.github/ISSUE_TEMPLATE/bug_report.yml`
 - `.github/ISSUE_TEMPLATE/feature_request.yml`

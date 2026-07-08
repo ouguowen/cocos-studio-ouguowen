@@ -14,10 +14,10 @@ Use this file to route a request into the correct module family before loading d
 - [README.md](README.md): English open-source entry, installation, commands, safety model, and first-MVP links
 - [README.zh-CN.md](README.zh-CN.md): Chinese beginner entry, safe first prompts, and beginner boundaries
 - [docs/quickstart-first-mvp.md](docs/quickstart-first-mvp.md): first-MVP command path from idea to release review
-- [docs/open-source-roadmap.md](docs/open-source-roadmap.md): open-source polish roadmap and contribution priorities
+- [docs/open-source/roadmap.md](docs/open-source/roadmap.md): open-source polish roadmap and contribution priorities
 - [docs/automation-validation.md](docs/automation-validation.md): GitHub Actions and local Skill docs validation guide
-- [docs/release-strategy.md](docs/release-strategy.md): release lanes, release gates, blockers, and post-release review
-- [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md): release readiness checklist for scope, docs, templates, validation, and release decision
+- [docs/release/strategy.md](docs/release/strategy.md): release lanes, release gates, blockers, and post-release review
+- [docs/release/checklist.md](docs/release/checklist.md): release readiness checklist for scope, docs, templates, validation, and release decision
 
 ## 2. Roles, authority, and handoff
 
@@ -79,8 +79,8 @@ Use this file to route a request into the correct module family before loading d
 - [docs/codex-cocos-automation-proof.md](docs/codex-cocos-automation-proof.md): Codex local automation proof flow for Cocos provider-driven validation
 - [docs/first-wave-spawn-proof.md](docs/first-wave-spawn-proof.md): first narrow gameplay proof for spawn-only behavior after config parsing
 - [RELEASE_PIPELINE_SYSTEM.md](RELEASE_PIPELINE_SYSTEM.md): build lanes, rollout, and hotfix planning
-- [docs/release-strategy.md](docs/release-strategy.md): open-source Skill release strategy and blockers
-- [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md): final release checklist before tag or announcement
+- [docs/release/strategy.md](docs/release/strategy.md): open-source Skill release strategy and blockers
+- [docs/release/checklist.md](docs/release/checklist.md): final release checklist before tag or announcement
 - [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md): `FIRST_MVP_ACCEPTANCE_REPORT.md` template and release decision vocabulary
 - [SUCCESS_CASE_MOONLIGHT_DELIVERY.md](SUCCESS_CASE_MOONLIGHT_DELIVERY.md): successful Moonlight Delivery Chapter 1 Shell pipeline case, not a universal genre template
 - [examples/moonlight-delivery/README.md](examples/moonlight-delivery/README.md): example entry for the Moonlight Delivery success case
