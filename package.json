@@ -1,6 +1,6 @@
 {
   "name": "cocos-studio-ouguowen",
-  "version": "0.3.0-alpha.7",
+  "version": "0.3.0-alpha.14",
   "private": true,
   "description": "AI Game Studio skill for multi-game-type Cocos Creator 3.8.8 workflows, agents, config validation, runtime templates, and provider-neutral local automation guidance.",
   "scripts": {

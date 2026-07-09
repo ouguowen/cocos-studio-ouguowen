@@ -291,6 +291,30 @@ Still not included:
 - Objective state proof.
 - Result path proof.
 
+## v0.3.0-alpha.14 status: Version Sync + First Wave Spawn Local Runtime Proof Preparation
+
+Primary goal:
+
+Synchronize package metadata with the roadmap and prepare the next local runtime proof step without claiming proof that has not been collected.
+
+Completed work:
+
+1. Updated `package.json` version to `0.3.0-alpha.14`.
+2. Added this roadmap entry so package metadata and roadmap history no longer diverge.
+3. Refined the first-wave-spawn proof guide as a planning artifact for the next real local Cocos proof pass.
+4. Preserved provider-neutral wording and avoided provider-specific MCP command dialects.
+5. Preserved the documentation-only boundary for this update.
+
+Still not included:
+
+- Actual local Cocos Creator execution by ChatGPT.
+- Browser preview proof showing spawned enemy nodes.
+- Console proof collected from a real Cocos preview for `Spawn table count: 2` and `Spawned enemy count: 2`.
+- Any `.scene`, `.prefab`, `.anim`, `.meta`, or real game runtime project changes.
+- Enemy movement proof.
+- Objective state proof.
+- Result path proof.
+
 ## v0.3.x next target: First Wave Spawn Local Runtime Proof
 
 Primary goal:

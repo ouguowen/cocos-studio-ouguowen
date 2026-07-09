@@ -57,6 +57,14 @@ examples/attack-defense-city/cocos-reference/SPAWN_PROOF_RUNTIME_USAGE.md
 
 This reference script is not a full gameplay runtime. It exists only to prove prefab instantiation from `config.tables.spawn`.
 
+## v0.3.0-alpha.14 preparation note
+
+This guide is currently a planning and proof-preparation artifact.
+
+The `v0.3.0-alpha.14` repository update synchronizes version metadata and prepares the next local runtime proof step. It does not claim that ChatGPT has run Cocos Creator, opened browser preview, or collected real spawned-enemy proof.
+
+The next proof pass must happen in a real Cocos Creator 3.8.8 project after explicit scope approval. It must return console, hierarchy, screenshot, or provider proof before this guide can be marked as full PASS evidence.
+
 ## Scope
 
 Allowed in this proof:

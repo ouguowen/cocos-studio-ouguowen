@@ -4,6 +4,20 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ## Unreleased
 
+## v0.3.0-alpha.14 - 2026-07-09
+
+### Changed
+
+- Synchronized package metadata to `0.3.0-alpha.14`.
+- Added roadmap planning for Version Sync + First Wave Spawn Local Runtime Proof Preparation.
+- Clarified first-wave-spawn proof preparation without claiming real browser preview proof.
+
+### Not Included
+
+- No real Cocos Creator project files were modified.
+- No `.scene`, `.prefab`, `.anim`, `.meta`, or game runtime project files were created or modified.
+- No real browser preview proof is claimed by this documentation-only update.
+
 ### Added
 
 - Added `docs/structure/repository-structure-plan.md` for staged repository organization without moving current canonical paths.
