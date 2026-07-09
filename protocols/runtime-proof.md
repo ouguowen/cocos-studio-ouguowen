@@ -13,6 +13,8 @@ Use this file when a request claims runtime safety, preview proof, or execution 
 - Runtime proof should be summarized once at the end of Fast Build Mode unless preview fails.
 - Do not repeatedly report browser proof after every minor UI/node change.
 - Preview Visibility Gate remains required, but its result should be reported as concise `PASS` / `FAIL` during Fast Build implementation.
+- Compact proof reporting is allowed only when proof exists and no runtime blocker appears.
+- Compact proof reporting must not turn unavailable evidence into `PASS`.
 
 ## Proof channels
 
@@ -21,6 +23,32 @@ Use this file when a request claims runtime safety, preview proof, or execution 
 - local Cocos hierarchy proof
 - Console proof
 - browser preview proof
+
+## Compact proof output
+
+For normal successful Fast Build work, summarize runtime proof once at the end:
+
+```text
+Preview / runtime proof: PASS
+Evidence: <short console, hierarchy, visual, or browser proof>
+Runtime errors: none / listed
+```
+
+Use a longer proof report when:
+
+- browser proof fails
+- the active scene is uncertain
+- the proof channel is unavailable
+- runtime errors appear
+- diff scope is dirty or unknown
+- QA, release review, first MVP acceptance, Skill evolution, or repository audit asks for detailed evidence
+
+Never skip:
+
+- browser proof when runtime visibility matters
+- no fake proof
+- declaring `BLOCKED` or `NOT_APPLICABLE` when required proof is unavailable
+- stopping when preview proof fails and cannot be repaired inside scope
 
 ## Browser preview proof for first MVP UI
 

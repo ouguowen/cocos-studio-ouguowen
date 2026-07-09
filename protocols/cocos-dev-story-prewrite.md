@@ -18,6 +18,42 @@ Codex must output all of these before implementation begins:
 8. browser preview proof plan
 9. final pre-write decision
 
+## Compact pre-write output
+
+Compact output is allowed for normal small implementation stories, but it reduces wording only. It must still include every required safety boundary.
+
+Minimum compact packet:
+
+```text
+Project:
+Files to change:
+Forbidden files:
+Cocos/meta allowance:
+Runtime/browser proof:
+Rollback:
+Expected diff:
+Decision: PRE_WRITE_APPROVAL_REQUIRED or PRE_WRITE_BLOCKED
+```
+
+Use the full checklist instead of compact output when:
+
+- the writable scope is broad or unclear
+- scene, prefab, generated `.meta`, or runtime ownership is ambiguous
+- external assets, settings, package files, build settings, or multiple systems may be touched
+- browser preview proof is required but the proof channel is uncertain
+- the user asks for full gate, audit, release review, or first MVP acceptance
+
+Compact pre-write output must never skip:
+
+- pre-write approval before scene, prefab, `.meta`, or runtime writes
+- approved diff scope
+- generated meta review
+- browser proof when runtime visibility matters
+- no fake proof
+- stop on unexpected files
+- no `git add .`
+- no force push
+
 ## Final pre-write decision
 
 Allowed decisions:
@@ -96,3 +132,4 @@ During implementation:
 - do not stop after every script edit
 - do not stop after every internal check
 - continue until implementation result, preview blocker, unexpected diff, or stop condition
+- keep successful implementation reports compact unless a stop condition, preview failure, dirty diff, or unexpected file appears

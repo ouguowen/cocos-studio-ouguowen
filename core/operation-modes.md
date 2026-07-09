@@ -80,6 +80,41 @@ Fast Build Mode final output should stay short:
 - commit hash if committed
 - next step
 
+### Compact output rule
+
+Normal successful Fast Build responses should be compact by default.
+
+Compact output reduces reporting verbosity only. It must not remove, weaken, rename, bypass, or make optional any safety gate, protocol, command, proof requirement, or stop condition. If compact output conflicts with safety completeness, safety completeness wins.
+
+For small approved tasks, prefer this final shape:
+
+1. Result
+2. Changed files
+3. Proof or validation result
+4. Diff / git status result
+5. Commit hash if committed
+6. Next recommended command
+
+Use longer reports only when:
+
+- QA fails
+- unexpected files appear
+- browser proof fails
+- diff scope is dirty or unknown
+- release review or first MVP acceptance is requested
+- Skill evolution, Skill validation, or repository audit is requested
+
+Never skip:
+
+- pre-write approval for scene, prefab, `.meta`, or runtime writes
+- approved diff scope
+- generated meta review
+- browser proof when runtime visibility matters
+- no fake proof
+- stop on unexpected files
+- no `git add .`
+- no force push
+
 ## 4. Safe Gate Mode
 
 Use Safe Gate Mode for:
@@ -163,6 +198,7 @@ Safe Gate Mode:
 - gate checklist
 - gate decision
 - next command
+- compact gate output is allowed when the gate passes and no unexpected risk appears
 
 Audit Mode:
 
@@ -188,6 +224,8 @@ Do not include during normal implementation:
 - repeated explanations of Skill principles
 - reports after every small action
 - confirmation prompts for every minor step
+
+Pre-write approval and QA review may use compact output when they still include all required safety fields. A compact report is a presentation format, not a reduced gate.
 
 ## 10. Stop conditions
 

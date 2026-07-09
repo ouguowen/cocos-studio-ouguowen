@@ -281,6 +281,8 @@ PASS requires:
 - reports are concise during implementation
 - stop conditions still stop unsafe work
 - audit mode is not used for normal development by default
+- successful Fast Build, pre-write, and QA outputs are compact when no stop condition appears
+- compact output reduces wording only and does not reduce required checks
 
 FAIL if any of these appear:
 
@@ -290,6 +292,29 @@ FAIL if any of these appear:
 - Codex blocks progress after harmless internal validation
 - Codex treats every check as a user-facing checkpoint
 - Codex skips mandatory stop conditions
+- compact output hides missing proof, dirty diff, unexpected files, or missing approval
+
+## Compact Output Gate
+
+Use this gate when applying fast-path reporting to normal small tasks.
+
+PASS requires:
+
+- normal successful Fast Build responses stay concise
+- compact pre-write still includes project, files to change, forbidden files, Cocos/meta allowance, runtime/browser proof, rollback, expected diff, and `PRE_WRITE_APPROVAL_REQUIRED` or `PRE_WRITE_BLOCKED`
+- compact QA still includes `QA_PASS`, `QA_FAIL`, or `QA_BLOCKED`, scope result, forbidden files result, runtime proof result, git status result, and notes
+- long reports are reserved for failure, ambiguity, release/acceptance, Skill evolution, or repository audit
+- all stop conditions still stop work
+
+FAIL if any of these appear:
+
+- compact output skips pre-write approval for scene, prefab, `.meta`, or runtime writes
+- compact output skips approved diff scope review
+- compact output skips generated meta review
+- compact output skips browser proof when runtime visibility matters
+- compact output accepts fake proof
+- compact output continues after unexpected files appear
+- compact output fails if it allows dot-pathspec broad staging or force push
 
 ## Interruption Budget Gate
 
@@ -346,6 +371,28 @@ If these are not true:
 
 - release review is blocked
 - `QA_PASS` cannot be claimed
+
+Compact QA output is allowed when QA passes and no unexpected risk appears.
+
+Minimum compact QA packet:
+
+```text
+QA_PASS / QA_FAIL / QA_BLOCKED
+Scope:
+Forbidden files:
+Runtime proof:
+Git status:
+Notes:
+```
+
+Use a longer QA report when:
+
+- QA fails
+- unexpected files appear
+- browser proof fails
+- diff scope is dirty or unknown
+- release review or first MVP acceptance is requested
+- Skill evolution or repository audit is requested
 
 ## Release Candidate Gate
 

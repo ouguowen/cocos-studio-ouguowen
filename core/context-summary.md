@@ -78,8 +78,28 @@ In Fast Build Mode:
 - do not stop after ordinary internal checks pass
 - continue automatically while inside approved scope
 - summarize validation once at the end unless blocked
+- use compact successful reports by default
 
 Stop only when a stop condition appears.
+
+## Compact output summary
+
+Compact output is a presentation optimization only.
+
+It must not remove, weaken, rename, bypass, or make optional any safety gate, protocol, command, proof requirement, or stop condition.
+
+Normal successful Fast Build output should be short:
+
+- result
+- changed files
+- proof / validation
+- diff / git status
+- commit hash if relevant
+- next command
+
+Compact pre-write must still include project, files to change, forbidden files, Cocos/meta allowance, runtime/browser proof, rollback, expected diff, and `PRE_WRITE_APPROVAL_REQUIRED` or `PRE_WRITE_BLOCKED`.
+
+Compact QA must still include `QA_PASS`, `QA_FAIL`, or `QA_BLOCKED`, scope result, forbidden files result, runtime proof result, git status result, and notes.
 
 ## Stop conditions
 
@@ -126,6 +146,7 @@ Do not repeat every gate during implementation after the scope is approved.
 - Runtime controller/domain logic owns final state.
 - Generated `.meta` must stay inside approved diff scope.
 - Browser preview proof is required when runtime visibility matters.
+- Compact output must never skip pre-write approval, approved diff scope, generated meta review, required browser proof, no-fake-proof rules, unexpected-file stops, `git add .` bans, or force-push bans.
 
 ## Context anti-patterns
 
@@ -137,6 +158,7 @@ Avoid:
 - using Audit Mode for normal game implementation
 - repeating full Skill philosophy during Fast Build Mode
 - treating every validation check as a user-facing checkpoint
+- using compact output to hide missing proof, unexpected files, dirty diffs, or missing approval
 
 ## Success definition
 
