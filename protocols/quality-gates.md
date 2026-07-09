@@ -46,7 +46,7 @@ If these are not true:
 ## Skill Change Review Gate
 
 - Skill-level rule changes follow [protocols/skill-change-review.md](skill-change-review.md).
-- Safety linkage exists in `SKILL.md`, `COMMANDS.md`, `MODULE_INDEX.md`, and `protocols/quality-gates.md`.
+- Safety linkage exists in `SKILL.md`, `core/commands.md`, `core/module-index.md`, and `protocols/quality-gates.md`.
 - Integration audit output exists in [protocols/skill-integration-audit-report.md](skill-integration-audit-report.md).
 
 If these are not true:

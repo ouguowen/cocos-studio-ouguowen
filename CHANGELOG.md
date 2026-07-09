@@ -10,9 +10,9 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added `design/asset-policy.md` for placeholder, external, generated, and Cocos asset approval boundaries.
 - Added context loading behavior test cases for `FAST_CONTEXT`, `GATE_CONTEXT`, `AUDIT_CONTEXT`, `CONTEXT_OVERLOAD`, and `REDUCE_CONTEXT`.
 - Added a side-effect-free generated artifact check for package validation.
-- Added `CONTEXT_LOADING_POLICY.md` to define context budgets, trigger-based loading, and anti-overload rules.
-- Added `SKILL_CONTEXT_SUMMARY.md` as the lightweight first-read memory for normal development sessions.
-- Added `SKILL_OPERATION_MODES.md` to define Fast Build Mode, Safe Gate Mode, and Audit Mode.
+- Added `core/context-loading-policy.md` to define context budgets, trigger-based loading, and anti-overload rules.
+- Added `core/context-summary.md` as the lightweight first-read memory for normal development sessions.
+- Added `core/operation-modes.md` to define Fast Build Mode, Safe Gate Mode, and Audit Mode.
 - Added Developer Experience Gate and Interruption Budget Gate.
 - Added UI-Character-Action linkage system.
 - Added `design/character-system.md` as the unified character behavior/action/skeleton boundary.
@@ -56,6 +56,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Migrated context loading, operation mode, command routing, and module index documents into `core/`.
 - Migrated reusable templates, level templates, workflow templates, and prompt patterns into `templates/`.
 - Migrated Cocos baseline, project structure, level-system, config schema, and runtime template routing documents into `architecture/`.
 - Migrated game design, numerical, economy, animation, asset, character, and UI boundary documents into `design/`.
@@ -67,7 +68,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Migrated quickstart and automation validation docs into `docs/quickstart/` and `docs/validation/`.
 - Migrated local proof runbooks into `docs/proof/`.
 - Migrated open-source roadmap and release docs into staged `docs/open-source/` and `docs/release/` folders.
-- Updated `MODULE_INDEX.md` and docs validation coverage to include the repository structure plan.
+- Updated `core/module-index.md` and docs validation coverage to include the repository structure plan.
 - Updated `npm run check` so it validates generated artifacts through a temporary directory instead of writing repository outputs.
 - Updated `scripts/validate_skill_docs.py` to require `design/asset-policy.md`, remove the deferred asset-policy link exception, and merge duplicate pre-write safety checks.
 - Integrated context loading policy and lightweight context summary into Skill routing, module index, and validation checks.
@@ -84,7 +85,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Updated README, Chinese README, MODULE_INDEX, and CONTRIBUTING with validation guidance.
 - Updated `README.md` to clarify project positioning, installation, core commands, safety model, automation provider stance, and first-MVP path.
 - Reworked `README.zh-CN.md` as a readable Chinese beginner entry with installation, MVP path, command list, safety model, and Moonlight Delivery case links.
-- Updated `MODULE_INDEX.md` with open-source docs, contribution/security docs, first-MVP quickstart, roadmap, and Moonlight Delivery example entry.
+- Updated `core/module-index.md` with open-source docs, contribution/security docs, first-MVP quickstart, roadmap, and Moonlight Delivery example entry.
 - Updated command routing and quality gates for QA/release closure.
 - Updated runtime proof rules so first-MVP browser preview proof must show title/objective/action/result style visibility when applicable.
 - Updated write approval and path scope rules so unapproved Cocos-generated `.meta` files require a stop-and-confirm step.
@@ -104,7 +105,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Aligned `AGENT_REGISTRY.md`, `AGENT_HANDOFF_PROTOCOL.md`, and `AI_GAME_STUDIO_SYSTEM.md` to the planned 12-Agent Cocos Studio structure.
 - Expanded `protocols/skill-extended-safety-test-cases.md` from the previous partial cases to S01-S08.
 - Expanded `protocols/skill-self-test-modes.md` to static, routing, gate, runtime, audit, safety, diff, and agent modes.
-- Updated `MODULE_INDEX.md` to index safety, audit, runtime, diff, Agent, and alignment files.
+- Updated `core/module-index.md` to index safety, audit, runtime, diff, Agent, and alignment files.
 - Updated `protocols/skill-integration-audit-report.md` with the second-pass alignment decision.
 
 ## v0.3.0-alpha.7 - 2026-06-23

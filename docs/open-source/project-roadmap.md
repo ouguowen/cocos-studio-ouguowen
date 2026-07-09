@@ -157,8 +157,8 @@ Completed work:
 2. Added `ONE_SHOT_GAME_BUILD.md` to define one-shot as a gated MVP chain, not a full-game shortcut.
 3. Added `design/example-pack-expansion-plan.md` to guide card battle, story level clear, tower defense, merge/collection, and idle growth example packs.
 4. Linked the new guides from `README.md`.
-5. Routed the new guides through `MODULE_INDEX.md`.
-6. Added `cocos-one-shot-mvp` to `COMMANDS.md`.
+5. Routed the new guides through `core/module-index.md`.
+6. Added `cocos-one-shot-mvp` to `core/commands.md`.
 
 Still not included:
 
@@ -179,7 +179,7 @@ Completed work:
 3. Defined a step-by-step local execution sequence for `examples/attack-defense-city`.
 4. Defined PASS, FAIL, and BLOCKED criteria.
 5. Added proof and blocker report templates.
-6. Linked the runbook from `README.md` and `MODULE_INDEX.md`.
+6. Linked the runbook from `README.md` and `core/module-index.md`.
 
 Still not included:
 
@@ -237,7 +237,7 @@ Completed work:
 4. Added the exact required runtime console proof, including `Config summary: levels=1, waves=2, spawns=2, objectives=1`.
 5. Added a local Codex prompt for provider-driven Cocos automation.
 6. Defined PASS, FAIL, and BLOCKED criteria.
-7. Linked the guide from `README.md` and `MODULE_INDEX.md`.
+7. Linked the guide from `README.md` and `core/module-index.md`.
 
 Still not included:
 
@@ -259,7 +259,7 @@ Completed work:
 3. Defined allowed scope: read `config.tables.spawn`, instantiate `Enemy_Placeholder`, parent enemies under `EnemyRoot`, log spawned count, and show visible placeholder nodes.
 4. Defined forbidden scope: pathfinding, movement, combat, objective update, win/loss, rewards, economy, UI production, and first playable claims.
 5. Defined PASS, PARTIAL PASS, FAIL, and BLOCKED criteria.
-6. Linked the guide from `README.md` and `MODULE_INDEX.md`.
+6. Linked the guide from `README.md` and `core/module-index.md`.
 
 Still not included:
 

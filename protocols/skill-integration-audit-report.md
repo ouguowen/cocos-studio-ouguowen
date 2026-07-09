@@ -28,8 +28,8 @@
 ## Integration targets
 
 - `SKILL.md`
-- `COMMANDS.md`
-- `MODULE_INDEX.md`
+- `core/commands.md`
+- `core/module-index.md`
 - `protocols/quality-gates.md`
 - `AGENT_REGISTRY.md`
 - `AGENT_HANDOFF_PROTOCOL.md`
@@ -43,7 +43,7 @@
 - Agent registry is aligned to the planned 12 Cocos-focused Agents.
 - Agent handoff routing is aligned to the 12-Agent structure.
 - `AI_GAME_STUDIO_SYSTEM.md` now describes the 12-Agent Cocos Studio structure.
-- `MODULE_INDEX.md` indexes safety, audit, runtime, diff, Agent, and alignment files.
+- `core/module-index.md` indexes safety, audit, runtime, diff, Agent, and alignment files.
 - `protocols/command-routing-alignment.md` records the canonical safety and Agent command routing set.
 - `protocols/quality-gate-alignment.md` records the canonical safety and integration gate set.
 
@@ -55,7 +55,7 @@
 
 ## Remaining gaps
 
-- `COMMANDS.md` and `protocols/quality-gates.md` already contain partial safety integration. The new alignment files provide the canonical checklist for future consolidation without deleting existing command and gate documentation.
+- `core/commands.md` and `protocols/quality-gates.md` already contain partial safety integration. The new alignment files provide the canonical checklist for future consolidation without deleting existing command and gate documentation.
 - No Cocos game project files were intentionally modified by this repair.
 
 ## Final decision

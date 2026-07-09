@@ -123,7 +123,7 @@ Important boundaries:
 - `cocos-qa-review`: verify acceptance criteria and forbidden scope.
 - `cocos-release-review`: decide `FIRST_MVP_ACCEPTED`, `FIRST_MVP_NOT_ACCEPTED`, or `RELEASE_BLOCKED`.
 
-See [COMMANDS.md](COMMANDS.md) for the full command registry.
+See [core/commands.md](core/commands.md) for the full command registry.
 
 ## How It Prevents Unsafe AI Writes
 
@@ -200,8 +200,8 @@ This case proves the pipeline, not the only game genre. It should improve workfl
 ## Repository Map
 
 - [SKILL.md](SKILL.md): Skill entrypoint and routing law.
-- [COMMANDS.md](COMMANDS.md): command registry.
-- [MODULE_INDEX.md](MODULE_INDEX.md): module map.
+- [core/commands.md](core/commands.md): command registry.
+- [core/module-index.md](core/module-index.md): module map.
 - [protocols/quality-gates.md](protocols/quality-gates.md): promotion and approval gates.
 - [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md): proven first-MVP pipeline.
 - [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md): pre-write approval protocol.

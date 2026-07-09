@@ -362,9 +362,9 @@ FAST_CONTEXT
 
 ### Expected Allowed Context
 
-- `SKILL_CONTEXT_SUMMARY.md`
-- `CONTEXT_LOADING_POLICY.md`
-- `SKILL_OPERATION_MODES.md`
+- `core/context-summary.md`
+- `core/context-loading-policy.md`
+- `core/operation-modes.md`
 - the directly relevant command section
 - at most one to three directly triggered protocol files
 
@@ -399,9 +399,9 @@ GATE_CONTEXT
 
 ### Expected Allowed Context
 
-- `SKILL_CONTEXT_SUMMARY.md`
-- `CONTEXT_LOADING_POLICY.md`
-- `SKILL_OPERATION_MODES.md`
+- `core/context-summary.md`
+- `core/context-loading-policy.md`
+- `core/operation-modes.md`
 - `protocols/cocos-dev-story-prewrite.md`
 - selected approval or diff review files required by the gate
 

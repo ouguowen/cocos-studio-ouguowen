@@ -12,9 +12,9 @@ Do not load every rule file by default.
 
 Use:
 
-1. `SKILL_CONTEXT_SUMMARY.md` as the lightweight first memory.
-2. `SKILL_OPERATION_MODES.md` to choose Fast Build Mode, Safe Gate Mode, or Audit Mode.
-3. `MODULE_INDEX.md` only to route into the smallest required module family.
+1. `core/context-summary.md` as the lightweight first memory.
+2. `core/operation-modes.md` to choose Fast Build Mode, Safe Gate Mode, or Audit Mode.
+3. `core/module-index.md` only to route into the smallest required module family.
 4. Detailed protocol files only when the task triggers their scope.
 
 ## Context loading stages
@@ -23,8 +23,8 @@ Use:
 
 Always start with:
 
-- `SKILL_CONTEXT_SUMMARY.md`
-- `SKILL_OPERATION_MODES.md`
+- `core/context-summary.md`
+- `core/operation-modes.md`
 
 This gives the agent the current operating rules without loading the full Skill repository.
 
@@ -32,13 +32,13 @@ This gives the agent the current operating rules without loading the full Skill 
 
 Load only the relevant command section from:
 
-- `COMMANDS.md`
+- `core/commands.md`
 
 Do not load every command when one command is enough.
 
 ### Stage 3: Module routing
 
-Use `MODULE_INDEX.md` to choose the smallest module family.
+Use `core/module-index.md` to choose the smallest module family.
 
 Load only the files that are required by the selected task.
 
@@ -54,9 +54,9 @@ Full repository scanning is allowed only in Audit Mode, Skill self-test, release
 
 Fast Build Mode should normally load no more than:
 
-1. `SKILL_CONTEXT_SUMMARY.md`
-2. `SKILL_OPERATION_MODES.md`
-3. one command section from `COMMANDS.md`
+1. `core/context-summary.md`
+2. `core/operation-modes.md`
+3. one command section from `core/commands.md`
 4. one to three task-specific protocol files
 
 Fast Build Mode must not load all gates, all workflows, all templates, all agents, or all semantic models unless the task explicitly triggers them.

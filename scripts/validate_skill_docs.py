@@ -21,14 +21,14 @@ REQUIRED_FILES = [
     "README.md",
     "README.zh-CN.md",
     "SKILL.md",
-    "COMMANDS.md",
-    "MODULE_INDEX.md",
+    "core/commands.md",
+    "core/module-index.md",
     "protocols/quality-gates.md",
     "package.json",
     "REPO_STRUCTURE_PLAN.md",
-    "CONTEXT_LOADING_POLICY.md",
-    "SKILL_CONTEXT_SUMMARY.md",
-    "SKILL_OPERATION_MODES.md",
+    "core/context-loading-policy.md",
+    "core/context-summary.md",
+    "core/operation-modes.md",
     "design/ui-character-action-linkage.md",
     "design/character-system.md",
     "design/ui-system-model.md",
@@ -97,7 +97,7 @@ CONTENT_CHECKS = {
         "docs/release/strategy.md",
         "docs/release/checklist.md",
     ],
-    "COMMANDS.md": [
+    "core/commands.md": [
         "cocos-fast-build",
         "cocos-safe-gate",
         "cocos-audit-mode",
@@ -120,9 +120,9 @@ CONTENT_CHECKS = {
         "npm run validate:example && npm run check:generated && npm run validate:runtime",
     ],
     "SKILL.md": [
-        "CONTEXT_LOADING_POLICY.md",
-        "SKILL_CONTEXT_SUMMARY.md",
-        "SKILL_OPERATION_MODES.md",
+        "core/context-loading-policy.md",
+        "core/context-summary.md",
+        "core/operation-modes.md",
         "FAST_CONTEXT",
         "GATE_CONTEXT",
         "AUDIT_CONTEXT",
@@ -143,11 +143,11 @@ CONTENT_CHECKS = {
         "design/asset-semantic-model.md",
         "Do not implement UI-character-action linkage before the first implementation story and production readiness approve the scope",
     ],
-    "MODULE_INDEX.md": [
-        "CONTEXT_LOADING_POLICY.md",
-        "SKILL_CONTEXT_SUMMARY.md",
+    "core/module-index.md": [
+        "core/context-loading-policy.md",
+        "core/context-summary.md",
         "REPO_STRUCTURE_PLAN.md",
-        "SKILL_OPERATION_MODES.md",
+        "core/operation-modes.md",
         "CONTRIBUTING.md",
         "SECURITY.md",
         "docs/quickstart/general.md",
@@ -231,7 +231,7 @@ CONTENT_CHECKS = {
         "ASSET_APPROVAL_REQUIRED",
         "ASSET_SCOPE_BLOCKED",
     ],
-    "SKILL_OPERATION_MODES.md": [
+    "core/operation-modes.md": [
         "Fast Build Mode",
         "Safe Gate Mode",
         "Audit Mode",
@@ -244,7 +244,7 @@ CONTENT_CHECKS = {
         "STOP_FOR_APPROVAL",
         "CONTINUE_AUTOMATICALLY",
     ],
-    "CONTEXT_LOADING_POLICY.md": [
+    "core/context-loading-policy.md": [
         "Fast Build Mode context budget",
         "Safe Gate Mode context budget",
         "Audit Mode context budget",
@@ -272,10 +272,10 @@ CONTENT_CHECKS = {
         "npm run check",
         "no game project files are modified",
     ],
-    "SKILL_CONTEXT_SUMMARY.md": [
+    "core/context-summary.md": [
         "lightweight first-read memory",
-        "CONTEXT_LOADING_POLICY.md",
-        "SKILL_OPERATION_MODES.md",
+        "core/context-loading-policy.md",
+        "core/operation-modes.md",
         "Do not load the whole repository",
         "Fast Build Mode",
         "Stop conditions",
@@ -301,7 +301,7 @@ CONTENT_CHECKS = {
         "docs/release/checklist.md",
         "design/ui-character-action-linkage.md",
         "design/character-system.md",
-        "SKILL_OPERATION_MODES.md",
+        "core/operation-modes.md",
         "Fast Build Mode",
         "Safe Gate Mode",
         "Audit Mode",

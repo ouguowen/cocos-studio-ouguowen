@@ -8,8 +8,8 @@ Use this file as the command registry for repeatable AI Game Studio execution.
 - Commands must name the current stage and responsible role.
 - Commands must state what is in scope and out of scope.
 - Commands must end with either a next command or a gate decision.
-- Commands that write files must apply [protocols/ai-command-permissions.md](protocols/ai-command-permissions.md), [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md), and [protocols/write-approval.md](protocols/write-approval.md) before execution.
-- Commands that claim completion must provide review proof from [protocols/git-diff-review.md](protocols/git-diff-review.md) or [protocols/runtime-proof.md](protocols/runtime-proof.md), depending on task type.
+- Commands that write files must apply [protocols/ai-command-permissions.md](../protocols/ai-command-permissions.md), [protocols/cocos-path-scope.md](../protocols/cocos-path-scope.md), and [protocols/write-approval.md](../protocols/write-approval.md) before execution.
+- Commands that claim completion must provide review proof from [protocols/git-diff-review.md](../protocols/git-diff-review.md) or [protocols/runtime-proof.md](../protocols/runtime-proof.md), depending on task type.
 
 ## Automation provider law
 
@@ -30,7 +30,7 @@ Use for fast implementation of a small feature, bug fix, simple interaction, app
 
 Mode:
 
-- Use Fast Build Mode from [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md).
+- Use Fast Build Mode from [core/operation-modes.md](operation-modes.md).
 
 Rules:
 
@@ -46,7 +46,7 @@ Use for stage transitions and safety confirmation, including production readines
 
 Mode:
 
-- Use Safe Gate Mode from [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md).
+- Use Safe Gate Mode from [core/operation-modes.md](operation-modes.md).
 
 Rules:
 
@@ -61,7 +61,7 @@ Use for Skill self-test, repo audit, safety check, release governance, validatio
 
 Mode:
 
-- Use Audit Mode from [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md).
+- Use Audit Mode from [core/operation-modes.md](operation-modes.md).
 
 Rules:
 
@@ -95,7 +95,7 @@ Rules:
 - Do not modify the Cocos project unless the selected test case explicitly requires local runtime proof.
 - Do not continue to implementation after a failed test case.
 - Do not call the skill validated until all required test cases pass or failed cases have repair issues.
-- Use [protocols/skill-self-test-modes.md](protocols/skill-self-test-modes.md), [protocols/skill-extended-safety-test-cases.md](protocols/skill-extended-safety-test-cases.md), and [protocols/cocos-hook-validation-plan.md](protocols/cocos-hook-validation-plan.md) when the request targets Skill safety integration.
+- Use [protocols/skill-self-test-modes.md](../protocols/skill-self-test-modes.md), [protocols/skill-extended-safety-test-cases.md](../protocols/skill-extended-safety-test-cases.md), and [protocols/cocos-hook-validation-plan.md](../protocols/cocos-hook-validation-plan.md) when the request targets Skill safety integration.
 
 ### `cocos-skill-integration-audit`
 
@@ -113,9 +113,9 @@ Output:
 
 Rules:
 
-- Use [protocols/cocos-automated-checks.md](protocols/cocos-automated-checks.md), [protocols/git-diff-review.md](protocols/git-diff-review.md), and [protocols/skill-change-review.md](protocols/skill-change-review.md).
+- Use [protocols/cocos-automated-checks.md](../protocols/cocos-automated-checks.md), [protocols/git-diff-review.md](../protocols/git-diff-review.md), and [protocols/skill-change-review.md](../protocols/skill-change-review.md).
 - Block the audit if any changed file leaves the approved path scope.
-- Do not claim runtime proof for documentation-only work; use [protocols/runtime-proof.md](protocols/runtime-proof.md).
+- Do not claim runtime proof for documentation-only work; use [protocols/runtime-proof.md](../protocols/runtime-proof.md).
 
 ## Pre-production commands
 
@@ -150,7 +150,7 @@ Output:
 
 Use when the user wants one continuous response or Codex run to move from a broad game idea into a controlled MVP plan and first dev-ready story.
 
-This command must load [ONE_SHOT_GAME_BUILD.md](ONE_SHOT_GAME_BUILD.md) before execution.
+This command must load [ONE_SHOT_GAME_BUILD.md](../ONE_SHOT_GAME_BUILD.md) before execution.
 
 Output:
 
@@ -309,7 +309,7 @@ Rules:
 
 - This is a design / policy command.
 - It does not authorize writing scene, prefab, meta, runtime code, or Cocos game project files.
-- It must follow [design/character-system.md](design/character-system.md), [design/character-animation-model.md](design/character-animation-model.md), [design/asset-semantic-model.md](design/asset-semantic-model.md), and [design/ui-character-action-linkage.md](design/ui-character-action-linkage.md) when UI or feedback is involved.
+- It must follow [design/character-system.md](../design/character-system.md), [design/character-animation-model.md](../design/character-animation-model.md), [design/asset-semantic-model.md](../design/asset-semantic-model.md), and [design/ui-character-action-linkage.md](../design/ui-character-action-linkage.md) when UI or feedback is involved.
 - Implementation still requires production readiness and pre-write approval.
 - Do not add full Spine tooling, full skeleton binding, combat, economy, inventory, shop, gacha, save/load, or multi-character action systems unless the selected game type and production readiness approve the scope.
 
@@ -334,7 +334,7 @@ Rules:
 
 - This is a design / policy command.
 - It does not authorize writing scene, prefab, meta, runtime code, or Cocos game project files.
-- It must apply [design/ui-character-action-linkage.md](design/ui-character-action-linkage.md), [design/ui-system-model.md](design/ui-system-model.md), [design/character-system.md](design/character-system.md), [design/character-animation-model.md](design/character-animation-model.md), and [design/asset-semantic-model.md](design/asset-semantic-model.md).
+- It must apply [design/ui-character-action-linkage.md](../design/ui-character-action-linkage.md), [design/ui-system-model.md](../design/ui-system-model.md), [design/character-system.md](../design/character-system.md), [design/character-animation-model.md](../design/character-animation-model.md), and [design/asset-semantic-model.md](../design/asset-semantic-model.md).
 - UI input is request-only; controller/domain logic owns final state.
 - Animation and skeleton presentation must not own gameplay result.
 - Asset imports must not create gameplay systems.
@@ -367,7 +367,7 @@ Rules:
 
 - This command is documentation-only unless the user explicitly authorizes asset import.
 - No external assets, final art, audio, fonts, Spine, particles, VFX, prefabs, scene files, or `.meta` files are modified during this command.
-- Route path risks through [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md).
+- Route path risks through [protocols/cocos-path-scope.md](../protocols/cocos-path-scope.md).
 
 ### `cocos-production-readiness`
 
@@ -528,11 +528,11 @@ Output:
 
 Rules:
 
-- Load [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md).
+- Load [protocols/cocos-dev-story-prewrite.md](../protocols/cocos-dev-story-prewrite.md).
 - Stop at `PRE_WRITE_APPROVAL_REQUIRED` until the user explicitly approves.
 - Do not create files, modify scenes, modify scripts, modify `.meta`, commit, or push before approval.
 - Name Cocos-generated companion meta that may appear.
-- If generated meta later appears outside the approved scope, stop and apply [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md).
+- If generated meta later appears outside the approved scope, stop and apply [protocols/cocos-generated-meta.md](../protocols/cocos-generated-meta.md).
 
 ### `cocos-dev-story`
 
@@ -633,7 +633,7 @@ Output:
 
 Rules:
 
-- Load [templates/reports/mvp-acceptance.md](templates/reports/mvp-acceptance.md).
+- Load [templates/reports/mvp-acceptance.md](../templates/reports/mvp-acceptance.md).
 - Release review may write acceptance documentation only.
 - Release review must not change gameplay, scene, prefab, meta, runtime code, or assets.
 - `FIRST_MVP_ACCEPTED` accepts the current MVP only and never authorizes scope expansion.

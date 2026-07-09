@@ -7,7 +7,7 @@ Add this appendix to `SKILL.md` when you want the skill entrypoint to route AI G
 When the user asks for AI Game Studio mode, load these files in order:
 
 1. `AI_GAME_STUDIO_SYSTEM.md`
-2. `COMMANDS.md`
+2. `core/commands.md`
 3. `AGENT_REGISTRY.md`
 4. `AGENT_MESSAGE_SCHEMA.md`
 5. `AGENT_HANDOFF_PROTOCOL.md`
@@ -16,13 +16,13 @@ When the user asks for AI Game Studio mode, load these files in order:
 
 ## Command routing
 
-- `cocos-game-brief`: use `COMMANDS.md`, `templates/core.md`, and `production/project-memory.md`
+- `cocos-game-brief`: use `core/commands.md`, `templates/core.md`, and `production/project-memory.md`
 - `cocos-classify-game`: use `design/game-classifier.md` and `design/game-type-templates.md`
 - `cocos-gdd`: use `production/prd-constraints.md`, `design/game-type-templates.md`, and `templates/core.md`
 - `cocos-project-context`: use `production/project-memory.md`
 - `cocos-game-architecture`: use `architecture/cocos-rules.md`, `architecture/project-structure.md`, and `architecture/level-system.md`
 - `cocos-config-schema`: use `architecture/level-config-schemas.md` and `architecture/level-config-schema-extensions.md`
-- `cocos-create-story`: use `production/task-decomposition.md` and `COMMANDS.md`
+- `cocos-create-story`: use `production/task-decomposition.md` and `core/commands.md`
 - `cocos-dev-story`: use `CHOICE_EXECUTION_PROTOCOL.md` and `SEQUENTIAL_GATE_PROTOCOL.md`
 - `cocos-code-review`: use `production/review-system.md`, `protocols/quality-gates.md`, and `templates/checklists/core.md`
 - `cocos-quick-prototype`: use `production/mvp-prototype-rules.md` and `protocols/quality-gates.md`

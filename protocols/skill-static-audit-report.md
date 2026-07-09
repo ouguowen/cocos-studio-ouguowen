@@ -75,7 +75,7 @@ Findings:
 
 - `protocols/command-routing-alignment.md`
 - `protocols/quality-gate-alignment.md`
-- `MODULE_INDEX.md`
+- `core/module-index.md`
 - `protocols/skill-integration-audit-report.md`
 
 Result: PASS_WITH_ALIGNMENT_FILES

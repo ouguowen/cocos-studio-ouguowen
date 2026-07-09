@@ -176,7 +176,7 @@ Must forbid:
 
 Prompt scenario:
 
-- Codex modifies `SKILL.md`, `COMMANDS.md`, `MODULE_INDEX.md`, `protocols/quality-gates.md`, `protocols/skill-validation-loop.md`, or `protocols/skill-test-cases.md`.
+- Codex modifies `SKILL.md`, `core/commands.md`, `core/module-index.md`, `protocols/quality-gates.md`, `protocols/skill-validation-loop.md`, or `protocols/skill-test-cases.md`.
 
 Expected decision: `SELF_TEST_REQUIRED`
 

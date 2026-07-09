@@ -28,7 +28,7 @@ Default priority:
 
 ## Operation modes
 
-Use `SKILL_OPERATION_MODES.md` for details.
+Use `core/operation-modes.md` for details.
 
 - Fast Build Mode: normal implementation, small feature, bug fix, approved dev story.
 - Safe Gate Mode: stage transition, pre-write approval, QA, release, preview proof.
@@ -40,13 +40,13 @@ Audit Mode must not be the default for normal implementation.
 
 ## Context loading rule
 
-Use `CONTEXT_LOADING_POLICY.md` for details.
+Use `core/context-loading-policy.md` for details.
 
 Default loading should be:
 
-1. `SKILL_CONTEXT_SUMMARY.md`
-2. `SKILL_OPERATION_MODES.md`
-3. the relevant command section from `COMMANDS.md`
+1. `core/context-summary.md`
+2. `core/operation-modes.md`
+3. the relevant command section from `core/commands.md`
 4. only the directly triggered protocol files
 
 Do not load the whole repository unless the task is an Audit Mode task.

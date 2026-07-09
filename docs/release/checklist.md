@@ -15,7 +15,7 @@ Use this checklist before tagging or announcing a Cocos Studio Ouguowen Skill re
 - [ ] README.md reflects new public entry points or release behavior.
 - [ ] README.zh-CN.md reflects matching contributor-facing guidance.
 - [ ] CONTRIBUTING.md explains required review and validation for the change type.
-- [ ] MODULE_INDEX.md links new release, collaboration, or validation docs.
+- [ ] core/module-index.md links new release, collaboration, or validation docs.
 - [ ] CHANGELOG.md has an Unreleased entry for the release contents.
 - [ ] docs/validation/automation.md explains validator coverage for new required files.
 - [ ] strategy.md reflects current release gates.

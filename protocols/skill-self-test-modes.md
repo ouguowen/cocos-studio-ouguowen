@@ -21,8 +21,8 @@ Required input:
 Required test files:
 
 - `SKILL.md`
-- `MODULE_INDEX.md`
-- `COMMANDS.md`
+- `core/module-index.md`
+- `core/commands.md`
 
 Required output:
 
@@ -51,13 +51,13 @@ Required input:
 Required test files:
 
 - `SKILL.md`
-- `COMMANDS.md`
-- `MODULE_INDEX.md`
+- `core/commands.md`
+- `core/module-index.md`
 
 Required output:
 
 - routing found in `SKILL.md`
-- command definition found in `COMMANDS.md`
+- command definition found in `core/commands.md`
 - module index entry found when required
 - PASS / FAIL / NEEDS_REPAIR
 
@@ -186,7 +186,7 @@ Required input:
 Required test files:
 
 - `protocols/skill-integration-audit-report.md`
-- `MODULE_INDEX.md`
+- `core/module-index.md`
 - `protocols/quality-gates.md`
 
 Required output:

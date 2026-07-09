@@ -50,8 +50,8 @@ Avoid contributions that. Do not:
 Read:
 
 - [SKILL.md](SKILL.md)
-- [COMMANDS.md](COMMANDS.md)
-- [MODULE_INDEX.md](MODULE_INDEX.md)
+- [core/commands.md](core/commands.md)
+- [core/module-index.md](core/module-index.md)
 - [protocols/ai-command-permissions.md](protocols/ai-command-permissions.md)
 - [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md)
 - [protocols/write-approval.md](protocols/write-approval.md)
@@ -93,9 +93,9 @@ Private vulnerabilities or sensitive safety reports should follow [SECURITY.md](
 
 When adding or changing a command:
 
-1. Update [COMMANDS.md](COMMANDS.md).
+1. Update [core/commands.md](core/commands.md).
 2. Update [SKILL.md](SKILL.md) routing if the command is a common route.
-3. Update [MODULE_INDEX.md](MODULE_INDEX.md) if a new file is introduced.
+3. Update [core/module-index.md](core/module-index.md) if a new file is introduced.
 4. Update [protocols/quality-gates.md](protocols/quality-gates.md) if the command advances a gate.
 5. Update [protocols/skill-test-cases.md](protocols/skill-test-cases.md) if the command changes behavior.
 6. Update [CHANGELOG.md](CHANGELOG.md).

@@ -1,6 +1,6 @@
 # Command Routing Alignment
 
-Use this file as the canonical alignment checklist for safety, audit, runtime proof, diff review, and Agent-routing commands. `COMMANDS.md` should stay consistent with this file.
+Use this file as the canonical alignment checklist for safety, audit, runtime proof, diff review, and Agent-routing commands. `core/commands.md` should stay consistent with this file.
 
 ## Safety and integration command routing
 
@@ -33,4 +33,4 @@ cocos-skill-self-test --all
 
 ## Completion rule
 
-A routing change is complete only when these references are consistent across `SKILL.md`, `COMMANDS.md`, `MODULE_INDEX.md`, and `protocols/quality-gates.md`, or when this file is used as the explicit alignment artifact until the primary registries are updated.
+A routing change is complete only when these references are consistent across `SKILL.md`, `core/commands.md`, `core/module-index.md`, and `protocols/quality-gates.md`, or when this file is used as the explicit alignment artifact until the primary registries are updated.

@@ -89,11 +89,11 @@ Root files should remain minimal and stable.
 
 Future home for first-load and routing files:
 
-- `SKILL_CONTEXT_SUMMARY.md`
-- `CONTEXT_LOADING_POLICY.md`
-- `SKILL_OPERATION_MODES.md`
-- `COMMANDS.md`
-- `MODULE_INDEX.md`
+- `core/context-summary.md`
+- `core/context-loading-policy.md`
+- `core/operation-modes.md`
+- `core/commands.md`
+- `core/module-index.md`
 
 ### `protocols/`
 
@@ -176,7 +176,7 @@ Future home for reusable non-runtime artifacts:
 Status: completed.
 
 - Keep all existing file paths unchanged.
-- Add this plan to [MODULE_INDEX.md](MODULE_INDEX.md).
+- Add this plan to [core/module-index.md](core/module-index.md).
 - Add validation coverage so the plan stays visible.
 - Do not move files.
 
@@ -309,6 +309,14 @@ Completed batch 11:
 - `GAME_STUDIO_WORKFLOWS.md` -> `templates/workflows/game-studio.md`
 - `PROMPT_LIBRARY.md` -> `templates/prompts.md`
 
+Completed batch 12:
+
+- `SKILL_CONTEXT_SUMMARY.md` -> `core/context-summary.md`
+- `CONTEXT_LOADING_POLICY.md` -> `core/context-loading-policy.md`
+- `SKILL_OPERATION_MODES.md` -> `core/operation-modes.md`
+- `COMMANDS.md` -> `core/commands.md`
+- `MODULE_INDEX.md` -> `core/module-index.md`
+
 Allowed candidates:
 
 - release docs
@@ -330,8 +338,8 @@ Move approval, runtime proof, diff review, and validation protocols in small bat
 Each batch must update:
 
 - `SKILL.md`
-- `MODULE_INDEX.md`
-- `COMMANDS.md`
+- `core/module-index.md`
+- `core/commands.md`
 - `scripts/validate_skill_docs.py`
 - all relative Markdown links
 
@@ -373,7 +381,7 @@ Repository structure work is successful only when:
 
 - current users can still follow existing entry points
 - `SKILL.md` still loads lightweight context first
-- `MODULE_INDEX.md` still routes by task family
+- `core/module-index.md` still routes by task family
 - `python scripts/validate_skill_docs.py` passes
 - `npm run check` passes when package validation is relevant
 - no broken Markdown links are introduced

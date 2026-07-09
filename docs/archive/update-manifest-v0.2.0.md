@@ -7,7 +7,7 @@ This update upgrades `cocos-studio-ouguowen` from a production-system skill into
 Copy these files into the repository root:
 
 - `AI_GAME_STUDIO_SYSTEM.md`
-- `COMMANDS.md`
+- `core/commands.md`
 - `AGENT_REGISTRY.md`
 - `AGENT_MESSAGE_SCHEMA.md`
 - `AGENT_HANDOFF_PROTOCOL.md`

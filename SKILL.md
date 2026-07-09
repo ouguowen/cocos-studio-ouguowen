@@ -38,11 +38,11 @@ This skill is not for:
 
 Before applying operation modes or detailed gates, load:
 
-1. [SKILL_CONTEXT_SUMMARY.md](SKILL_CONTEXT_SUMMARY.md)
-2. [CONTEXT_LOADING_POLICY.md](CONTEXT_LOADING_POLICY.md)
-3. [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md)
+1. [core/context-summary.md](core/context-summary.md)
+2. [core/context-loading-policy.md](core/context-loading-policy.md)
+3. [core/operation-modes.md](core/operation-modes.md)
 
-Then route through [MODULE_INDEX.md](MODULE_INDEX.md) only when needed.
+Then route through [core/module-index.md](core/module-index.md) only when needed.
 
 Do not load the full Skill repository by default.
 Do not load all gates, workflows, templates, agents, or semantic models during normal Fast Build Mode.
@@ -53,7 +53,7 @@ Do not load all gates, workflows, templates, agents, or semantic models during n
 
 ## Operation Mode routing
 
-Before applying detailed gates, choose an operation mode from [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md).
+Before applying detailed gates, choose an operation mode from [core/operation-modes.md](core/operation-modes.md).
 
 - Default for normal game development: Fast Build Mode.
 - Default for stage transition: Safe Gate Mode.
@@ -65,12 +65,12 @@ Before applying detailed gates, choose an operation mode from [SKILL_OPERATION_M
 
 ## Default execution order
 
-1. Load lightweight context first: [SKILL_CONTEXT_SUMMARY.md](SKILL_CONTEXT_SUMMARY.md), [CONTEXT_LOADING_POLICY.md](CONTEXT_LOADING_POLICY.md), and [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md).
-2. Choose Fast Build Mode, Safe Gate Mode, or Audit Mode from [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md) before applying detailed gates.
+1. Load lightweight context first: [core/context-summary.md](core/context-summary.md), [core/context-loading-policy.md](core/context-loading-policy.md), and [core/operation-modes.md](core/operation-modes.md).
+2. Choose Fast Build Mode, Safe Gate Mode, or Audit Mode from [core/operation-modes.md](core/operation-modes.md) before applying detailed gates.
 3. Identify the current production mode. See [production/modes.md](production/modes.md).
 4. Identify the current production stage. See [production/stages.md](production/stages.md).
 5. Identify role, authority, and asset ownership. See [production/roles.md](production/roles.md), [production/role-stage-matrix.md](production/role-stage-matrix.md), [production/ownership.md](production/ownership.md), and [production/team-seniority.md](production/team-seniority.md).
-6. Route the request through [MODULE_INDEX.md](MODULE_INDEX.md) only when the current task needs detailed module selection.
+6. Route the request through [core/module-index.md](core/module-index.md) only when the current task needs detailed module selection.
 7. If the request asks to debug, audit, validate, test, or close-loop test this skill itself, apply [protocols/skill-validation-loop.md](protocols/skill-validation-loop.md) and [protocols/skill-test-cases.md](protocols/skill-test-cases.md) before any game implementation.
 8. If the request changes this Skill repository itself, apply [protocols/ai-command-permissions.md](protocols/ai-command-permissions.md), [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md), [protocols/write-approval.md](protocols/write-approval.md), [protocols/git-diff-review.md](protocols/git-diff-review.md), and [protocols/skill-change-review.md](protocols/skill-change-review.md) before writing files.
 9. For most requests, open [templates/workflows/core.md](templates/workflows/core.md) first. Open [templates/workflows/extensions.md](templates/workflows/extensions.md) only for specialist flows.
@@ -88,7 +88,7 @@ Before applying detailed gates, choose an operation mode from [SKILL_OPERATION_M
 21. If the request needs approval or stage advancement, apply [protocols/quality-gates.md](protocols/quality-gates.md), [templates/checklists/core.md](templates/checklists/core.md), and [production/review-system.md](production/review-system.md). Open [templates/checklists/extensions.md](templates/checklists/extensions.md) only for specialist reviews.
 22. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
 23. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
-24. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [COMMANDS.md](COMMANDS.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [templates/workflows/game-studio.md](templates/workflows/game-studio.md), [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md), and [protocols/skill-integration-audit-report.md](protocols/skill-integration-audit-report.md).
+24. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [core/commands.md](core/commands.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [templates/workflows/game-studio.md](templates/workflows/game-studio.md), [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md), and [protocols/skill-integration-audit-report.md](protocols/skill-integration-audit-report.md).
 25. If a project moves from design into the first real MVP implementation, apply [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md) before starting implementation.
 26. Before `cocos-dev-story` writes scene, script, prefab, meta, or runtime files, apply [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md) and stop at `PRE_WRITE_APPROVAL_REQUIRED` until the user confirms.
 27. If Cocos Creator generates `.meta` files outside the approved diff scope, apply [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md), stop, and request user confirmation before staging or committing.
@@ -192,7 +192,7 @@ Use AI Game Studio mode when the request mentions Agent teams, workflow commands
 
 Common command routing:
 
-- `cocos-game-brief` -> [COMMANDS.md](COMMANDS.md), [templates/core.md](templates/core.md), [production/project-memory.md](production/project-memory.md)
+- `cocos-game-brief` -> [core/commands.md](core/commands.md), [templates/core.md](templates/core.md), [production/project-memory.md](production/project-memory.md)
 - `cocos-classify-game` -> [design/game-classifier.md](design/game-classifier.md), [design/game-type-templates.md](design/game-type-templates.md)
 - `cocos-gdd` -> [production/prd-constraints.md](production/prd-constraints.md), [design/game-type-templates.md](design/game-type-templates.md), [templates/core.md](templates/core.md)
 - `cocos-numerical-design` -> [design/numerical-design.md](design/numerical-design.md), [architecture/level-config-schemas.md](architecture/level-config-schemas.md), [protocols/quality-gates.md](protocols/quality-gates.md)
@@ -207,7 +207,7 @@ Common command routing:
 - `cocos-project-context` -> [production/project-memory.md](production/project-memory.md)
 - `cocos-game-architecture` -> [architecture/cocos-rules.md](architecture/cocos-rules.md), [architecture/project-structure.md](architecture/project-structure.md), [architecture/level-system.md](architecture/level-system.md)
 - `cocos-config-schema` -> [architecture/level-config-schemas.md](architecture/level-config-schemas.md), [architecture/level-config-schema-extensions.md](architecture/level-config-schema-extensions.md)
-- `cocos-create-story` -> [production/task-decomposition.md](production/task-decomposition.md), [COMMANDS.md](COMMANDS.md)
+- `cocos-create-story` -> [production/task-decomposition.md](production/task-decomposition.md), [core/commands.md](core/commands.md)
 - `cocos-first-implementation-story` -> [production/task-decomposition.md](production/task-decomposition.md), [production/mvp-prototype-rules.md](production/mvp-prototype-rules.md), [production/game-readiness-gate.md](production/game-readiness-gate.md)
 - `cocos-dev-story-prewrite` -> [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md), [protocols/write-approval.md](protocols/write-approval.md), [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md)
 - `cocos-dev-story` -> [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md), [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md), [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md), [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md), [protocols/runtime-proof.md](protocols/runtime-proof.md)
