@@ -41,6 +41,7 @@ Current capabilities:
 - manual local Cocos preview/config parsing proof baseline for attack-defense-city
 - multi-game-type scope clarification
 - provider-neutral Cocos automation execution policy
+- compact output rules for faster normal Codex usage without weakening safety
 
 ## v0.3.0-alpha.1 status: Example Pack Foundation
 
@@ -314,6 +315,28 @@ Still not included:
 - Enemy movement proof.
 - Objective state proof.
 - Result path proof.
+
+## v0.3.0-alpha.15 status: Compact Output Optimization Version Sync
+
+Primary goal:
+
+Synchronize package metadata and roadmap history after the Compact Output Optimization patch.
+
+Completed work:
+
+1. Updated `package.json` version to `0.3.0-alpha.15`.
+2. Added this roadmap entry for Compact Output Optimization.
+3. Recorded that compact output is a reporting optimization only.
+4. Clarified that compact output reduces verbosity and does not weaken safety gates, proof requirements, stop conditions, approval rules, generated meta review, browser proof rules, broad-staging bans, or force-push bans.
+5. Preserved the Skill-repository metadata/docs-only boundary for this update.
+
+Still not included:
+
+- Real Cocos Creator project changes.
+- `.scene`, `.prefab`, `.anim`, `.meta`, or game runtime project changes.
+- New modules.
+- Changes to compact-output rule files.
+- Any claim that compact output can bypass required proof or approval.
 
 ## v0.3.x next target: First Wave Spawn Local Runtime Proof
 

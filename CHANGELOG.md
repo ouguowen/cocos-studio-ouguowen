@@ -4,6 +4,21 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ## Unreleased
 
+## v0.3.0-alpha.15 - 2026-07-09
+
+### Changed
+
+- Synchronized package metadata to `0.3.0-alpha.15`.
+- Added roadmap planning for Compact Output Optimization.
+- Documented that compact output reduces reporting verbosity only and does not weaken safety gates, proof requirements, stop conditions, approval rules, generated meta review, browser proof rules, broad-staging bans, or force-push bans.
+
+### Not Included
+
+- No real Cocos Creator project files were modified.
+- No `.scene`, `.prefab`, `.anim`, `.meta`, or game runtime project files were created or modified.
+- No new modules were created.
+- No compact-output rule files were changed by this version sync.
+
 ## v0.3.0-alpha.14 - 2026-07-09
 
 ### Changed
