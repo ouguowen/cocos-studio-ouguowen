@@ -115,7 +115,7 @@ Acceptance applies to Chapter 1 Shell only.
 - [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md)
 - [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md)
 - [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md)
-- [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md)
+- [templates/reports/mvp-acceptance.md](templates/reports/mvp-acceptance.md)
 - command routing for `cocos-dev-story-prewrite`, `cocos-qa-review`, and `cocos-release-review`
 - gates for pre-write approval, Cocos-generated meta, QA review, and first MVP acceptance
 

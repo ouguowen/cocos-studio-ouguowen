@@ -93,7 +93,7 @@ The validator requires key files such as:
 - `FIRST_MVP_SUCCESS_PIPELINE.md`
 - `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md`
 - `COCOS_GENERATED_META_POLICY.md`
-- `MVP_ACCEPTANCE_REPORT_TEMPLATE.md`
+- `templates/reports/mvp-acceptance.md`
 - `SUCCESS_CASE_MOONLIGHT_DELIVERY.md`
 - `docs/quickstart/first-mvp.md`
 - `docs/open-source/roadmap.md`

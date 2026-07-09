@@ -206,7 +206,7 @@ This case proves the pipeline, not the only game genre. It should improve workfl
 - [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md): proven first-MVP pipeline.
 - [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md): pre-write approval protocol.
 - [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md): generated meta policy.
-- [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md): MVP acceptance report template.
+- [templates/reports/mvp-acceptance.md](templates/reports/mvp-acceptance.md): MVP acceptance report template.
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution guide.
 - [SECURITY.md](SECURITY.md): security reporting and safety policy.
 - [docs/open-source/roadmap.md](docs/open-source/roadmap.md): open-source polish roadmap.

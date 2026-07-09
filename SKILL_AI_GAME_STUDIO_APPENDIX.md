@@ -24,7 +24,7 @@ When the user asks for AI Game Studio mode, load these files in order:
 - `cocos-config-schema`: use `LEVEL_CONFIG_SCHEMAS.md` and `LEVEL_CONFIG_SCHEMA_EXTENSIONS.md`
 - `cocos-create-story`: use `TASK_DECOMPOSITION_RULES.md` and `COMMANDS.md`
 - `cocos-dev-story`: use `CHOICE_EXECUTION_PROTOCOL.md` and `SEQUENTIAL_GATE_PROTOCOL.md`
-- `cocos-code-review`: use `REVIEW_SYSTEM.md`, `QUALITY_GATES.md`, and `CHECKLISTS.md`
+- `cocos-code-review`: use `REVIEW_SYSTEM.md`, `QUALITY_GATES.md`, and `templates/checklists/core.md`
 - `cocos-quick-prototype`: use `MVP_PROTOTYPE_RULES.md` and `QUALITY_GATES.md`
 
 ## Operating guardrails

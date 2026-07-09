@@ -164,10 +164,10 @@ Future home for reusable non-runtime artifacts:
 - `LEVEL_TEMPLATES.md`
 - `WORKFLOWS.md`
 - `WORKFLOW_EXTENSIONS.md`
-- `CHECKLISTS.md`
-- `CHECKLIST_EXTENSIONS.md`
-- `MVP_ACCEPTANCE_REPORT_TEMPLATE.md`
-- `INCIDENT_POSTMORTEM_TEMPLATE.md`
+- `templates/checklists/core.md`
+- `templates/checklists/extensions.md`
+- `templates/reports/mvp-acceptance.md`
+- `templates/reports/incident-postmortem.md`
 
 ## Migration phases
 
@@ -202,6 +202,13 @@ Completed batch 3:
 
 - `docs/quickstart-first-mvp.md` -> `docs/quickstart/first-mvp.md`
 - `docs/automation-validation.md` -> `docs/validation/automation.md`
+
+Completed batch 4:
+
+- `CHECKLISTS.md` -> `templates/checklists/core.md`
+- `CHECKLIST_EXTENSIONS.md` -> `templates/checklists/extensions.md`
+- `MVP_ACCEPTANCE_REPORT_TEMPLATE.md` -> `templates/reports/mvp-acceptance.md`
+- `INCIDENT_POSTMORTEM_TEMPLATE.md` -> `templates/reports/incident-postmortem.md`
 
 Allowed candidates:
 

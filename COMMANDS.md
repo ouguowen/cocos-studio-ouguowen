@@ -633,7 +633,7 @@ Output:
 
 Rules:
 
-- Load [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md).
+- Load [templates/reports/mvp-acceptance.md](templates/reports/mvp-acceptance.md).
 - Release review may write acceptance documentation only.
 - Release review must not change gameplay, scene, prefab, meta, runtime code, or assets.
 - `FIRST_MVP_ACCEPTED` accepts the current MVP only and never authorizes scope expansion.

@@ -81,7 +81,7 @@ Use this file to route a request into the correct module family before loading d
 - [RELEASE_PIPELINE_SYSTEM.md](RELEASE_PIPELINE_SYSTEM.md): build lanes, rollout, and hotfix planning
 - [docs/release/strategy.md](docs/release/strategy.md): open-source Skill release strategy and blockers
 - [docs/release/checklist.md](docs/release/checklist.md): final release checklist before tag or announcement
-- [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md): `FIRST_MVP_ACCEPTANCE_REPORT.md` template and release decision vocabulary
+- [templates/reports/mvp-acceptance.md](templates/reports/mvp-acceptance.md): `FIRST_MVP_ACCEPTANCE_REPORT.md` template and release decision vocabulary
 - [SUCCESS_CASE_MOONLIGHT_DELIVERY.md](SUCCESS_CASE_MOONLIGHT_DELIVERY.md): successful Moonlight Delivery Chapter 1 Shell pipeline case, not a universal genre template
 - [examples/moonlight-delivery/README.md](examples/moonlight-delivery/README.md): example entry for the Moonlight Delivery success case
 - [PLATFORM_TARGET_RULES.md](PLATFORM_TARGET_RULES.md): Android, iOS, web, mini-game, and package differences
@@ -92,11 +92,11 @@ Use this file to route a request into the correct module family before loading d
 
 - [QUALITY_GATES.md](QUALITY_GATES.md): promotion and approval gates
 - [QUALITY_GATE_ALIGNMENT.md](QUALITY_GATE_ALIGNMENT.md): canonical alignment checklist for safety and integration gates
-- [CHECKLISTS.md](CHECKLISTS.md): review checklists
-- [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md): specialist review checklists
+- [templates/checklists/core.md](templates/checklists/core.md): review checklists
+- [templates/checklists/extensions.md](templates/checklists/extensions.md): specialist review checklists
 - [TECH_DEBT_REGISTER.md](TECH_DEBT_REGISTER.md): debt ownership and repayment triggers
 - [COST_BUDGET_MODEL.md](COST_BUDGET_MODEL.md): cost control
-- [INCIDENT_POSTMORTEM_TEMPLATE.md](INCIDENT_POSTMORTEM_TEMPLATE.md): post-incident review
+- [templates/reports/incident-postmortem.md](templates/reports/incident-postmortem.md): post-incident review
 - [MILESTONE_BURNDOWN_RULES.md](MILESTONE_BURNDOWN_RULES.md): convergence tracking
 - [RISK_ESCALATION_SYSTEM.md](RISK_ESCALATION_SYSTEM.md): when the team must stop and escalate
 - [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md): formal gate review rules

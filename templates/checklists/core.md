@@ -1,6 +1,6 @@
 # Checklists
 
-Use these core checklists to run high-frequency operational reviews. Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
+Use these core checklists to run high-frequency operational reviews. Open [extensions.md](extensions.md) only for specialist reviews.
 
 ## 1. Project Framing Checklist
 

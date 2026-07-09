@@ -1,6 +1,6 @@
 # Checklist Extensions
 
-Use this file only when [CHECKLISTS.md](CHECKLISTS.md) does not cover the required review.
+Use this file only when [core.md](core.md) does not cover the required review.
 
 ## Planning and documentation
 

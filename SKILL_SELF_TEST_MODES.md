@@ -148,7 +148,7 @@ Required test files:
 - `FIRST_MVP_SUCCESS_PIPELINE.md`
 - `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md`
 - `COCOS_GENERATED_META_POLICY.md`
-- `MVP_ACCEPTANCE_REPORT_TEMPLATE.md`
+- `templates/reports/mvp-acceptance.md`
 - `SKILL_TEST_CASES.md`
 
 Required output:

@@ -85,7 +85,7 @@ Before applying detailed gates, choose an operation mode from [SKILL_OPERATION_M
 18. If browser preview output is required, apply the Preview Visibility Gate before script-runtime proof. Editor scene visibility does not prove browser runtime visibility.
 19. If the request needs runtime proof, proof-channel selection, or a distinction between docs-only audit proof and game runtime proof, apply [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md) before claiming completion.
 20. If the request needs runtime code or subsystem boundaries, use [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md). Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only for advanced online, monetization, live-ops, social, or compliance systems.
-21. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [CHECKLIST_EXTENSIONS.md](CHECKLIST_EXTENSIONS.md) only for specialist reviews.
+21. If the request needs approval or stage advancement, apply [QUALITY_GATES.md](QUALITY_GATES.md), [templates/checklists/core.md](templates/checklists/core.md), and [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md). Open [templates/checklists/extensions.md](templates/checklists/extensions.md) only for specialist reviews.
 22. If the user asks to build one concrete module such as home page, battle page, shop page, bag page, HUD, or result page, apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md) before implementation.
 23. If delivery order, prerequisites, or step-skipping risk matters, apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) before advancing work.
 24. If the user asks for AI Game Studio mode, multi-Agent work, command-based production, or Agent handoff, load [AI_GAME_STUDIO_SYSTEM.md](AI_GAME_STUDIO_SYSTEM.md), [COMMANDS.md](COMMANDS.md), [AGENT_REGISTRY.md](AGENT_REGISTRY.md), [AGENT_MESSAGE_SCHEMA.md](AGENT_MESSAGE_SCHEMA.md), [AGENT_HANDOFF_PROTOCOL.md](AGENT_HANDOFF_PROTOCOL.md), [GAME_STUDIO_WORKFLOWS.md](GAME_STUDIO_WORKFLOWS.md), [AGENT_AUDIT_LOG.md](AGENT_AUDIT_LOG.md), and [SKILL_INTEGRATION_AUDIT_REPORT.md](SKILL_INTEGRATION_AUDIT_REPORT.md).
@@ -212,8 +212,8 @@ Common command routing:
 - `cocos-dev-story-prewrite` -> [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md), [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md), [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md)
 - `cocos-dev-story` -> [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md), [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md), [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md), [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md), [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md)
 - `cocos-qa-review` -> [QUALITY_GATES.md](QUALITY_GATES.md), [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md), [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md)
-- `cocos-release-review` -> [QUALITY_GATES.md](QUALITY_GATES.md), [MVP_ACCEPTANCE_REPORT_TEMPLATE.md](MVP_ACCEPTANCE_REPORT_TEMPLATE.md), [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md)
-- `cocos-code-review` -> [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md), [QUALITY_GATES.md](QUALITY_GATES.md), [CHECKLISTS.md](CHECKLISTS.md)
+- `cocos-release-review` -> [QUALITY_GATES.md](QUALITY_GATES.md), [templates/reports/mvp-acceptance.md](templates/reports/mvp-acceptance.md), [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md)
+- `cocos-code-review` -> [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md), [QUALITY_GATES.md](QUALITY_GATES.md), [templates/checklists/core.md](templates/checklists/core.md)
 - `cocos-quick-prototype` -> [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md), [QUALITY_GATES.md](QUALITY_GATES.md)
 
 ## When responding

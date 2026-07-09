@@ -33,7 +33,7 @@ Use this file only when the request is not covered by [WORKFLOWS.md](WORKFLOWS.m
 
 - Escalate risk: open [RISK_ESCALATION_SYSTEM.md](RISK_ESCALATION_SYSTEM.md) and name severity before optimism.
 - Track technical debt: open [TECH_DEBT_REGISTER.md](TECH_DEBT_REGISTER.md) and require owner plus repayment trigger.
-- Run a postmortem: open [INCIDENT_POSTMORTEM_TEMPLATE.md](INCIDENT_POSTMORTEM_TEMPLATE.md) and finish with action owners.
+- Run a postmortem: open [templates/reports/incident-postmortem.md](templates/reports/incident-postmortem.md) and finish with action owners.
 - Budget scope: open [COST_BUDGET_MODEL.md](COST_BUDGET_MODEL.md) before commitment.
 - Track milestone burn: open [MILESTONE_BURNDOWN_RULES.md](MILESTONE_BURNDOWN_RULES.md) and call out scope growth directly.
 

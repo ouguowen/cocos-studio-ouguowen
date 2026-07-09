@@ -10,7 +10,7 @@ Use this file as the canonical alignment checklist for safety, audit, runtime pr
 | `cocos-write-approval` | `CODEX_WRITE_APPROVAL_PROTOCOL.md`, `QUALITY_GATES.md` |
 | `cocos-path-rules` | `COCOS_PATH_SCOPED_RULES.md`, `COCOS_RESOURCE_RISK_MATRIX.md`, `QUALITY_GATES.md` |
 | `cocos-hook-plan` | `COCOS_HOOK_VALIDATION_PLAN.md`, `COCOS_AUTOMATED_CHECKS.md` |
-| `cocos-auto-checks` | `COCOS_AUTOMATED_CHECKS.md`, `CHECKLISTS.md` |
+| `cocos-auto-checks` | `COCOS_AUTOMATED_CHECKS.md`, `templates/checklists/core.md` |
 | `cocos-risk-matrix` | `COCOS_RESOURCE_RISK_MATRIX.md`, `QUALITY_GATES.md` |
 | `cocos-diff-review` | `GIT_DIFF_REVIEW_PROTOCOL.md`, `QUALITY_GATES.md` |
 | `cocos-runtime-proof` | `RUNTIME_PROOF_PROTOCOL.md`, `QUALITY_GATES.md` |
