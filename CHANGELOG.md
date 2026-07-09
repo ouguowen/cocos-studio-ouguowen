@@ -56,6 +56,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Migrated reusable templates, level templates, workflow templates, and prompt patterns into `templates/`.
 - Migrated Cocos baseline, project structure, level-system, config schema, and runtime template routing documents into `architecture/`.
 - Migrated game design, numerical, economy, animation, asset, character, and UI boundary documents into `design/`.
 - Migrated production, release, role, ownership, planning, risk, and operations documents into `production/`.
@@ -98,7 +99,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Routed economy-sensitive work through economy design before config or implementation.
 - Routed presentation-sensitive work through animation presentation rules before implementation.
 - Routed broad game implementation through production readiness before Cocos development.
-- Updated `GAME_STUDIO_WORKFLOWS.md` so new-game and MVP workflows include production readiness before implementation.
+- Updated `templates/workflows/game-studio.md` so new-game and MVP workflows include production readiness before implementation.
 - Routed skill debugging and closed-loop validation through dedicated self-test cases before any game implementation.
 - Aligned `AGENT_REGISTRY.md`, `AGENT_HANDOFF_PROTOCOL.md`, and `AI_GAME_STUDIO_SYSTEM.md` to the planned 12-Agent Cocos Studio structure.
 - Expanded `protocols/skill-extended-safety-test-cases.md` from the previous partial cases to S01-S08.

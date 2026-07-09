@@ -1,6 +1,6 @@
 # Templates
 
-Use these high-frequency templates first. Open [LEVEL_TEMPLATES.md](LEVEL_TEMPLATES.md) only for level-content artifacts.
+Use these high-frequency templates first. Open [level-templates.md](level-templates.md) only for level-content artifacts.
 
 ## 1. First Session Kickoff Template
 

@@ -71,7 +71,7 @@ Use this file to route a request into the correct module family before loading d
 - [architecture/level-data-models.md](architecture/level-data-models.md): choose the right content and level data model
 - [architecture/level-config-schemas.md](architecture/level-config-schemas.md): common wave-spawn and stage-table schemas
 - [architecture/level-config-schema-extensions.md](architecture/level-config-schema-extensions.md): optional support tables for wave-spawn projects
-- [LEVEL_TEMPLATES.md](LEVEL_TEMPLATES.md): level-specific design and runtime artifacts
+- [templates/level-templates.md](templates/level-templates.md): level-specific design and runtime artifacts
 - [architecture/level-system.md](architecture/level-system.md): core runtime implementation boundaries
 - [architecture/level-system-extensions.md](architecture/level-system-extensions.md): optional advanced systems for live service or large-scope games
 - [architecture/runtime-template-router.md](architecture/runtime-template-router.md): map requests to the right runtime template assets and scripts
@@ -130,12 +130,12 @@ Use this file to route a request into the correct module family before loading d
 - [protocols/runtime-proof.md](protocols/runtime-proof.md): runtime proof protocol
 - [protocols/skill-change-review.md](protocols/skill-change-review.md): Skill change review protocol
 - [protocols/skill-integration-audit-report.md](protocols/skill-integration-audit-report.md): integrated-scope audit artifact for Skill maintenance updates
-- [PROMPT_LIBRARY.md](PROMPT_LIBRARY.md): high-signal recurring prompt patterns
+- [templates/prompts.md](templates/prompts.md): high-signal recurring prompt patterns
 - [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md): short-option selection followed by continuous module execution
 - [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md): prerequisite-first advancement and anti-step-skipping control
 - [ADVANCEMENT_CHAIN_MAP.md](ADVANCEMENT_CHAIN_MAP.md): exact prerequisite chains for projects, modules, level systems, features, and release
-- [WORKFLOWS.md](WORKFLOWS.md): high-frequency execution patterns
-- [WORKFLOW_EXTENSIONS.md](WORKFLOW_EXTENSIONS.md): specialist execution patterns
+- [templates/workflows/core.md](templates/workflows/core.md): high-frequency execution patterns
+- [templates/workflows/extensions.md](templates/workflows/extensions.md): specialist execution patterns
 - [scripts/validate_skill_docs.py](scripts/validate_skill_docs.py): standard-library validation script for docs, links, commands, and safety rules
 - [.github/workflows/skill-docs-validate.yml](.github/workflows/skill-docs-validate.yml): GitHub Actions workflow for Skill docs validation
 

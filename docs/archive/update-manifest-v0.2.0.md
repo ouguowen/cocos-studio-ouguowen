@@ -12,7 +12,7 @@ Copy these files into the repository root:
 - `AGENT_MESSAGE_SCHEMA.md`
 - `AGENT_HANDOFF_PROTOCOL.md`
 - `AGENT_AUDIT_LOG.md`
-- `GAME_STUDIO_WORKFLOWS.md`
+- `templates/workflows/game-studio.md`
 - `QUICK_START.md`
 - `package.json`
 - `README_AGENT_WORKFLOW_SECTION.md`

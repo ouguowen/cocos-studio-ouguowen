@@ -11,14 +11,14 @@ When the user asks for AI Game Studio mode, load these files in order:
 3. `AGENT_REGISTRY.md`
 4. `AGENT_MESSAGE_SCHEMA.md`
 5. `AGENT_HANDOFF_PROTOCOL.md`
-6. `GAME_STUDIO_WORKFLOWS.md`
+6. `templates/workflows/game-studio.md`
 7. `AGENT_AUDIT_LOG.md`
 
 ## Command routing
 
-- `cocos-game-brief`: use `COMMANDS.md`, `TEMPLATES.md`, and `production/project-memory.md`
+- `cocos-game-brief`: use `COMMANDS.md`, `templates/core.md`, and `production/project-memory.md`
 - `cocos-classify-game`: use `design/game-classifier.md` and `design/game-type-templates.md`
-- `cocos-gdd`: use `production/prd-constraints.md`, `design/game-type-templates.md`, and `TEMPLATES.md`
+- `cocos-gdd`: use `production/prd-constraints.md`, `design/game-type-templates.md`, and `templates/core.md`
 - `cocos-project-context`: use `production/project-memory.md`
 - `cocos-game-architecture`: use `architecture/cocos-rules.md`, `architecture/project-structure.md`, and `architecture/level-system.md`
 - `cocos-config-schema`: use `architecture/level-config-schemas.md` and `architecture/level-config-schema-extensions.md`

@@ -160,10 +160,10 @@ Future home for Cocos and runtime architecture:
 
 Future home for reusable non-runtime artifacts:
 
-- `TEMPLATES.md`
-- `LEVEL_TEMPLATES.md`
-- `WORKFLOWS.md`
-- `WORKFLOW_EXTENSIONS.md`
+- `templates/core.md`
+- `templates/level-templates.md`
+- `templates/workflows/core.md`
+- `templates/workflows/extensions.md`
 - `templates/checklists/core.md`
 - `templates/checklists/extensions.md`
 - `templates/reports/mvp-acceptance.md`
@@ -275,7 +275,7 @@ Completed batch 8:
 Completed batch 9:
 
 - `GAME_CLASSIFIER_SYSTEM.md` -> `design/game-classifier.md`
-- `GAME_TYPE_TEMPLATES.md` -> `design/game-type-templates.md`
+- `GAME_TYPE_templates/core.md` -> `design/game-type-templates.md`
 - `EXAMPLE_PACK_EXPANSION_PLAN.md` -> `design/example-pack-expansion-plan.md`
 - `GAME_NUMERICAL_DESIGN.md` -> `design/numerical-design.md`
 - `GAME_ECONOMY_DESIGN.md` -> `design/economy-design.md`
@@ -299,6 +299,15 @@ Completed batch 10:
 - `LEVEL_CONFIG_SCHEMAS.md` -> `architecture/level-config-schemas.md`
 - `LEVEL_CONFIG_SCHEMA_EXTENSIONS.md` -> `architecture/level-config-schema-extensions.md`
 - `RUNTIME_TEMPLATE_ROUTER.md` -> `architecture/runtime-template-router.md`
+
+Completed batch 11:
+
+- `TEMPLATES.md` -> `templates/core.md`
+- `LEVEL_TEMPLATES.md` -> `templates/level-templates.md`
+- `WORKFLOWS.md` -> `templates/workflows/core.md`
+- `WORKFLOW_EXTENSIONS.md` -> `templates/workflows/extensions.md`
+- `GAME_STUDIO_WORKFLOWS.md` -> `templates/workflows/game-studio.md`
+- `PROMPT_LIBRARY.md` -> `templates/prompts.md`
 
 Allowed candidates:
 

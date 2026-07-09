@@ -1,6 +1,6 @@
 # Workflows
 
-Use these high-frequency execution patterns first. Open [WORKFLOW_EXTENSIONS.md](WORKFLOW_EXTENSIONS.md) only when the request is specialist or release-heavy.
+Use these high-frequency execution patterns first. Open [templates/workflows/extensions.md](../../templates/workflows/extensions.md) only when the request is specialist or release-heavy.
 
 ## 1. Starting a new Cocos game
 
@@ -35,7 +35,7 @@ Use these high-frequency execution patterns first. Open [WORKFLOW_EXTENSIONS.md]
 
 ## 5. Building the project structure
 
-1. Apply [architecture/cocos-rules.md](architecture/cocos-rules.md) and [architecture/project-structure.md](architecture/project-structure.md).
+1. Apply [architecture/cocos-rules.md](../../architecture/cocos-rules.md) and [architecture/project-structure.md](../../architecture/project-structure.md).
 2. Create only the structure justified by the current mode and stage.
 3. Name the owner for scene shell, UI framework, config schema, and resource loading.
 
@@ -48,9 +48,9 @@ Use these high-frequency execution patterns first. Open [WORKFLOW_EXTENSIONS.md]
 
 ## 7. Implementing the level runtime
 
-1. Start from [architecture/level-system.md](architecture/level-system.md).
+1. Start from [architecture/level-system.md](../../architecture/level-system.md).
 2. Keep config, runtime state, systems, factories, and scene bridge separate.
-3. Open [architecture/level-system-extensions.md](architecture/level-system-extensions.md) only when the game truly needs monetization, live ops, sync, social, or compliance layers.
+3. Open [architecture/level-system-extensions.md](../../architecture/level-system-extensions.md) only when the game truly needs monetization, live ops, sync, social, or compliance layers.
 4. Reject designs where one `LevelManager` owns the whole level stack.
 
 ## 8. Fixing a messy project
@@ -82,8 +82,8 @@ Use these high-frequency execution patterns first. Open [WORKFLOW_EXTENSIONS.md]
 
 ## 12. Building one concrete module
 
-1. Apply [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md).
-2. Apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md).
+1. Apply [CHOICE_EXECUTION_PROTOCOL.md](../../CHOICE_EXECUTION_PROTOCOL.md).
+2. Apply [SEQUENTIAL_GATE_PROTOCOL.md](../../SEQUENTIAL_GATE_PROTOCOL.md).
 3. Confirm module owner and approver before implementation depth increases.
 4. Confirm module goal, boundaries, data, and actions in order.
 5. Give `2` to `4` options only.
@@ -93,8 +93,8 @@ Use these high-frequency execution patterns first. Open [WORKFLOW_EXTENSIONS.md]
 
 ## 13. Preventing step-skipping
 
-1. Apply [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md).
-2. Open [ADVANCEMENT_CHAIN_MAP.md](ADVANCEMENT_CHAIN_MAP.md) if the task fits a known chain.
+1. Apply [SEQUENTIAL_GATE_PROTOCOL.md](../../SEQUENTIAL_GATE_PROTOCOL.md).
+2. Open [ADVANCEMENT_CHAIN_MAP.md](../../ADVANCEMENT_CHAIN_MAP.md) if the task fits a known chain.
 3. Name the current step before naming the next step.
 4. Check whether prerequisites are actually complete.
 5. If prerequisites are missing, stop advancement and repair the sequence first.
