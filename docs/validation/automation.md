@@ -28,7 +28,7 @@ It protects the repository from accidental regressions such as:
 
 ## When GitHub Actions runs
 
-The workflow [../.github/workflows/skill-docs-validate.yml](../.github/workflows/skill-docs-validate.yml) runs on:
+The workflow [../../.github/workflows/skill-docs-validate.yml](../../.github/workflows/skill-docs-validate.yml) runs on:
 
 - `push`
 - `pull_request`
@@ -50,7 +50,7 @@ No npm install, third-party Python package, or external link checker is required
 
 ## What the script checks
 
-[../scripts/validate_skill_docs.py](../scripts/validate_skill_docs.py) uses only the Python standard library.
+[../../scripts/validate_skill_docs.py](../../scripts/validate_skill_docs.py) uses only the Python standard library.
 
 It checks:
 
@@ -95,9 +95,9 @@ The validator requires key files such as:
 - `COCOS_GENERATED_META_POLICY.md`
 - `MVP_ACCEPTANCE_REPORT_TEMPLATE.md`
 - `SUCCESS_CASE_MOONLIGHT_DELIVERY.md`
-- `docs/quickstart-first-mvp.md`
+- `docs/quickstart/first-mvp.md`
 - `docs/open-source/roadmap.md`
-- `docs/automation-validation.md`
+- `docs/validation/automation.md`
 - `docs/release/strategy.md`
 - `docs/release/checklist.md`
 - `scripts/check-generated-artifacts.js`

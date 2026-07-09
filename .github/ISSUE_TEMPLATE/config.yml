@@ -7,5 +7,5 @@ contact_links:
     url: https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/CONTRIBUTING.md
     about: Read contribution boundaries before proposing workflow, gate, validation, or release changes.
   - name: First MVP quickstart
-    url: https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/docs/quickstart-first-mvp.md
+    url: https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/docs/quickstart/first-mvp.md
     about: Start here for the safe first-MVP workflow.

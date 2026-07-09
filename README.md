@@ -74,7 +74,7 @@ Restart Codex after installing or updating the Skill so metadata reloads cleanly
 
 ## First MVP Path
 
-For the full first-MVP path, see [docs/quickstart-first-mvp.md](docs/quickstart-first-mvp.md) and [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md).
+For the full first-MVP path, see [docs/quickstart/first-mvp.md](docs/quickstart/first-mvp.md) and [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md).
 
 Canonical chain:
 
@@ -149,7 +149,7 @@ The workflow runs on `push` and `pull_request`:
 python scripts/validate_skill_docs.py
 ```
 
-See [docs/automation-validation.md](docs/automation-validation.md) for the full validation policy and local run instructions.
+See [docs/validation/automation.md](docs/validation/automation.md) for the full validation policy and local run instructions.
 
 ## Collaboration and Release
 
@@ -210,7 +210,7 @@ This case proves the pipeline, not the only game genre. It should improve workfl
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution guide.
 - [SECURITY.md](SECURITY.md): security reporting and safety policy.
 - [docs/open-source/roadmap.md](docs/open-source/roadmap.md): open-source polish roadmap.
-- [docs/automation-validation.md](docs/automation-validation.md): automated docs and safety validation.
+- [docs/validation/automation.md](docs/validation/automation.md): automated docs and safety validation.
 
 ## Contributing
 

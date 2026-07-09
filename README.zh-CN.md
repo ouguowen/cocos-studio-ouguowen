@@ -57,7 +57,7 @@ C:\Users\<you>\.codex\skills\cocos-studio-ouguowen
 
 ## 第一个 MVP 推荐流程
 
-完整流程见 [docs/quickstart-first-mvp.md](docs/quickstart-first-mvp.md) 和 [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md)。
+完整流程见 [docs/quickstart/first-mvp.md](docs/quickstart/first-mvp.md) 和 [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md)。
 
 ```text
 cocos-game-brief
@@ -130,7 +130,7 @@ python scripts/validate_skill_docs.py
 
 本验证不会打开 Cocos，不会修改游戏项目，也不会验证真实浏览器预览。它只验证 Skill 文档和安全规则是否完整。
 
-详细说明见 [docs/automation-validation.md](docs/automation-validation.md)。
+详细说明见 [docs/validation/automation.md](docs/validation/automation.md)。
 
 ## Moonlight Delivery 案例
 

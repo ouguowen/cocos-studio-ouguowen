@@ -22,7 +22,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added GitHub Actions Skill Docs Validation workflow.
 - Added `scripts/validate_skill_docs.py` for required docs, links, command routing, and safety regression checks.
 - Added automation validation documentation.
-- Added open-source polish docs: `CONTRIBUTING.md`, `SECURITY.md`, `docs/quickstart-first-mvp.md`, `docs/open-source/roadmap.md`, and `examples/moonlight-delivery/README.md`.
+- Added open-source polish docs: `CONTRIBUTING.md`, `SECURITY.md`, `docs/quickstart/first-mvp.md`, `docs/open-source/roadmap.md`, and `examples/moonlight-delivery/README.md`.
 - Added a Moonlight Delivery example entry that frames the case as pipeline proof, not the only game type.
 - Added first MVP success pipeline based on Moonlight Delivery Chapter 1 Shell.
 - Added `FIRST_MVP_SUCCESS_PIPELINE.md` for the command chain from brief to `FIRST_MVP_ACCEPTED`.
@@ -56,6 +56,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Migrated quickstart and automation validation docs into `docs/quickstart/` and `docs/validation/`.
 - Migrated local proof runbooks into `docs/proof/`.
 - Migrated open-source roadmap and release docs into staged `docs/open-source/` and `docs/release/` folders.
 - Updated `MODULE_INDEX.md` and docs validation coverage to include the repository structure plan.

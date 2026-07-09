@@ -198,6 +198,11 @@ Completed batch 2:
 - `docs/codex-cocos-automation-proof.md` -> `docs/proof/codex-cocos-automation.md`
 - `docs/first-wave-spawn-proof.md` -> `docs/proof/first-wave-spawn.md`
 
+Completed batch 3:
+
+- `docs/quickstart-first-mvp.md` -> `docs/quickstart/first-mvp.md`
+- `docs/automation-validation.md` -> `docs/validation/automation.md`
+
 Allowed candidates:
 
 - release docs

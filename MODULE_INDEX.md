@@ -13,9 +13,9 @@ Use this file to route a request into the correct module family before loading d
 - [PROJECT_MEMORY_SYSTEM.md](PROJECT_MEMORY_SYSTEM.md): stable project truth across sessions
 - [README.md](README.md): English open-source entry, installation, commands, safety model, and first-MVP links
 - [README.zh-CN.md](README.zh-CN.md): Chinese beginner entry, safe first prompts, and beginner boundaries
-- [docs/quickstart-first-mvp.md](docs/quickstart-first-mvp.md): first-MVP command path from idea to release review
+- [docs/quickstart/first-mvp.md](docs/quickstart/first-mvp.md): first-MVP command path from idea to release review
 - [docs/open-source/roadmap.md](docs/open-source/roadmap.md): open-source polish roadmap and contribution priorities
-- [docs/automation-validation.md](docs/automation-validation.md): GitHub Actions and local Skill docs validation guide
+- [docs/validation/automation.md](docs/validation/automation.md): GitHub Actions and local Skill docs validation guide
 - [docs/release/strategy.md](docs/release/strategy.md): release lanes, release gates, blockers, and post-release review
 - [docs/release/checklist.md](docs/release/checklist.md): release readiness checklist for scope, docs, templates, validation, and release decision
 

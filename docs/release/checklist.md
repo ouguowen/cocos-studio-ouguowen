@@ -17,7 +17,7 @@ Use this checklist before tagging or announcing a Cocos Studio Ouguowen Skill re
 - [ ] CONTRIBUTING.md explains required review and validation for the change type.
 - [ ] MODULE_INDEX.md links new release, collaboration, or validation docs.
 - [ ] CHANGELOG.md has an Unreleased entry for the release contents.
-- [ ] docs/automation-validation.md explains validator coverage for new required files.
+- [ ] docs/validation/automation.md explains validator coverage for new required files.
 - [ ] strategy.md reflects current release gates.
 
 ## Collaboration Templates
