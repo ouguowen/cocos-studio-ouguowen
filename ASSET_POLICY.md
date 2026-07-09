@@ -90,10 +90,10 @@ Forbidden:
 ## Routing
 
 - Use [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md) for asset meaning and behavior-free semantics.
-- Use [COCOS_RESOURCE_RISK_MATRIX.md](COCOS_RESOURCE_RISK_MATRIX.md) for resource risk classification.
-- Use [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md) for path boundaries.
+- Use [protocols/cocos-resource-risk-matrix.md](protocols/cocos-resource-risk-matrix.md) for resource risk classification.
+- Use [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md) for path boundaries.
 - Use [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md) when generated `.meta` files appear.
-- Use [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md) when asset visibility or presentation must be proven in browser preview.
+- Use [protocols/runtime-proof.md](protocols/runtime-proof.md) when asset visibility or presentation must be proven in browser preview.
 
 ## Stop conditions
 

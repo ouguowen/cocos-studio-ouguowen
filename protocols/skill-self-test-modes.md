@@ -80,9 +80,9 @@ Required input:
 
 Required test files:
 
-- `QUALITY_GATES.md`
-- `SKILL_TEST_CASES.md`
-- `SKILL_EXTENDED_SAFETY_TEST_CASES.md`
+- `protocols/quality-gates.md`
+- `protocols/skill-test-cases.md`
+- `protocols/skill-extended-safety-test-cases.md`
 
 Required output:
 
@@ -112,8 +112,8 @@ Required input:
 
 Required test files:
 
-- `RUNTIME_PROOF_PROTOCOL.md`
-- `QUALITY_GATES.md`
+- `protocols/runtime-proof.md`
+- `protocols/quality-gates.md`
 
 Required output:
 
@@ -149,7 +149,7 @@ Required test files:
 - `protocols/cocos-dev-story-prewrite.md`
 - `protocols/cocos-generated-meta.md`
 - `templates/reports/mvp-acceptance.md`
-- `SKILL_TEST_CASES.md`
+- `protocols/skill-test-cases.md`
 
 Required output:
 
@@ -185,9 +185,9 @@ Required input:
 
 Required test files:
 
-- `SKILL_INTEGRATION_AUDIT_REPORT.md`
+- `protocols/skill-integration-audit-report.md`
 - `MODULE_INDEX.md`
-- `QUALITY_GATES.md`
+- `protocols/quality-gates.md`
 
 Required output:
 
@@ -217,11 +217,11 @@ Required input:
 
 Required test files:
 
-- `SKILL_EXTENDED_SAFETY_TEST_CASES.md`
-- `AI_COMMAND_PERMISSION_RULES.md`
+- `protocols/skill-extended-safety-test-cases.md`
+- `protocols/ai-command-permissions.md`
 - `protocols/write-approval.md`
-- `COCOS_PATH_SCOPED_RULES.md`
-- `COCOS_RESOURCE_RISK_MATRIX.md`
+- `protocols/cocos-path-scope.md`
+- `protocols/cocos-resource-risk-matrix.md`
 
 Required output:
 
@@ -249,7 +249,7 @@ Required input:
 
 Required test files:
 
-- `GIT_DIFF_REVIEW_PROTOCOL.md`
+- `protocols/git-diff-review.md`
 
 Required output:
 
@@ -310,11 +310,11 @@ cocos-skill-self-test --agent
 cocos-skill-self-test --all
 ```
 
-- `--core` uses `SKILL_TEST_CASES.md`.
-- `--safety` uses `SKILL_EXTENDED_SAFETY_TEST_CASES.md`.
-- `--runtime` uses `RUNTIME_PROOF_PROTOCOL.md` and Preview Visibility Gate.
+- `--core` uses `protocols/skill-test-cases.md`.
+- `--safety` uses `protocols/skill-extended-safety-test-cases.md`.
+- `--runtime` uses `protocols/runtime-proof.md` and Preview Visibility Gate.
 - `--pipeline` uses `FIRST_MVP_SUCCESS_PIPELINE.md` and Test Case 09.
-- `--diff` uses `GIT_DIFF_REVIEW_PROTOCOL.md`.
+- `--diff` uses `protocols/git-diff-review.md`.
 - `--agent` uses `AGENT_REGISTRY.md` and `AGENT_HANDOFF_PROTOCOL.md`.
 - `--all` runs core plus extended safety, runtime, diff, and Agent checks.
 

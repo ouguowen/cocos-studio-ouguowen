@@ -129,13 +129,13 @@ See [COMMANDS.md](COMMANDS.md) for the full command registry.
 
 The Skill uses multiple guardrails:
 
-- [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md): AI command permission boundaries.
-- [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md): path-scope rules for Cocos projects and Skill maintenance.
+- [protocols/ai-command-permissions.md](protocols/ai-command-permissions.md): AI command permission boundaries.
+- [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md): path-scope rules for Cocos projects and Skill maintenance.
 - [protocols/write-approval.md](protocols/write-approval.md): write approval before file changes.
 - [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md): mandatory pre-write checklist before `cocos-dev-story`.
 - [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md): stop-and-confirm policy for Cocos-generated `.meta` files.
-- [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md): proof rules for browser preview and runtime claims.
-- [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md): required diff review before commit.
+- [protocols/runtime-proof.md](protocols/runtime-proof.md): proof rules for browser preview and runtime claims.
+- [protocols/git-diff-review.md](protocols/git-diff-review.md): required diff review before commit.
 
 The Skill should stop when unexpected files appear, especially Cocos `.scene`, `.prefab`, `.meta`, runtime code, or unrelated assets.
 
@@ -202,7 +202,7 @@ This case proves the pipeline, not the only game genre. It should improve workfl
 - [SKILL.md](SKILL.md): Skill entrypoint and routing law.
 - [COMMANDS.md](COMMANDS.md): command registry.
 - [MODULE_INDEX.md](MODULE_INDEX.md): module map.
-- [QUALITY_GATES.md](QUALITY_GATES.md): promotion and approval gates.
+- [protocols/quality-gates.md](protocols/quality-gates.md): promotion and approval gates.
 - [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md): proven first-MVP pipeline.
 - [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md): pre-write approval protocol.
 - [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md): generated meta policy.

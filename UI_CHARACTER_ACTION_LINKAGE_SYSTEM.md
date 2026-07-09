@@ -202,5 +202,5 @@ Documentation-only changes use diff proof. Runtime proof is not applicable unles
 - [UI_SYSTEM_MODEL.md](UI_SYSTEM_MODEL.md)
 - [CHARACTER_ANIMATION_MODEL.md](CHARACTER_ANIMATION_MODEL.md)
 - [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md)
-- [QUALITY_GATES.md](QUALITY_GATES.md)
-- [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md)
+- [protocols/quality-gates.md](protocols/quality-gates.md)
+- [protocols/runtime-proof.md](protocols/runtime-proof.md)

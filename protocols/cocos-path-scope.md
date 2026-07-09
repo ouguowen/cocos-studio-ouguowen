@@ -50,7 +50,7 @@ Rules:
 5. Unrelated `.meta` files remain forbidden.
 6. `.scene`, `.prefab`, and `.meta` files must not be raw text edited.
 
-See [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md).
+See [protocols/cocos-generated-meta.md](cocos-generated-meta.md).
 
 ## Block list for this repository update
 

@@ -10,19 +10,19 @@
 
 ## Required deliverables
 
-- `AI_COMMAND_PERMISSION_RULES.md`
-- `COCOS_PATH_SCOPED_RULES.md`
+- `protocols/ai-command-permissions.md`
+- `protocols/cocos-path-scope.md`
 - `protocols/write-approval.md`
-- `COCOS_HOOK_VALIDATION_PLAN.md`
-- `SKILL_SELF_TEST_MODES.md`
-- `COCOS_AUTOMATED_CHECKS.md`
-- `COCOS_RESOURCE_RISK_MATRIX.md`
-- `GIT_DIFF_REVIEW_PROTOCOL.md`
-- `RUNTIME_PROOF_PROTOCOL.md`
-- `SKILL_CHANGE_REVIEW_PROTOCOL.md`
-- `SKILL_EXTENDED_SAFETY_TEST_CASES.md`
-- `COMMAND_ROUTING_ALIGNMENT.md`
-- `QUALITY_GATE_ALIGNMENT.md`
+- `protocols/cocos-hook-validation-plan.md`
+- `protocols/skill-self-test-modes.md`
+- `protocols/cocos-automated-checks.md`
+- `protocols/cocos-resource-risk-matrix.md`
+- `protocols/git-diff-review.md`
+- `protocols/runtime-proof.md`
+- `protocols/skill-change-review.md`
+- `protocols/skill-extended-safety-test-cases.md`
+- `protocols/command-routing-alignment.md`
+- `protocols/quality-gate-alignment.md`
 - this audit report
 
 ## Integration targets
@@ -30,7 +30,7 @@
 - `SKILL.md`
 - `COMMANDS.md`
 - `MODULE_INDEX.md`
-- `QUALITY_GATES.md`
+- `protocols/quality-gates.md`
 - `AGENT_REGISTRY.md`
 - `AGENT_HANDOFF_PROTOCOL.md`
 - `AI_GAME_STUDIO_SYSTEM.md`
@@ -44,8 +44,8 @@
 - Agent handoff routing is aligned to the 12-Agent structure.
 - `AI_GAME_STUDIO_SYSTEM.md` now describes the 12-Agent Cocos Studio structure.
 - `MODULE_INDEX.md` indexes safety, audit, runtime, diff, Agent, and alignment files.
-- `COMMAND_ROUTING_ALIGNMENT.md` records the canonical safety and Agent command routing set.
-- `QUALITY_GATE_ALIGNMENT.md` records the canonical safety and integration gate set.
+- `protocols/command-routing-alignment.md` records the canonical safety and Agent command routing set.
+- `protocols/quality-gate-alignment.md` records the canonical safety and integration gate set.
 
 ## Scope confirmation
 
@@ -55,7 +55,7 @@
 
 ## Remaining gaps
 
-- `COMMANDS.md` and `QUALITY_GATES.md` already contain partial safety integration. The new alignment files provide the canonical checklist for future consolidation without deleting existing command and gate documentation.
+- `COMMANDS.md` and `protocols/quality-gates.md` already contain partial safety integration. The new alignment files provide the canonical checklist for future consolidation without deleting existing command and gate documentation.
 - No Cocos game project files were intentionally modified by this repair.
 
 ## Final decision

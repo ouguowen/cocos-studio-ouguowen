@@ -1,6 +1,6 @@
 # Quality Gate Alignment
 
-Use this file as the canonical checklist for the safety and integration gates added during the Skill alignment repair. `QUALITY_GATES.md` should remain consistent with this file.
+Use this file as the canonical checklist for the safety and integration gates added during the Skill alignment repair. `protocols/quality-gates.md` should remain consistent with this file.
 
 ## Command Safety Gate
 

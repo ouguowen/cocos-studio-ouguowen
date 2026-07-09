@@ -52,11 +52,11 @@ Read:
 - [SKILL.md](SKILL.md)
 - [COMMANDS.md](COMMANDS.md)
 - [MODULE_INDEX.md](MODULE_INDEX.md)
-- [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md)
-- [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md)
+- [protocols/ai-command-permissions.md](protocols/ai-command-permissions.md)
+- [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md)
 - [protocols/write-approval.md](protocols/write-approval.md)
-- [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md)
-- [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md)
+- [protocols/git-diff-review.md](protocols/git-diff-review.md)
+- [protocols/skill-change-review.md](protocols/skill-change-review.md)
 - [docs/release/strategy.md](docs/release/strategy.md)
 - [docs/release/checklist.md](docs/release/checklist.md)
 
@@ -96,8 +96,8 @@ When adding or changing a command:
 1. Update [COMMANDS.md](COMMANDS.md).
 2. Update [SKILL.md](SKILL.md) routing if the command is a common route.
 3. Update [MODULE_INDEX.md](MODULE_INDEX.md) if a new file is introduced.
-4. Update [QUALITY_GATES.md](QUALITY_GATES.md) if the command advances a gate.
-5. Update [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md) if the command changes behavior.
+4. Update [protocols/quality-gates.md](protocols/quality-gates.md) if the command advances a gate.
+5. Update [protocols/skill-test-cases.md](protocols/skill-test-cases.md) if the command changes behavior.
 6. Update [CHANGELOG.md](CHANGELOG.md).
 
 ## Adding examples

@@ -53,8 +53,8 @@ PASS
 
 Files read:
 
-- `SKILL_VALIDATION_LOOP.md`
-- `SKILL_TEST_CASES.md`
+- `protocols/skill-validation-loop.md`
+- `protocols/skill-test-cases.md`
 
 Validation notes:
 
@@ -73,11 +73,11 @@ PASS
 
 Files read:
 
-- `SKILL_EXTENDED_SAFETY_TEST_CASES.md`
-- `AI_COMMAND_PERMISSION_RULES.md`
-- `COCOS_PATH_SCOPED_RULES.md`
+- `protocols/skill-extended-safety-test-cases.md`
+- `protocols/ai-command-permissions.md`
+- `protocols/cocos-path-scope.md`
 - `protocols/write-approval.md`
-- `COCOS_RESOURCE_RISK_MATRIX.md`
+- `protocols/cocos-resource-risk-matrix.md`
 
 Validation notes:
 
@@ -118,7 +118,7 @@ PASS
 
 Files read:
 
-- `GIT_DIFF_REVIEW_PROTOCOL.md`
+- `protocols/git-diff-review.md`
 
 Validation notes:
 
@@ -140,8 +140,8 @@ PASS
 
 Files read:
 
-- `RUNTIME_PROOF_PROTOCOL.md`
-- `QUALITY_GATES.md`
+- `protocols/runtime-proof.md`
+- `protocols/quality-gates.md`
 
 Simulated scenario:
 

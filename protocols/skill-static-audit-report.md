@@ -30,11 +30,11 @@ Findings:
 
 ### Safety and path control
 
-- `AI_COMMAND_PERMISSION_RULES.md`
-- `COCOS_PATH_SCOPED_RULES.md`
+- `protocols/ai-command-permissions.md`
+- `protocols/cocos-path-scope.md`
 - `protocols/write-approval.md`
-- `COCOS_RESOURCE_RISK_MATRIX.md`
-- `COCOS_AUTOMATED_CHECKS.md`
+- `protocols/cocos-resource-risk-matrix.md`
+- `protocols/cocos-automated-checks.md`
 
 Result: PASS
 
@@ -45,9 +45,9 @@ Findings:
 
 ### Runtime and proof control
 
-- `RUNTIME_PROOF_PROTOCOL.md`
-- `GIT_DIFF_REVIEW_PROTOCOL.md`
-- `SKILL_CHANGE_REVIEW_PROTOCOL.md`
+- `protocols/runtime-proof.md`
+- `protocols/git-diff-review.md`
+- `protocols/skill-change-review.md`
 
 Result: PASS
 
@@ -59,9 +59,9 @@ Findings:
 
 ### Self-test coverage
 
-- `SKILL_TEST_CASES.md`
-- `SKILL_EXTENDED_SAFETY_TEST_CASES.md`
-- `SKILL_SELF_TEST_MODES.md`
+- `protocols/skill-test-cases.md`
+- `protocols/skill-extended-safety-test-cases.md`
+- `protocols/skill-self-test-modes.md`
 
 Result: PASS
 
@@ -73,10 +73,10 @@ Findings:
 
 ### Routing and gate alignment
 
-- `COMMAND_ROUTING_ALIGNMENT.md`
-- `QUALITY_GATE_ALIGNMENT.md`
+- `protocols/command-routing-alignment.md`
+- `protocols/quality-gate-alignment.md`
 - `MODULE_INDEX.md`
-- `SKILL_INTEGRATION_AUDIT_REPORT.md`
+- `protocols/skill-integration-audit-report.md`
 
 Result: PASS_WITH_ALIGNMENT_FILES
 

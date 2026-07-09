@@ -77,7 +77,7 @@ The validator requires key files such as:
 - `SKILL.md`
 - `COMMANDS.md`
 - `MODULE_INDEX.md`
-- `QUALITY_GATES.md`
+- `protocols/quality-gates.md`
 - `package.json`
 - `REPO_STRUCTURE_PLAN.md`
 - `CONTEXT_LOADING_POLICY.md`

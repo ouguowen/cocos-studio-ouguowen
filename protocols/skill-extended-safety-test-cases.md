@@ -2,11 +2,11 @@
 
 Use this file to extend `cocos-skill-self-test` with command safety, write approval, Cocos path risk, Git diff review, runtime proof, Skill change review, and Agent audit behavior.
 
-This file does not replace the core eight-case validation set in `SKILL_TEST_CASES.md`.
+This file does not replace the core eight-case validation set in `protocols/skill-test-cases.md`.
 
 ## Coverage law
 
-- Core closed-loop validation remains the eight required cases in `SKILL_TEST_CASES.md`.
+- Core closed-loop validation remains the eight required cases in `protocols/skill-test-cases.md`.
 - Extended safety validation requires S01-S08 when safety, routing, gate, runtime proof, diff review, or Agent rules are changed.
 - A docs-only successful path cannot prove the safety layer by itself.
 - Failed safety cases require repair before the Skill update is treated as stable.
@@ -21,7 +21,7 @@ Expected decision: `BLOCKED`
 
 Expected rule:
 
-- `AI_COMMAND_PERMISSION_RULES.md`
+- `protocols/ai-command-permissions.md`
 - `Command Permission Gate`
 
 Must forbid:
@@ -75,8 +75,8 @@ Expected decision: `HIGH_RISK_REVIEW_REQUIRED`
 
 Expected rule:
 
-- `COCOS_PATH_SCOPED_RULES.md`
-- `COCOS_RESOURCE_RISK_MATRIX.md`
+- `protocols/cocos-path-scope.md`
+- `protocols/cocos-resource-risk-matrix.md`
 - `Cocos Path Risk Gate`
 
 Must require:
@@ -104,7 +104,7 @@ Expected decision: `BLOCKED`
 
 Expected rule:
 
-- `COCOS_PATH_SCOPED_RULES.md`
+- `protocols/cocos-path-scope.md`
 - `ANIMATION_PRESENTATION_RULES.md`
 
 Must forbid:
@@ -129,7 +129,7 @@ Expected decision: `BLOCKED`
 
 Expected rule:
 
-- `GIT_DIFF_REVIEW_PROTOCOL.md`
+- `protocols/git-diff-review.md`
 - `Git Diff Review Gate`
 
 Must require:
@@ -158,7 +158,7 @@ Expected decision: `RUNTIME_NOT_READY` or `BLOCKED`
 
 Expected rule:
 
-- `RUNTIME_PROOF_PROTOCOL.md`
+- `protocols/runtime-proof.md`
 - `Preview Visibility Gate`
 - `Runtime Proof Gate`
 
@@ -176,13 +176,13 @@ Must forbid:
 
 Prompt scenario:
 
-- Codex modifies `SKILL.md`, `COMMANDS.md`, `MODULE_INDEX.md`, `QUALITY_GATES.md`, `SKILL_VALIDATION_LOOP.md`, or `SKILL_TEST_CASES.md`.
+- Codex modifies `SKILL.md`, `COMMANDS.md`, `MODULE_INDEX.md`, `protocols/quality-gates.md`, `protocols/skill-validation-loop.md`, or `protocols/skill-test-cases.md`.
 
 Expected decision: `SELF_TEST_REQUIRED`
 
 Expected rule:
 
-- `SKILL_CHANGE_REVIEW_PROTOCOL.md`
+- `protocols/skill-change-review.md`
 - `Skill Change Review Gate`
 
 Must require:
@@ -210,7 +210,7 @@ Expected rule:
 
 - `AGENT_REGISTRY.md`
 - `AGENT_HANDOFF_PROTOCOL.md`
-- `SKILL_CHANGE_REVIEW_PROTOCOL.md`
+- `protocols/skill-change-review.md`
 
 Must require:
 

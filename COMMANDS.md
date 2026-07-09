@@ -8,8 +8,8 @@ Use this file as the command registry for repeatable AI Game Studio execution.
 - Commands must name the current stage and responsible role.
 - Commands must state what is in scope and out of scope.
 - Commands must end with either a next command or a gate decision.
-- Commands that write files must apply [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md), [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md), and [protocols/write-approval.md](protocols/write-approval.md) before execution.
-- Commands that claim completion must provide review proof from [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md) or [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md), depending on task type.
+- Commands that write files must apply [protocols/ai-command-permissions.md](protocols/ai-command-permissions.md), [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md), and [protocols/write-approval.md](protocols/write-approval.md) before execution.
+- Commands that claim completion must provide review proof from [protocols/git-diff-review.md](protocols/git-diff-review.md) or [protocols/runtime-proof.md](protocols/runtime-proof.md), depending on task type.
 
 ## Automation provider law
 
@@ -95,7 +95,7 @@ Rules:
 - Do not modify the Cocos project unless the selected test case explicitly requires local runtime proof.
 - Do not continue to implementation after a failed test case.
 - Do not call the skill validated until all required test cases pass or failed cases have repair issues.
-- Use [SKILL_SELF_TEST_MODES.md](SKILL_SELF_TEST_MODES.md), [SKILL_EXTENDED_SAFETY_TEST_CASES.md](SKILL_EXTENDED_SAFETY_TEST_CASES.md), and [COCOS_HOOK_VALIDATION_PLAN.md](COCOS_HOOK_VALIDATION_PLAN.md) when the request targets Skill safety integration.
+- Use [protocols/skill-self-test-modes.md](protocols/skill-self-test-modes.md), [protocols/skill-extended-safety-test-cases.md](protocols/skill-extended-safety-test-cases.md), and [protocols/cocos-hook-validation-plan.md](protocols/cocos-hook-validation-plan.md) when the request targets Skill safety integration.
 
 ### `cocos-skill-integration-audit`
 
@@ -113,9 +113,9 @@ Output:
 
 Rules:
 
-- Use [COCOS_AUTOMATED_CHECKS.md](COCOS_AUTOMATED_CHECKS.md), [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md), and [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md).
+- Use [protocols/cocos-automated-checks.md](protocols/cocos-automated-checks.md), [protocols/git-diff-review.md](protocols/git-diff-review.md), and [protocols/skill-change-review.md](protocols/skill-change-review.md).
 - Block the audit if any changed file leaves the approved path scope.
-- Do not claim runtime proof for documentation-only work; use [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md).
+- Do not claim runtime proof for documentation-only work; use [protocols/runtime-proof.md](protocols/runtime-proof.md).
 
 ## Pre-production commands
 
@@ -367,7 +367,7 @@ Rules:
 
 - This command is documentation-only unless the user explicitly authorizes asset import.
 - No external assets, final art, audio, fonts, Spine, particles, VFX, prefabs, scene files, or `.meta` files are modified during this command.
-- Route path risks through [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md).
+- Route path risks through [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md).
 
 ### `cocos-production-readiness`
 

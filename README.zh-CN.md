@@ -108,13 +108,13 @@ cocos-game-brief
 
 主要防线：
 
-- [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md)：AI 命令权限边界。
-- [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md)：Cocos 路径和写入范围规则。
+- [protocols/ai-command-permissions.md](protocols/ai-command-permissions.md)：AI 命令权限边界。
+- [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md)：Cocos 路径和写入范围规则。
 - [protocols/write-approval.md](protocols/write-approval.md)：写文件前审批。
 - [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md)：`cocos-dev-story` 写入前必须停止等待确认。
 - [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md)：Cocos 自动生成 `.meta` 时必须审查和确认。
-- [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md)：浏览器预览和运行证明规则。
-- [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md)：提交前必须检查 diff。
+- [protocols/runtime-proof.md](protocols/runtime-proof.md)：浏览器预览和运行证明规则。
+- [protocols/git-diff-review.md](protocols/git-diff-review.md)：提交前必须检查 diff。
 
 如果出现未批准文件，尤其是 `.scene`、`.prefab`、`.meta`、运行时代码或外部资源，Codex 应该停止并报告。
 

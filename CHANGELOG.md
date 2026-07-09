@@ -35,27 +35,28 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added first MVP pipeline success self-test coverage.
 - Added `GAME_NUMERICAL_DESIGN.md` for gameplay stats, difficulty, rewards, costs, placeholder values, legal ranges, and balance validation rules.
 - Added `cocos-numerical-design` command routing.
-- Added `Numerical Design Gate` to `QUALITY_GATES.md`.
+- Added `Numerical Design Gate` to `protocols/quality-gates.md`.
 - Added `GAME_ECONOMY_DESIGN.md` for currencies, sources, sinks, reward cadence, upgrades, stamina/energy, ads, shops, gacha boundaries, and economy validation rules.
 - Added `cocos-economy-design` command routing.
-- Added `Economy Design Gate` to `QUALITY_GATES.md`.
+- Added `Economy Design Gate` to `protocols/quality-gates.md`.
 - Added `ANIMATION_PRESENTATION_RULES.md` for actor animation states, UI motion, combat feedback, VFX, Spine/Tween/AnimationClip boundaries, and presentation validation.
 - Added `cocos-animation-design` command routing.
-- Added `Animation Presentation Gate` to `QUALITY_GATES.md`.
+- Added `Animation Presentation Gate` to `protocols/quality-gates.md`.
 - Added `GAME_PRODUCTION_READINESS_GATE.md` for deciding whether Codex may start real implementation, continue design repair, fix runtime readiness, reduce scope, or stop as blocked.
 - Added `cocos-production-readiness` command routing.
-- Added `Game Production Readiness Gate` to `QUALITY_GATES.md`.
-- Added `SKILL_VALIDATION_LOOP.md` for closed-loop QA of the skill itself.
-- Added `SKILL_TEST_CASES.md` with repeatable block-path and allow-path self-test cases.
+- Added `Game Production Readiness Gate` to `protocols/quality-gates.md`.
+- Added `protocols/skill-validation-loop.md` for closed-loop QA of the skill itself.
+- Added `protocols/skill-test-cases.md` with repeatable block-path and allow-path self-test cases.
 - Added `cocos-skill-self-test` command routing.
-- Added `Skill Validation Gate` to `QUALITY_GATES.md`.
-- Synchronized `SKILL_VALIDATION_LOOP.md` with the full eight-case Skill self-test set.
+- Added `Skill Validation Gate` to `protocols/quality-gates.md`.
+- Synchronized `protocols/skill-validation-loop.md` with the full eight-case Skill self-test set.
 - Added command safety, Cocos path scope, write approval, automated checks, resource risk, diff review, runtime proof, Skill change review, and extended safety self-test documents.
-- Added `COMMAND_ROUTING_ALIGNMENT.md` as the canonical safety and Agent command routing checklist.
-- Added `QUALITY_GATE_ALIGNMENT.md` as the canonical safety and integration gate checklist.
+- Added `protocols/command-routing-alignment.md` as the canonical safety and Agent command routing checklist.
+- Added `protocols/quality-gate-alignment.md` as the canonical safety and integration gate checklist.
 
 ### Changed
 
+- Migrated safety, validation, audit, runtime proof, diff review, and quality gate documents into `protocols/`.
 - Migrated write approval, dev-story pre-write, and generated meta protocols into `protocols/`.
 - Migrated quick start, general examples, project roadmap, and historical update drafts into `docs/quickstart/`, `docs/examples/`, `docs/open-source/`, and `docs/archive/`.
 - Migrated checklist and report templates into `templates/checklists/` and `templates/reports/`.
@@ -87,7 +88,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added a quick check that separates the reusable multi-game-type Skill from the currently selected game type.
 - Added a provider-driven proof workflow that treats the current Cocos automation tool/MCP provider as an execution channel.
 - Added Preview Visibility Gate routing to `SKILL.md` so script-runtime proof cannot bypass browser-preview visibility.
-- Added `Preview Visibility Gate` to `QUALITY_GATES.md`.
+- Added `Preview Visibility Gate` to `protocols/quality-gates.md`.
 - Added `Cocos Preview Visibility Checklist` to `templates/checklists/core.md`.
 - Clarified that editor Scene view visibility is not the same as browser runtime visibility.
 - Routed balance-sensitive work through numerical design before config or implementation.
@@ -97,10 +98,10 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Updated `GAME_STUDIO_WORKFLOWS.md` so new-game and MVP workflows include production readiness before implementation.
 - Routed skill debugging and closed-loop validation through dedicated self-test cases before any game implementation.
 - Aligned `AGENT_REGISTRY.md`, `AGENT_HANDOFF_PROTOCOL.md`, and `AI_GAME_STUDIO_SYSTEM.md` to the planned 12-Agent Cocos Studio structure.
-- Expanded `SKILL_EXTENDED_SAFETY_TEST_CASES.md` from the previous partial cases to S01-S08.
-- Expanded `SKILL_SELF_TEST_MODES.md` to static, routing, gate, runtime, audit, safety, diff, and agent modes.
+- Expanded `protocols/skill-extended-safety-test-cases.md` from the previous partial cases to S01-S08.
+- Expanded `protocols/skill-self-test-modes.md` to static, routing, gate, runtime, audit, safety, diff, and agent modes.
 - Updated `MODULE_INDEX.md` to index safety, audit, runtime, diff, Agent, and alignment files.
-- Updated `SKILL_INTEGRATION_AUDIT_REPORT.md` with the second-pass alignment decision.
+- Updated `protocols/skill-integration-audit-report.md` with the second-pass alignment decision.
 
 ## v0.3.0-alpha.7 - 2026-06-23
 

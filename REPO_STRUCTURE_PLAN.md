@@ -99,16 +99,16 @@ Future home for first-load and routing files:
 
 Home for migrated rule and proof protocols, with unmigrated protocols kept at their current root paths until their batch is approved:
 
-- `AI_COMMAND_PERMISSION_RULES.md`
+- `protocols/ai-command-permissions.md`
 - `protocols/write-approval.md`
 - `protocols/cocos-dev-story-prewrite.md`
 - `protocols/cocos-generated-meta.md`
-- `RUNTIME_PROOF_PROTOCOL.md`
-- `GIT_DIFF_REVIEW_PROTOCOL.md`
-- `SKILL_CHANGE_REVIEW_PROTOCOL.md`
-- `SKILL_VALIDATION_LOOP.md`
-- `SKILL_TEST_CASES.md`
-- `QUALITY_GATES.md`
+- `protocols/runtime-proof.md`
+- `protocols/git-diff-review.md`
+- `protocols/skill-change-review.md`
+- `protocols/skill-validation-loop.md`
+- `protocols/skill-test-cases.md`
+- `protocols/quality-gates.md`
 
 ### `production/`
 
@@ -223,6 +223,27 @@ Completed batch 6:
 - `CODEX_WRITE_APPROVAL_PROTOCOL.md` -> `protocols/write-approval.md`
 - `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md` -> `protocols/cocos-dev-story-prewrite.md`
 - `COCOS_GENERATED_META_POLICY.md` -> `protocols/cocos-generated-meta.md`
+
+Completed batch 7:
+
+- `AI_COMMAND_PERMISSION_RULES.md` -> `protocols/ai-command-permissions.md`
+- `COCOS_PATH_SCOPED_RULES.md` -> `protocols/cocos-path-scope.md`
+- `RUNTIME_PROOF_PROTOCOL.md` -> `protocols/runtime-proof.md`
+- `GIT_DIFF_REVIEW_PROTOCOL.md` -> `protocols/git-diff-review.md`
+- `SKILL_CHANGE_REVIEW_PROTOCOL.md` -> `protocols/skill-change-review.md`
+- `SKILL_VALIDATION_LOOP.md` -> `protocols/skill-validation-loop.md`
+- `SKILL_TEST_CASES.md` -> `protocols/skill-test-cases.md`
+- `QUALITY_GATES.md` -> `protocols/quality-gates.md`
+- `QUALITY_GATE_ALIGNMENT.md` -> `protocols/quality-gate-alignment.md`
+- `COMMAND_ROUTING_ALIGNMENT.md` -> `protocols/command-routing-alignment.md`
+- `COCOS_AUTOMATED_CHECKS.md` -> `protocols/cocos-automated-checks.md`
+- `COCOS_HOOK_VALIDATION_PLAN.md` -> `protocols/cocos-hook-validation-plan.md`
+- `COCOS_RESOURCE_RISK_MATRIX.md` -> `protocols/cocos-resource-risk-matrix.md`
+- `SKILL_EXTENDED_SAFETY_TEST_CASES.md` -> `protocols/skill-extended-safety-test-cases.md`
+- `SKILL_SELF_TEST_MODES.md` -> `protocols/skill-self-test-modes.md`
+- `SKILL_SELF_TEST_RUN_REPORT.md` -> `protocols/skill-self-test-run-report.md`
+- `SKILL_STATIC_AUDIT_REPORT.md` -> `protocols/skill-static-audit-report.md`
+- `SKILL_INTEGRATION_AUDIT_REPORT.md` -> `protocols/skill-integration-audit-report.md`
 
 Allowed candidates:
 

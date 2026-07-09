@@ -68,7 +68,7 @@ Safe Gate Mode may load:
 - the relevant gate file
 - the relevant approval protocol
 - the relevant runtime proof or diff review protocol
-- `QUALITY_GATES.md` when a gate decision is required
+- `protocols/quality-gates.md` when a gate decision is required
 
 It should still avoid full repository loading.
 
@@ -96,7 +96,7 @@ Load these files only when triggered:
 - `ANIMATION_PRESENTATION_RULES.md`: animation, tween, VFX, Spine, particles, audio-visual timing.
 - `UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md`: UI input, character response, action state, animation state, skeleton presentation.
 - `protocols/cocos-dev-story-prewrite.md`: before approved dev-story implementation writes scene, script, prefab, meta, or runtime files.
-- `RUNTIME_PROOF_PROTOCOL.md`: when runtime proof or preview proof is claimed.
+- `protocols/runtime-proof.md`: when runtime proof or preview proof is claimed.
 - `protocols/cocos-generated-meta.md`: when generated meta appears or diff scope includes generated companion meta.
 
 ## Forbidden default behavior

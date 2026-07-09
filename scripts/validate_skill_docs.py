@@ -23,7 +23,7 @@ REQUIRED_FILES = [
     "SKILL.md",
     "COMMANDS.md",
     "MODULE_INDEX.md",
-    "QUALITY_GATES.md",
+    "protocols/quality-gates.md",
     "package.json",
     "REPO_STRUCTURE_PLAN.md",
     "CONTEXT_LOADING_POLICY.md",
@@ -135,7 +135,7 @@ CONTENT_CHECKS = {
         "protocols/cocos-dev-story-prewrite.md",
         "protocols/cocos-generated-meta.md",
         "Preview Visibility Gate",
-        "RUNTIME_PROOF_PROTOCOL.md",
+        "protocols/runtime-proof.md",
         "UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md",
         "CHARACTER_SYSTEM.md",
         "UI_SYSTEM_MODEL.md",
@@ -369,7 +369,7 @@ CONTENT_CHECKS = {
         "https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/CONTRIBUTING.md",
         "https://github.com/ouguowen/cocos-studio-ouguowen/blob/main/docs/quickstart/first-mvp.md",
     ],
-    "SKILL_TEST_CASES.md": [
+    "protocols/skill-test-cases.md": [
         "FAST_CONTEXT",
         "GATE_CONTEXT",
         "AUDIT_CONTEXT",
@@ -407,7 +407,7 @@ SAFETY_CHECKS = {
         "user must explicitly confirm",
         "must not raw text edit `.scene`, `.prefab`, or `.meta`",
     ],
-    "RUNTIME_PROOF_PROTOCOL.md": [
+    "protocols/runtime-proof.md": [
         "browser preview",
         "Preview Visibility Gate",
         "summarized once",
@@ -418,7 +418,7 @@ SAFETY_CHECKS = {
         "approve a scope",
         "without repeated confirmation",
     ],
-    "QUALITY_GATES.md": [
+    "protocols/quality-gates.md": [
         "Pre-write Approval Gate",
         "Cocos Generated Meta Gate",
         "QA Review Gate",
@@ -625,10 +625,10 @@ def check_safety_rules() -> list[str]:
             if term not in text:
                 errors.append(f"{file_name}: missing safety term {term!r}")
 
-    runtime_text = read_text(ROOT / "RUNTIME_PROOF_PROTOCOL.md")
+    runtime_text = read_text(ROOT / "protocols/runtime-proof.md")
     runtime_lower = runtime_text.lower()
     if "editor scene visibility is not enough" not in runtime_lower and "editor hierarchy" not in runtime_lower:
-        errors.append("RUNTIME_PROOF_PROTOCOL.md: missing editor-only proof rejection")
+        errors.append("protocols/runtime-proof.md: missing editor-only proof rejection")
 
     approval_text = read_text(ROOT / "protocols/write-approval.md").lower()
     if "pre_write_approval_required" not in approval_text and "pre-write" not in approval_text:

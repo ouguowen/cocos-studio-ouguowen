@@ -30,7 +30,7 @@ Without steps 1-8, the skill is not closed-loop validated.
 
 ## Required validation passes
 
-Run all eight passes before claiming the skill is ready. These passes map to [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md) and must not be shortened to only successful or convenient cases.
+Run all eight passes before claiming the skill is ready. These passes map to [protocols/skill-test-cases.md](skill-test-cases.md) and must not be shortened to only successful or convenient cases.
 
 ### Pass 1: Runtime-ready but design-missing
 

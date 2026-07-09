@@ -6,9 +6,9 @@ Use these gates to decide whether work is allowed to advance.
 
 Use this gate before claiming the skill is closed-loop validated or safe for broad game development guidance.
 
-- Skill validation uses [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md) and [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md).
-- Skill validation mode is selected from [SKILL_SELF_TEST_MODES.md](SKILL_SELF_TEST_MODES.md).
-- Safety-focused validation includes [SKILL_EXTENDED_SAFETY_TEST_CASES.md](SKILL_EXTENDED_SAFETY_TEST_CASES.md) and [COCOS_HOOK_VALIDATION_PLAN.md](COCOS_HOOK_VALIDATION_PLAN.md).
+- Skill validation uses [protocols/skill-validation-loop.md](skill-validation-loop.md) and [protocols/skill-test-cases.md](skill-test-cases.md).
+- Skill validation mode is selected from [protocols/skill-self-test-modes.md](skill-self-test-modes.md).
+- Safety-focused validation includes [protocols/skill-extended-safety-test-cases.md](skill-extended-safety-test-cases.md) and [protocols/cocos-hook-validation-plan.md](cocos-hook-validation-plan.md).
 - Both allow-path tests and block-path tests have been run.
 - Each test case records expected decision, actual decision, allowed command, forbidden actions, proof, and repair status.
 - A single successful path is not treated as closed-loop validation.
@@ -24,7 +24,7 @@ If these are not true:
 
 ## Command Permission Gate
 
-- File-writing work applies [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md).
+- File-writing work applies [protocols/ai-command-permissions.md](ai-command-permissions.md).
 - Allowed scope, blocked scope, and escalation-only scope are explicit.
 - The command does not treat local disk reachability as permission.
 
@@ -37,7 +37,7 @@ If these are not true:
 - Writable scope is explicit and reviewable.
 - Changed paths remain inside the approved repository.
 - `D:\CocosProjects\AI_Game_Studio_FirstGame`, `assets/scenes/**`, `assets/prefabs/**`, `assets/**/*.meta`, and actual game runtime code remain untouched for documentation-only tasks.
-- Path review follows [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md).
+- Path review follows [protocols/cocos-path-scope.md](cocos-path-scope.md).
 
 If these are not true:
 
@@ -45,9 +45,9 @@ If these are not true:
 
 ## Skill Change Review Gate
 
-- Skill-level rule changes follow [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md).
-- Safety linkage exists in `SKILL.md`, `COMMANDS.md`, `MODULE_INDEX.md`, and `QUALITY_GATES.md`.
-- Integration audit output exists in [SKILL_INTEGRATION_AUDIT_REPORT.md](SKILL_INTEGRATION_AUDIT_REPORT.md).
+- Skill-level rule changes follow [protocols/skill-change-review.md](skill-change-review.md).
+- Safety linkage exists in `SKILL.md`, `COMMANDS.md`, `MODULE_INDEX.md`, and `protocols/quality-gates.md`.
+- Integration audit output exists in [protocols/skill-integration-audit-report.md](skill-integration-audit-report.md).
 
 If these are not true:
 
@@ -55,7 +55,7 @@ If these are not true:
 
 ## Git Diff Review Gate
 
-- Diff review follows [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md).
+- Diff review follows [protocols/git-diff-review.md](git-diff-review.md).
 - `git status`, `git diff --name-only`, and `git diff --stat` have been reviewed.
 - Unexpected non-doc changes are absent.
 
@@ -69,7 +69,7 @@ Use this gate before `cocos-dev-story` writes implementation files.
 
 - The implementation story is dev-ready.
 - Production readiness is `READY_FOR_IMPLEMENTATION`.
-- [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md) has been applied.
+- [protocols/cocos-dev-story-prewrite.md](cocos-dev-story-prewrite.md) has been applied.
 - Exact files to create or modify are listed.
 - Files that must not be touched are listed.
 - Runtime validation plan is listed.
@@ -144,7 +144,7 @@ Use this gate before script-runtime proof, first-playable proof, or browser-prev
 
 ## Runtime Proof Gate
 
-- Proof channel selection follows [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md).
+- Proof channel selection follows [protocols/runtime-proof.md](runtime-proof.md).
 - Documentation-only work uses diff or audit proof, not fake runtime proof.
 - If runtime evidence is required but unavailable, the result is `BLOCKED` or `NOT_APPLICABLE`, not passed.
 

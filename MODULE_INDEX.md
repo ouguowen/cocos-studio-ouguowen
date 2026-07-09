@@ -95,8 +95,8 @@ Use this file to route a request into the correct module family before loading d
 
 ## 6. Governance, risk, and review
 
-- [QUALITY_GATES.md](QUALITY_GATES.md): promotion and approval gates
-- [QUALITY_GATE_ALIGNMENT.md](QUALITY_GATE_ALIGNMENT.md): canonical alignment checklist for safety and integration gates
+- [protocols/quality-gates.md](protocols/quality-gates.md): promotion and approval gates
+- [protocols/quality-gate-alignment.md](protocols/quality-gate-alignment.md): canonical alignment checklist for safety and integration gates
 - [templates/checklists/core.md](templates/checklists/core.md): review checklists
 - [templates/checklists/extensions.md](templates/checklists/extensions.md): specialist review checklists
 - [TECH_DEBT_REGISTER.md](TECH_DEBT_REGISTER.md): debt ownership and repayment triggers
@@ -113,23 +113,23 @@ Use this file to route a request into the correct module family before loading d
 - [AI_COLLAB_RULES.md](AI_COLLAB_RULES.md): what AI may and may not own
 - [SKILL_OPERATION_MODES.md](SKILL_OPERATION_MODES.md): Fast Build, Safe Gate, and Audit Mode routing for development experience
 - [ONE_SHOT_GAME_BUILD.md](ONE_SHOT_GAME_BUILD.md): continuous one-request MVP chain that still obeys gates and proof rules
-- [SKILL_VALIDATION_LOOP.md](SKILL_VALIDATION_LOOP.md): closed-loop QA process for testing this skill itself
-- [SKILL_TEST_CASES.md](SKILL_TEST_CASES.md): repeatable pass/fail test cases for skill behavior
-- [SKILL_SELF_TEST_MODES.md](SKILL_SELF_TEST_MODES.md): self-test modes for static, routing, gate, runtime, audit, safety, diff, and Agent checks
-- [SKILL_EXTENDED_SAFETY_TEST_CASES.md](SKILL_EXTENDED_SAFETY_TEST_CASES.md): extended safety tests S01-S08
-- [COMMAND_ROUTING_ALIGNMENT.md](COMMAND_ROUTING_ALIGNMENT.md): canonical alignment checklist for safety, runtime, diff, and Agent command routing
-- [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md): command allow/block rules for AI agents
-- [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md): Cocos path-level ownership and risk rules
+- [protocols/skill-validation-loop.md](protocols/skill-validation-loop.md): closed-loop QA process for testing this skill itself
+- [protocols/skill-test-cases.md](protocols/skill-test-cases.md): repeatable pass/fail test cases for skill behavior
+- [protocols/skill-self-test-modes.md](protocols/skill-self-test-modes.md): self-test modes for static, routing, gate, runtime, audit, safety, diff, and Agent checks
+- [protocols/skill-extended-safety-test-cases.md](protocols/skill-extended-safety-test-cases.md): extended safety tests S01-S08
+- [protocols/command-routing-alignment.md](protocols/command-routing-alignment.md): canonical alignment checklist for safety, runtime, diff, and Agent command routing
+- [protocols/ai-command-permissions.md](protocols/ai-command-permissions.md): command allow/block rules for AI agents
+- [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md): Cocos path-level ownership and risk rules
 - [protocols/write-approval.md](protocols/write-approval.md): file write approval protocol
 - [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md): required pre-write approval checklist for `cocos-dev-story`
 - [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md): Cocos-generated companion `.meta` approval and stop rules
-- [COCOS_HOOK_VALIDATION_PLAN.md](COCOS_HOOK_VALIDATION_PLAN.md): hook-inspired validation plan
-- [COCOS_AUTOMATED_CHECKS.md](COCOS_AUTOMATED_CHECKS.md): automated check loop
-- [COCOS_RESOURCE_RISK_MATRIX.md](COCOS_RESOURCE_RISK_MATRIX.md): resource risk classification
-- [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md): Git diff review protocol
-- [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md): runtime proof protocol
-- [SKILL_CHANGE_REVIEW_PROTOCOL.md](SKILL_CHANGE_REVIEW_PROTOCOL.md): Skill change review protocol
-- [SKILL_INTEGRATION_AUDIT_REPORT.md](SKILL_INTEGRATION_AUDIT_REPORT.md): integrated-scope audit artifact for Skill maintenance updates
+- [protocols/cocos-hook-validation-plan.md](protocols/cocos-hook-validation-plan.md): hook-inspired validation plan
+- [protocols/cocos-automated-checks.md](protocols/cocos-automated-checks.md): automated check loop
+- [protocols/cocos-resource-risk-matrix.md](protocols/cocos-resource-risk-matrix.md): resource risk classification
+- [protocols/git-diff-review.md](protocols/git-diff-review.md): Git diff review protocol
+- [protocols/runtime-proof.md](protocols/runtime-proof.md): runtime proof protocol
+- [protocols/skill-change-review.md](protocols/skill-change-review.md): Skill change review protocol
+- [protocols/skill-integration-audit-report.md](protocols/skill-integration-audit-report.md): integrated-scope audit artifact for Skill maintenance updates
 - [PROMPT_LIBRARY.md](PROMPT_LIBRARY.md): high-signal recurring prompt patterns
 - [CHOICE_EXECUTION_PROTOCOL.md](CHOICE_EXECUTION_PROTOCOL.md): short-option selection followed by continuous module execution
 - [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md): prerequisite-first advancement and anti-step-skipping control
