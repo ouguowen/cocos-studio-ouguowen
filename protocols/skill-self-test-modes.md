@@ -298,6 +298,44 @@ Block condition:
 
 - vague Agents, missing boundaries, or handoff without artifact
 
+## `evolution`
+
+Purpose: Evolution Governance Self-Test.
+
+Required input:
+
+- proposed Skill change
+- claimed evidence
+- expected evolution level
+- expected approval or rejection decision
+
+Required test files:
+
+- `core/evolution-system.md`
+- `templates/evolution-proposal-template.md`
+- `protocols/quality-gates.md`
+- `protocols/skill-extended-safety-test-cases.md`
+
+Required output:
+
+- one-off issue does not force Skill upgrade
+- repeated issue may become E2/E3
+- E3/E4 requires proposal
+- automatic self-evolution is rejected
+- Fast Build Mode remains protected
+- context loading remains protected
+- root support docs are rejected
+
+Pass condition:
+
+- evolution decisions match evidence, context cost, Fast Build impact, and repository structure rules
+
+Block condition:
+
+- automatic self-evolution is allowed
+- one-off issue becomes a broad permanent rule
+- Fast Build Mode or Context Loading Policy regresses
+
 ## Command forms
 
 ```text
@@ -307,6 +345,7 @@ cocos-skill-self-test --runtime
 cocos-skill-self-test --pipeline
 cocos-skill-self-test --diff
 cocos-skill-self-test --agent
+cocos-skill-self-test --evolution
 cocos-skill-self-test --all
 ```
 
@@ -316,7 +355,8 @@ cocos-skill-self-test --all
 - `--pipeline` uses `production/first-mvp-success-pipeline.md` and Test Case 09.
 - `--diff` uses `protocols/git-diff-review.md`.
 - `--agent` uses `agents/registry.md` and `agents/handoff-protocol.md`.
-- `--all` runs core plus extended safety, runtime, diff, and Agent checks.
+- `--evolution` uses `core/evolution-system.md` and Evolution Governance Self-Test cases.
+- `--all` runs core plus extended safety, runtime, diff, Agent, and evolution checks.
 
 ## Change mapping
 
@@ -326,3 +366,4 @@ cocos-skill-self-test --all
 - Changing runtime proof rules requires `--runtime`.
 - Changing diff review requires `--diff`.
 - Changing first-MVP command flow, pre-write approval, generated meta policy, QA review, or release acceptance requires `--pipeline`.
+- Changing Skill evolution, broad Skill upgrades, core system additions, or repository governance requires `--evolution`.

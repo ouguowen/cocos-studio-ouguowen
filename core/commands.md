@@ -117,6 +117,70 @@ Rules:
 - Block the audit if any changed file leaves the approved path scope.
 - Do not claim runtime proof for documentation-only work; use [protocols/runtime-proof.md](../protocols/runtime-proof.md).
 
+### `cocos-skill-evolution`
+
+Use when a request asks to improve, evolve, upgrade, extend, restructure, or make the Skill smarter.
+
+Output:
+
+- evolution problem
+- evidence
+- repeated or one-off classification
+- proposed E0-E5 level
+- context impact
+- Fast Build impact
+- repository structure impact
+- validation requirement
+- rollback requirement
+- decision
+
+Rules:
+
+- route through [core/evolution-system.md](evolution-system.md)
+- classify E0-E5 before implementation
+- do not implement until approved when E3/E4
+- do not allow automatic self-evolution
+- do not weaken Fast Build Mode or Context Loading Policy
+
+### `cocos-evolution-proposal`
+
+Use when E3 or E4 evolution may be needed.
+
+Output:
+
+- completed [templates/evolution-proposal-template.md](../templates/evolution-proposal-template.md)
+- context impact
+- Fast Build impact
+- safety impact
+- repository structure impact
+- validation plan
+- rollback plan
+- proposed decision
+
+Rules:
+
+- create proposal before implementation
+- proposal must include context, Fast Build, validation, and rollback impact
+- proposal does not authorize file changes by itself
+
+### `cocos-evolution-review`
+
+Use to decide whether a proposed Skill evolution should be approved, rejected, recorded only, patched lightly, upgraded as a module, or rolled back.
+
+Output:
+
+- approve / reject / record-only / light-patch / module-upgrade / rollback-required decision
+- required validation
+- allowed changed files
+- blocked changed files
+- next command
+
+Rules:
+
+- apply [protocols/quality-gates.md](../protocols/quality-gates.md) Skill Evolution Gate
+- require user-approved evolution decision before E3/E4 implementation
+- reject E5 automatic self-evolution at the current stage
+
 ## Pre-production commands
 
 ### `cocos-brainstorm-game`

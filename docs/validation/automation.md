@@ -10,6 +10,8 @@ Automation validation now also checks the context loading policy and lightweight
 
 Automation validation now checks the universal map model system, including map model routing, map space contracts, minimap/navigation boundaries, and command entries that prevent one-size-fits-all map design.
 
+Validation now checks controlled Skill evolution governance, evolution proposal template, evolution gate vocabulary, and anti-automatic-self-evolution rules.
+
 It protects the repository from accidental regressions such as:
 
 - missing core docs
@@ -17,6 +19,7 @@ It protects the repository from accidental regressions such as:
 - missing context loading strategy or lightweight first-read memory
 - regressions that push normal Skill usage back toward full default loading
 - missing universal map model routing, map-space model, or minimap/navigation model
+- missing controlled evolution governance, evolution proposal template, or anti-automatic-self-evolution rules
 - broken relative Markdown links
 - missing first-MVP pipeline references
 - missing pre-write approval rules
@@ -71,6 +74,7 @@ It checks:
 12. Context Loading Policy and Skill Context Summary preserve FAST_CONTEXT, GATE_CONTEXT, AUDIT_CONTEXT, trigger-based loading, and anti-overload rules
 13. Repository Structure Plan preserves index-first migration, current canonical paths, batch migration rules, and validation requirements
 14. Universal map model files preserve map model selection, map-space vocabulary, Cocos scene handoff, minimap/navigation rules, and anti-default-map safeguards
+15. Controlled Skill evolution files preserve evidence-driven evolution, proposal requirements, rollback planning, Skill Evolution Gate vocabulary, and anti-automatic-self-evolution safeguards
 
 ## Required files
 

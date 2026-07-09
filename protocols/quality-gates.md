@@ -53,6 +53,42 @@ If these are not true:
 
 - Skill update approval is blocked
 
+## Skill Evolution Gate
+
+Use this gate when a request asks to improve, evolve, upgrade, extend, restructure, or make the Skill smarter.
+
+PASS requires:
+
+- evolution level is classified
+- evidence is stated
+- repeated vs one-off is stated
+- context impact is reviewed
+- Fast Build impact is reviewed
+- repository structure impact is reviewed
+- validation plan is stated
+- rollback plan exists for E3/E4
+- no automatic self-evolution
+
+FAIL if any of these appear:
+
+- change is based only on theoretical completeness
+- one-off issue becomes permanent rule without evidence
+- new root-level support doc is added
+- Fast Build Mode becomes slower or more interruptive
+- context loading expands by default
+- E3/E4 change has no proposal or rollback plan
+- AI modifies Skill automatically without user-approved evolution decision
+
+Decision vocabulary:
+
+- `EVOLUTION_READY`
+- `EVOLUTION_NOT_READY`
+- `EVOLUTION_RECORD_ONLY`
+- `EVOLUTION_REJECTED`
+- `EVOLUTION_ROLLBACK_REQUIRED`
+- `EVOLUTION_CONTEXT_TOO_HEAVY`
+- `EVOLUTION_FAST_BUILD_REGRESSION`
+
 ## Git Diff Review Gate
 
 - Diff review follows [protocols/git-diff-review.md](git-diff-review.md).

@@ -82,6 +82,17 @@ Rules:
 - Do not add minimap by default.
 - Do not treat background art as the full map system.
 
+## Evolution routing
+
+When a request asks to improve, evolve, upgrade, extend, restructure, or make the Skill smarter, route through [core/evolution-system.md](core/evolution-system.md) first.
+
+Rules:
+
+- Do not evolve Skill from theoretical completeness alone.
+- Do not allow automatic self-evolution.
+- E3 / E4 changes require proposal, approval, validation, and rollback plan.
+- Evolution must preserve Fast Build Mode and Context Loading Policy.
+
 ## Default execution order
 
 1. Load lightweight context first: [core/context-summary.md](core/context-summary.md), [core/context-loading-policy.md](core/context-loading-policy.md), and [core/operation-modes.md](core/operation-modes.md).
@@ -229,6 +240,9 @@ Common command routing:
 - `cocos-map-model` -> [architecture/map-model-router.md](architecture/map-model-router.md), [design/game-classifier.md](design/game-classifier.md)
 - `cocos-map-space-design` -> [architecture/map-model-router.md](architecture/map-model-router.md), [architecture/map-space-model.md](architecture/map-space-model.md)
 - `cocos-minimap-navigation` -> [architecture/map-model-router.md](architecture/map-model-router.md), [architecture/minimap-navigation-model.md](architecture/minimap-navigation-model.md)
+- `cocos-skill-evolution` -> [core/evolution-system.md](core/evolution-system.md), [protocols/quality-gates.md](protocols/quality-gates.md)
+- `cocos-evolution-proposal` -> [core/evolution-system.md](core/evolution-system.md), [templates/evolution-proposal-template.md](templates/evolution-proposal-template.md)
+- `cocos-evolution-review` -> [core/evolution-system.md](core/evolution-system.md), [protocols/skill-change-review.md](protocols/skill-change-review.md)
 - `cocos-create-story` -> [production/task-decomposition.md](production/task-decomposition.md), [core/commands.md](core/commands.md)
 - `cocos-first-implementation-story` -> [production/task-decomposition.md](production/task-decomposition.md), [production/mvp-prototype-rules.md](production/mvp-prototype-rules.md), [production/game-readiness-gate.md](production/game-readiness-gate.md)
 - `cocos-dev-story-prewrite` -> [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md), [protocols/write-approval.md](protocols/write-approval.md), [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md)

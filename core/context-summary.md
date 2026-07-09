@@ -61,6 +61,14 @@ Map model must be selected by game type and gameplay space.
 
 Use `architecture/map-model-router.md` before concrete map design, then load `architecture/map-space-model.md`, `architecture/minimap-navigation-model.md`, `architecture/level-data-models.md`, `architecture/level-config-schemas.md`, or `architecture/level-system.md` only when needed.
 
+## Evolution summary
+
+Skill evolution is controlled and evidence-driven.
+
+Do not upgrade Skill just because a new rule is theoretically possible.
+
+Use `core/evolution-system.md` before broad Skill upgrades.
+
 ## Fast Build behavior
 
 In Fast Build Mode:
