@@ -121,6 +121,21 @@ assets/scripts/
 - `EnemyFactory.ts`: create enemies from config and resources
 - `EnemyActor.ts`: enemy runtime behavior
 
+MapPointRegistry is only one part of map runtime binding.
+
+Depending on the selected map model, runtime may need:
+
+- `MapSpaceRuntime`
+- `CameraRuleController`
+- `RouteRegistry`
+- `GridRegistry`
+- `RegionRegistry`
+- `RoomRegistry`
+- `MiniMapProjection`
+- `NavigationHintSystem`
+
+Do not add these systems by default in the first MVP. Add them only when the selected map model clearly needs them.
+
 ### Resources and reuse
 
 - `ResourceIds.ts` and `ResourceManifest.ts`: ids and resource mapping

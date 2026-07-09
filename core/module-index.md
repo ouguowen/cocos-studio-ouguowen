@@ -63,6 +63,9 @@ Use this file to route a request into the correct module family before loading d
 - [architecture/cocos-rules.md](../architecture/cocos-rules.md): engineering law for Cocos Creator 3.8.8
 - [architecture/project-structure.md](../architecture/project-structure.md): default project layout
 - [architecture/template-system.md](../architecture/template-system.md): choose a matching runtime blueprint family
+- [architecture/map-model-router.md](../architecture/map-model-router.md): select the correct universal map model before concrete map design
+- [architecture/map-space-model.md](../architecture/map-space-model.md): define viewport, world space, layers, camera, Cocos scene structure, and runtime map binding
+- [architecture/minimap-navigation-model.md](../architecture/minimap-navigation-model.md): decide whether minimap, navigation hints, reveal, markers, or route guidance are needed
 - [design/ui-character-action-linkage.md](../design/ui-character-action-linkage.md): UI input, behavior request, character intent, action state, animation state, visual output, and UI feedback ownership chain
 - [design/character-system.md](../design/character-system.md): character identity, behavior, action state, animation state, skeleton boundary, and asset binding boundary
 - [design/ui-system-model.md](../design/ui-system-model.md): UI layer, control, feedback, binding, and request-only input semantics
@@ -72,6 +75,7 @@ Use this file to route a request into the correct module family before loading d
 - [architecture/level-config-schemas.md](../architecture/level-config-schemas.md): common wave-spawn and stage-table schemas
 - [architecture/level-config-schema-extensions.md](../architecture/level-config-schema-extensions.md): optional support tables for wave-spawn projects
 - [templates/level-templates.md](../templates/level-templates.md): level-specific design and runtime artifacts
+- [templates/map-design-template.md](../templates/map-design-template.md): map model selection and map-space decision template
 - [architecture/level-system.md](../architecture/level-system.md): core runtime implementation boundaries
 - [architecture/level-system-extensions.md](../architecture/level-system-extensions.md): optional advanced systems for live service or large-scope games
 - [architecture/runtime-template-router.md](../architecture/runtime-template-router.md): map requests to the right runtime template assets and scripts

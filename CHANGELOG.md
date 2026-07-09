@@ -7,6 +7,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 ### Added
 
 - Added `docs/structure/repository-structure-plan.md` for staged repository organization without moving current canonical paths.
+- Added universal map understanding system with map space model, map model router, and minimap/navigation model.
 - Added `design/asset-policy.md` for placeholder, external, generated, and Cocos asset approval boundaries.
 - Added context loading behavior test cases for `FAST_CONTEXT`, `GATE_CONTEXT`, `AUDIT_CONTEXT`, `CONTEXT_OVERLOAD`, and `REDUCE_CONTEXT`.
 - Added a side-effect-free generated artifact check for package validation.

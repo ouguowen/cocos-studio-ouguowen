@@ -63,6 +63,25 @@ Before applying detailed gates, choose an operation mode from [core/operation-mo
 - Do not generate full audit reports during normal implementation unless a stop condition appears.
 - Safety gates remain mandatory, but they must be placed at stage boundaries or stop conditions.
 
+## Map model routing
+
+When a request involves maps, scene space, world space, routes, regions, TileMap, Grid, minimap, navigation, paths, level space, or 16:9 map space, route through [architecture/map-model-router.md](architecture/map-model-router.md) first.
+
+Then load only what the selected map model needs:
+
+- [architecture/map-space-model.md](architecture/map-space-model.md)
+- [architecture/minimap-navigation-model.md](architecture/minimap-navigation-model.md)
+- [architecture/level-data-models.md](architecture/level-data-models.md)
+- [architecture/level-config-schemas.md](architecture/level-config-schemas.md)
+- [architecture/level-system.md](architecture/level-system.md)
+
+Rules:
+
+- Do not assume one map model fits every game.
+- Do not design a concrete map before selecting the map model.
+- Do not add minimap by default.
+- Do not treat background art as the full map system.
+
 ## Default execution order
 
 1. Load lightweight context first: [core/context-summary.md](core/context-summary.md), [core/context-loading-policy.md](core/context-loading-policy.md), and [core/operation-modes.md](core/operation-modes.md).
@@ -207,6 +226,9 @@ Common command routing:
 - `cocos-project-context` -> [production/project-memory.md](production/project-memory.md)
 - `cocos-game-architecture` -> [architecture/cocos-rules.md](architecture/cocos-rules.md), [architecture/project-structure.md](architecture/project-structure.md), [architecture/level-system.md](architecture/level-system.md)
 - `cocos-config-schema` -> [architecture/level-config-schemas.md](architecture/level-config-schemas.md), [architecture/level-config-schema-extensions.md](architecture/level-config-schema-extensions.md)
+- `cocos-map-model` -> [architecture/map-model-router.md](architecture/map-model-router.md), [design/game-classifier.md](design/game-classifier.md)
+- `cocos-map-space-design` -> [architecture/map-model-router.md](architecture/map-model-router.md), [architecture/map-space-model.md](architecture/map-space-model.md)
+- `cocos-minimap-navigation` -> [architecture/map-model-router.md](architecture/map-model-router.md), [architecture/minimap-navigation-model.md](architecture/minimap-navigation-model.md)
 - `cocos-create-story` -> [production/task-decomposition.md](production/task-decomposition.md), [core/commands.md](core/commands.md)
 - `cocos-first-implementation-story` -> [production/task-decomposition.md](production/task-decomposition.md), [production/mvp-prototype-rules.md](production/mvp-prototype-rules.md), [production/game-readiness-gate.md](production/game-readiness-gate.md)
 - `cocos-dev-story-prewrite` -> [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md), [protocols/write-approval.md](protocols/write-approval.md), [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md)

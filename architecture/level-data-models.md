@@ -215,6 +215,38 @@ Examples:
 
 Do not merge three or four model families into one first-version content pipeline.
 
+## Map model relationship
+
+Level data model is not the same as map space model.
+
+A level may use:
+
+- one level data model
+- one primary map model
+- optional secondary map model
+
+The level data model defines content and progression truth. The map space model defines gameplay space, camera, layers, points, routes, regions, collision, navigation, and runtime map binding.
+
+Examples:
+
+- Tower defense:
+  - level data model = Wave Spawn Model
+  - map model = Path / Lane Map
+- Tactical RPG:
+  - level data model = Quest Driven or Combat Stage
+  - map model = Grid / Tile Map
+- Roguelite:
+  - level data model = Roguelite Room Pool Model
+  - map model = Room-Based Map or Node Graph Map
+- Narrative chapter:
+  - level data model = Quest Driven or Narrative Scene
+  - map model = Fixed Screen Map or Narrative Scene Map
+- Exploration RPG:
+  - level data model = Exploration Region Model
+  - map model = Region / Area Map or World Map
+
+Use [architecture/map-model-router.md](map-model-router.md) before adding map-specific data tables.
+
 ## Ownership baseline
 
 - Lead Designer: gameplay intent and tuning truth

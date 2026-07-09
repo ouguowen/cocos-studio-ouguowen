@@ -8,12 +8,15 @@ Automation validation checks that required Skill documents, command routes, safe
 
 Automation validation now also checks the context loading policy and lightweight context summary so the Skill does not regress to default full-repository loading as the file set grows.
 
+Automation validation now checks the universal map model system, including map model routing, map space contracts, minimap/navigation boundaries, and command entries that prevent one-size-fits-all map design.
+
 It protects the repository from accidental regressions such as:
 
 - missing core docs
 - missing repository structure planning rules
 - missing context loading strategy or lightweight first-read memory
 - regressions that push normal Skill usage back toward full default loading
+- missing universal map model routing, map-space model, or minimap/navigation model
 - broken relative Markdown links
 - missing first-MVP pipeline references
 - missing pre-write approval rules
@@ -67,6 +70,7 @@ It checks:
 11. Skill Operation Modes exist and preserve Fast Build Mode, Safe Gate Mode, Audit Mode, concise reporting, stop conditions, and interruption-budget rules
 12. Context Loading Policy and Skill Context Summary preserve FAST_CONTEXT, GATE_CONTEXT, AUDIT_CONTEXT, trigger-based loading, and anti-overload rules
 13. Repository Structure Plan preserves index-first migration, current canonical paths, batch migration rules, and validation requirements
+14. Universal map model files preserve map model selection, map-space vocabulary, Cocos scene handoff, minimap/navigation rules, and anti-default-map safeguards
 
 ## Required files
 

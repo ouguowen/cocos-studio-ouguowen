@@ -192,6 +192,26 @@ Validation:
 - maps reference only valid points
 - runtime-required point types exist for the chosen template
 
+## Universal map schema boundary
+
+Map.csv and MapPoint.csv are minimum shared schemas, not complete map systems.
+
+Depending on the selected map model, a project may need:
+
+- `Route.csv`
+- `Lane.csv`
+- `Grid.csv`
+- `Tile.csv`
+- `Room.csv`
+- `Region.csv`
+- `Area.csv`
+- `Gate.csv`
+- `MapReveal.csv`
+- `MiniMapMarker.csv`
+- `NavigationHint.csv`
+
+But the first version can add these only after [architecture/map-model-router.md](map-model-router.md) confirms the map model.
+
 ## Optional support tables
 
 Move these into the project only when the game actually needs them:

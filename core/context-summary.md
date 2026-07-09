@@ -51,6 +51,16 @@ Default loading should be:
 
 Do not load the whole repository unless the task is an Audit Mode task.
 
+## Map work summary
+
+Map work should route through universal map model selection first.
+
+Maps are not only background art.
+
+Map model must be selected by game type and gameplay space.
+
+Use `architecture/map-model-router.md` before concrete map design, then load `architecture/map-space-model.md`, `architecture/minimap-navigation-model.md`, `architecture/level-data-models.md`, `architecture/level-config-schemas.md`, or `architecture/level-system.md` only when needed.
+
 ## Fast Build behavior
 
 In Fast Build Mode:

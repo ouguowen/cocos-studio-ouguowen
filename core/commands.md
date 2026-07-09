@@ -221,6 +221,76 @@ Output:
 - reward model
 - validation rules
 
+### `cocos-map-model`
+
+Use when selecting a map model from game type and gameplay space.
+
+Output:
+
+- selected game type
+- primary gameplay space
+- primary map model
+- optional secondary map model
+- map models explicitly avoided
+- next design file to load
+
+Rules:
+
+- classify the game first
+- select the map model second
+- do not generate a concrete map
+- do not directly assume all games need a big map
+- do not directly assume all games need a minimap
+- do not treat background image as map system
+- do not hardcode rules for one game type
+
+### `cocos-map-space-design`
+
+Use after `cocos-map-model` when defining viewport, world space, map layers, points, routes, regions, and camera rules.
+
+Output:
+
+- viewport
+- world space type
+- camera rule
+- required map layers
+- required points
+- required routes
+- required regions
+- required grid or tile rules
+- Cocos scene structure
+- runtime binding
+
+Rules:
+
+- use [architecture/map-model-router.md](../architecture/map-model-router.md) before concrete design
+- use [architecture/map-space-model.md](../architecture/map-space-model.md) for map-space contract
+- do not treat a 1280x720 background image as a complete map system
+- do not add unused route, grid, room, region, or minimap systems
+
+### `cocos-minimap-navigation`
+
+Use after map model selection when deciding whether minimap, navigation, region reveal, objective markers, player markers, or route hints are needed.
+
+Output:
+
+- minimap need level
+- navigation hint type
+- projection type if minimap is needed
+- reveal or fog rules
+- player marker rule
+- objective marker rule
+- route hint rule
+- runtime data source
+
+Rules:
+
+- use [architecture/minimap-navigation-model.md](../architecture/minimap-navigation-model.md)
+- do not add minimap by default
+- do not assume all games need minimap
+- Fixed Screen Map and simple Narrative Scene Map usually do not need minimap
+- Region, World, Room, Path, Grid, and Endless maps may need minimap or navigation hints
+
 ### `cocos-numerical-design`
 
 Use before writing or changing gameplay values such as enemy hp, attack, movement speed, wave timing, spawn count, reward amount, unit cost, upgrade value, cooldown, difficulty, or balance-sensitive config.
