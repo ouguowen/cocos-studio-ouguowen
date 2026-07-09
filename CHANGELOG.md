@@ -42,7 +42,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added `ANIMATION_PRESENTATION_RULES.md` for actor animation states, UI motion, combat feedback, VFX, Spine/Tween/AnimationClip boundaries, and presentation validation.
 - Added `cocos-animation-design` command routing.
 - Added `Animation Presentation Gate` to `protocols/quality-gates.md`.
-- Added `GAME_PRODUCTION_READINESS_GATE.md` for deciding whether Codex may start real implementation, continue design repair, fix runtime readiness, reduce scope, or stop as blocked.
+- Added `production/game-readiness-gate.md` for deciding whether Codex may start real implementation, continue design repair, fix runtime readiness, reduce scope, or stop as blocked.
 - Added `cocos-production-readiness` command routing.
 - Added `Game Production Readiness Gate` to `protocols/quality-gates.md`.
 - Added `protocols/skill-validation-loop.md` for closed-loop QA of the skill itself.
@@ -56,6 +56,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Migrated production, release, role, ownership, planning, risk, and operations documents into `production/`.
 - Migrated safety, validation, audit, runtime proof, diff review, and quality gate documents into `protocols/`.
 - Migrated write approval, dev-story pre-write, and generated meta protocols into `protocols/`.
 - Migrated quick start, general examples, project roadmap, and historical update drafts into `docs/quickstart/`, `docs/examples/`, `docs/open-source/`, and `docs/archive/`.

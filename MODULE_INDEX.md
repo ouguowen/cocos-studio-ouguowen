@@ -7,10 +7,10 @@ Use this file to route a request into the correct module family before loading d
 - [SKILL_CONTEXT_SUMMARY.md](SKILL_CONTEXT_SUMMARY.md): lightweight first-read memory
 - [CONTEXT_LOADING_POLICY.md](CONTEXT_LOADING_POLICY.md): context budget and anti-overload rules
 - [REPO_STRUCTURE_PLAN.md](REPO_STRUCTURE_PLAN.md): staged repository organization plan that keeps current paths canonical until migration batches are approved
-- [PRODUCTION_MODES.md](PRODUCTION_MODES.md): how strict the team should be right now
-- [STAGES.md](STAGES.md): where the project is in time
+- [production/modes.md](production/modes.md): how strict the team should be right now
+- [production/stages.md](production/stages.md): where the project is in time
 - [VERSION_ROADMAP_SYSTEM.md](VERSION_ROADMAP_SYSTEM.md): why the current version exists and what proves promotion
-- [PROJECT_MEMORY_SYSTEM.md](PROJECT_MEMORY_SYSTEM.md): stable project truth across sessions
+- [production/project-memory.md](production/project-memory.md): stable project truth across sessions
 - [README.md](README.md): English open-source entry, installation, commands, safety model, and first-MVP links
 - [README.zh-CN.md](README.zh-CN.md): Chinese beginner entry, safe first prompts, and beginner boundaries
 - [docs/quickstart/general.md](docs/quickstart/general.md): beginner setup and first Skill-loading checks
@@ -25,12 +25,12 @@ Use this file to route a request into the correct module family before loading d
 
 ## 2. Roles, authority, and handoff
 
-- [ROLES.md](ROLES.md): what each role is responsible for
-- [ROLE_STAGE_MATRIX.md](ROLE_STAGE_MATRIX.md): what each role does in each stage
-- [OWNERSHIP.md](OWNERSHIP.md): who owns which asset class
-- [TEAM_SENIORITY_SYSTEM.md](TEAM_SENIORITY_SYSTEM.md): who is senior enough to own or approve work
-- [COLLAB_HANDOFF_SYSTEM.md](COLLAB_HANDOFF_SYSTEM.md): how internal, vendor, and AI-assisted handoffs must work
-- [OUTSOURCING_COLLAB_RULES.md](OUTSOURCING_COLLAB_RULES.md): external collaboration boundaries
+- [production/roles.md](production/roles.md): what each role is responsible for
+- [production/role-stage-matrix.md](production/role-stage-matrix.md): what each role does in each stage
+- [production/ownership.md](production/ownership.md): who owns which asset class
+- [production/team-seniority.md](production/team-seniority.md): who is senior enough to own or approve work
+- [production/collab-handoff-system.md](production/collab-handoff-system.md): how internal, vendor, and AI-assisted handoffs must work
+- [production/outsourcing-collab-rules.md](production/outsourcing-collab-rules.md): external collaboration boundaries
 - [CONTRIBUTING.md](CONTRIBUTING.md): open-source contribution rules and review checklist
 - [SECURITY.md](SECURITY.md): security and AI safety reporting policy
 - [.github/ISSUE_TEMPLATE/bug_report.yml](.github/ISSUE_TEMPLATE/bug_report.yml): structured public bug report template
@@ -46,16 +46,16 @@ Use this file to route a request into the correct module family before loading d
 - [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md): select the closest genre or loop template
 - [EXAMPLE_PACK_EXPANSION_PLAN.md](EXAMPLE_PACK_EXPANSION_PLAN.md): expand example packs by selected game type without turning the skill into one universal template
 - [docs/examples/general.md](docs/examples/general.md): applied workflow examples for common Cocos Studio situations
-- [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md): decide whether the project is ready for real implementation, design repair, runtime repair, or scope reduction
+- [production/game-readiness-gate.md](production/game-readiness-gate.md): decide whether the project is ready for real implementation, design repair, runtime repair, or scope reduction
 - [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md): proven first-MVP command chain from brief to `FIRST_MVP_ACCEPTED`
 - [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md): define gameplay numbers, difficulty, rewards, costs, and balance rules before implementation
 - [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md): define currencies, sources, sinks, rewards, upgrades, ads, shops, gacha boundaries, and economy validation before implementation
 - [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md): define animation states, UI motion, feedback, VFX, Spine/Tween/AnimationClip boundaries, and presentation validation before implementation
 - [ASSET_POLICY.md](ASSET_POLICY.md): asset source, placeholder, import, and forbidden asset boundaries before implementation
-- [MVP_PROTOTYPE_RULES.md](MVP_PROTOTYPE_RULES.md): cut to the first real playable product
-- [PLAYBOOK_SYSTEM.md](PLAYBOOK_SYSTEM.md): recurring operating procedures
-- [PRD_CONSTRAINTS.md](PRD_CONSTRAINTS.md): PRD structure and red flags
-- [TASK_DECOMPOSITION_RULES.md](TASK_DECOMPOSITION_RULES.md): production-safe task splitting
+- [production/mvp-prototype-rules.md](production/mvp-prototype-rules.md): cut to the first real playable product
+- [production/playbook-system.md](production/playbook-system.md): recurring operating procedures
+- [production/prd-constraints.md](production/prd-constraints.md): PRD structure and red flags
+- [production/task-decomposition.md](production/task-decomposition.md): production-safe task splitting
 
 ## 4. Architecture and content systems
 
@@ -79,19 +79,19 @@ Use this file to route a request into the correct module family before loading d
 ## 5. Delivery, release, and live operations
 
 - [TEST_MATRIX.md](TEST_MATRIX.md): coverage planning
-- [ACCEPTANCE_ARTIFACTS.md](ACCEPTANCE_ARTIFACTS.md): evidence before sign-off
+- [production/acceptance-artifacts.md](production/acceptance-artifacts.md): evidence before sign-off
 - [docs/proof/provider-driven-local-cocos.md](docs/proof/provider-driven-local-cocos.md): local Cocos proof runbook for scene, prefab, binding, Console, and preview evidence
 - [docs/proof/codex-cocos-automation.md](docs/proof/codex-cocos-automation.md): Codex local automation proof flow for Cocos provider-driven validation
 - [docs/proof/first-wave-spawn.md](docs/proof/first-wave-spawn.md): first narrow gameplay proof for spawn-only behavior after config parsing
-- [RELEASE_PIPELINE_SYSTEM.md](RELEASE_PIPELINE_SYSTEM.md): build lanes, rollout, and hotfix planning
+- [production/release-pipeline.md](production/release-pipeline.md): build lanes, rollout, and hotfix planning
 - [docs/release/strategy.md](docs/release/strategy.md): open-source Skill release strategy and blockers
 - [docs/release/checklist.md](docs/release/checklist.md): final release checklist before tag or announcement
 - [templates/reports/mvp-acceptance.md](templates/reports/mvp-acceptance.md): `FIRST_MVP_ACCEPTANCE_REPORT.md` template and release decision vocabulary
 - [SUCCESS_CASE_MOONLIGHT_DELIVERY.md](SUCCESS_CASE_MOONLIGHT_DELIVERY.md): successful Moonlight Delivery Chapter 1 Shell pipeline case, not a universal genre template
 - [examples/moonlight-delivery/README.md](examples/moonlight-delivery/README.md): example entry for the Moonlight Delivery success case
-- [PLATFORM_TARGET_RULES.md](PLATFORM_TARGET_RULES.md): Android, iOS, web, mini-game, and package differences
-- [RELEASE_ROLLBACK_PLAYBOOK.md](RELEASE_ROLLBACK_PLAYBOOK.md): rollback discipline
-- [OPERATIONS_DATA_SYSTEM.md](OPERATIONS_DATA_SYSTEM.md): retention, monetization, ad, event, and economy review
+- [production/platform-targets.md](production/platform-targets.md): Android, iOS, web, mini-game, and package differences
+- [production/release-rollback.md](production/release-rollback.md): rollback discipline
+- [production/operations-data.md](production/operations-data.md): retention, monetization, ad, event, and economy review
 
 ## 6. Governance, risk, and review
 
@@ -99,12 +99,12 @@ Use this file to route a request into the correct module family before loading d
 - [protocols/quality-gate-alignment.md](protocols/quality-gate-alignment.md): canonical alignment checklist for safety and integration gates
 - [templates/checklists/core.md](templates/checklists/core.md): review checklists
 - [templates/checklists/extensions.md](templates/checklists/extensions.md): specialist review checklists
-- [TECH_DEBT_REGISTER.md](TECH_DEBT_REGISTER.md): debt ownership and repayment triggers
-- [COST_BUDGET_MODEL.md](COST_BUDGET_MODEL.md): cost control
+- [production/tech-debt-register.md](production/tech-debt-register.md): debt ownership and repayment triggers
+- [production/cost-budget.md](production/cost-budget.md): cost control
 - [templates/reports/incident-postmortem.md](templates/reports/incident-postmortem.md): post-incident review
-- [MILESTONE_BURNDOWN_RULES.md](MILESTONE_BURNDOWN_RULES.md): convergence tracking
-- [RISK_ESCALATION_SYSTEM.md](RISK_ESCALATION_SYSTEM.md): when the team must stop and escalate
-- [REVIEW_SYSTEM.md](REVIEW_SYSTEM.md): formal gate review rules
+- [production/milestone-burndown.md](production/milestone-burndown.md): convergence tracking
+- [production/risk-escalation.md](production/risk-escalation.md): when the team must stop and escalate
+- [production/review-system.md](production/review-system.md): formal gate review rules
 
 ## 7. AI-assisted work
 

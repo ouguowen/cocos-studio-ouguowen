@@ -61,7 +61,7 @@ Use this file when work passes between internal roles, external vendors, tempora
 - The receiver does not silently become the owner of upstream intent.
 - The review owner decides whether the handoff is complete enough to integrate.
 - The approver decides whether the integrated result may advance to the next stage.
-- If ownership or authority is unclear, use [TEAM_SENIORITY_SYSTEM.md](TEAM_SENIORITY_SYSTEM.md) before accepting the handoff.
+- If ownership or authority is unclear, use [production/team-seniority.md](team-seniority.md) before accepting the handoff.
 
 ## Rework rules
 

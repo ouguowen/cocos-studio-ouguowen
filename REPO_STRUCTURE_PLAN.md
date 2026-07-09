@@ -114,14 +114,14 @@ Home for migrated rule and proof protocols, with unmigrated protocols kept at th
 
 Future home for project control and ownership:
 
-- `PRODUCTION_MODES.md`
-- `STAGES.md`
-- `ROLES.md`
-- `ROLE_STAGE_MATRIX.md`
-- `OWNERSHIP.md`
-- `TEAM_SENIORITY_SYSTEM.md`
-- `PROJECT_MEMORY_SYSTEM.md`
-- `GAME_PRODUCTION_READINESS_GATE.md`
+- `production/modes.md`
+- `production/stages.md`
+- `production/roles.md`
+- `production/role-stage-matrix.md`
+- `production/ownership.md`
+- `production/team-seniority.md`
+- `production/project-memory.md`
+- `production/game-readiness-gate.md`
 
 ### `design/`
 
@@ -244,6 +244,33 @@ Completed batch 7:
 - `SKILL_SELF_TEST_RUN_REPORT.md` -> `protocols/skill-self-test-run-report.md`
 - `SKILL_STATIC_AUDIT_REPORT.md` -> `protocols/skill-static-audit-report.md`
 - `SKILL_INTEGRATION_AUDIT_REPORT.md` -> `protocols/skill-integration-audit-report.md`
+
+Completed batch 8:
+
+- `PRODUCTION_MODES.md` -> `production/modes.md`
+- `STAGES.md` -> `production/stages.md`
+- `ROLES.md` -> `production/roles.md`
+- `ROLE_STAGE_MATRIX.md` -> `production/role-stage-matrix.md`
+- `OWNERSHIP.md` -> `production/ownership.md`
+- `TEAM_SENIORITY_SYSTEM.md` -> `production/team-seniority.md`
+- `PROJECT_MEMORY_SYSTEM.md` -> `production/project-memory.md`
+- `GAME_PRODUCTION_READINESS_GATE.md` -> `production/game-readiness-gate.md`
+- `ACCEPTANCE_ARTIFACTS.md` -> `production/acceptance-artifacts.md`
+- `MILESTONE_BURNDOWN_RULES.md` -> `production/milestone-burndown.md`
+- `RISK_ESCALATION_SYSTEM.md` -> `production/risk-escalation.md`
+- `REVIEW_SYSTEM.md` -> `production/review-system.md`
+- `COST_BUDGET_MODEL.md` -> `production/cost-budget.md`
+- `TECH_DEBT_REGISTER.md` -> `production/tech-debt-register.md`
+- `RELEASE_PIPELINE_SYSTEM.md` -> `production/release-pipeline.md`
+- `RELEASE_ROLLBACK_PLAYBOOK.md` -> `production/release-rollback.md`
+- `OPERATIONS_DATA_SYSTEM.md` -> `production/operations-data.md`
+- `PLATFORM_TARGET_RULES.md` -> `production/platform-targets.md`
+- `MVP_PROTOTYPE_RULES.md` -> `production/mvp-prototype-rules.md`
+- `PRD_CONSTRAINTS.md` -> `production/prd-constraints.md`
+- `TASK_DECOMPOSITION_RULES.md` -> `production/task-decomposition.md`
+- `PLAYBOOK_SYSTEM.md` -> `production/playbook-system.md`
+- `OUTSOURCING_COLLAB_RULES.md` -> `production/outsourcing-collab-rules.md`
+- `COLLAB_HANDOFF_SYSTEM.md` -> `production/collab-handoff-system.md`
 
 Allowed candidates:
 

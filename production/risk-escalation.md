@@ -60,7 +60,7 @@ Use this file when a project risk must be named, classified, escalated, blocked,
 
 ## Acceptance authority
 
-- Use [TEAM_SENIORITY_SYSTEM.md](TEAM_SENIORITY_SYSTEM.md) to map final authority.
+- Use [production/team-seniority.md](team-seniority.md) to map final authority.
 - No Support Contributor or Independent Implementer may accept high-blast-radius risk alone.
 - Product-shaping risk needs Producer or Lead Designer alignment.
 - Core architecture or platform safety risk needs Technical Director or stronger alignment.

@@ -16,16 +16,16 @@ When the user asks for AI Game Studio mode, load these files in order:
 
 ## Command routing
 
-- `cocos-game-brief`: use `COMMANDS.md`, `TEMPLATES.md`, and `PROJECT_MEMORY_SYSTEM.md`
+- `cocos-game-brief`: use `COMMANDS.md`, `TEMPLATES.md`, and `production/project-memory.md`
 - `cocos-classify-game`: use `GAME_CLASSIFIER_SYSTEM.md` and `GAME_TYPE_TEMPLATES.md`
-- `cocos-gdd`: use `PRD_CONSTRAINTS.md`, `GAME_TYPE_TEMPLATES.md`, and `TEMPLATES.md`
-- `cocos-project-context`: use `PROJECT_MEMORY_SYSTEM.md`
+- `cocos-gdd`: use `production/prd-constraints.md`, `GAME_TYPE_TEMPLATES.md`, and `TEMPLATES.md`
+- `cocos-project-context`: use `production/project-memory.md`
 - `cocos-game-architecture`: use `COCOS_RULES.md`, `PROJECT_STRUCTURE.md`, and `LEVEL_SYSTEM_ARCHITECTURE.md`
 - `cocos-config-schema`: use `LEVEL_CONFIG_SCHEMAS.md` and `LEVEL_CONFIG_SCHEMA_EXTENSIONS.md`
-- `cocos-create-story`: use `TASK_DECOMPOSITION_RULES.md` and `COMMANDS.md`
+- `cocos-create-story`: use `production/task-decomposition.md` and `COMMANDS.md`
 - `cocos-dev-story`: use `CHOICE_EXECUTION_PROTOCOL.md` and `SEQUENTIAL_GATE_PROTOCOL.md`
-- `cocos-code-review`: use `REVIEW_SYSTEM.md`, `protocols/quality-gates.md`, and `templates/checklists/core.md`
-- `cocos-quick-prototype`: use `MVP_PROTOTYPE_RULES.md` and `protocols/quality-gates.md`
+- `cocos-code-review`: use `production/review-system.md`, `protocols/quality-gates.md`, and `templates/checklists/core.md`
+- `cocos-quick-prototype`: use `production/mvp-prototype-rules.md` and `protocols/quality-gates.md`
 
 ## Operating guardrails
 
