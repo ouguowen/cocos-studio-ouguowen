@@ -114,5 +114,5 @@ Generalize only the controls:
 
 - [../../SUCCESS_CASE_MOONLIGHT_DELIVERY.md](../../SUCCESS_CASE_MOONLIGHT_DELIVERY.md)
 - [../../FIRST_MVP_SUCCESS_PIPELINE.md](../../FIRST_MVP_SUCCESS_PIPELINE.md)
-- [../../COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](../../COCOS_DEV_STORY_PREWRITE_PROTOCOL.md)
-- [../../COCOS_GENERATED_META_POLICY.md](../../COCOS_GENERATED_META_POLICY.md)
+- [../../protocols/cocos-dev-story-prewrite.md](../../protocols/cocos-dev-story-prewrite.md)
+- [../../protocols/cocos-generated-meta.md](../../protocols/cocos-generated-meta.md)

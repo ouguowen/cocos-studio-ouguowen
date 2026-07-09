@@ -110,9 +110,9 @@ cocos-game-brief
 
 - [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md)：AI 命令权限边界。
 - [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md)：Cocos 路径和写入范围规则。
-- [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md)：写文件前审批。
-- [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md)：`cocos-dev-story` 写入前必须停止等待确认。
-- [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md)：Cocos 自动生成 `.meta` 时必须审查和确认。
+- [protocols/write-approval.md](protocols/write-approval.md)：写文件前审批。
+- [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md)：`cocos-dev-story` 写入前必须停止等待确认。
+- [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md)：Cocos 自动生成 `.meta` 时必须审查和确认。
 - [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md)：浏览器预览和运行证明规则。
 - [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md)：提交前必须检查 diff。
 

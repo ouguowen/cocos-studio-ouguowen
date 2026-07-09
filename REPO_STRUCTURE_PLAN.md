@@ -97,12 +97,12 @@ Future home for first-load and routing files:
 
 ### `protocols/`
 
-Future home for rule and proof protocols:
+Home for migrated rule and proof protocols, with unmigrated protocols kept at their current root paths until their batch is approved:
 
 - `AI_COMMAND_PERMISSION_RULES.md`
-- `CODEX_WRITE_APPROVAL_PROTOCOL.md`
-- `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md`
-- `COCOS_GENERATED_META_POLICY.md`
+- `protocols/write-approval.md`
+- `protocols/cocos-dev-story-prewrite.md`
+- `protocols/cocos-generated-meta.md`
 - `RUNTIME_PROOF_PROTOCOL.md`
 - `GIT_DIFF_REVIEW_PROTOCOL.md`
 - `SKILL_CHANGE_REVIEW_PROTOCOL.md`
@@ -217,6 +217,12 @@ Completed batch 5:
 - `ROADMAP.md` -> `docs/open-source/project-roadmap.md`
 - `UPDATE_MANIFEST.md` -> `docs/archive/update-manifest-v0.2.0.md`
 - `README_AGENT_WORKFLOW_SECTION.md` -> `docs/archive/readme-agent-workflow-section.md`
+
+Completed batch 6:
+
+- `CODEX_WRITE_APPROVAL_PROTOCOL.md` -> `protocols/write-approval.md`
+- `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md` -> `protocols/cocos-dev-story-prewrite.md`
+- `COCOS_GENERATED_META_POLICY.md` -> `protocols/cocos-generated-meta.md`
 
 Allowed candidates:
 

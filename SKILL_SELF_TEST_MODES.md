@@ -146,8 +146,8 @@ Required input:
 Required test files:
 
 - `FIRST_MVP_SUCCESS_PIPELINE.md`
-- `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md`
-- `COCOS_GENERATED_META_POLICY.md`
+- `protocols/cocos-dev-story-prewrite.md`
+- `protocols/cocos-generated-meta.md`
 - `templates/reports/mvp-acceptance.md`
 - `SKILL_TEST_CASES.md`
 
@@ -219,7 +219,7 @@ Required test files:
 
 - `SKILL_EXTENDED_SAFETY_TEST_CASES.md`
 - `AI_COMMAND_PERMISSION_RULES.md`
-- `CODEX_WRITE_APPROVAL_PROTOCOL.md`
+- `protocols/write-approval.md`
 - `COCOS_PATH_SCOPED_RULES.md`
 - `COCOS_RESOURCE_RISK_MATRIX.md`
 

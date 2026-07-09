@@ -76,7 +76,7 @@ Files read:
 - `SKILL_EXTENDED_SAFETY_TEST_CASES.md`
 - `AI_COMMAND_PERMISSION_RULES.md`
 - `COCOS_PATH_SCOPED_RULES.md`
-- `CODEX_WRITE_APPROVAL_PROTOCOL.md`
+- `protocols/write-approval.md`
 - `COCOS_RESOURCE_RISK_MATRIX.md`
 
 Validation notes:

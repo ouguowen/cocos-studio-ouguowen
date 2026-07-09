@@ -120,9 +120,9 @@ Use this file to route a request into the correct module family before loading d
 - [COMMAND_ROUTING_ALIGNMENT.md](COMMAND_ROUTING_ALIGNMENT.md): canonical alignment checklist for safety, runtime, diff, and Agent command routing
 - [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md): command allow/block rules for AI agents
 - [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md): Cocos path-level ownership and risk rules
-- [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md): file write approval protocol
-- [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md): required pre-write approval checklist for `cocos-dev-story`
-- [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md): Cocos-generated companion `.meta` approval and stop rules
+- [protocols/write-approval.md](protocols/write-approval.md): file write approval protocol
+- [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md): required pre-write approval checklist for `cocos-dev-story`
+- [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md): Cocos-generated companion `.meta` approval and stop rules
 - [COCOS_HOOK_VALIDATION_PLAN.md](COCOS_HOOK_VALIDATION_PLAN.md): hook-inspired validation plan
 - [COCOS_AUTOMATED_CHECKS.md](COCOS_AUTOMATED_CHECKS.md): automated check loop
 - [COCOS_RESOURCE_RISK_MATRIX.md](COCOS_RESOURCE_RISK_MATRIX.md): resource risk classification

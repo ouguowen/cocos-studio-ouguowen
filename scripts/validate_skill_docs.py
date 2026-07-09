@@ -40,8 +40,9 @@ REQUIRED_FILES = [
     "CONTRIBUTING.md",
     "SECURITY.md",
     "FIRST_MVP_SUCCESS_PIPELINE.md",
-    "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md",
-    "COCOS_GENERATED_META_POLICY.md",
+    "protocols/write-approval.md",
+    "protocols/cocos-dev-story-prewrite.md",
+    "protocols/cocos-generated-meta.md",
     "templates/reports/mvp-acceptance.md",
     "SUCCESS_CASE_MOONLIGHT_DELIVERY.md",
     "docs/quickstart/general.md",
@@ -73,8 +74,9 @@ CONTENT_CHECKS = {
         "Safe Gate Mode",
         "Audit Mode",
         "FIRST_MVP_SUCCESS_PIPELINE.md",
-        "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md",
-        "COCOS_GENERATED_META_POLICY.md",
+        "protocols/write-approval.md",
+        "protocols/cocos-dev-story-prewrite.md",
+        "protocols/cocos-generated-meta.md",
         "SUCCESS_CASE_MOONLIGHT_DELIVERY.md",
         "cocos-dev-story-prewrite",
         "FIRST_MVP_ACCEPTED",
@@ -129,8 +131,9 @@ CONTENT_CHECKS = {
         "Safe Gate Mode",
         "Audit Mode",
         "FIRST_MVP_SUCCESS_PIPELINE.md",
-        "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md",
-        "COCOS_GENERATED_META_POLICY.md",
+        "protocols/write-approval.md",
+        "protocols/cocos-dev-story-prewrite.md",
+        "protocols/cocos-generated-meta.md",
         "Preview Visibility Gate",
         "RUNTIME_PROOF_PROTOCOL.md",
         "UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md",
@@ -165,8 +168,8 @@ CONTENT_CHECKS = {
         ".github/pull_request_template.md",
         "examples/moonlight-delivery/README.md",
         "FIRST_MVP_SUCCESS_PIPELINE.md",
-        "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md",
-        "COCOS_GENERATED_META_POLICY.md",
+        "protocols/cocos-dev-story-prewrite.md",
+        "protocols/cocos-generated-meta.md",
         "templates/reports/mvp-acceptance.md",
         "SUCCESS_CASE_MOONLIGHT_DELIVERY.md",
         "UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md",
@@ -224,7 +227,7 @@ CONTENT_CHECKS = {
         "license",
         "owner",
         "approver",
-        "COCOS_GENERATED_META_POLICY.md",
+        "protocols/cocos-generated-meta.md",
         "ASSET_APPROVAL_REQUIRED",
         "ASSET_SCOPE_BLOCKED",
     ],
@@ -387,7 +390,7 @@ CONTENT_CHECKS = {
 }
 
 SAFETY_CHECKS = {
-    "COCOS_DEV_STORY_PREWRITE_PROTOCOL.md": [
+    "protocols/cocos-dev-story-prewrite.md": [
         "PRE_WRITE_APPROVAL_REQUIRED",
         "Before explicit user confirmation",
         "must not",
@@ -397,7 +400,7 @@ SAFETY_CHECKS = {
         "Fast Build Mode",
         "do not stop after every",
     ],
-    "COCOS_GENERATED_META_POLICY.md": [
+    "protocols/cocos-generated-meta.md": [
         "assets/scenes.meta",
         "unapproved `.meta`",
         "stop and report",
@@ -410,7 +413,7 @@ SAFETY_CHECKS = {
         "summarized once",
         "Fast Build Mode",
     ],
-    "CODEX_WRITE_APPROVAL_PROTOCOL.md": [
+    "protocols/write-approval.md": [
         "generated `.meta`",
         "approve a scope",
         "without repeated confirmation",
@@ -627,11 +630,11 @@ def check_safety_rules() -> list[str]:
     if "editor scene visibility is not enough" not in runtime_lower and "editor hierarchy" not in runtime_lower:
         errors.append("RUNTIME_PROOF_PROTOCOL.md: missing editor-only proof rejection")
 
-    approval_text = read_text(ROOT / "CODEX_WRITE_APPROVAL_PROTOCOL.md").lower()
+    approval_text = read_text(ROOT / "protocols/write-approval.md").lower()
     if "pre_write_approval_required" not in approval_text and "pre-write" not in approval_text:
-        errors.append("CODEX_WRITE_APPROVAL_PROTOCOL.md: missing pre-write approval rule")
+        errors.append("protocols/write-approval.md: missing pre-write approval rule")
     if "user must explicitly approve" not in approval_text and "user confirmation" not in approval_text:
-        errors.append("CODEX_WRITE_APPROVAL_PROTOCOL.md: missing explicit user approval rule")
+        errors.append("protocols/write-approval.md: missing explicit user approval rule")
     return errors
 
 

@@ -402,7 +402,7 @@ GATE_CONTEXT
 - `SKILL_CONTEXT_SUMMARY.md`
 - `CONTEXT_LOADING_POLICY.md`
 - `SKILL_OPERATION_MODES.md`
-- `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md`
+- `protocols/cocos-dev-story-prewrite.md`
 - selected approval or diff review files required by the gate
 
 ### Must Forbid

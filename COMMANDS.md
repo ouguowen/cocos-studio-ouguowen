@@ -8,7 +8,7 @@ Use this file as the command registry for repeatable AI Game Studio execution.
 - Commands must name the current stage and responsible role.
 - Commands must state what is in scope and out of scope.
 - Commands must end with either a next command or a gate decision.
-- Commands that write files must apply [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md), [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md), and [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md) before execution.
+- Commands that write files must apply [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md), [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md), and [protocols/write-approval.md](protocols/write-approval.md) before execution.
 - Commands that claim completion must provide review proof from [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md) or [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md), depending on task type.
 
 ## Automation provider law
@@ -528,11 +528,11 @@ Output:
 
 Rules:
 
-- Load [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md).
+- Load [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md).
 - Stop at `PRE_WRITE_APPROVAL_REQUIRED` until the user explicitly approves.
 - Do not create files, modify scenes, modify scripts, modify `.meta`, commit, or push before approval.
 - Name Cocos-generated companion meta that may appear.
-- If generated meta later appears outside the approved scope, stop and apply [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md).
+- If generated meta later appears outside the approved scope, stop and apply [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md).
 
 ### `cocos-dev-story`
 

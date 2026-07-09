@@ -7,7 +7,7 @@ Use this file as the canonical alignment checklist for safety, audit, runtime pr
 | Command | Required files |
 |---|---|
 | `cocos-command-safety` | `AI_COMMAND_PERMISSION_RULES.md`, `QUALITY_GATES.md` |
-| `cocos-write-approval` | `CODEX_WRITE_APPROVAL_PROTOCOL.md`, `QUALITY_GATES.md` |
+| `cocos-write-approval` | `protocols/write-approval.md`, `QUALITY_GATES.md` |
 | `cocos-path-rules` | `COCOS_PATH_SCOPED_RULES.md`, `COCOS_RESOURCE_RISK_MATRIX.md`, `QUALITY_GATES.md` |
 | `cocos-hook-plan` | `COCOS_HOOK_VALIDATION_PLAN.md`, `COCOS_AUTOMATED_CHECKS.md` |
 | `cocos-auto-checks` | `COCOS_AUTOMATED_CHECKS.md`, `templates/checklists/core.md` |

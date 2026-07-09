@@ -69,7 +69,7 @@ Use this gate before `cocos-dev-story` writes implementation files.
 
 - The implementation story is dev-ready.
 - Production readiness is `READY_FOR_IMPLEMENTATION`.
-- [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md) has been applied.
+- [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md) has been applied.
 - Exact files to create or modify are listed.
 - Files that must not be touched are listed.
 - Runtime validation plan is listed.

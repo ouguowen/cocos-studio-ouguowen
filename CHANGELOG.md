@@ -26,8 +26,8 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added a Moonlight Delivery example entry that frames the case as pipeline proof, not the only game type.
 - Added first MVP success pipeline based on Moonlight Delivery Chapter 1 Shell.
 - Added `FIRST_MVP_SUCCESS_PIPELINE.md` for the command chain from brief to `FIRST_MVP_ACCEPTED`.
-- Added `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md` for `cocos-dev-story` pre-write approval.
-- Added `COCOS_GENERATED_META_POLICY.md` for Cocos-generated companion meta review and approval.
+- Added `protocols/cocos-dev-story-prewrite.md` for `cocos-dev-story` pre-write approval.
+- Added `protocols/cocos-generated-meta.md` for Cocos-generated companion meta review and approval.
 - Added `templates/reports/mvp-acceptance.md` for first MVP release acceptance reports.
 - Added `SUCCESS_CASE_MOONLIGHT_DELIVERY.md` as a successful pipeline case without making story games the only template.
 - Added `cocos-asset-policy`, `cocos-first-implementation-story`, `cocos-dev-story-prewrite`, `cocos-qa-review`, and `cocos-release-review` command definitions.
@@ -56,6 +56,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Migrated write approval, dev-story pre-write, and generated meta protocols into `protocols/`.
 - Migrated quick start, general examples, project roadmap, and historical update drafts into `docs/quickstart/`, `docs/examples/`, `docs/open-source/`, and `docs/archive/`.
 - Migrated checklist and report templates into `templates/checklists/` and `templates/reports/`.
 - Migrated quickstart and automation validation docs into `docs/quickstart/` and `docs/validation/`.

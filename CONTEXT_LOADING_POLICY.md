@@ -95,9 +95,9 @@ Load these files only when triggered:
 - `GAME_ECONOMY_DESIGN.md`: currency, shop, gacha, inventory value, stamina, monetization.
 - `ANIMATION_PRESENTATION_RULES.md`: animation, tween, VFX, Spine, particles, audio-visual timing.
 - `UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md`: UI input, character response, action state, animation state, skeleton presentation.
-- `COCOS_DEV_STORY_PREWRITE_PROTOCOL.md`: before approved dev-story implementation writes scene, script, prefab, meta, or runtime files.
+- `protocols/cocos-dev-story-prewrite.md`: before approved dev-story implementation writes scene, script, prefab, meta, or runtime files.
 - `RUNTIME_PROOF_PROTOCOL.md`: when runtime proof or preview proof is claimed.
-- `COCOS_GENERATED_META_POLICY.md`: when generated meta appears or diff scope includes generated companion meta.
+- `protocols/cocos-generated-meta.md`: when generated meta appears or diff scope includes generated companion meta.
 
 ## Forbidden default behavior
 

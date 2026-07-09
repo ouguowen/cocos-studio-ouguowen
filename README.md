@@ -131,9 +131,9 @@ The Skill uses multiple guardrails:
 
 - [AI_COMMAND_PERMISSION_RULES.md](AI_COMMAND_PERMISSION_RULES.md): AI command permission boundaries.
 - [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md): path-scope rules for Cocos projects and Skill maintenance.
-- [CODEX_WRITE_APPROVAL_PROTOCOL.md](CODEX_WRITE_APPROVAL_PROTOCOL.md): write approval before file changes.
-- [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md): mandatory pre-write checklist before `cocos-dev-story`.
-- [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md): stop-and-confirm policy for Cocos-generated `.meta` files.
+- [protocols/write-approval.md](protocols/write-approval.md): write approval before file changes.
+- [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md): mandatory pre-write checklist before `cocos-dev-story`.
+- [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md): stop-and-confirm policy for Cocos-generated `.meta` files.
 - [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md): proof rules for browser preview and runtime claims.
 - [GIT_DIFF_REVIEW_PROTOCOL.md](GIT_DIFF_REVIEW_PROTOCOL.md): required diff review before commit.
 
@@ -204,8 +204,8 @@ This case proves the pipeline, not the only game genre. It should improve workfl
 - [MODULE_INDEX.md](MODULE_INDEX.md): module map.
 - [QUALITY_GATES.md](QUALITY_GATES.md): promotion and approval gates.
 - [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md): proven first-MVP pipeline.
-- [COCOS_DEV_STORY_PREWRITE_PROTOCOL.md](COCOS_DEV_STORY_PREWRITE_PROTOCOL.md): pre-write approval protocol.
-- [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md): generated meta policy.
+- [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md): pre-write approval protocol.
+- [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md): generated meta policy.
 - [templates/reports/mvp-acceptance.md](templates/reports/mvp-acceptance.md): MVP acceptance report template.
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution guide.
 - [SECURITY.md](SECURITY.md): security reporting and safety policy.

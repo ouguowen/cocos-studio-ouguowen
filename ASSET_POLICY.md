@@ -17,7 +17,7 @@ This policy keeps assets separate from behavior, economy, level truth, and runti
 - External assets require source, license, owner, approver, and import scope before production use.
 - Generated assets require the same ownership, approval, and scope rules as imported assets.
 - Cocos `.scene`, `.prefab`, `.anim`, and `.meta` files must not be raw text edited.
-- Cocos-generated `.meta` files must follow [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md).
+- Cocos-generated `.meta` files must follow [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md).
 
 ## MVP placeholder policy
 
@@ -92,7 +92,7 @@ Forbidden:
 - Use [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md) for asset meaning and behavior-free semantics.
 - Use [COCOS_RESOURCE_RISK_MATRIX.md](COCOS_RESOURCE_RISK_MATRIX.md) for resource risk classification.
 - Use [COCOS_PATH_SCOPED_RULES.md](COCOS_PATH_SCOPED_RULES.md) for path boundaries.
-- Use [COCOS_GENERATED_META_POLICY.md](COCOS_GENERATED_META_POLICY.md) when generated `.meta` files appear.
+- Use [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md) when generated `.meta` files appear.
 - Use [RUNTIME_PROOF_PROTOCOL.md](RUNTIME_PROOF_PROTOCOL.md) when asset visibility or presentation must be proven in browser preview.
 
 ## Stop conditions

@@ -48,7 +48,7 @@ Expected decision: `NEEDS_APPROVAL`
 
 Expected rule:
 
-- `CODEX_WRITE_APPROVAL_PROTOCOL.md`
+- `protocols/write-approval.md`
 - `Write Approval Gate`
 
 Must require:
