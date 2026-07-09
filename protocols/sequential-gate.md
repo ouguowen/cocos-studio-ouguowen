@@ -2,7 +2,7 @@
 
 Use this file when the user wants the project to move smoothly, avoid logic conflicts, and forbid step-skipping.
 
-Open [ADVANCEMENT_CHAIN_MAP.md](ADVANCEMENT_CHAIN_MAP.md) when the team needs a direct prerequisite chain for project setup, modules, level systems, feature delivery, release, or rescue work.
+Open [protocols/advancement-chain-map.md](advancement-chain-map.md) when the team needs a direct prerequisite chain for project setup, modules, level systems, feature delivery, release, or rescue work.
 
 ## Core law
 
@@ -37,7 +37,7 @@ Use this default order unless the project has an approved special case:
 
 Do not reorder this casually.
 
-If the task fits a known chain, prefer the exact order in [ADVANCEMENT_CHAIN_MAP.md](ADVANCEMENT_CHAIN_MAP.md).
+If the task fits a known chain, prefer the exact order in [protocols/advancement-chain-map.md](advancement-chain-map.md).
 
 ## Module build sequence
 

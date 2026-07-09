@@ -6,7 +6,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Added
 
-- Added `REPO_STRUCTURE_PLAN.md` for staged repository organization without moving current canonical paths.
+- Added `docs/structure/repository-structure-plan.md` for staged repository organization without moving current canonical paths.
 - Added `design/asset-policy.md` for placeholder, external, generated, and Cocos asset approval boundaries.
 - Added context loading behavior test cases for `FAST_CONTEXT`, `GATE_CONTEXT`, `AUDIT_CONTEXT`, `CONTEXT_OVERLOAD`, and `REDUCE_CONTEXT`.
 - Added a side-effect-free generated artifact check for package validation.
@@ -25,11 +25,11 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added open-source polish docs: `CONTRIBUTING.md`, `SECURITY.md`, `docs/quickstart/first-mvp.md`, `docs/open-source/roadmap.md`, and `examples/moonlight-delivery/README.md`.
 - Added a Moonlight Delivery example entry that frames the case as pipeline proof, not the only game type.
 - Added first MVP success pipeline based on Moonlight Delivery Chapter 1 Shell.
-- Added `FIRST_MVP_SUCCESS_PIPELINE.md` for the command chain from brief to `FIRST_MVP_ACCEPTED`.
+- Added `production/first-mvp-success-pipeline.md` for the command chain from brief to `FIRST_MVP_ACCEPTED`.
 - Added `protocols/cocos-dev-story-prewrite.md` for `cocos-dev-story` pre-write approval.
 - Added `protocols/cocos-generated-meta.md` for Cocos-generated companion meta review and approval.
 - Added `templates/reports/mvp-acceptance.md` for first MVP release acceptance reports.
-- Added `SUCCESS_CASE_MOONLIGHT_DELIVERY.md` as a successful pipeline case without making story games the only template.
+- Added `docs/success-cases/moonlight-delivery.md` as a successful pipeline case without making story games the only template.
 - Added `cocos-asset-policy`, `cocos-first-implementation-story`, `cocos-dev-story-prewrite`, `cocos-qa-review`, and `cocos-release-review` command definitions.
 - Added Pre-write Approval Gate, Cocos Generated Meta Gate, QA Review Gate, and First MVP Acceptance Gate.
 - Added first MVP pipeline success self-test coverage.
@@ -56,6 +56,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Migrated Agent system docs, execution-chain protocols, first-MVP pipeline, success case, test matrix, version roadmap, and repository structure plan into organized folders.
 - Migrated context loading, operation mode, command routing, and module index documents into `core/`.
 - Migrated reusable templates, level templates, workflow templates, and prompt patterns into `templates/`.
 - Migrated Cocos baseline, project structure, level-system, config schema, and runtime template routing documents into `architecture/`.
@@ -102,7 +103,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Routed broad game implementation through production readiness before Cocos development.
 - Updated `templates/workflows/game-studio.md` so new-game and MVP workflows include production readiness before implementation.
 - Routed skill debugging and closed-loop validation through dedicated self-test cases before any game implementation.
-- Aligned `AGENT_REGISTRY.md`, `AGENT_HANDOFF_PROTOCOL.md`, and `AI_GAME_STUDIO_SYSTEM.md` to the planned 12-Agent Cocos Studio structure.
+- Aligned `agents/registry.md`, `agents/handoff-protocol.md`, and `agents/ai-game-studio-system.md` to the planned 12-Agent Cocos Studio structure.
 - Expanded `protocols/skill-extended-safety-test-cases.md` from the previous partial cases to S01-S08.
 - Expanded `protocols/skill-self-test-modes.md` to static, routing, gate, runtime, audit, safety, diff, and agent modes.
 - Updated `core/module-index.md` to index safety, audit, runtime, diff, Agent, and alignment files.

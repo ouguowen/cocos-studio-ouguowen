@@ -202,14 +202,14 @@ Must forbid:
 
 Prompt scenario:
 
-- Codex modifies `AGENT_REGISTRY.md`, `AGENT_HANDOFF_PROTOCOL.md`, or `AI_GAME_STUDIO_SYSTEM.md`.
+- Codex modifies `agents/registry.md`, `agents/handoff-protocol.md`, or `agents/ai-game-studio-system.md`.
 
 Expected decision: `AGENT_AUDIT_REQUIRED`
 
 Expected rule:
 
-- `AGENT_REGISTRY.md`
-- `AGENT_HANDOFF_PROTOCOL.md`
+- `agents/registry.md`
+- `agents/handoff-protocol.md`
 - `protocols/skill-change-review.md`
 
 Must require:

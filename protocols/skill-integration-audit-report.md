@@ -31,9 +31,9 @@
 - `core/commands.md`
 - `core/module-index.md`
 - `protocols/quality-gates.md`
-- `AGENT_REGISTRY.md`
-- `AGENT_HANDOFF_PROTOCOL.md`
-- `AI_GAME_STUDIO_SYSTEM.md`
+- `agents/registry.md`
+- `agents/handoff-protocol.md`
+- `agents/ai-game-studio-system.md`
 
 ## Audit findings
 
@@ -42,7 +42,7 @@
 - Extended safety test cases now use S01-S08.
 - Agent registry is aligned to the planned 12 Cocos-focused Agents.
 - Agent handoff routing is aligned to the 12-Agent structure.
-- `AI_GAME_STUDIO_SYSTEM.md` now describes the 12-Agent Cocos Studio structure.
+- `agents/ai-game-studio-system.md` now describes the 12-Agent Cocos Studio structure.
 - `core/module-index.md` indexes safety, audit, runtime, diff, Agent, and alignment files.
 - `protocols/command-routing-alignment.md` records the canonical safety and Agent command routing set.
 - `protocols/quality-gate-alignment.md` records the canonical safety and integration gate set.

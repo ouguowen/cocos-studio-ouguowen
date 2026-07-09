@@ -74,7 +74,7 @@ Restart Codex after installing or updating the Skill so metadata reloads cleanly
 
 ## First MVP Path
 
-For the full first-MVP path, see [docs/quickstart/first-mvp.md](docs/quickstart/first-mvp.md) and [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md).
+For the full first-MVP path, see [docs/quickstart/first-mvp.md](docs/quickstart/first-mvp.md) and [production/first-mvp-success-pipeline.md](production/first-mvp-success-pipeline.md).
 
 Canonical chain:
 
@@ -192,7 +192,7 @@ Moonlight Delivery - Chapter 1 Shell is a successful first-MVP case:
 
 Read the case:
 
-- [SUCCESS_CASE_MOONLIGHT_DELIVERY.md](SUCCESS_CASE_MOONLIGHT_DELIVERY.md)
+- [docs/success-cases/moonlight-delivery.md](docs/success-cases/moonlight-delivery.md)
 - [examples/moonlight-delivery/README.md](examples/moonlight-delivery/README.md)
 
 This case proves the pipeline, not the only game genre. It should improve workflow control, not lock the Skill to story games.
@@ -203,7 +203,7 @@ This case proves the pipeline, not the only game genre. It should improve workfl
 - [core/commands.md](core/commands.md): command registry.
 - [core/module-index.md](core/module-index.md): module map.
 - [protocols/quality-gates.md](protocols/quality-gates.md): promotion and approval gates.
-- [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md): proven first-MVP pipeline.
+- [production/first-mvp-success-pipeline.md](production/first-mvp-success-pipeline.md): proven first-MVP pipeline.
 - [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md): pre-write approval protocol.
 - [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md): generated meta policy.
 - [templates/reports/mvp-acceptance.md](templates/reports/mvp-acceptance.md): MVP acceptance report template.

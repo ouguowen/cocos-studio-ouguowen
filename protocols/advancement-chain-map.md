@@ -1,6 +1,6 @@
 # Advancement Chain Map
 
-Use this file with [SEQUENTIAL_GATE_PROTOCOL.md](SEQUENTIAL_GATE_PROTOCOL.md) when the team needs a direct prerequisite chain instead of general guidance.
+Use this file with [protocols/sequential-gate.md](sequential-gate.md) when the team needs a direct prerequisite chain instead of general guidance.
 
 ## 1. New project chain
 

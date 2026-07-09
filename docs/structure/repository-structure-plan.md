@@ -176,7 +176,7 @@ Future home for reusable non-runtime artifacts:
 Status: completed.
 
 - Keep all existing file paths unchanged.
-- Add this plan to [core/module-index.md](core/module-index.md).
+- Add this plan to [core/module-index.md](../../core/module-index.md).
 - Add validation coverage so the plan stays visible.
 - Do not move files.
 
@@ -316,6 +316,25 @@ Completed batch 12:
 - `SKILL_OPERATION_MODES.md` -> `core/operation-modes.md`
 - `COMMANDS.md` -> `core/commands.md`
 - `MODULE_INDEX.md` -> `core/module-index.md`
+
+Completed batch 13:
+
+- `AGENT_AUDIT_LOG.md` -> `agents/audit-log.md`
+- `AGENT_HANDOFF_PROTOCOL.md` -> `agents/handoff-protocol.md`
+- `AGENT_MESSAGE_SCHEMA.md` -> `agents/message-schema.md`
+- `AGENT_REGISTRY.md` -> `agents/registry.md`
+- `AI_GAME_STUDIO_SYSTEM.md` -> `agents/ai-game-studio-system.md`
+- `AI_COLLAB_RULES.md` -> `agents/ai-collab-rules.md`
+- `SKILL_AI_GAME_STUDIO_APPENDIX.md` -> `agents/skill-ai-game-studio-appendix.md`
+- `ADVANCEMENT_CHAIN_MAP.md` -> `protocols/advancement-chain-map.md`
+- `CHOICE_EXECUTION_PROTOCOL.md` -> `protocols/choice-execution.md`
+- `SEQUENTIAL_GATE_PROTOCOL.md` -> `protocols/sequential-gate.md`
+- `ONE_SHOT_GAME_BUILD.md` -> `production/one-shot-game-build.md`
+- `FIRST_MVP_SUCCESS_PIPELINE.md` -> `production/first-mvp-success-pipeline.md`
+- `TEST_MATRIX.md` -> `production/test-matrix.md`
+- `VERSION_ROADMAP_SYSTEM.md` -> `production/version-roadmap.md`
+- `SUCCESS_CASE_MOONLIGHT_DELIVERY.md` -> `docs/success-cases/moonlight-delivery.md`
+- `REPO_STRUCTURE_PLAN.md` -> `docs/structure/repository-structure-plan.md`
 
 Allowed candidates:
 

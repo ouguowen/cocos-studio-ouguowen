@@ -30,8 +30,8 @@ cocos-game-brief
 1. Documentation stages do not open Cocos Creator.
 2. Real implementation requires `FIRST_IMPLEMENTATION_STORY.md`.
 3. `READY_FOR_IMPLEMENTATION` only allows one approved implementation story. It does not mean the game is complete.
-4. `cocos-dev-story` must first output the Pre-write Approval Checklist from [protocols/cocos-dev-story-prewrite.md](protocols/cocos-dev-story-prewrite.md).
-5. Cocos-generated companion meta can be approved, but it must be listed in the expected diff scope. See [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md).
+4. `cocos-dev-story` must first output the Pre-write Approval Checklist from [protocols/cocos-dev-story-prewrite.md](../protocols/cocos-dev-story-prewrite.md).
+5. Cocos-generated companion meta can be approved, but it must be listed in the expected diff scope. See [protocols/cocos-generated-meta.md](../protocols/cocos-generated-meta.md).
 6. Browser preview proof must verify visible runtime output in the real browser. Editor hierarchy, scene snapshot, or inspector state is supporting evidence only.
 7. `QA_PASS` is required before `cocos-release-review`.
 8. `FIRST_MVP_ACCEPTED` only means the current MVP is accepted. It does not mean the full game is complete.

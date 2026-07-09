@@ -150,7 +150,7 @@ Output:
 
 Use when the user wants one continuous response or Codex run to move from a broad game idea into a controlled MVP plan and first dev-ready story.
 
-This command must load [ONE_SHOT_GAME_BUILD.md](../ONE_SHOT_GAME_BUILD.md) before execution.
+This command must load [production/one-shot-game-build.md](../production/one-shot-game-build.md) before execution.
 
 Output:
 

@@ -154,7 +154,7 @@ Make beginner usage and one-shot execution clearer without weakening production 
 Completed work:
 
 1. Added `README.zh-CN.md` as a Chinese beginner entry.
-2. Added `ONE_SHOT_GAME_BUILD.md` to define one-shot as a gated MVP chain, not a full-game shortcut.
+2. Added `production/one-shot-game-build.md` to define one-shot as a gated MVP chain, not a full-game shortcut.
 3. Added `design/example-pack-expansion-plan.md` to guide card battle, story level clear, tower defense, merge/collection, and idle growth example packs.
 4. Linked the new guides from `README.md`.
 5. Routed the new guides through `core/module-index.md`.

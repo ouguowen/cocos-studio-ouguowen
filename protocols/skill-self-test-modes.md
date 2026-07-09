@@ -145,7 +145,7 @@ Required input:
 
 Required test files:
 
-- `FIRST_MVP_SUCCESS_PIPELINE.md`
+- `production/first-mvp-success-pipeline.md`
 - `protocols/cocos-dev-story-prewrite.md`
 - `protocols/cocos-generated-meta.md`
 - `templates/reports/mvp-acceptance.md`
@@ -278,9 +278,9 @@ Required input:
 
 Required test files:
 
-- `AGENT_REGISTRY.md`
-- `AGENT_HANDOFF_PROTOCOL.md`
-- `AI_GAME_STUDIO_SYSTEM.md`
+- `agents/registry.md`
+- `agents/handoff-protocol.md`
+- `agents/ai-game-studio-system.md`
 
 Required output:
 
@@ -313,9 +313,9 @@ cocos-skill-self-test --all
 - `--core` uses `protocols/skill-test-cases.md`.
 - `--safety` uses `protocols/skill-extended-safety-test-cases.md`.
 - `--runtime` uses `protocols/runtime-proof.md` and Preview Visibility Gate.
-- `--pipeline` uses `FIRST_MVP_SUCCESS_PIPELINE.md` and Test Case 09.
+- `--pipeline` uses `production/first-mvp-success-pipeline.md` and Test Case 09.
 - `--diff` uses `protocols/git-diff-review.md`.
-- `--agent` uses `AGENT_REGISTRY.md` and `AGENT_HANDOFF_PROTOCOL.md`.
+- `--agent` uses `agents/registry.md` and `agents/handoff-protocol.md`.
 - `--all` runs core plus extended safety, runtime, diff, and Agent checks.
 
 ## Change mapping

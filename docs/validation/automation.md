@@ -79,7 +79,7 @@ The validator requires key files such as:
 - `core/module-index.md`
 - `protocols/quality-gates.md`
 - `package.json`
-- `REPO_STRUCTURE_PLAN.md`
+- `docs/structure/repository-structure-plan.md`
 - `core/context-loading-policy.md`
 - `core/context-summary.md`
 - `core/operation-modes.md`
@@ -90,11 +90,11 @@ The validator requires key files such as:
 - `design/asset-semantic-model.md`
 - `CONTRIBUTING.md`
 - `SECURITY.md`
-- `FIRST_MVP_SUCCESS_PIPELINE.md`
+- `production/first-mvp-success-pipeline.md`
 - `protocols/cocos-dev-story-prewrite.md`
 - `protocols/cocos-generated-meta.md`
 - `templates/reports/mvp-acceptance.md`
-- `SUCCESS_CASE_MOONLIGHT_DELIVERY.md`
+- `docs/success-cases/moonlight-delivery.md`
 - `docs/quickstart/first-mvp.md`
 - `docs/open-source/roadmap.md`
 - `docs/validation/automation.md`

@@ -6,10 +6,10 @@ Use this file to route a request into the correct module family before loading d
 
 - [core/context-summary.md](context-summary.md): lightweight first-read memory
 - [core/context-loading-policy.md](context-loading-policy.md): context budget and anti-overload rules
-- [REPO_STRUCTURE_PLAN.md](../REPO_STRUCTURE_PLAN.md): staged repository organization plan that keeps current paths canonical until migration batches are approved
+- [docs/structure/repository-structure-plan.md](../docs/structure/repository-structure-plan.md): staged repository organization plan that keeps current paths canonical until migration batches are approved
 - [production/modes.md](../production/modes.md): how strict the team should be right now
 - [production/stages.md](../production/stages.md): where the project is in time
-- [VERSION_ROADMAP_SYSTEM.md](../VERSION_ROADMAP_SYSTEM.md): why the current version exists and what proves promotion
+- [production/version-roadmap.md](../production/version-roadmap.md): why the current version exists and what proves promotion
 - [production/project-memory.md](../production/project-memory.md): stable project truth across sessions
 - [README.md](../README.md): English open-source entry, installation, commands, safety model, and first-MVP links
 - [README.zh-CN.md](../README.zh-CN.md): Chinese beginner entry, safe first prompts, and beginner boundaries
@@ -47,7 +47,7 @@ Use this file to route a request into the correct module family before loading d
 - [design/example-pack-expansion-plan.md](../design/example-pack-expansion-plan.md): expand example packs by selected game type without turning the skill into one universal template
 - [docs/examples/general.md](../docs/examples/general.md): applied workflow examples for common Cocos Studio situations
 - [production/game-readiness-gate.md](../production/game-readiness-gate.md): decide whether the project is ready for real implementation, design repair, runtime repair, or scope reduction
-- [FIRST_MVP_SUCCESS_PIPELINE.md](../FIRST_MVP_SUCCESS_PIPELINE.md): proven first-MVP command chain from brief to `FIRST_MVP_ACCEPTED`
+- [production/first-mvp-success-pipeline.md](../production/first-mvp-success-pipeline.md): proven first-MVP command chain from brief to `FIRST_MVP_ACCEPTED`
 - [design/numerical-design.md](../design/numerical-design.md): define gameplay numbers, difficulty, rewards, costs, and balance rules before implementation
 - [design/economy-design.md](../design/economy-design.md): define currencies, sources, sinks, rewards, upgrades, ads, shops, gacha boundaries, and economy validation before implementation
 - [design/animation-presentation.md](../design/animation-presentation.md): define animation states, UI motion, feedback, VFX, Spine/Tween/AnimationClip boundaries, and presentation validation before implementation
@@ -78,7 +78,7 @@ Use this file to route a request into the correct module family before loading d
 
 ## 5. Delivery, release, and live operations
 
-- [TEST_MATRIX.md](../TEST_MATRIX.md): coverage planning
+- [production/test-matrix.md](../production/test-matrix.md): coverage planning
 - [production/acceptance-artifacts.md](../production/acceptance-artifacts.md): evidence before sign-off
 - [docs/proof/provider-driven-local-cocos.md](../docs/proof/provider-driven-local-cocos.md): local Cocos proof runbook for scene, prefab, binding, Console, and preview evidence
 - [docs/proof/codex-cocos-automation.md](../docs/proof/codex-cocos-automation.md): Codex local automation proof flow for Cocos provider-driven validation
@@ -87,7 +87,7 @@ Use this file to route a request into the correct module family before loading d
 - [docs/release/strategy.md](../docs/release/strategy.md): open-source Skill release strategy and blockers
 - [docs/release/checklist.md](../docs/release/checklist.md): final release checklist before tag or announcement
 - [templates/reports/mvp-acceptance.md](../templates/reports/mvp-acceptance.md): `FIRST_MVP_ACCEPTANCE_REPORT.md` template and release decision vocabulary
-- [SUCCESS_CASE_MOONLIGHT_DELIVERY.md](../SUCCESS_CASE_MOONLIGHT_DELIVERY.md): successful Moonlight Delivery Chapter 1 Shell pipeline case, not a universal genre template
+- [docs/success-cases/moonlight-delivery.md](../docs/success-cases/moonlight-delivery.md): successful Moonlight Delivery Chapter 1 Shell pipeline case, not a universal genre template
 - [examples/moonlight-delivery/README.md](../examples/moonlight-delivery/README.md): example entry for the Moonlight Delivery success case
 - [production/platform-targets.md](../production/platform-targets.md): Android, iOS, web, mini-game, and package differences
 - [production/release-rollback.md](../production/release-rollback.md): rollback discipline
@@ -110,9 +110,9 @@ Use this file to route a request into the correct module family before loading d
 
 - [core/context-summary.md](context-summary.md): lightweight first-read memory
 - [core/context-loading-policy.md](context-loading-policy.md): context budget and anti-overload rules
-- [AI_COLLAB_RULES.md](../AI_COLLAB_RULES.md): what AI may and may not own
+- [agents/ai-collab-rules.md](../agents/ai-collab-rules.md): what AI may and may not own
 - [core/operation-modes.md](operation-modes.md): Fast Build, Safe Gate, and Audit Mode routing for development experience
-- [ONE_SHOT_GAME_BUILD.md](../ONE_SHOT_GAME_BUILD.md): continuous one-request MVP chain that still obeys gates and proof rules
+- [production/one-shot-game-build.md](../production/one-shot-game-build.md): continuous one-request MVP chain that still obeys gates and proof rules
 - [protocols/skill-validation-loop.md](../protocols/skill-validation-loop.md): closed-loop QA process for testing this skill itself
 - [protocols/skill-test-cases.md](../protocols/skill-test-cases.md): repeatable pass/fail test cases for skill behavior
 - [protocols/skill-self-test-modes.md](../protocols/skill-self-test-modes.md): self-test modes for static, routing, gate, runtime, audit, safety, diff, and Agent checks
@@ -131,9 +131,9 @@ Use this file to route a request into the correct module family before loading d
 - [protocols/skill-change-review.md](../protocols/skill-change-review.md): Skill change review protocol
 - [protocols/skill-integration-audit-report.md](../protocols/skill-integration-audit-report.md): integrated-scope audit artifact for Skill maintenance updates
 - [templates/prompts.md](../templates/prompts.md): high-signal recurring prompt patterns
-- [CHOICE_EXECUTION_PROTOCOL.md](../CHOICE_EXECUTION_PROTOCOL.md): short-option selection followed by continuous module execution
-- [SEQUENTIAL_GATE_PROTOCOL.md](../SEQUENTIAL_GATE_PROTOCOL.md): prerequisite-first advancement and anti-step-skipping control
-- [ADVANCEMENT_CHAIN_MAP.md](../ADVANCEMENT_CHAIN_MAP.md): exact prerequisite chains for projects, modules, level systems, features, and release
+- [protocols/choice-execution.md](../protocols/choice-execution.md): short-option selection followed by continuous module execution
+- [protocols/sequential-gate.md](../protocols/sequential-gate.md): prerequisite-first advancement and anti-step-skipping control
+- [protocols/advancement-chain-map.md](../protocols/advancement-chain-map.md): exact prerequisite chains for projects, modules, level systems, features, and release
 - [templates/workflows/core.md](../templates/workflows/core.md): high-frequency execution patterns
 - [templates/workflows/extensions.md](../templates/workflows/extensions.md): specialist execution patterns
 - [scripts/validate_skill_docs.py](../scripts/validate_skill_docs.py): standard-library validation script for docs, links, commands, and safety rules
@@ -141,8 +141,8 @@ Use this file to route a request into the correct module family before loading d
 
 ## 8. AI Game Studio Agents
 
-- [AGENT_REGISTRY.md](../AGENT_REGISTRY.md): 12-Agent Cocos Studio registry
-- [AGENT_HANDOFF_PROTOCOL.md](../AGENT_HANDOFF_PROTOCOL.md): Agent handoff protocol
-- [AI_GAME_STUDIO_SYSTEM.md](../AI_GAME_STUDIO_SYSTEM.md): AI Game Studio structure
-- [AGENT_AUDIT_LOG.md](../AGENT_AUDIT_LOG.md): Agent audit log
-- [AGENT_MESSAGE_SCHEMA.md](../AGENT_MESSAGE_SCHEMA.md): Agent message schema
+- [agents/registry.md](../agents/registry.md): 12-Agent Cocos Studio registry
+- [agents/handoff-protocol.md](../agents/handoff-protocol.md): Agent handoff protocol
+- [agents/ai-game-studio-system.md](../agents/ai-game-studio-system.md): AI Game Studio structure
+- [agents/audit-log.md](../agents/audit-log.md): Agent audit log
+- [agents/message-schema.md](../agents/message-schema.md): Agent message schema

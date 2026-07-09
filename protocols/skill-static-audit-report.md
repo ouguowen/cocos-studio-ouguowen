@@ -15,9 +15,9 @@ Confirm that the Skill safety layer, Agent registry, self-test modes, command ro
 
 ### Agent system
 
-- `AGENT_REGISTRY.md`
-- `AGENT_HANDOFF_PROTOCOL.md`
-- `AI_GAME_STUDIO_SYSTEM.md`
+- `agents/registry.md`
+- `agents/handoff-protocol.md`
+- `agents/ai-game-studio-system.md`
 
 Result: PASS
 

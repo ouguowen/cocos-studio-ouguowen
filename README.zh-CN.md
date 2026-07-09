@@ -57,7 +57,7 @@ C:\Users\<you>\.codex\skills\cocos-studio-ouguowen
 
 ## 第一个 MVP 推荐流程
 
-完整流程见 [docs/quickstart/first-mvp.md](docs/quickstart/first-mvp.md) 和 [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md)。
+完整流程见 [docs/quickstart/first-mvp.md](docs/quickstart/first-mvp.md) 和 [production/first-mvp-success-pipeline.md](production/first-mvp-success-pipeline.md)。
 
 ```text
 cocos-game-brief
@@ -143,7 +143,7 @@ Moonlight Delivery - Chapter 1 Shell 是一个成功闭环案例：
 
 阅读：
 
-- [SUCCESS_CASE_MOONLIGHT_DELIVERY.md](SUCCESS_CASE_MOONLIGHT_DELIVERY.md)
+- [docs/success-cases/moonlight-delivery.md](docs/success-cases/moonlight-delivery.md)
 - [examples/moonlight-delivery/README.md](examples/moonlight-delivery/README.md)
 
 注意：这个案例证明的是流程，不是唯一游戏类型。它用于改进工作流控制，不会把 Skill 锁定成剧情游戏模板。

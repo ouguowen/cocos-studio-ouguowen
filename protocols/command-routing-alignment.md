@@ -15,9 +15,9 @@ Use this file as the canonical alignment checklist for safety, audit, runtime pr
 | `cocos-diff-review` | `protocols/git-diff-review.md`, `protocols/quality-gates.md` |
 | `cocos-runtime-proof` | `protocols/runtime-proof.md`, `protocols/quality-gates.md` |
 | `cocos-skill-change-review` | `protocols/skill-change-review.md`, `protocols/skill-self-test-modes.md`, `protocols/quality-gates.md` |
-| `cocos-agent-registry` | `AGENT_REGISTRY.md` |
-| `cocos-agent-handoff` | `AGENT_HANDOFF_PROTOCOL.md`, `AGENT_MESSAGE_SCHEMA.md` |
-| `cocos-agent-audit` | `AGENT_REGISTRY.md`, `AGENT_HANDOFF_PROTOCOL.md`, `AI_GAME_STUDIO_SYSTEM.md`, `protocols/skill-change-review.md` |
+| `cocos-agent-registry` | `agents/registry.md` |
+| `cocos-agent-handoff` | `agents/handoff-protocol.md`, `agents/message-schema.md` |
+| `cocos-agent-audit` | `agents/registry.md`, `agents/handoff-protocol.md`, `agents/ai-game-studio-system.md`, `protocols/skill-change-review.md` |
 | `cocos-skill-self-test` | `protocols/skill-validation-loop.md`, `protocols/skill-test-cases.md`, `protocols/skill-extended-safety-test-cases.md`, `protocols/skill-self-test-modes.md`, `protocols/quality-gates.md` |
 
 ## Required self-test command forms

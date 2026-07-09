@@ -112,7 +112,7 @@ Generalize only the controls:
 
 ## Related docs
 
-- [../../SUCCESS_CASE_MOONLIGHT_DELIVERY.md](../../SUCCESS_CASE_MOONLIGHT_DELIVERY.md)
-- [../../FIRST_MVP_SUCCESS_PIPELINE.md](../../FIRST_MVP_SUCCESS_PIPELINE.md)
+- [../../docs/success-cases/moonlight-delivery.md](../../docs/success-cases/moonlight-delivery.md)
+- [../../production/first-mvp-success-pipeline.md](../../production/first-mvp-success-pipeline.md)
 - [../../protocols/cocos-dev-story-prewrite.md](../../protocols/cocos-dev-story-prewrite.md)
 - [../../protocols/cocos-generated-meta.md](../../protocols/cocos-generated-meta.md)

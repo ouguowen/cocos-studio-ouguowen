@@ -97,9 +97,9 @@ PASS
 
 Files read:
 
-- `AGENT_REGISTRY.md`
-- `AGENT_HANDOFF_PROTOCOL.md`
-- `AI_GAME_STUDIO_SYSTEM.md`
+- `agents/registry.md`
+- `agents/handoff-protocol.md`
+- `agents/ai-game-studio-system.md`
 
 Validation notes:
 

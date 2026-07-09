@@ -22,7 +22,7 @@ Each option must:
 4. Wait for the user's choice.
 5. After the user chooses, execute continuously until the module reaches a usable completed state.
 6. Do not interrupt for minor implementation choices.
-7. If useful, create a short module brief with [templates/core.md](templates/core.md) before or during execution, but do not let the brief delay delivery.
+7. If useful, create a short module brief with [templates/core.md](../templates/core.md) before or during execution, but do not let the brief delay delivery.
 
 ## When to pause
 

@@ -209,4 +209,4 @@ RELEASE_BLOCKED
 
 ## Example
 
-See [../../examples/moonlight-delivery/README.md](../../examples/moonlight-delivery/README.md) and [../../SUCCESS_CASE_MOONLIGHT_DELIVERY.md](../../SUCCESS_CASE_MOONLIGHT_DELIVERY.md).
+See [../../examples/moonlight-delivery/README.md](../../examples/moonlight-delivery/README.md) and [../../docs/success-cases/moonlight-delivery.md](../../docs/success-cases/moonlight-delivery.md).
