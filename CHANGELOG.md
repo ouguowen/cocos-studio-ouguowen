@@ -7,7 +7,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 ### Added
 
 - Added `REPO_STRUCTURE_PLAN.md` for staged repository organization without moving current canonical paths.
-- Added `ASSET_POLICY.md` for placeholder, external, generated, and Cocos asset approval boundaries.
+- Added `design/asset-policy.md` for placeholder, external, generated, and Cocos asset approval boundaries.
 - Added context loading behavior test cases for `FAST_CONTEXT`, `GATE_CONTEXT`, `AUDIT_CONTEXT`, `CONTEXT_OVERLOAD`, and `REDUCE_CONTEXT`.
 - Added a side-effect-free generated artifact check for package validation.
 - Added `CONTEXT_LOADING_POLICY.md` to define context budgets, trigger-based loading, and anti-overload rules.
@@ -15,7 +15,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added `SKILL_OPERATION_MODES.md` to define Fast Build Mode, Safe Gate Mode, and Audit Mode.
 - Added Developer Experience Gate and Interruption Budget Gate.
 - Added UI-Character-Action linkage system.
-- Added `CHARACTER_SYSTEM.md` as the unified character behavior/action/skeleton boundary.
+- Added `design/character-system.md` as the unified character behavior/action/skeleton boundary.
 - Added GitHub issue templates for bug reports, feature requests, safety reports, documentation requests, and issue routing config.
 - Added `.github/pull_request_template.md` with scope, safety, validation, and release-impact checks.
 - Added `docs/release/strategy.md` and `docs/release/checklist.md` for open-source release planning and release readiness review.
@@ -33,13 +33,13 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Added `cocos-asset-policy`, `cocos-first-implementation-story`, `cocos-dev-story-prewrite`, `cocos-qa-review`, and `cocos-release-review` command definitions.
 - Added Pre-write Approval Gate, Cocos Generated Meta Gate, QA Review Gate, and First MVP Acceptance Gate.
 - Added first MVP pipeline success self-test coverage.
-- Added `GAME_NUMERICAL_DESIGN.md` for gameplay stats, difficulty, rewards, costs, placeholder values, legal ranges, and balance validation rules.
+- Added `design/numerical-design.md` for gameplay stats, difficulty, rewards, costs, placeholder values, legal ranges, and balance validation rules.
 - Added `cocos-numerical-design` command routing.
 - Added `Numerical Design Gate` to `protocols/quality-gates.md`.
-- Added `GAME_ECONOMY_DESIGN.md` for currencies, sources, sinks, reward cadence, upgrades, stamina/energy, ads, shops, gacha boundaries, and economy validation rules.
+- Added `design/economy-design.md` for currencies, sources, sinks, reward cadence, upgrades, stamina/energy, ads, shops, gacha boundaries, and economy validation rules.
 - Added `cocos-economy-design` command routing.
 - Added `Economy Design Gate` to `protocols/quality-gates.md`.
-- Added `ANIMATION_PRESENTATION_RULES.md` for actor animation states, UI motion, combat feedback, VFX, Spine/Tween/AnimationClip boundaries, and presentation validation.
+- Added `design/animation-presentation.md` for actor animation states, UI motion, combat feedback, VFX, Spine/Tween/AnimationClip boundaries, and presentation validation.
 - Added `cocos-animation-design` command routing.
 - Added `Animation Presentation Gate` to `protocols/quality-gates.md`.
 - Added `production/game-readiness-gate.md` for deciding whether Codex may start real implementation, continue design repair, fix runtime readiness, reduce scope, or stop as blocked.
@@ -56,6 +56,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Migrated game design, numerical, economy, animation, asset, character, and UI boundary documents into `design/`.
 - Migrated production, release, role, ownership, planning, risk, and operations documents into `production/`.
 - Migrated safety, validation, audit, runtime proof, diff review, and quality gate documents into `protocols/`.
 - Migrated write approval, dev-story pre-write, and generated meta protocols into `protocols/`.
@@ -66,7 +67,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Migrated open-source roadmap and release docs into staged `docs/open-source/` and `docs/release/` folders.
 - Updated `MODULE_INDEX.md` and docs validation coverage to include the repository structure plan.
 - Updated `npm run check` so it validates generated artifacts through a temporary directory instead of writing repository outputs.
-- Updated `scripts/validate_skill_docs.py` to require `ASSET_POLICY.md`, remove the deferred asset-policy link exception, and merge duplicate pre-write safety checks.
+- Updated `scripts/validate_skill_docs.py` to require `design/asset-policy.md`, remove the deferred asset-policy link exception, and merge duplicate pre-write safety checks.
 - Integrated context loading policy and lightweight context summary into Skill routing, module index, and validation checks.
 - Updated context guidance so normal development starts with a lightweight summary and expands only by trigger.
 - Updated cocos-dev-story workflow so implementation after approved pre-write scope runs in Fast Build Mode.

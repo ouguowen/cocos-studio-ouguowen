@@ -91,10 +91,10 @@ Audit Mode must clearly state that it is operating in Audit Mode.
 
 Load these files only when triggered:
 
-- `GAME_NUMERICAL_DESIGN.md`: numbers, difficulty, rewards, costs, balance.
-- `GAME_ECONOMY_DESIGN.md`: currency, shop, gacha, inventory value, stamina, monetization.
-- `ANIMATION_PRESENTATION_RULES.md`: animation, tween, VFX, Spine, particles, audio-visual timing.
-- `UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md`: UI input, character response, action state, animation state, skeleton presentation.
+- `design/numerical-design.md`: numbers, difficulty, rewards, costs, balance.
+- `design/economy-design.md`: currency, shop, gacha, inventory value, stamina, monetization.
+- `design/animation-presentation.md`: animation, tween, VFX, Spine, particles, audio-visual timing.
+- `design/ui-character-action-linkage.md`: UI input, character response, action state, animation state, skeleton presentation.
 - `protocols/cocos-dev-story-prewrite.md`: before approved dev-story implementation writes scene, script, prefab, meta, or runtime files.
 - `protocols/runtime-proof.md`: when runtime proof or preview proof is claimed.
 - `protocols/cocos-generated-meta.md`: when generated meta appears or diff scope includes generated companion meta.

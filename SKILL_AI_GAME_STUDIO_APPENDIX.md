@@ -17,8 +17,8 @@ When the user asks for AI Game Studio mode, load these files in order:
 ## Command routing
 
 - `cocos-game-brief`: use `COMMANDS.md`, `TEMPLATES.md`, and `production/project-memory.md`
-- `cocos-classify-game`: use `GAME_CLASSIFIER_SYSTEM.md` and `GAME_TYPE_TEMPLATES.md`
-- `cocos-gdd`: use `production/prd-constraints.md`, `GAME_TYPE_TEMPLATES.md`, and `TEMPLATES.md`
+- `cocos-classify-game`: use `design/game-classifier.md` and `design/game-type-templates.md`
+- `cocos-gdd`: use `production/prd-constraints.md`, `design/game-type-templates.md`, and `TEMPLATES.md`
 - `cocos-project-context`: use `production/project-memory.md`
 - `cocos-game-architecture`: use `COCOS_RULES.md`, `PROJECT_STRUCTURE.md`, and `LEVEL_SYSTEM_ARCHITECTURE.md`
 - `cocos-config-schema`: use `LEVEL_CONFIG_SCHEMAS.md` and `LEVEL_CONFIG_SCHEMA_EXTENSIONS.md`

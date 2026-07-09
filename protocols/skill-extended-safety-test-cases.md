@@ -105,7 +105,7 @@ Expected decision: `BLOCKED`
 Expected rule:
 
 - `protocols/cocos-path-scope.md`
-- `ANIMATION_PRESENTATION_RULES.md`
+- `design/animation-presentation.md`
 
 Must forbid:
 

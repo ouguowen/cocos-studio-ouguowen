@@ -127,17 +127,17 @@ Future home for project control and ownership:
 
 Future home for game design boundaries:
 
-- `GAME_CLASSIFIER_SYSTEM.md`
-- `GAME_TYPE_TEMPLATES.md`
-- `GAME_NUMERICAL_DESIGN.md`
-- `GAME_ECONOMY_DESIGN.md`
-- `ANIMATION_PRESENTATION_RULES.md`
-- `ASSET_POLICY.md`
-- `ASSET_SEMANTIC_MODEL.md`
-- `CHARACTER_SYSTEM.md`
-- `UI_SYSTEM_MODEL.md`
-- `UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md`
-- `CHARACTER_ANIMATION_MODEL.md`
+- `design/game-classifier.md`
+- `design/game-type-templates.md`
+- `design/numerical-design.md`
+- `design/economy-design.md`
+- `design/animation-presentation.md`
+- `design/asset-policy.md`
+- `design/asset-semantic-model.md`
+- `design/character-system.md`
+- `design/ui-system-model.md`
+- `design/ui-character-action-linkage.md`
+- `design/character-animation-model.md`
 
 ### `architecture/`
 
@@ -271,6 +271,21 @@ Completed batch 8:
 - `PLAYBOOK_SYSTEM.md` -> `production/playbook-system.md`
 - `OUTSOURCING_COLLAB_RULES.md` -> `production/outsourcing-collab-rules.md`
 - `COLLAB_HANDOFF_SYSTEM.md` -> `production/collab-handoff-system.md`
+
+Completed batch 9:
+
+- `GAME_CLASSIFIER_SYSTEM.md` -> `design/game-classifier.md`
+- `GAME_TYPE_TEMPLATES.md` -> `design/game-type-templates.md`
+- `EXAMPLE_PACK_EXPANSION_PLAN.md` -> `design/example-pack-expansion-plan.md`
+- `GAME_NUMERICAL_DESIGN.md` -> `design/numerical-design.md`
+- `GAME_ECONOMY_DESIGN.md` -> `design/economy-design.md`
+- `ANIMATION_PRESENTATION_RULES.md` -> `design/animation-presentation.md`
+- `ASSET_POLICY.md` -> `design/asset-policy.md`
+- `ASSET_SEMANTIC_MODEL.md` -> `design/asset-semantic-model.md`
+- `CHARACTER_SYSTEM.md` -> `design/character-system.md`
+- `UI_SYSTEM_MODEL.md` -> `design/ui-system-model.md`
+- `UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md` -> `design/ui-character-action-linkage.md`
+- `CHARACTER_ANIMATION_MODEL.md` -> `design/character-animation-model.md`
 
 Allowed candidates:
 

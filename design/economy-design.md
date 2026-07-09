@@ -13,7 +13,7 @@ This file is not a business plan and not a full live-ops economy. It is the mini
 - Costs must create understandable decisions, not spreadsheet confusion.
 - Monetization and ads must not be introduced before the product loop and player value are clear.
 - Prototype economy numbers may be fake, but must be labeled as temporary.
-- Economy design must respect [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md) when values affect difficulty, pacing, or rewards.
+- Economy design must respect [design/numerical-design.md](numerical-design.md) when values affect difficulty, pacing, or rewards.
 
 ## Required inputs before economy design
 

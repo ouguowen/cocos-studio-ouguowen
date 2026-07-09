@@ -36,7 +36,7 @@ Use this file when the team needs a starting code or runtime blueprint matched t
 
 ## Template routing
 
-- Pair this with [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md) first.
+- Pair this with [design/game-classifier.md](design/game-classifier.md) first.
 - Pair this with [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for folder layout.
 - Pair this with [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md) when level runtime is primary.
 

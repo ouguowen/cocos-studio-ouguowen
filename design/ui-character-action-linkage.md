@@ -198,9 +198,9 @@ Documentation-only changes use diff proof. Runtime proof is not applicable unles
 
 ## 17. Related models
 
-- [CHARACTER_SYSTEM.md](CHARACTER_SYSTEM.md)
-- [UI_SYSTEM_MODEL.md](UI_SYSTEM_MODEL.md)
-- [CHARACTER_ANIMATION_MODEL.md](CHARACTER_ANIMATION_MODEL.md)
-- [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md)
-- [protocols/quality-gates.md](protocols/quality-gates.md)
-- [protocols/runtime-proof.md](protocols/runtime-proof.md)
+- [design/character-system.md](character-system.md)
+- [design/ui-system-model.md](ui-system-model.md)
+- [design/character-animation-model.md](character-animation-model.md)
+- [design/asset-semantic-model.md](asset-semantic-model.md)
+- [protocols/quality-gates.md](../protocols/quality-gates.md)
+- [protocols/runtime-proof.md](../protocols/runtime-proof.md)

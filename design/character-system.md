@@ -47,9 +47,9 @@ Asset binding must follow controller-owned behavior and character-owned action s
 
 Asset binding may provide visuals or structure only.
 
-## 7. Linkage with UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md
+## 7. Linkage with design/ui-character-action-linkage.md
 
-Any character-related UI interaction must follow [UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md](UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md).
+Any character-related UI interaction must follow [design/ui-character-action-linkage.md](ui-character-action-linkage.md).
 
 Required chain:
 

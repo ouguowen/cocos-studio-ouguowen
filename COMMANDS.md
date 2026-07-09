@@ -309,7 +309,7 @@ Rules:
 
 - This is a design / policy command.
 - It does not authorize writing scene, prefab, meta, runtime code, or Cocos game project files.
-- It must follow [CHARACTER_SYSTEM.md](CHARACTER_SYSTEM.md), [CHARACTER_ANIMATION_MODEL.md](CHARACTER_ANIMATION_MODEL.md), [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md), and [UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md](UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md) when UI or feedback is involved.
+- It must follow [design/character-system.md](design/character-system.md), [design/character-animation-model.md](design/character-animation-model.md), [design/asset-semantic-model.md](design/asset-semantic-model.md), and [design/ui-character-action-linkage.md](design/ui-character-action-linkage.md) when UI or feedback is involved.
 - Implementation still requires production readiness and pre-write approval.
 - Do not add full Spine tooling, full skeleton binding, combat, economy, inventory, shop, gacha, save/load, or multi-character action systems unless the selected game type and production readiness approve the scope.
 
@@ -334,7 +334,7 @@ Rules:
 
 - This is a design / policy command.
 - It does not authorize writing scene, prefab, meta, runtime code, or Cocos game project files.
-- It must apply [UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md](UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md), [UI_SYSTEM_MODEL.md](UI_SYSTEM_MODEL.md), [CHARACTER_SYSTEM.md](CHARACTER_SYSTEM.md), [CHARACTER_ANIMATION_MODEL.md](CHARACTER_ANIMATION_MODEL.md), and [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md).
+- It must apply [design/ui-character-action-linkage.md](design/ui-character-action-linkage.md), [design/ui-system-model.md](design/ui-system-model.md), [design/character-system.md](design/character-system.md), [design/character-animation-model.md](design/character-animation-model.md), and [design/asset-semantic-model.md](design/asset-semantic-model.md).
 - UI input is request-only; controller/domain logic owns final state.
 - Animation and skeleton presentation must not own gameplay result.
 - Asset imports must not create gameplay systems.

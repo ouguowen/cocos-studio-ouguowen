@@ -17,7 +17,7 @@ This policy keeps assets separate from behavior, economy, level truth, and runti
 - External assets require source, license, owner, approver, and import scope before production use.
 - Generated assets require the same ownership, approval, and scope rules as imported assets.
 - Cocos `.scene`, `.prefab`, `.anim`, and `.meta` files must not be raw text edited.
-- Cocos-generated `.meta` files must follow [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md).
+- Cocos-generated `.meta` files must follow [protocols/cocos-generated-meta.md](../protocols/cocos-generated-meta.md).
 
 ## MVP placeholder policy
 
@@ -89,11 +89,11 @@ Forbidden:
 
 ## Routing
 
-- Use [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md) for asset meaning and behavior-free semantics.
-- Use [protocols/cocos-resource-risk-matrix.md](protocols/cocos-resource-risk-matrix.md) for resource risk classification.
-- Use [protocols/cocos-path-scope.md](protocols/cocos-path-scope.md) for path boundaries.
-- Use [protocols/cocos-generated-meta.md](protocols/cocos-generated-meta.md) when generated `.meta` files appear.
-- Use [protocols/runtime-proof.md](protocols/runtime-proof.md) when asset visibility or presentation must be proven in browser preview.
+- Use [design/asset-semantic-model.md](asset-semantic-model.md) for asset meaning and behavior-free semantics.
+- Use [protocols/cocos-resource-risk-matrix.md](../protocols/cocos-resource-risk-matrix.md) for resource risk classification.
+- Use [protocols/cocos-path-scope.md](../protocols/cocos-path-scope.md) for path boundaries.
+- Use [protocols/cocos-generated-meta.md](../protocols/cocos-generated-meta.md) when generated `.meta` files appear.
+- Use [protocols/runtime-proof.md](../protocols/runtime-proof.md) when asset visibility or presentation must be proven in browser preview.
 
 ## Stop conditions
 

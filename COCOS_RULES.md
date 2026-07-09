@@ -82,7 +82,7 @@ assets/
 - Animation state should be derived from gameplay state, not invented independently.
 - VFX timing should support readability, not obscure it.
 - Effects, shaders, and materials must stay within performance budgets.
-- For animation states, UI motion, combat feedback, VFX, Spine, Tween, AnimationClip, particles, or audio-visual timing, apply [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md) before implementation.
+- For animation states, UI motion, combat feedback, VFX, Spine, Tween, AnimationClip, particles, or audio-visual timing, apply [design/animation-presentation.md](design/animation-presentation.md) before implementation.
 
 ## Performance discipline
 

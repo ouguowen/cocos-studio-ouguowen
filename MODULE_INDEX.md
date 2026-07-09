@@ -42,16 +42,16 @@ Use this file to route a request into the correct module family before loading d
 
 ## 3. Game definition and scope
 
-- [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md): classify the game before template choice
-- [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md): select the closest genre or loop template
-- [EXAMPLE_PACK_EXPANSION_PLAN.md](EXAMPLE_PACK_EXPANSION_PLAN.md): expand example packs by selected game type without turning the skill into one universal template
+- [design/game-classifier.md](design/game-classifier.md): classify the game before template choice
+- [design/game-type-templates.md](design/game-type-templates.md): select the closest genre or loop template
+- [design/example-pack-expansion-plan.md](design/example-pack-expansion-plan.md): expand example packs by selected game type without turning the skill into one universal template
 - [docs/examples/general.md](docs/examples/general.md): applied workflow examples for common Cocos Studio situations
 - [production/game-readiness-gate.md](production/game-readiness-gate.md): decide whether the project is ready for real implementation, design repair, runtime repair, or scope reduction
 - [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md): proven first-MVP command chain from brief to `FIRST_MVP_ACCEPTED`
-- [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md): define gameplay numbers, difficulty, rewards, costs, and balance rules before implementation
-- [GAME_ECONOMY_DESIGN.md](GAME_ECONOMY_DESIGN.md): define currencies, sources, sinks, rewards, upgrades, ads, shops, gacha boundaries, and economy validation before implementation
-- [ANIMATION_PRESENTATION_RULES.md](ANIMATION_PRESENTATION_RULES.md): define animation states, UI motion, feedback, VFX, Spine/Tween/AnimationClip boundaries, and presentation validation before implementation
-- [ASSET_POLICY.md](ASSET_POLICY.md): asset source, placeholder, import, and forbidden asset boundaries before implementation
+- [design/numerical-design.md](design/numerical-design.md): define gameplay numbers, difficulty, rewards, costs, and balance rules before implementation
+- [design/economy-design.md](design/economy-design.md): define currencies, sources, sinks, rewards, upgrades, ads, shops, gacha boundaries, and economy validation before implementation
+- [design/animation-presentation.md](design/animation-presentation.md): define animation states, UI motion, feedback, VFX, Spine/Tween/AnimationClip boundaries, and presentation validation before implementation
+- [design/asset-policy.md](design/asset-policy.md): asset source, placeholder, import, and forbidden asset boundaries before implementation
 - [production/mvp-prototype-rules.md](production/mvp-prototype-rules.md): cut to the first real playable product
 - [production/playbook-system.md](production/playbook-system.md): recurring operating procedures
 - [production/prd-constraints.md](production/prd-constraints.md): PRD structure and red flags
@@ -63,11 +63,11 @@ Use this file to route a request into the correct module family before loading d
 - [COCOS_RULES.md](COCOS_RULES.md): engineering law for Cocos Creator 3.8.8
 - [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md): default project layout
 - [ARCHITECTURE_TEMPLATE_SYSTEM.md](ARCHITECTURE_TEMPLATE_SYSTEM.md): choose a matching runtime blueprint family
-- [UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md](UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md): UI input, behavior request, character intent, action state, animation state, visual output, and UI feedback ownership chain
-- [CHARACTER_SYSTEM.md](CHARACTER_SYSTEM.md): character identity, behavior, action state, animation state, skeleton boundary, and asset binding boundary
-- [UI_SYSTEM_MODEL.md](UI_SYSTEM_MODEL.md): UI layer, control, feedback, binding, and request-only input semantics
-- [CHARACTER_ANIMATION_MODEL.md](CHARACTER_ANIMATION_MODEL.md): character animation state, transition, event, and presentation boundaries
-- [ASSET_SEMANTIC_MODEL.md](ASSET_SEMANTIC_MODEL.md): asset meaning, ownership, import boundary, and behavior-free asset semantics
+- [design/ui-character-action-linkage.md](design/ui-character-action-linkage.md): UI input, behavior request, character intent, action state, animation state, visual output, and UI feedback ownership chain
+- [design/character-system.md](design/character-system.md): character identity, behavior, action state, animation state, skeleton boundary, and asset binding boundary
+- [design/ui-system-model.md](design/ui-system-model.md): UI layer, control, feedback, binding, and request-only input semantics
+- [design/character-animation-model.md](design/character-animation-model.md): character animation state, transition, event, and presentation boundaries
+- [design/asset-semantic-model.md](design/asset-semantic-model.md): asset meaning, ownership, import boundary, and behavior-free asset semantics
 - [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md): choose the right content and level data model
 - [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md): common wave-spawn and stage-table schemas
 - [LEVEL_CONFIG_SCHEMA_EXTENSIONS.md](LEVEL_CONFIG_SCHEMA_EXTENSIONS.md): optional support tables for wave-spawn projects

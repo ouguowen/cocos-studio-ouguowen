@@ -4,7 +4,7 @@ Use this file only when the request is not covered by [WORKFLOWS.md](WORKFLOWS.m
 
 ## Strategy and planning
 
-- Classify a game: open [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md) before template or architecture choice.
+- Classify a game: open [design/game-classifier.md](design/game-classifier.md) before template or architecture choice.
 - Choose an architecture template: open [ARCHITECTURE_TEMPLATE_SYSTEM.md](ARCHITECTURE_TEMPLATE_SYSTEM.md) after classification is stable.
 - Write a PRD: open [production/prd-constraints.md](production/prd-constraints.md) before drafting.
 - Break work into tasks: open [production/task-decomposition.md](production/task-decomposition.md) and split by ownership and reviewable output.

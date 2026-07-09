@@ -83,11 +83,11 @@ The validator requires key files such as:
 - `CONTEXT_LOADING_POLICY.md`
 - `SKILL_CONTEXT_SUMMARY.md`
 - `SKILL_OPERATION_MODES.md`
-- `UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md`
-- `CHARACTER_SYSTEM.md`
-- `UI_SYSTEM_MODEL.md`
-- `CHARACTER_ANIMATION_MODEL.md`
-- `ASSET_SEMANTIC_MODEL.md`
+- `design/ui-character-action-linkage.md`
+- `design/character-system.md`
+- `design/ui-system-model.md`
+- `design/character-animation-model.md`
+- `design/asset-semantic-model.md`
 - `CONTRIBUTING.md`
 - `SECURITY.md`
 - `FIRST_MVP_SUCCESS_PIPELINE.md`
