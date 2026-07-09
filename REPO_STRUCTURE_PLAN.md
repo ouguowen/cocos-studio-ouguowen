@@ -210,6 +210,14 @@ Completed batch 4:
 - `MVP_ACCEPTANCE_REPORT_TEMPLATE.md` -> `templates/reports/mvp-acceptance.md`
 - `INCIDENT_POSTMORTEM_TEMPLATE.md` -> `templates/reports/incident-postmortem.md`
 
+Completed batch 5:
+
+- `QUICK_START.md` -> `docs/quickstart/general.md`
+- `EXAMPLES.md` -> `docs/examples/general.md`
+- `ROADMAP.md` -> `docs/open-source/project-roadmap.md`
+- `UPDATE_MANIFEST.md` -> `docs/archive/update-manifest-v0.2.0.md`
+- `README_AGENT_WORKFLOW_SECTION.md` -> `docs/archive/readme-agent-workflow-section.md`
+
 Allowed candidates:
 
 - release docs

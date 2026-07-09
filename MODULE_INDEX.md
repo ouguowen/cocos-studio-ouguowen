@@ -13,11 +13,15 @@ Use this file to route a request into the correct module family before loading d
 - [PROJECT_MEMORY_SYSTEM.md](PROJECT_MEMORY_SYSTEM.md): stable project truth across sessions
 - [README.md](README.md): English open-source entry, installation, commands, safety model, and first-MVP links
 - [README.zh-CN.md](README.zh-CN.md): Chinese beginner entry, safe first prompts, and beginner boundaries
+- [docs/quickstart/general.md](docs/quickstart/general.md): beginner setup and first Skill-loading checks
 - [docs/quickstart/first-mvp.md](docs/quickstart/first-mvp.md): first-MVP command path from idea to release review
 - [docs/open-source/roadmap.md](docs/open-source/roadmap.md): open-source polish roadmap and contribution priorities
+- [docs/open-source/project-roadmap.md](docs/open-source/project-roadmap.md): version-level AI Game Studio roadmap and completed capability history
 - [docs/validation/automation.md](docs/validation/automation.md): GitHub Actions and local Skill docs validation guide
 - [docs/release/strategy.md](docs/release/strategy.md): release lanes, release gates, blockers, and post-release review
 - [docs/release/checklist.md](docs/release/checklist.md): release readiness checklist for scope, docs, templates, validation, and release decision
+- [docs/archive/update-manifest-v0.2.0.md](docs/archive/update-manifest-v0.2.0.md): historical v0.2.0 update package manifest
+- [docs/archive/readme-agent-workflow-section.md](docs/archive/readme-agent-workflow-section.md): historical README workflow-section patch draft
 
 ## 2. Roles, authority, and handoff
 
@@ -41,6 +45,7 @@ Use this file to route a request into the correct module family before loading d
 - [GAME_CLASSIFIER_SYSTEM.md](GAME_CLASSIFIER_SYSTEM.md): classify the game before template choice
 - [GAME_TYPE_TEMPLATES.md](GAME_TYPE_TEMPLATES.md): select the closest genre or loop template
 - [EXAMPLE_PACK_EXPANSION_PLAN.md](EXAMPLE_PACK_EXPANSION_PLAN.md): expand example packs by selected game type without turning the skill into one universal template
+- [docs/examples/general.md](docs/examples/general.md): applied workflow examples for common Cocos Studio situations
 - [GAME_PRODUCTION_READINESS_GATE.md](GAME_PRODUCTION_READINESS_GATE.md): decide whether the project is ready for real implementation, design repair, runtime repair, or scope reduction
 - [FIRST_MVP_SUCCESS_PIPELINE.md](FIRST_MVP_SUCCESS_PIPELINE.md): proven first-MVP command chain from brief to `FIRST_MVP_ACCEPTED`
 - [GAME_NUMERICAL_DESIGN.md](GAME_NUMERICAL_DESIGN.md): define gameplay numbers, difficulty, rewards, costs, and balance rules before implementation

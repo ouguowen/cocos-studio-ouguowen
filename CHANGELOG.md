@@ -56,6 +56,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Migrated quick start, general examples, project roadmap, and historical update drafts into `docs/quickstart/`, `docs/examples/`, `docs/open-source/`, and `docs/archive/`.
 - Migrated checklist and report templates into `templates/checklists/` and `templates/reports/`.
 - Migrated quickstart and automation validation docs into `docs/quickstart/` and `docs/validation/`.
 - Migrated local proof runbooks into `docs/proof/`.
@@ -81,7 +82,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 - Updated command routing and quality gates for QA/release closure.
 - Updated runtime proof rules so first-MVP browser preview proof must show title/objective/action/result style visibility when applicable.
 - Updated write approval and path scope rules so unapproved Cocos-generated `.meta` files require a stop-and-confirm step.
-- Updated `QUICK_START.md` with a provider-driven AI Game Studio startup prompt.
+- Updated `docs/quickstart/general.md` with a provider-driven AI Game Studio startup prompt.
 - Added a quick check that separates the reusable multi-game-type Skill from the currently selected game type.
 - Added a provider-driven proof workflow that treats the current Cocos automation tool/MCP provider as an execution channel.
 - Added Preview Visibility Gate routing to `SKILL.md` so script-runtime proof cannot bypass browser-preview visibility.
