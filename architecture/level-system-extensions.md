@@ -1,6 +1,6 @@
 # Level System Extensions
 
-Use this file only after the core runtime in [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md) is already justified and stable.
+Use this file only after the core runtime in [architecture/level-system.md](level-system.md) is already justified and stable.
 
 Do not import these systems into early prototypes just because large commercial games have them.
 

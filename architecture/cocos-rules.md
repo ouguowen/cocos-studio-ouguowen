@@ -2,7 +2,7 @@
 
 This file defines the non-chaotic implementation rules for a `Cocos Creator 3.8.8` project.
 
-If a request may depend on another engine version, check [COCOS_3_8_8_BASELINE.md](COCOS_3_8_8_BASELINE.md) first and call out the mismatch before giving version-sensitive advice.
+If a request may depend on another engine version, check [architecture/cocos-baseline-3-8-8.md](cocos-baseline-3-8-8.md) first and call out the mismatch before giving version-sensitive advice.
 
 ## Recommended project shape
 
@@ -82,7 +82,7 @@ assets/
 - Animation state should be derived from gameplay state, not invented independently.
 - VFX timing should support readability, not obscure it.
 - Effects, shaders, and materials must stay within performance budgets.
-- For animation states, UI motion, combat feedback, VFX, Spine, Tween, AnimationClip, particles, or audio-visual timing, apply [design/animation-presentation.md](design/animation-presentation.md) before implementation.
+- For animation states, UI motion, combat feedback, VFX, Spine, Tween, AnimationClip, particles, or audio-visual timing, apply [design/animation-presentation.md](../design/animation-presentation.md) before implementation.
 
 ## Performance discipline
 

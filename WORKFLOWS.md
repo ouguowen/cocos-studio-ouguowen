@@ -35,7 +35,7 @@ Use these high-frequency execution patterns first. Open [WORKFLOW_EXTENSIONS.md]
 
 ## 5. Building the project structure
 
-1. Apply [COCOS_RULES.md](COCOS_RULES.md) and [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md).
+1. Apply [architecture/cocos-rules.md](architecture/cocos-rules.md) and [architecture/project-structure.md](architecture/project-structure.md).
 2. Create only the structure justified by the current mode and stage.
 3. Name the owner for scene shell, UI framework, config schema, and resource loading.
 
@@ -48,9 +48,9 @@ Use these high-frequency execution patterns first. Open [WORKFLOW_EXTENSIONS.md]
 
 ## 7. Implementing the level runtime
 
-1. Start from [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md).
+1. Start from [architecture/level-system.md](architecture/level-system.md).
 2. Keep config, runtime state, systems, factories, and scene bridge separate.
-3. Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only when the game truly needs monetization, live ops, sync, social, or compliance layers.
+3. Open [architecture/level-system-extensions.md](architecture/level-system-extensions.md) only when the game truly needs monetization, live ops, sync, social, or compliance layers.
 4. Reject designs where one `LevelManager` owns the whole level stack.
 
 ## 8. Fixing a messy project

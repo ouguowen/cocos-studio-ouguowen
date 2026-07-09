@@ -33,7 +33,7 @@ This story proves that the example pack has valid source data before Cocos scene
 ## Required source truth
 
 - `examples/attack-defense-city/level-config/*.csv`
-- `LEVEL_CONFIG_SCHEMAS.md`
+- `architecture/level-config-schemas.md`
 - `scripts/validate-level-config.js`
 - `scripts/export-level-config.js`
 - `scripts/export-level-types.js`

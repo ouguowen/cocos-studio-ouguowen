@@ -1,6 +1,6 @@
 # Level Config Schema Extensions
 
-Use this file only when the core tables in [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md) are not enough for the chosen wave-spawn game.
+Use this file only when the core tables in [architecture/level-config-schemas.md](level-config-schemas.md) are not enough for the chosen wave-spawn game.
 
 ## 1. `LevelTemplate.csv`
 

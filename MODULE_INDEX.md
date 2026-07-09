@@ -59,22 +59,22 @@ Use this file to route a request into the correct module family before loading d
 
 ## 4. Architecture and content systems
 
-- [COCOS_3_8_8_BASELINE.md](COCOS_3_8_8_BASELINE.md): engine-version baseline for Cocos Creator 3.8.8
-- [COCOS_RULES.md](COCOS_RULES.md): engineering law for Cocos Creator 3.8.8
-- [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md): default project layout
-- [ARCHITECTURE_TEMPLATE_SYSTEM.md](ARCHITECTURE_TEMPLATE_SYSTEM.md): choose a matching runtime blueprint family
+- [architecture/cocos-baseline-3-8-8.md](architecture/cocos-baseline-3-8-8.md): engine-version baseline for Cocos Creator 3.8.8
+- [architecture/cocos-rules.md](architecture/cocos-rules.md): engineering law for Cocos Creator 3.8.8
+- [architecture/project-structure.md](architecture/project-structure.md): default project layout
+- [architecture/template-system.md](architecture/template-system.md): choose a matching runtime blueprint family
 - [design/ui-character-action-linkage.md](design/ui-character-action-linkage.md): UI input, behavior request, character intent, action state, animation state, visual output, and UI feedback ownership chain
 - [design/character-system.md](design/character-system.md): character identity, behavior, action state, animation state, skeleton boundary, and asset binding boundary
 - [design/ui-system-model.md](design/ui-system-model.md): UI layer, control, feedback, binding, and request-only input semantics
 - [design/character-animation-model.md](design/character-animation-model.md): character animation state, transition, event, and presentation boundaries
 - [design/asset-semantic-model.md](design/asset-semantic-model.md): asset meaning, ownership, import boundary, and behavior-free asset semantics
-- [LEVEL_DATA_MODELS.md](LEVEL_DATA_MODELS.md): choose the right content and level data model
-- [LEVEL_CONFIG_SCHEMAS.md](LEVEL_CONFIG_SCHEMAS.md): common wave-spawn and stage-table schemas
-- [LEVEL_CONFIG_SCHEMA_EXTENSIONS.md](LEVEL_CONFIG_SCHEMA_EXTENSIONS.md): optional support tables for wave-spawn projects
+- [architecture/level-data-models.md](architecture/level-data-models.md): choose the right content and level data model
+- [architecture/level-config-schemas.md](architecture/level-config-schemas.md): common wave-spawn and stage-table schemas
+- [architecture/level-config-schema-extensions.md](architecture/level-config-schema-extensions.md): optional support tables for wave-spawn projects
 - [LEVEL_TEMPLATES.md](LEVEL_TEMPLATES.md): level-specific design and runtime artifacts
-- [LEVEL_SYSTEM_ARCHITECTURE.md](LEVEL_SYSTEM_ARCHITECTURE.md): core runtime implementation boundaries
-- [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md): optional advanced systems for live service or large-scope games
-- [RUNTIME_TEMPLATE_ROUTER.md](RUNTIME_TEMPLATE_ROUTER.md): map requests to the right runtime template assets and scripts
+- [architecture/level-system.md](architecture/level-system.md): core runtime implementation boundaries
+- [architecture/level-system-extensions.md](architecture/level-system-extensions.md): optional advanced systems for live service or large-scope games
+- [architecture/runtime-template-router.md](architecture/runtime-template-router.md): map requests to the right runtime template assets and scripts
 
 ## 5. Delivery, release, and live operations
 

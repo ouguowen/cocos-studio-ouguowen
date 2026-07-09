@@ -20,8 +20,8 @@ When the user asks for AI Game Studio mode, load these files in order:
 - `cocos-classify-game`: use `design/game-classifier.md` and `design/game-type-templates.md`
 - `cocos-gdd`: use `production/prd-constraints.md`, `design/game-type-templates.md`, and `TEMPLATES.md`
 - `cocos-project-context`: use `production/project-memory.md`
-- `cocos-game-architecture`: use `COCOS_RULES.md`, `PROJECT_STRUCTURE.md`, and `LEVEL_SYSTEM_ARCHITECTURE.md`
-- `cocos-config-schema`: use `LEVEL_CONFIG_SCHEMAS.md` and `LEVEL_CONFIG_SCHEMA_EXTENSIONS.md`
+- `cocos-game-architecture`: use `architecture/cocos-rules.md`, `architecture/project-structure.md`, and `architecture/level-system.md`
+- `cocos-config-schema`: use `architecture/level-config-schemas.md` and `architecture/level-config-schema-extensions.md`
 - `cocos-create-story`: use `production/task-decomposition.md` and `COMMANDS.md`
 - `cocos-dev-story`: use `CHOICE_EXECUTION_PROTOCOL.md` and `SEQUENTIAL_GATE_PROTOCOL.md`
 - `cocos-code-review`: use `production/review-system.md`, `protocols/quality-gates.md`, and `templates/checklists/core.md`

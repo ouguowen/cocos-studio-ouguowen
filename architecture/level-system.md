@@ -2,7 +2,7 @@
 
 Use this file when implementing a Cocos Creator 3.8.8 level runtime from level data, CSV-derived JSON, editor-exported points, or generated config.
 
-Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only when the game truly needs monetization, live ops, sync, social, compliance, or online-service layers.
+Open [architecture/level-system-extensions.md](level-system-extensions.md) only when the game truly needs monetization, live ops, sync, social, compliance, or online-service layers.
 
 ## Core principle
 
@@ -154,7 +154,7 @@ Keep the event bus local to gameplay runtime boundaries. Do not turn it into a g
 
 ## Extension trigger
 
-Open [LEVEL_SYSTEM_EXTENSIONS.md](LEVEL_SYSTEM_EXTENSIONS.md) only when one of these is true:
+Open [architecture/level-system-extensions.md](level-system-extensions.md) only when one of these is true:
 
 - the game has ads, IAP, gacha, or economy persistence
 - the game has remote config, experiments, or hotfix switches

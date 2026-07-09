@@ -143,16 +143,16 @@ Future home for game design boundaries:
 
 Future home for Cocos and runtime architecture:
 
-- `COCOS_3_8_8_BASELINE.md`
-- `COCOS_RULES.md`
-- `PROJECT_STRUCTURE.md`
-- `ARCHITECTURE_TEMPLATE_SYSTEM.md`
-- `LEVEL_SYSTEM_ARCHITECTURE.md`
-- `LEVEL_SYSTEM_EXTENSIONS.md`
-- `LEVEL_DATA_MODELS.md`
-- `LEVEL_CONFIG_SCHEMAS.md`
-- `LEVEL_CONFIG_SCHEMA_EXTENSIONS.md`
-- `RUNTIME_TEMPLATE_ROUTER.md`
+- `architecture/cocos-baseline-3-8-8.md`
+- `architecture/cocos-rules.md`
+- `architecture/project-structure.md`
+- `architecture/template-system.md`
+- `architecture/level-system.md`
+- `architecture/level-system-extensions.md`
+- `architecture/level-data-models.md`
+- `architecture/level-config-schemas.md`
+- `architecture/level-config-schema-extensions.md`
+- `architecture/runtime-template-router.md`
 - `assets/cocos-config-runtime-template/`
 - `assets/cocos-level-runtime-template/`
 
@@ -286,6 +286,19 @@ Completed batch 9:
 - `UI_SYSTEM_MODEL.md` -> `design/ui-system-model.md`
 - `UI_CHARACTER_ACTION_LINKAGE_SYSTEM.md` -> `design/ui-character-action-linkage.md`
 - `CHARACTER_ANIMATION_MODEL.md` -> `design/character-animation-model.md`
+
+Completed batch 10:
+
+- `COCOS_3_8_8_BASELINE.md` -> `architecture/cocos-baseline-3-8-8.md`
+- `COCOS_RULES.md` -> `architecture/cocos-rules.md`
+- `PROJECT_STRUCTURE.md` -> `architecture/project-structure.md`
+- `ARCHITECTURE_TEMPLATE_SYSTEM.md` -> `architecture/template-system.md`
+- `LEVEL_SYSTEM_ARCHITECTURE.md` -> `architecture/level-system.md`
+- `LEVEL_SYSTEM_EXTENSIONS.md` -> `architecture/level-system-extensions.md`
+- `LEVEL_DATA_MODELS.md` -> `architecture/level-data-models.md`
+- `LEVEL_CONFIG_SCHEMAS.md` -> `architecture/level-config-schemas.md`
+- `LEVEL_CONFIG_SCHEMA_EXTENSIONS.md` -> `architecture/level-config-schema-extensions.md`
+- `RUNTIME_TEMPLATE_ROUTER.md` -> `architecture/runtime-template-router.md`
 
 Allowed candidates:
 

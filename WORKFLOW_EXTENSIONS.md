@@ -5,7 +5,7 @@ Use this file only when the request is not covered by [WORKFLOWS.md](WORKFLOWS.m
 ## Strategy and planning
 
 - Classify a game: open [design/game-classifier.md](design/game-classifier.md) before template or architecture choice.
-- Choose an architecture template: open [ARCHITECTURE_TEMPLATE_SYSTEM.md](ARCHITECTURE_TEMPLATE_SYSTEM.md) after classification is stable.
+- Choose an architecture template: open [architecture/template-system.md](architecture/template-system.md) after classification is stable.
 - Write a PRD: open [production/prd-constraints.md](production/prd-constraints.md) before drafting.
 - Break work into tasks: open [production/task-decomposition.md](production/task-decomposition.md) and split by ownership and reviewable output.
 - Plan the version roadmap: open [VERSION_ROADMAP_SYSTEM.md](VERSION_ROADMAP_SYSTEM.md) and define proof obligation before features.
@@ -42,4 +42,4 @@ Use this file only when the request is not covered by [WORKFLOWS.md](WORKFLOWS.m
 - Validate level config tables: run `node scripts/validate-level-config.js <level-data-directory>` and report schema errors first.
 - Export runtime level JSON: run `node scripts/export-level-config.js <level-data-directory> [output-file]` after validation passes.
 - Generate TypeScript config types: run `node scripts/export-level-types.js [output-file]` and treat the generated file as readonly.
-- Wire runtime templates into Cocos: open [RUNTIME_TEMPLATE_ROUTER.md](RUNTIME_TEMPLATE_ROUTER.md) and reuse the provided baseline assets before inventing one-off systems.
+- Wire runtime templates into Cocos: open [architecture/runtime-template-router.md](architecture/runtime-template-router.md) and reuse the provided baseline assets before inventing one-off systems.

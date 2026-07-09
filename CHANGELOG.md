@@ -56,6 +56,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Migrated Cocos baseline, project structure, level-system, config schema, and runtime template routing documents into `architecture/`.
 - Migrated game design, numerical, economy, animation, asset, character, and UI boundary documents into `design/`.
 - Migrated production, release, role, ownership, planning, risk, and operations documents into `production/`.
 - Migrated safety, validation, audit, runtime proof, diff review, and quality gate documents into `protocols/`.

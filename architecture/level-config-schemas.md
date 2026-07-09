@@ -2,7 +2,7 @@
 
 Use this file when designing concrete CSV, spreadsheet, or generated JSON schemas for the common wave-spawn or stage-based small-game model.
 
-Open [LEVEL_CONFIG_SCHEMA_EXTENSIONS.md](LEVEL_CONFIG_SCHEMA_EXTENSIONS.md) only when the project needs optional support tables beyond the core combat-stage path.
+Open [architecture/level-config-schema-extensions.md](level-config-schema-extensions.md) only when the project needs optional support tables beyond the core combat-stage path.
 
 ## Schema law
 
@@ -203,7 +203,7 @@ Move these into the project only when the game actually needs them:
 - `DropGroup.csv`
 - `LevelModifier.csv`
 
-See [LEVEL_CONFIG_SCHEMA_EXTENSIONS.md](LEVEL_CONFIG_SCHEMA_EXTENSIONS.md).
+See [architecture/level-config-schema-extensions.md](level-config-schema-extensions.md).
 
 ## Required validation categories
 
