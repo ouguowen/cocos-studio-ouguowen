@@ -8,11 +8,13 @@ The repository has grown from a small Skill into a production-control system wit
 
 The goal is to make the repository easier to scan and safer for AI agents to load without doing a risky one-shot file move.
 
-## Current rule
+## Current structure rule
 
-Current root-level paths remain canonical until a specific migration batch is approved, implemented, validated, and documented.
+Only root entry files remain canonical at repository root.
 
-Do not move files just because the future directory exists in this plan.
+All supporting Skill documents should live in `core/`, `protocols/`, `production/`, `design/`, `architecture/`, `templates/`, `agents/`, `docs/`, `examples/`, `assets/`, or `scripts/`.
+
+Do not add new root-level support documents unless they are public repository entry points such as `README.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md`, `LICENSE`, `package.json`, or the required `SKILL.md`.
 
 Do not rename or relocate `.scene`, `.prefab`, `.anim`, `.meta`, or live game-project files as part of Skill repository cleanup.
 
@@ -72,7 +74,7 @@ Do not rename or relocate `.scene`, `.prefab`, `.anim`, `.meta`, or live game-pr
   scripts/
 ```
 
-## Future module mapping
+## Current module mapping
 
 ### Root entry files
 
@@ -87,7 +89,7 @@ Root files should remain minimal and stable.
 
 ### `core/`
 
-Future home for first-load and routing files:
+Home for first-load and routing files:
 
 - `core/context-summary.md`
 - `core/context-loading-policy.md`
@@ -97,7 +99,7 @@ Future home for first-load and routing files:
 
 ### `protocols/`
 
-Home for migrated rule and proof protocols, with unmigrated protocols kept at their current root paths until their batch is approved:
+Home for rule, proof, approval, audit, validation, and review protocols:
 
 - `protocols/ai-command-permissions.md`
 - `protocols/write-approval.md`
@@ -112,7 +114,7 @@ Home for migrated rule and proof protocols, with unmigrated protocols kept at th
 
 ### `production/`
 
-Future home for project control and ownership:
+Home for project control, delivery, release, ownership, planning, and operations:
 
 - `production/modes.md`
 - `production/stages.md`
@@ -125,7 +127,7 @@ Future home for project control and ownership:
 
 ### `design/`
 
-Future home for game design boundaries:
+Home for game design boundaries:
 
 - `design/game-classifier.md`
 - `design/game-type-templates.md`
@@ -141,7 +143,7 @@ Future home for game design boundaries:
 
 ### `architecture/`
 
-Future home for Cocos and runtime architecture:
+Home for Cocos and runtime architecture:
 
 - `architecture/cocos-baseline-3-8-8.md`
 - `architecture/cocos-rules.md`
@@ -158,7 +160,7 @@ Future home for Cocos and runtime architecture:
 
 ### `templates/`
 
-Future home for reusable non-runtime artifacts:
+Home for reusable non-runtime artifacts:
 
 - `templates/core.md`
 - `templates/level-templates.md`
@@ -182,7 +184,7 @@ Status: completed.
 
 ### Phase 1: Low-risk documentation migration
 
-Status: in progress.
+Status: completed.
 
 Move only small documentation groups after validation coverage exists.
 
@@ -275,7 +277,7 @@ Completed batch 8:
 Completed batch 9:
 
 - `GAME_CLASSIFIER_SYSTEM.md` -> `design/game-classifier.md`
-- `GAME_TYPE_templates/core.md` -> `design/game-type-templates.md`
+- `GAME_TYPE_TEMPLATES.md` -> `design/game-type-templates.md`
 - `EXAMPLE_PACK_EXPANSION_PLAN.md` -> `design/example-pack-expansion-plan.md`
 - `GAME_NUMERICAL_DESIGN.md` -> `design/numerical-design.md`
 - `GAME_ECONOMY_DESIGN.md` -> `design/economy-design.md`
@@ -336,14 +338,7 @@ Completed batch 13:
 - `SUCCESS_CASE_MOONLIGHT_DELIVERY.md` -> `docs/success-cases/moonlight-delivery.md`
 - `REPO_STRUCTURE_PLAN.md` -> `docs/structure/repository-structure-plan.md`
 
-Allowed candidates:
-
-- release docs
-- contribution docs
-- open-source roadmap docs
-- non-command checklists
-
-Required proof:
+Completion proof:
 
 - `python scripts/validate_skill_docs.py`
 - `npm run check`
@@ -352,7 +347,9 @@ Required proof:
 
 ### Phase 2: Protocol migration
 
-Move approval, runtime proof, diff review, and validation protocols in small batches.
+Status: completed.
+
+Moved approval, runtime proof, diff review, and validation protocols in small batches.
 
 Each batch must update:
 
@@ -364,13 +361,17 @@ Each batch must update:
 
 ### Phase 3: Design and architecture migration
 
-Move design and architecture files only after command routing and validation coverage are stable.
+Status: completed.
+
+Moved design and architecture files after command routing and validation coverage were stable.
 
 Do not mix design-policy moves with runtime-template moves in the same batch.
 
 ### Phase 4: Runtime template review
 
-Review `assets/cocos-config-runtime-template/` and `assets/cocos-level-runtime-template/` separately.
+Status: completed without moving runtime template asset directories.
+
+Reviewed `assets/cocos-config-runtime-template/` and `assets/cocos-level-runtime-template/` separately through package validation.
 
 This phase may require package script updates and TypeScript validation.
 

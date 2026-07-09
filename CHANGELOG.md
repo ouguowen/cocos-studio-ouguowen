@@ -56,6 +56,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Finalized repository structure rules and validation so only root entry files remain at repository root.
 - Migrated Agent system docs, execution-chain protocols, first-MVP pipeline, success case, test matrix, version roadmap, and repository structure plan into organized folders.
 - Migrated context loading, operation mode, command routing, and module index documents into `core/`.
 - Migrated reusable templates, level templates, workflow templates, and prompt patterns into `templates/`.

@@ -17,6 +17,18 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 
+ALLOWED_ROOT_FILES = {
+    ".gitignore",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "package.json",
+    "README.md",
+    "README.zh-CN.md",
+    "SECURITY.md",
+    "SKILL.md",
+}
+
 REQUIRED_FILES = [
     "README.md",
     "README.zh-CN.md",
@@ -257,8 +269,8 @@ CONTENT_CHECKS = {
         "REDUCE_CONTEXT",
     ],
     "docs/structure/repository-structure-plan.md": [
-        "Current root-level paths remain canonical",
-        "Do not move files",
+        "Only root entry files remain canonical",
+        "Do not add new root-level support documents",
         "Target directory model",
         "core/",
         "protocols/",
@@ -540,6 +552,14 @@ def check_required_files_exist(existing: set[str]) -> list[str]:
     return errors
 
 
+def check_root_entry_files() -> list[str]:
+    errors = []
+    for path in ROOT.iterdir():
+        if path.is_file() and path.name not in ALLOWED_ROOT_FILES:
+            errors.append(f"unexpected root-level file: {path.name}")
+    return errors
+
+
 def check_required_content() -> list[str]:
     errors = []
     for file_name, required_terms in CONTENT_CHECKS.items():
@@ -670,6 +690,7 @@ def main() -> int:
     existing = all_existing_paths()
     checks = [
         ("required_files_exist", lambda: check_required_files_exist(existing)),
+        ("root_entry_file_check", check_root_entry_files),
         ("required_content_checks", check_required_content),
         ("markdown_link_check", lambda: check_markdown_links(existing)),
         ("safety_rule_checks", check_safety_rules),
