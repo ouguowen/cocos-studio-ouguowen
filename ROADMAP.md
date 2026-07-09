@@ -174,7 +174,7 @@ Turn the next local Cocos proof step into a strict evidence checklist that can b
 
 Completed work:
 
-1. Added `docs/provider-driven-local-cocos-proof.md`.
+1. Added `docs/proof/provider-driven-local-cocos.md`.
 2. Defined provider capability requirements for project creation/opening, scene creation, node creation, component attachment, inspector binding, prefab creation, preview, screenshots, and failure reporting.
 3. Defined a step-by-step local execution sequence for `examples/attack-defense-city`.
 4. Defined PASS, FAIL, and BLOCKED criteria.
@@ -231,7 +231,7 @@ Turn the manual local proof baseline into a Codex-ready automation guide so futu
 
 Completed work:
 
-1. Added `docs/codex-cocos-automation-proof.md`.
+1. Added `docs/proof/codex-cocos-automation.md`.
 2. Defined required Cocos provider capabilities: version detection, project/scene access, hierarchy proof, component attachment, inspector binding, prefab proof, preview, console logs, screenshots, and failure reporting.
 3. Added the golden target for `attack-defense-city`: `scene_city_battle`, `CityBattleRuntime`, `Enemy_Placeholder.prefab`, and `level-config.json`.
 4. Added the exact required runtime console proof, including `Config summary: levels=1, waves=2, spawns=2, objectives=1`.
@@ -254,7 +254,7 @@ Define the first narrow gameplay proof after config parsing without expanding in
 
 Completed work:
 
-1. Added `docs/first-wave-spawn-proof.md`.
+1. Added `docs/proof/first-wave-spawn.md`.
 2. Defined prerequisite proof: local preview, lifecycle, config load, and generated config parsing must already pass.
 3. Defined allowed scope: read `config.tables.spawn`, instantiate `Enemy_Placeholder`, parent enemies under `EnemyRoot`, log spawned count, and show visible placeholder nodes.
 4. Defined forbidden scope: pathfinding, movement, combat, objective update, win/loss, rewards, economy, UI production, and first playable claims.
@@ -280,7 +280,7 @@ Completed work:
 1. Added `examples/attack-defense-city/cocos-reference/CityBattleSpawnProofRuntime.ts`.
 2. Added `examples/attack-defense-city/cocos-reference/SPAWN_PROOF_RUNTIME_USAGE.md`.
 3. Implemented spawn-only runtime behavior: load config, read `config.tables.spawn`, instantiate `Enemy_Placeholder`, parent enemies under `EnemyRoot`, assign proof positions, and log spawned count.
-4. Linked the runtime template from `docs/first-wave-spawn-proof.md` and `README.md`.
+4. Linked the runtime template from `docs/proof/first-wave-spawn.md` and `README.md`.
 5. Preserved scope boundaries: no movement, combat, objective state, result path, economy, UI, or first playable claim.
 
 Still not included:

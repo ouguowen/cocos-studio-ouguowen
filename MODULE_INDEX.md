@@ -75,9 +75,9 @@ Use this file to route a request into the correct module family before loading d
 
 - [TEST_MATRIX.md](TEST_MATRIX.md): coverage planning
 - [ACCEPTANCE_ARTIFACTS.md](ACCEPTANCE_ARTIFACTS.md): evidence before sign-off
-- [docs/provider-driven-local-cocos-proof.md](docs/provider-driven-local-cocos-proof.md): local Cocos proof runbook for scene, prefab, binding, Console, and preview evidence
-- [docs/codex-cocos-automation-proof.md](docs/codex-cocos-automation-proof.md): Codex local automation proof flow for Cocos provider-driven validation
-- [docs/first-wave-spawn-proof.md](docs/first-wave-spawn-proof.md): first narrow gameplay proof for spawn-only behavior after config parsing
+- [docs/proof/provider-driven-local-cocos.md](docs/proof/provider-driven-local-cocos.md): local Cocos proof runbook for scene, prefab, binding, Console, and preview evidence
+- [docs/proof/codex-cocos-automation.md](docs/proof/codex-cocos-automation.md): Codex local automation proof flow for Cocos provider-driven validation
+- [docs/proof/first-wave-spawn.md](docs/proof/first-wave-spawn.md): first narrow gameplay proof for spawn-only behavior after config parsing
 - [RELEASE_PIPELINE_SYSTEM.md](RELEASE_PIPELINE_SYSTEM.md): build lanes, rollout, and hotfix planning
 - [docs/release/strategy.md](docs/release/strategy.md): open-source Skill release strategy and blockers
 - [docs/release/checklist.md](docs/release/checklist.md): final release checklist before tag or announcement

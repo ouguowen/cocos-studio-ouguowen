@@ -56,6 +56,7 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ### Changed
 
+- Migrated local proof runbooks into `docs/proof/`.
 - Migrated open-source roadmap and release docs into staged `docs/open-source/` and `docs/release/` folders.
 - Updated `MODULE_INDEX.md` and docs validation coverage to include the repository structure plan.
 - Updated `npm run check` so it validates generated artifacts through a temporary directory instead of writing repository outputs.

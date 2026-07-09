@@ -2,7 +2,7 @@
 
 Use this guide when Codex is running locally and can access a Cocos Creator automation provider, MCP server, or equivalent editor-control tool.
 
-The goal is to reduce manual screenshot-driven validation while preserving the same proof discipline required by `docs/provider-driven-local-cocos-proof.md`.
+The goal is to reduce manual screenshot-driven validation while preserving the same proof discipline required by `provider-driven-local-cocos.md`.
 
 ## Current proof baseline
 

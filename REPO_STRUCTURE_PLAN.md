@@ -192,6 +192,12 @@ Completed batch 1:
 - `docs/release-strategy.md` -> `docs/release/strategy.md`
 - `RELEASE_CHECKLIST.md` -> `docs/release/checklist.md`
 
+Completed batch 2:
+
+- `docs/provider-driven-local-cocos-proof.md` -> `docs/proof/provider-driven-local-cocos.md`
+- `docs/codex-cocos-automation-proof.md` -> `docs/proof/codex-cocos-automation.md`
+- `docs/first-wave-spawn-proof.md` -> `docs/proof/first-wave-spawn.md`
+
 Allowed candidates:
 
 - release docs
