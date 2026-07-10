@@ -17,6 +17,14 @@ Use:
 3. `core/module-index.md` only to route into the smallest required module family.
 4. Detailed protocol files only when the task triggers their scope.
 
+Default scope boundary:
+
+- Skill discussion and Skill maintenance must not load real game implementation context by default.
+- Do not use Cocos Creator, Cocos MCP, browser preview, runtime proof tools, or real project file inspection as part of default context loading.
+- Inspect real Cocos project files only when the user explicitly requests project work and provides or approves the active project path.
+- Runtime proof and proof-chain documents are validation sandbox context. Load them only when runtime proof is directly requested or an approved implementation story requires it.
+- A `next recommended command` is optional advice only and must not trigger additional context loading or automatic continuation.
+
 ## Context loading stages
 
 ### Stage 1: Lightweight memory
@@ -60,6 +68,8 @@ Fast Build Mode should normally load no more than:
 4. one to three task-specific protocol files
 
 Fast Build Mode must not load all gates, all workflows, all templates, all agents, or all semantic models unless the task explicitly triggers them.
+Fast Build Mode must also avoid heavy protocol, index, agent, runtime proof, and game proof documents unless they are directly triggered by the current user request.
+For Skill maintenance, Fast Build Mode should stay inside Skill repository context and must not inspect real Cocos project files by default.
 
 ## Safe Gate Mode context budget
 
@@ -99,16 +109,24 @@ Load these files only when triggered:
 - `protocols/runtime-proof.md`: when runtime proof or preview proof is claimed.
 - `protocols/cocos-generated-meta.md`: when generated meta appears or diff scope includes generated companion meta.
 
+Do not load runtime-proof or game proof documentation merely because a previous response included a proof result or a next recommended command.
+Proof-chain validation context expires after the approved proof slice unless the user explicitly asks to continue.
+
 ## Forbidden default behavior
 
 The Skill must not:
 
 - load every file before every answer
+- load heavy protocol, index, agent, runtime proof, or game proof docs without a direct trigger
 - run full Audit Mode during normal development
+- inspect real Cocos project files without explicit project-work request and approved active path
+- use Cocos Creator, Cocos MCP, or browser preview during normal Skill discussion or Skill maintenance
 - treat ordinary internal checks as user-facing checkpoints
 - repeatedly explain all gates during Fast Build Mode
 - load all Agent files unless multi-Agent work is requested
 - load all semantic models unless the task touches those semantics
+- treat runtime proof as default product development
+- treat `next recommended command` as implicit approval or automatic continuation
 - use validation-script completeness as a reason to overload the active context
 
 ## Required loading behavior
@@ -122,6 +140,7 @@ Before answering or executing, choose:
 ## Decision vocabulary
 
 - `FAST_CONTEXT`: use for normal game development and approved small implementation work.
+- `FAST_CONTEXT`: for Skill maintenance means lightweight Skill docs only; no real Cocos project inspection unless directly requested and approved.
 - `GATE_CONTEXT`: use for stage transitions, pre-write approval, preview proof, QA, and release review.
 - `AUDIT_CONTEXT`: use for Skill validation, repo audit, release governance, and safety review.
 - `CONTEXT_OVERLOAD`: too many files are being loaded for the task.

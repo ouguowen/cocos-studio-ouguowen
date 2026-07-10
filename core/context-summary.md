@@ -26,6 +26,16 @@ Default priority:
 4. Validate at meaningful milestones.
 5. Avoid repeated user interruption.
 
+Default boundary:
+
+- Normal Skill discussion must stay in Skill guidance, planning, review, or maintenance unless the user explicitly asks for real project implementation.
+- Skill maintenance and real game implementation are separate by default.
+- Do not use Cocos Creator, Cocos MCP, browser preview, or real project file inspection by default.
+- Inspect a real Cocos project only when the user explicitly requests project work and provides or approves the active project path.
+- Runtime proof and proof-chain work are validation sandbox work, not default product development.
+- Stop after each approved proof slice unless the user explicitly asks to continue.
+- `next recommended command` is optional advice only and never implicit approval or automatic continuation.
+
 ## Operation modes
 
 Use `core/operation-modes.md` for details.
@@ -79,6 +89,8 @@ In Fast Build Mode:
 - continue automatically while inside approved scope
 - summarize validation once at the end unless blocked
 - use compact successful reports by default
+- do not continue from one proof slice to the next without explicit user request
+- do not treat `next recommended command` as authorization to run the next command
 
 Stop only when a stop condition appears.
 
@@ -146,7 +158,9 @@ Do not repeat every gate during implementation after the scope is approved.
 - Runtime controller/domain logic owns final state.
 - Generated `.meta` must stay inside approved diff scope.
 - Browser preview proof is required when runtime visibility matters.
+- Runtime proof is validation sandbox work unless tied to an explicitly approved implementation story.
 - Compact output must never skip pre-write approval, approved diff scope, generated meta review, required browser proof, no-fake-proof rules, unexpected-file stops, `git add .` bans, or force-push bans.
+- Safety completeness always wins over compact output.
 
 ## Context anti-patterns
 
@@ -155,9 +169,14 @@ Avoid:
 - loading all gates for every small task
 - loading all workflows for every answer
 - loading all Agent files unless multi-Agent work is requested
+- loading heavy protocol, index, agent, runtime proof, or game proof docs unless directly triggered
 - using Audit Mode for normal game implementation
+- using Cocos/MCP by default during Skill discussion or Skill maintenance
+- inspecting real Cocos project files without an explicit project-work request and approved active path
 - repeating full Skill philosophy during Fast Build Mode
 - treating every validation check as a user-facing checkpoint
+- treating proof-chain validation as the default continuation path
+- treating `next recommended command` as implicit approval
 - using compact output to hide missing proof, unexpected files, dirty diffs, or missing approval
 
 ## Success definition

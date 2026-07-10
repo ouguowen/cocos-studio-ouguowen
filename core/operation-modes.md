@@ -21,6 +21,15 @@ Default game development should be result-focused:
 
 Safety is still mandatory, but safety gates must appear at the correct time.
 
+Default boundary:
+
+- Normal Skill discussion must not enter real game implementation by default.
+- Skill maintenance and game implementation are separate modes unless the user explicitly asks for project work and approves the active project path and write scope.
+- Do not use Cocos Creator, Cocos MCP, browser preview, or real Cocos project inspection by default.
+- Runtime proof and proof-chain work are validation sandbox activities, not default product development.
+- A passing proof slice does not authorize the next proof slice.
+- `next recommended command` is optional advice only and never implicit approval or automatic continuation.
+
 ## 3. Fast Build Mode
 
 Use Fast Build Mode for:
@@ -41,6 +50,11 @@ Rules:
 - Continue automatically while the work remains inside the approved scope.
 - Run lightweight validation internally.
 - Report only final result unless a stop condition appears.
+- Stay inside Skill repository context for Skill maintenance requests.
+- Do not inspect real Cocos project files unless the user explicitly requests project work and provides or approves the active project path.
+- Do not use Cocos/MCP/browser preview unless directly requested or required by an approved project implementation scope.
+- Stop after each approved proof slice unless the user explicitly asks to continue.
+- Do not treat `next recommended command` as permission to run that command.
 
 Decision terms:
 
@@ -58,6 +72,8 @@ Fast Build Mode may automatically:
 - run `git status`, `git diff --name-only`, and `git diff --stat` checks
 - commit and push only when the user already requested it or the active workflow requires it
 
+For Skill maintenance, "project state" means the Skill repository state, not a real Cocos game project, unless the user explicitly approves project inspection.
+
 Fast Build Mode must stop when:
 
 - unapproved scene, prefab, or `.meta` appears
@@ -70,6 +86,8 @@ Fast Build Mode must stop when:
 - dangerous Git command would be needed
 - user approval is required by the pre-write protocol
 - scope expansion is detected
+- proof-chain work reaches the end of the approved proof slice and the user has not explicitly approved the next slice
+- Skill maintenance would require real Cocos project inspection, Cocos/MCP, or browser preview without explicit approval
 
 Fast Build Mode final output should stay short:
 
@@ -95,6 +113,8 @@ For small approved tasks, prefer this final shape:
 5. Commit hash if committed
 6. Next recommended command
 
+The next recommended command is optional advice only. It must not be treated as approval, a hidden task, or permission to continue automatically.
+
 Use longer reports only when:
 
 - QA fails
@@ -114,6 +134,8 @@ Never skip:
 - stop on unexpected files
 - no `git add .`
 - no force push
+- separation between Skill maintenance and real game implementation
+- explicit approval before entering real Cocos project inspection or Cocos/MCP work
 
 ## 4. Safe Gate Mode
 
@@ -161,6 +183,8 @@ Rules:
 - When the user says do not be verbose, only give results, directly do it, `不要啰嗦`, `我只要结果`, or `直接做`, prefer Fast Build Mode while still respecting mandatory stop conditions.
 - When the user asks to modify Skill repository rules, use Safe Gate Mode or Audit Mode.
 - When the user asks for real Cocos game implementation, confirm production readiness and pre-write approval first; after an approved scope exists, use Fast Build Mode.
+- When the user asks for Skill maintenance, use Skill repository context only and do not enter real Cocos project implementation by default.
+- When the user asks for proof-chain validation, treat it as validation sandbox work and stop after the approved proof slice.
 
 ## 7. Interruption budget
 
@@ -173,6 +197,8 @@ Fast Build Mode:
 - Normal lint or static check pass must not interrupt the user.
 - Normal clean `git status` must not interrupt the user.
 - Normal preview pass must not interrupt the user and should be summarized only in the final result.
+- Proof-chain validation must stop after the approved proof slice and should not proceed to the next slice without explicit user request.
+- `next recommended command` does not count as user confirmation.
 
 Safe Gate Mode:
 
@@ -254,11 +280,15 @@ When the current mode is Fast Build Mode and no stop condition appears, Codex ma
 - fixing small issues inside the approved file list
 - preparing a concise final result
 
+`CONTINUE_AUTOMATICALLY` never crosses from Skill maintenance into real game implementation and never starts the next proof slice from a previous `next recommended command`.
+
 ## 12. User confirmation rules
 
 - Pre-write approval should approve a scope, not one micro-action.
 - After the user approves a scope, do not ask again for each small file edit, node creation, internal check, or preview pass.
 - Ask again only when the scope changes, a new unapproved file appears, an unexpected `.meta` appears, a dangerous command is needed, an external asset import appears, or project settings would change.
+- A `next recommended command` is not user approval.
+- Each proof-chain slice needs its own explicit user request or approval before implementation continues.
 
 ## 13. Command mapping
 
@@ -299,3 +329,6 @@ Audit Mode:
 - Generating a long audit report after every implementation step.
 - Continuing after a stop condition appears.
 - Skipping mandatory pre-write approval, generated meta approval, or preview visibility requirements.
+- Treating Skill maintenance as permission to inspect or modify a real Cocos project.
+- Treating validation sandbox proof work as default product development.
+- Treating `next recommended command` as automatic continuation.

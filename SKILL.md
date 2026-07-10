@@ -26,6 +26,16 @@ This skill is for:
 - Codex or other AI coding agents that need a controlled Cocos production brain.
 - The currently available Cocos automation tool or MCP provider when local Cocos engine operations must be executed.
 
+Default boundary:
+
+- Normal Skill discussion, planning, review, or maintenance must not enter real game implementation by default.
+- Skill maintenance and real game implementation are separate work modes. Do not cross from one into the other unless the user explicitly asks for project work and approves the active project path and write scope.
+- Do not use Cocos Creator, Cocos MCP, browser preview, or real project inspection by default during Skill discussion or Skill maintenance.
+- Do not inspect real Cocos project files unless the user explicitly asks for project work and provides or approves the active project path.
+- Runtime proof and proof-chain work are validation sandbox activities, not default product development and not proof of a full MVP.
+- Proof-chain work must stop after each approved proof slice unless the user explicitly asks to continue with the next slice.
+- `next recommended command` is optional advice only. It is never implicit approval, never an instruction to continue automatically, and never a substitute for pre-write approval.
+
 This skill is not for:
 
 - Cocos2d-x C++ engine guidance.
@@ -33,6 +43,8 @@ This skill is not for:
 - A single fixed game template.
 - A hard dependency on one commercial MCP plugin, one future official MCP plugin, or any provider-specific command dialect.
 - Importing the full Cocos manual into the skill.
+- Turning Skill maintenance requests into real game implementation.
+- Treating validation sandbox proof chains as default product development.
 
 ## Context Loading routing
 
@@ -46,6 +58,7 @@ Then route through [core/module-index.md](core/module-index.md) only when needed
 
 Do not load the full Skill repository by default.
 Do not load all gates, workflows, templates, agents, or semantic models during normal Fast Build Mode.
+Do not load heavy protocol, index, agent, runtime proof, or game proof documents unless the current user request directly triggers them.
 
 - Fast Build Mode should use `FAST_CONTEXT`.
 - Safe Gate Mode should use `GATE_CONTEXT`.
@@ -128,6 +141,8 @@ Rules:
 Use this policy only when the user already has, requests, or authorizes a Cocos Creator automation tool/MCP provider.
 
 - Treat the provider as an execution channel, not as the identity of this skill.
+- Do not use Cocos Creator automation, Cocos MCP, browser preview, or real Cocos project inspection during normal Skill discussion or Skill maintenance.
+- Use Cocos automation only after the user explicitly asks for project work and provides or approves the active project path.
 - Do not hard-code one commercial MCP provider, one official MCP provider, or one tool-specific command vocabulary into core instructions.
 - Prefer capability-based intents: open project, inspect hierarchy, create scene, create node, add component, set property, bind reference, create prefab, save scene, run preview, read Console, return screenshot/proof.
 - If a Cocos official automation MCP becomes available later, it may replace the current provider without changing this skill's core production logic.
@@ -151,6 +166,8 @@ Use this law when the user is testing, debugging, auditing, or trying to close-l
 
 Use this law when browser preview, runtime UI visibility, script runtime proof, or first playable proof matters.
 
+- Runtime proof is validation sandbox work unless the user has explicitly approved a real implementation story. It must not become a default continuation path.
+- A passing proof slice authorizes only that slice. Stop after each proof slice and wait for explicit continuation before starting another proof slice.
 - Editor scene visibility is not enough proof.
 - Browser preview visibility must be proven with a baseline UI or gameplay marker before script-runtime proof can pass.
 - If the editor shows a Label or UI marker but the browser preview does not, stop script verification and enter Preview Visibility Gate.
@@ -267,6 +284,7 @@ Common command routing:
 - Distinguish between gameplay truth and presentation state.
 - Distinguish between design readiness and runtime readiness.
 - Distinguish between skill validation and game project validation.
+- Treat `next recommended command` as optional advice only, not implicit approval or automatic continuation.
 
 ## Common routing
 
