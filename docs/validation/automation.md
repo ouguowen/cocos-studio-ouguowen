@@ -34,7 +34,7 @@ It protects the repository from accidental regressions such as:
 
 ## When GitHub Actions runs
 
-The workflow [../../.github/workflows/skill-docs-validate.yml](../../.github/workflows/skill-docs-validate.yml) runs on:
+The workflow [../../.github/workflows/validate-skill-docs.yml](../../.github/workflows/validate-skill-docs.yml) runs on:
 
 - `push`
 - `pull_request`
