@@ -31,6 +31,7 @@ Expected result:
 - Codex should mention game classification
 - Codex should ask or infer dominant loop
 - Codex should not jump directly into random code
+- Codex should not open Cocos Creator, call Cocos/MCP, inspect a real Cocos project, or run browser preview by default
 
 ## Step 3: Confirm the multi-game-type stance
 
@@ -67,6 +68,13 @@ Expected result:
 - automation provider treated as an execution channel
 - explicit non-goals
 - next recommended command
+- next recommended command treated as optional advice only, not automatic approval
+
+Default boundary:
+
+- Normal Skill discussion is planning, review, or documentation unless you explicitly ask for real project work.
+- Real Cocos project work requires your explicit request, the approved active project path, and an approved write scope.
+- Runtime proof and proof-chain work are validation sandbox work, not default product development.
 
 ## Step 5: Install Node dependencies
 
@@ -115,6 +123,8 @@ cocos-game-brief
 -> cocos-project-context
 -> cocos-game-architecture
 -> cocos-create-story
+-> cocos-dev-story-prewrite
+-> explicit user approval
 -> cocos-dev-story
 -> cocos-code-review
 ```
@@ -126,6 +136,8 @@ Use this only after a selected game type and MVP scope exist.
 ```text
 cocos-game-architecture
 -> cocos-create-story
+-> cocos-dev-story-prewrite
+-> explicit user approval
 -> cocos-dev-story using current Cocos automation provider when authorized
 -> provider returns hierarchy / bindings / Console / preview proof
 -> cocos-code-review

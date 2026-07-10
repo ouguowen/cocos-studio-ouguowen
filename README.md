@@ -45,6 +45,13 @@ Normal game development defaults to Fast Build Mode to avoid unnecessary interru
 
 Safety gates are still enforced when risk appears. Stage transitions use Safe Gate Mode, and Skill self-tests or repository audits use Audit Mode.
 
+Default scope boundary:
+
+- Normal Skill discussion does not open Cocos Creator, call Cocos/MCP, inspect real Cocos project files, or run browser preview by default.
+- Real Cocos project work requires an explicit user request, an approved active project path, and an approved write scope.
+- Runtime proof and proof-chain work are validation sandbox work, not default product development.
+- `next recommended command` is optional advice only. It is not automatic approval and does not authorize the agent to continue by itself.
+
 ## Quick Start
 
 Use this prompt in Codex:
@@ -55,6 +62,7 @@ Run cocos-game-brief for my game idea, then recommend the next command.
 ```
 
 The Skill should start with a brief and recommend the next controlled command. It should not jump directly into Cocos scene or script writing.
+Treat the recommendation as advice only. Run the next command only when you explicitly ask for it.
 
 ## Installation
 
@@ -90,6 +98,7 @@ cocos-game-brief
 -> cocos-first-implementation-story
 -> cocos-production-readiness
 -> cocos-dev-story-prewrite
+-> explicit user approval
 -> cocos-dev-story
 -> Preview Visibility Gate
 -> cocos-qa-review
@@ -100,10 +109,12 @@ cocos-game-brief
 Important boundaries:
 
 - Documentation stages do not open Cocos Creator.
+- Normal Skill discussion does not inspect real Cocos project files or run browser preview by default.
 - Implementation requires `FIRST_IMPLEMENTATION_STORY.md`.
 - `READY_FOR_IMPLEMENTATION` authorizes one story only.
-- `cocos-dev-story` must stop at pre-write approval before writing files.
+- `cocos-dev-story-prewrite` must expose the exact write scope, and `cocos-dev-story` starts only after explicit user approval.
 - Browser preview proof must show real visible runtime output.
+- Proof-chain work proves one approved validation slice at a time; it is not default product development.
 - `FIRST_MVP_ACCEPTED` means the current MVP is accepted, not that the full game is complete.
 
 ## Core Commands

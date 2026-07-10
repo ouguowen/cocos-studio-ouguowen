@@ -11,6 +11,14 @@ Use $cocos-studio-ouguowen.
 Run cocos-game-brief for my game idea, then recommend the next command.
 ```
 
+The recommended next command is optional advice only. It is not automatic approval and does not authorize Codex to continue without your explicit request.
+
+Default boundary:
+
+- Normal Skill discussion does not open Cocos Creator, call Cocos/MCP, inspect real Cocos project files, or run browser preview by default.
+- Real Cocos project work requires your explicit request, the approved active project path, and an approved write scope.
+- Runtime proof and proof-chain work are validation sandbox work, not default product development.
+
 ## Command chain
 
 ```text
@@ -25,6 +33,7 @@ cocos-game-brief
 -> cocos-first-implementation-story
 -> cocos-production-readiness
 -> cocos-dev-story-prewrite
+-> explicit user approval
 -> cocos-dev-story
 -> Preview Visibility Gate
 -> cocos-qa-review
@@ -140,6 +149,7 @@ PRE_WRITE_BLOCKED
 ```
 
 Before the user approves, Codex must not create files, modify scenes, modify scripts, modify `.meta`, commit, or push.
+This approval is required before `cocos-dev-story` implementation begins.
 
 ### 6. Implementation
 

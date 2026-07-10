@@ -1,5 +1,11 @@
 # Cocos Studio Ouguowen 中文入门
 
+Default boundary:
+
+- `next recommended command` is optional advice only, not automatic approval.
+- Normal Skill discussion does not open Cocos Creator, call Cocos/MCP, inspect real Cocos project files, or run browser preview by default.
+- Real Cocos project work requires an explicit user request, an approved active project path, and an approved write scope.
+- Runtime proof and proof-chain work are validation sandbox work, not default product development.
 `cocos-studio-ouguowen` 是一个面向 Cocos Creator 3.8.8 的 AI 辅助游戏开发生产控制 Skill。
 
 它帮助 Codex 或其他 AI 编程代理，把一个 Cocos 游戏从想法推进到 MVP：先明确类型和范围，再生成设计文档，再写第一条实现 story，再经过浏览器预览证明、QA 和 release review。
@@ -71,6 +77,7 @@ cocos-game-brief
 -> cocos-first-implementation-story
 -> cocos-production-readiness
 -> cocos-dev-story-prewrite
+-> explicit user approval
 -> cocos-dev-story
 -> Preview Visibility Gate
 -> cocos-qa-review
