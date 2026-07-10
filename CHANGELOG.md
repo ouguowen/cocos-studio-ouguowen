@@ -4,6 +4,26 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ## Unreleased
 
+## v0.3.0-alpha.16 - 2026-07-10
+
+### Changed
+
+- Synchronized package metadata to `0.3.0-alpha.16`.
+- Added default scope boundary rules separating Skill maintenance and normal Skill discussion from real Cocos game implementation by default.
+- Clarified that `next recommended command` is optional advice only, not implicit approval or automatic continuation.
+- Disabled default Cocos Creator, Cocos MCP, browser preview, and real project inspection for normal Skill discussion and Skill maintenance.
+- Clarified that real Cocos project work requires an explicit user request, approved active project path, and approved write scope.
+- Treated runtime proof and proof-chain work as validation sandbox work, not default product development.
+- Added validation script coverage so boundary rules cannot regress silently.
+- Updated GitHub Actions coverage to run Python docs validation, dependency install, and `npm run check`.
+- Synchronized README, Chinese README, and quickstart wording with the default boundary rules.
+
+### Not Included
+
+- No real Cocos Creator project files were modified.
+- No `.scene`, `.prefab`, `.anim`, `.meta`, or game runtime project files were created or modified.
+- No new game functionality, Tower Placement Proof, first playable claim, or Cocos runtime implementation change is included.
+
 ## v0.3.0-alpha.15 - 2026-07-09
 
 ### Changed

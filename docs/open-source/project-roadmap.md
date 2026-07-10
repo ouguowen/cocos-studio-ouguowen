@@ -42,6 +42,8 @@ Current capabilities:
 - multi-game-type scope clarification
 - provider-neutral Cocos automation execution policy
 - compact output rules for faster normal Codex usage without weakening safety
+- default scope boundary rules that keep Skill maintenance and normal Skill discussion separate from real game implementation by default
+- validation coverage and CI checks for default boundary regressions
 
 ## v0.3.0-alpha.1 status: Example Pack Foundation
 
@@ -337,6 +339,33 @@ Still not included:
 - New modules.
 - Changes to compact-output rule files.
 - Any claim that compact output can bypass required proof or approval.
+
+## v0.3.0-alpha.16 status: Default Scope Boundary + Validation Coverage
+
+Primary goal:
+
+Synchronize package metadata and roadmap history after the default scope boundary, validation coverage, CI, and README/quickstart wording patches.
+
+Completed work:
+
+1. Updated `package.json` version to `0.3.0-alpha.16`.
+2. Added default scope boundary rules that separate Skill maintenance and normal Skill discussion from real Cocos game implementation by default.
+3. Clarified that `next recommended command` is optional advice only, not implicit approval or automatic continuation.
+4. Disabled default Cocos Creator, Cocos MCP, browser preview, and real project inspection for normal Skill discussion and Skill maintenance.
+5. Clarified that real Cocos project work requires an explicit user request, approved active project path, and approved write scope.
+6. Treated runtime proof and proof-chain work as validation sandbox work, not default product development.
+7. Added validation script coverage for the default boundary rules.
+8. Updated GitHub Actions to run Python docs validation, dependency install, and `npm run check`.
+9. Synchronized README, README.zh-CN, and quickstart boundary wording.
+
+Still not included:
+
+- Real Cocos Creator project changes.
+- `.scene`, `.prefab`, `.anim`, `.meta`, or game runtime project changes.
+- New game functionality.
+- Tower Placement Proof.
+- A new first playable claim.
+- Cocos runtime implementation changes.
 
 ## v0.3.x next target: First Wave Spawn Local Runtime Proof
 
