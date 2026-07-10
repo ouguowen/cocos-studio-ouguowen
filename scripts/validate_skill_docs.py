@@ -579,6 +579,47 @@ SAFETY_CHECKS = {
     ],
 }
 
+DEFAULT_BOUNDARY_CHECKS = {
+    "normal_skill_discussion_boundary": [
+        "Normal Skill discussion",
+        "must not enter real game implementation by default",
+    ],
+    "no_cocos_mcp_default": [
+        "Do not use Cocos Creator",
+        "Cocos MCP",
+        "browser preview",
+        "real project inspection by default",
+    ],
+    "runtime_proof_validation_sandbox": [
+        "Runtime proof",
+        "proof-chain work",
+        "validation sandbox",
+        "not default product development",
+    ],
+    "proof_slice_stop_rule": [
+        "Proof-chain work must stop after each approved proof slice",
+        "explicitly asks to continue",
+    ],
+    "next_recommended_command_optional": [
+        "next recommended command",
+        "optional advice only",
+        "never implicit approval",
+        "automatic continuation",
+    ],
+    "fast_context_heavy_loading_rule": [
+        "FAST_CONTEXT",
+        "heavy protocol",
+        "index",
+        "agent",
+        "proof",
+        "directly triggered",
+    ],
+    "compact_output_safety_rule": [
+        "Safety completeness",
+        "wins over compact output",
+    ],
+}
+
 DANGEROUS_PHRASES = [
     "git reset --hard",
     "git push --force",
@@ -789,6 +830,34 @@ def check_safety_rules() -> list[str]:
     return errors
 
 
+def check_default_boundary_rules() -> list[str]:
+    errors = []
+    source_files = [
+        "SKILL.md",
+        "core/context-summary.md",
+        "core/context-loading-policy.md",
+        "core/operation-modes.md",
+    ]
+    combined_parts = []
+    for file_name in source_files:
+        path = ROOT / file_name
+        if not path.exists():
+            errors.append(f"{file_name}: file missing for default boundary check")
+            continue
+        combined_parts.append(read_text(path))
+
+    combined = "\n".join(combined_parts)
+    combined_lower = combined.lower()
+    for rule_name, required_terms in DEFAULT_BOUNDARY_CHECKS.items():
+        missing_terms = [term for term in required_terms if term.lower() not in combined_lower]
+        if missing_terms:
+            errors.append(
+                f"default boundary rule {rule_name}: missing required term(s) "
+                + ", ".join(repr(term) for term in missing_terms)
+            )
+    return errors
+
+
 def check_dangerous_patterns() -> list[str]:
     errors = []
     for md_file in markdown_files():
@@ -825,6 +894,7 @@ def main() -> int:
         ("required_content_checks", check_required_content),
         ("markdown_link_check", lambda: check_markdown_links(existing)),
         ("safety_rule_checks", check_safety_rules),
+        ("default_boundary_rule_checks", check_default_boundary_rules),
         ("dangerous_pattern_checks", check_dangerous_patterns),
     ]
     ok = True
