@@ -83,11 +83,14 @@ Use this file to route a request into the correct module family before loading d
 
 ## 5. Delivery, release, and live operations
 
+Proof and example content in this section is validation sandbox context. Load it only when runtime proof, local Cocos validation, or example history is directly requested. It must not trigger default Cocos/MCP use, browser preview, real project inspection, or continuation of prior AIGameStudioFirstGame / City Battle proof work.
+
 - [production/test-matrix.md](../production/test-matrix.md): coverage planning
 - [production/acceptance-artifacts.md](../production/acceptance-artifacts.md): evidence before sign-off
-- [docs/proof/provider-driven-local-cocos.md](../docs/proof/provider-driven-local-cocos.md): local Cocos proof runbook for scene, prefab, binding, Console, and preview evidence
-- [docs/proof/codex-cocos-automation.md](../docs/proof/codex-cocos-automation.md): Codex local automation proof flow for Cocos provider-driven validation
-- [docs/proof/first-wave-spawn.md](../docs/proof/first-wave-spawn.md): first narrow gameplay proof for spawn-only behavior after config parsing
+- [docs/proof/provider-driven-local-cocos.md](../docs/proof/provider-driven-local-cocos.md): validation-sandbox runbook for local Cocos proof of scene, prefab, binding, Console, and preview evidence; trigger-only, not default project inspection
+- [docs/proof/codex-cocos-automation.md](../docs/proof/codex-cocos-automation.md): validation-sandbox Codex automation proof flow for Cocos provider-driven checks; trigger-only, not default Cocos/MCP use
+- [docs/proof/first-wave-spawn.md](../docs/proof/first-wave-spawn.md): validation-sandbox spawn-only proof history after config parsing; trigger-only, not default product direction
+- [examples/attack-defense-city/*](../examples/attack-defense-city/README.md): attack-defense example pack and proof sandbox history; preserves validation evidence but must not be inspected, continued, or treated as default product direction unless explicitly requested
 - [production/release-pipeline.md](../production/release-pipeline.md): build lanes, rollout, and hotfix planning
 - [docs/release/strategy.md](../docs/release/strategy.md): open-source Skill release strategy and blockers
 - [docs/release/checklist.md](../docs/release/checklist.md): final release checklist before tag or announcement
