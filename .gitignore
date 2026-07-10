@@ -9,6 +9,13 @@ Thumbs.db
 # Node dependencies
 node_modules/
 
+# Local cache and build outputs
+.cache/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
 # Generated example artifacts
 examples/attack-defense-city/generated-level-config.json
 examples/attack-defense-city/generated-config-types.ts

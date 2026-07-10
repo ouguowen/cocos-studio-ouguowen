@@ -150,7 +150,7 @@ Do not load this section by default for normal game development, `cocos-dev-stor
 - [templates/workflows/core.md](../templates/workflows/core.md): high-frequency execution patterns
 - [templates/workflows/extensions.md](../templates/workflows/extensions.md): specialist execution patterns
 - [scripts/validate_skill_docs.py](../scripts/validate_skill_docs.py): standard-library validation script for docs, links, commands, and safety rules
-- [.github/workflows/skill-docs-validate.yml](../.github/workflows/skill-docs-validate.yml): GitHub Actions workflow for Skill docs validation
+- [.github/workflows/validate-skill-docs.yml](../.github/workflows/validate-skill-docs.yml): canonical GitHub Actions workflow for Skill docs validation and npm checks
 
 ## 8. AI Game Studio Agents
 
