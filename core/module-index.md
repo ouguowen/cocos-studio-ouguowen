@@ -6,7 +6,6 @@ Use this file to route a request into the correct module family before loading d
 
 - [core/context-summary.md](context-summary.md): lightweight first-read memory
 - [core/context-loading-policy.md](context-loading-policy.md): context budget and anti-overload rules
-- [core/evolution-system.md](evolution-system.md): controlled Skill evolution levels, evidence requirements, validation, and rollback governance
 - [docs/structure/repository-structure-plan.md](../docs/structure/repository-structure-plan.md): staged repository organization plan that keeps current paths canonical until migration batches are approved
 - [production/modes.md](../production/modes.md): how strict the team should be right now
 - [production/stages.md](../production/stages.md): where the project is in time
@@ -104,7 +103,6 @@ Use this file to route a request into the correct module family before loading d
 - [protocols/quality-gate-alignment.md](../protocols/quality-gate-alignment.md): canonical alignment checklist for safety and integration gates
 - [templates/checklists/core.md](../templates/checklists/core.md): review checklists
 - [templates/checklists/extensions.md](../templates/checklists/extensions.md): specialist review checklists
-- [templates/evolution-proposal-template.md](../templates/evolution-proposal-template.md): proposal template for E3 / E4 Skill evolution decisions
 - [production/tech-debt-register.md](../production/tech-debt-register.md): debt ownership and repayment triggers
 - [production/cost-budget.md](../production/cost-budget.md): cost control
 - [templates/reports/incident-postmortem.md](../templates/reports/incident-postmortem.md): post-incident review
@@ -112,7 +110,16 @@ Use this file to route a request into the correct module family before loading d
 - [production/risk-escalation.md](../production/risk-escalation.md): when the team must stop and escalate
 - [production/review-system.md](../production/review-system.md): formal gate review rules
 
-## 7. AI-assisted work
+## 7. Skill governance and evolution
+
+Use this section only when a request asks to improve, evolve, upgrade, optimize, extend, restructure, or change the Skill itself.
+
+Do not load this section by default for normal game development, `cocos-dev-story`, `cocos-qa-review`, runtime proof, commit, or push.
+
+- [core/evolution-system.md](evolution-system.md): trigger-only controlled Skill evolution levels, evidence requirements, context impact checks, validation, and rollback governance
+- [templates/evolution-proposal-template.md](../templates/evolution-proposal-template.md): proposal template for E3 / E4 Skill evolution decisions
+
+## 8. AI-assisted work
 
 - [core/context-summary.md](context-summary.md): lightweight first-read memory
 - [core/context-loading-policy.md](context-loading-policy.md): context budget and anti-overload rules
