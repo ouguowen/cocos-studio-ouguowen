@@ -17,6 +17,7 @@ Use this file to route a request into the correct module family before loading d
 - [docs/quickstart/first-mvp.md](../docs/quickstart/first-mvp.md): first-MVP command path from idea to release review
 - [docs/open-source/roadmap.md](../docs/open-source/roadmap.md): open-source polish roadmap and contribution priorities
 - [docs/open-source/project-roadmap.md](../docs/open-source/project-roadmap.md): version-level AI Game Studio roadmap and completed capability history
+- [docs/open-source/v1.0-skill-definition.md](../docs/open-source/v1.0-skill-definition.md): v1.0 destination definition for roadmap, cleanup, and feature-scope decisions
 - [docs/validation/automation.md](../docs/validation/automation.md): GitHub Actions and local Skill docs validation guide
 - [docs/release/strategy.md](../docs/release/strategy.md): release lanes, release gates, blockers, and post-release review
 - [docs/release/checklist.md](../docs/release/checklist.md): release readiness checklist for scope, docs, templates, validation, and release decision
