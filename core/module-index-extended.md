@@ -94,6 +94,7 @@ or any module index without paired cleanup.
 ## 7. Governance, validation, and evolution extras
 
 - [docs/open-source/extension-boundary.md](../docs/open-source/extension-boundary.md): trigger-only core/extension boundary, promotion rules, rollback discipline, and multi-engine separation
+- [docs/open-source/v1.0-architecture-convergence-report.md](../docs/open-source/v1.0-architecture-convergence-report.md): trigger-only v1.0 convergence status, layer structure, cleanup position, and next-stage recommendations
 - [core/evolution-system.md](evolution-system.md): controlled Skill evolution levels, evidence, context impact checks, validation, and rollback
 - [templates/evolution-proposal-template.md](../templates/evolution-proposal-template.md): E3 / E4 Skill evolution proposal template
 - [protocols/skill-validation-loop.md](../protocols/skill-validation-loop.md): closed-loop QA process for testing this Skill
