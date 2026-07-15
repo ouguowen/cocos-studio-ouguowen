@@ -1,0 +1,67 @@
+{
+  "id": "default-game-task-graph",
+  "status": "implemented",
+  "tasks": [
+    {
+      "id": "game-design",
+      "agent": "game-designer",
+      "priority": 1,
+      "depends_on": [],
+      "input_sections": [
+        "project",
+        "design"
+      ],
+      "output": "game design specification",
+      "validation": "Project scope, theme, camera, and gameplay loop are documented without inventing implementation approval."
+    },
+    {
+      "id": "system-implementation-plan",
+      "agent": "cocos-programmer",
+      "priority": 2,
+      "depends_on": [
+        "game-design"
+      ],
+      "input_sections": [
+        "project",
+        "design",
+        "systems"
+      ],
+      "output": "system implementation planning document",
+      "validation": "Every Blueprint system has a planning boundary, priority, and no generated game code."
+    },
+    {
+      "id": "asset-requirements",
+      "agent": "artist",
+      "priority": 2,
+      "depends_on": [
+        "game-design"
+      ],
+      "input_sections": [
+        "project",
+        "design",
+        "assets"
+      ],
+      "output": "asset requirements list",
+      "validation": "Character, scene, UI, and audio requirements are listed without creating real assets."
+    },
+    {
+      "id": "validation-checklist",
+      "agent": "qa",
+      "priority": 3,
+      "depends_on": [
+        "game-design",
+        "system-implementation-plan",
+        "asset-requirements"
+      ],
+      "input_sections": [
+        "project",
+        "design",
+        "systems",
+        "assets",
+        "agents"
+      ],
+      "output": "validation checklist",
+      "validation": "The checklist covers design, system planning, asset requirements, dependencies, and the approval boundary before implementation."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "execution_enabled": false,
+  "default_mode": "preview",
+  "modes": {
+    "preview": {
+      "writes": false
+    },
+    "dry-run": {
+      "writes": false
+    },
+    "commit": {
+      "writes": true
+    }
+  },
+  "operations": {
+    "create": [
+      "preview",
+      "dry-run",
+      "commit"
+    ],
+    "update": [
+      "preview",
+      "dry-run",
+      "commit"
+    ],
+    "delete": [
+      "preview",
+      "dry-run",
+      "commit"
+    ],
+    "diff": [
+      "preview",
+      "dry-run",
+      "commit"
+    ],
+    "rollback": [
+      "preview",
+      "dry-run",
+      "commit"
+    ]
+  },
+  "workspace": {
+    "require_existing_root": true,
+    "allow_absolute_paths": false,
+    "allow_parent_traversal": false,
+    "allow_symbolic_links": false
+  },
+  "commit_requirements": {
+    "runtime_execution_enabled": true,
+    "permission_grant_required": true,
+    "workspace_binding_required": true,
+    "operation_binding_required": true,
+    "mode_binding_required": true
+  }
+}

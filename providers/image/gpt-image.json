@@ -1,0 +1,15 @@
+{
+  "id": "gpt-image",
+  "name": "GPT Image Provider",
+  "type": "image",
+  "capabilities": [
+    "asset-requirements",
+    "image-generation",
+    "concept-art"
+  ],
+  "adapter": "gpt-image-adapter",
+  "execution_enabled": false,
+  "priority": 90,
+  "speed": 75,
+  "quality": 98
+}

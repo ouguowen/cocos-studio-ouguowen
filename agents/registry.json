@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "prototype-plan-only",
+  "agents": [
+    {
+      "id": "game-designer",
+      "file": "game-designer.json"
+    },
+    {
+      "id": "cocos-programmer",
+      "file": "cocos-programmer.json"
+    },
+    {
+      "id": "artist",
+      "file": "artist.json"
+    },
+    {
+      "id": "qa",
+      "file": "qa.json"
+    }
+  ]
+}

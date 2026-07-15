@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cocos-studio-ouguowen.local/schemas/execution-feedback.json",
+  "title": "Execution Feedback",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "capability",
+    "provider",
+    "status",
+    "duration",
+    "quality_score",
+    "speed_score",
+    "success_score",
+    "validation_result"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capability": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "success",
+        "failed"
+      ]
+    },
+    "duration": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "quality_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "speed_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "success_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "validation_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "passed",
+        "message"
+      ],
+      "properties": {
+        "passed": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

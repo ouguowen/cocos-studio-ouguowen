@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "validation-rules-only",
+  "execution_enabled": false,
+  "rules": [
+    {
+      "id": "assets-present",
+      "category": "completeness",
+      "source": "scanner.assets.total_files",
+      "operator": "min",
+      "expected": 1,
+      "severity": "error",
+      "penalty": 30,
+      "message": "Project scan found no asset files.",
+      "recommendation": "Add or restore the approved project asset structure before continuing."
+    },
+    {
+      "id": "code-modules-present",
+      "category": "completeness",
+      "source": "scanner.code.module_count",
+      "operator": "min",
+      "expected": 1,
+      "severity": "error",
+      "penalty": 30,
+      "message": "Project scan found no code modules.",
+      "recommendation": "Define at least one approved code module before implementation validation."
+    },
+    {
+      "id": "scenes-present",
+      "category": "completeness",
+      "source": "scanner.scenes.scene_count",
+      "operator": "min",
+      "expected": 1,
+      "severity": "error",
+      "penalty": 30,
+      "message": "Project scan found no scene files.",
+      "recommendation": "Restore or define an approved scene before scene-dependent work."
+    },
+    {
+      "id": "resources-directory-present",
+      "category": "completeness",
+      "source": "scanner.assets.directories.resources",
+      "operator": "equals",
+      "expected": true,
+      "severity": "warning",
+      "penalty": 5,
+      "message": "Project structure has no resources directory.",
+      "recommendation": "Confirm whether the project intentionally omits a resources directory."
+    },
+    {
+      "id": "todo-count-zero",
+      "category": "quality",
+      "source": "scanner.code.todo_count",
+      "operator": "max",
+      "expected": 0,
+      "severity": "warning",
+      "penalty": 5,
+      "message": "Project scripts contain unresolved TODO markers.",
+      "recommendation": "Review TODO markers and convert approved work into tracked tasks."
+    },
+    {
+      "id": "project-not-blocked",
+      "category": "quality",
+      "source": "context.current_project_state.status",
+      "operator": "not-equals",
+      "expected": "blocked",
+      "severity": "error",
+      "penalty": 30,
+      "message": "Project Intelligence reports a blocked project state.",
+      "recommendation": "Resolve blocking issues before recommending further production work."
+    },
+    {
+      "id": "project-risk-clear",
+      "category": "quality",
+      "source": "context.current_project_state.status",
+      "operator": "not-equals",
+      "expected": "at-risk",
+      "severity": "warning",
+      "penalty": 15,
+      "message": "Project Intelligence reports an at-risk project state.",
+      "recommendation": "Review open project risks before advancing the project phase."
+    },
+    {
+      "id": "unfinished-tasks-zero",
+      "category": "quality",
+      "source": "metrics.unfinished_task_count",
+      "operator": "max",
+      "expected": 0,
+      "severity": "warning",
+      "penalty": 10,
+      "message": "Project contains unfinished tasks.",
+      "recommendation": "Complete or explicitly defer remaining tasks before final validation."
+    },
+    {
+      "id": "feedback-failures-zero",
+      "category": "quality",
+      "source": "feedback.summary.failed_count",
+      "operator": "max",
+      "expected": 0,
+      "severity": "warning",
+      "penalty": 5,
+      "message": "Execution feedback contains failed validation samples.",
+      "recommendation": "Review failed feedback samples before relying on historical performance."
+    }
+  ]
+}

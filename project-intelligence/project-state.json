@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "project-intelligence-metadata-only",
+  "execution_enabled": false,
+  "project_id": "modern-city-defense",
+  "game_type": "tower-defense",
+  "engine": "Cocos Creator",
+  "phase": "production",
+  "systems": [
+    {
+      "id": "battle-system",
+      "name": "Battle System",
+      "status": "completed"
+    },
+    {
+      "id": "tower-system",
+      "name": "Tower System",
+      "status": "completed"
+    },
+    {
+      "id": "wave-system",
+      "name": "Wave System",
+      "status": "in-progress"
+    }
+  ],
+  "assets": [
+    {
+      "id": "game-design-spec",
+      "type": "specification",
+      "status": "ready",
+      "provider": null
+    },
+    {
+      "id": "city-scene-spec",
+      "type": "scene",
+      "status": "specified",
+      "provider": null
+    },
+    {
+      "id": "hero-art-spec",
+      "type": "character",
+      "status": "specified",
+      "provider": null
+    }
+  ],
+  "agents": [
+    {
+      "id": "game-designer",
+      "status": "registered",
+      "assigned_tasks": [
+        "define-game-design"
+      ],
+      "execution_enabled": false
+    },
+    {
+      "id": "cocos-programmer",
+      "status": "registered",
+      "assigned_tasks": [
+        "plan-system-implementation",
+        "implement-core-systems"
+      ],
+      "execution_enabled": false
+    },
+    {
+      "id": "artist",
+      "status": "registered",
+      "assigned_tasks": [
+        "prepare-asset-requirements"
+      ],
+      "execution_enabled": false
+    }
+  ],
+  "tasks": [
+    {
+      "id": "define-game-design",
+      "title": "Define game design",
+      "status": "completed",
+      "agent": "game-designer",
+      "depends_on": [],
+      "priority": 1
+    },
+    {
+      "id": "plan-system-implementation",
+      "title": "Plan system implementation",
+      "status": "completed",
+      "agent": "cocos-programmer",
+      "depends_on": [
+        "define-game-design"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "implement-core-systems",
+      "title": "Prepare core system implementation scope",
+      "status": "in-progress",
+      "agent": "cocos-programmer",
+      "depends_on": [
+        "plan-system-implementation"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "prepare-asset-requirements",
+      "title": "Prepare asset requirements",
+      "status": "pending",
+      "agent": "artist",
+      "depends_on": [
+        "define-game-design"
+      ],
+      "priority": 4
+    }
+  ],
+  "issues": [
+    {
+      "id": "asset-production-not-started",
+      "severity": "medium",
+      "status": "open",
+      "description": "Asset requirements exist as metadata, but no real asset production is permitted in this phase."
+    }
+  ],
+  "history": [
+    {
+      "decision_id": "provider-neutral-core",
+      "task_id": "define-game-design",
+      "decision": "Keep Project Intelligence independent from concrete Providers.",
+      "reason": "Provider choice must remain replaceable and outside the core analysis model.",
+      "related_agents": [
+        "game-designer",
+        "cocos-programmer",
+        "artist"
+      ],
+      "timestamp": "2026-01-01T00:00:00.000Z"
+    }
+  ]
+}

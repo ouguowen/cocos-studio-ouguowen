@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "feedback-metadata-only",
+  "execution_enabled": false,
+  "capabilities": {
+    "image-generation": {
+      "qwen-image": {
+        "samples": 2,
+        "success_count": 1,
+        "success_rate": 0.5,
+        "average_duration": 850,
+        "quality_score": 64,
+        "speed_score": 88.5,
+        "success_score": 50
+      },
+      "gpt-image": {
+        "samples": 1,
+        "success_count": 1,
+        "success_rate": 1,
+        "average_duration": 1000,
+        "quality_score": 96,
+        "speed_score": 75,
+        "success_score": 100
+      }
+    },
+    "system-implementation-plan": {
+      "cocos": {
+        "samples": 1,
+        "success_count": 1,
+        "success_rate": 1,
+        "average_duration": 500,
+        "quality_score": 90,
+        "speed_score": 90,
+        "success_score": 100
+      }
+    }
+  }
+}

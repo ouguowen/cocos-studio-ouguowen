@@ -12,8 +12,8 @@ function main() {
 
   try {
     prepareCompilationSandbox(tempDir);
-    const compiler = resolveTscCommand();
-    const result = runCommand(compiler, ["-p", path.join(tempDir, "tsconfig.json")], {
+    const pnpm = resolvePnpmCommand();
+    const result = runCommand(pnpm.command, [...pnpm.args, "exec", "tsc", "-p", path.join(tempDir, "tsconfig.json")], {
       encoding: "utf8",
       stdio: "pipe",
     });
@@ -536,25 +536,13 @@ function prepareCompilationSandbox(tempDir) {
   );
 }
 
-function resolveTscCommand() {
-  const candidates = process.platform === "win32" ? buildWindowsCandidates() : ["tsc"];
-  for (const candidate of candidates) {
-    const result = runCommand(candidate, ["-v"], { encoding: "utf8", stdio: "pipe" });
-    if (result.status === 0) {
-      return candidate;
-    }
+function resolvePnpmCommand() {
+  const npmExecPath = process.env.npm_execpath;
+  if (npmExecPath && /pnpm(?:\.cjs|\.mjs|\.js)?$/i.test(npmExecPath)) {
+    return { command: process.execPath, args: [npmExecPath] };
   }
 
-  throw new Error("TypeScript compiler not found. Install it with `npm.cmd install -g typescript`.");
-}
-
-function buildWindowsCandidates() {
-  const candidates = ["tsc.cmd", "tsc"];
-  const appData = process.env.APPDATA;
-  if (appData) {
-    candidates.push(path.join(appData, "npm", "tsc.cmd"));
-  }
-  return candidates;
+  return { command: process.platform === "win32" ? "pnpm.cmd" : "pnpm", args: [] };
 }
 
 function runCommand(command, args, options) {

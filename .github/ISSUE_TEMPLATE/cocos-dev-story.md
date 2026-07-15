@@ -71,10 +71,10 @@ What should the player experience after this story is done?
 ## Validation commands
 
 ```bash
-npm run validate:example
-npm run export:example
-npm run validate:runtime
-npm run check
+pnpm run validate:example
+pnpm run export:example
+pnpm run validate:runtime
+pnpm run check
 ```
 
 ## QA notes

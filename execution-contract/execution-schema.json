@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cocos-studio-ouguowen.local/schemas/execution-contract.json",
+  "title": "AI Game Studio Execution Contract",
+  "$defs": {
+    "executionRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "request_id",
+        "run_id",
+        "task_id",
+        "agent",
+        "capability",
+        "tool",
+        "operation",
+        "workspace_path",
+        "content",
+        "mode",
+        "provider_requirements",
+        "transaction_id",
+        "external_execution",
+        "execution_enabled"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capability": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool": {
+          "type": "string",
+          "minLength": 1
+        },
+        "operation": {
+          "enum": [
+            "create",
+            "update",
+            "delete",
+            "diff",
+            "rollback"
+          ]
+        },
+        "workspace_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "preview",
+            "dry-run",
+            "commit"
+          ]
+        },
+        "provider_requirements": {
+          "type": "object"
+        },
+        "transaction_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "external_execution": {
+          "const": false
+        },
+        "execution_enabled": {
+          "const": false
+        }
+      }
+    },
+    "executionResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "request_id",
+        "run_id",
+        "task_id",
+        "status",
+        "mode",
+        "route",
+        "transaction_id",
+        "diff",
+        "error",
+        "external_execution",
+        "execution_enabled"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "previewed",
+            "validated",
+            "committed",
+            "rolled-back",
+            "blocked",
+            "failed"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "preview",
+            "dry-run",
+            "commit"
+          ]
+        },
+        "route": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "transaction_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "diff": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "error": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "external_execution": {
+          "const": false
+        },
+        "execution_enabled": {
+          "const": false
+        }
+      }
+    }
+  }
+}

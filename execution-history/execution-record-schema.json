@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cocos-studio-ouguowen.local/schemas/execution-record.json",
+  "title": "AI Game Studio Execution Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "task_id",
+    "execution_id",
+    "transaction_id",
+    "status",
+    "mode",
+    "capability",
+    "provider",
+    "adapter",
+    "runtime",
+    "request",
+    "result",
+    "diff",
+    "permission",
+    "rollback_point",
+    "timestamp",
+    "updated_at",
+    "recovery",
+    "execution_enabled"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "execution_id": {
+      "type": "string",
+      "pattern": "^execution-[0-9]{4,}$"
+    },
+    "transaction_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "previewed",
+        "validated",
+        "committed",
+        "blocked",
+        "failed",
+        "recovering",
+        "recovered",
+        "rolled-back"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "preview",
+        "dry-run",
+        "commit"
+      ]
+    },
+    "capability": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "adapter": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "runtime": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "request": {
+      "type": "object"
+    },
+    "result": {
+      "type": "object"
+    },
+    "diff": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "permission": {
+      "type": "object",
+      "required": [
+        "allowed",
+        "code",
+        "mode"
+      ],
+      "properties": {
+        "allowed": {
+          "type": "boolean"
+        },
+        "code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "preview",
+            "dry-run",
+            "commit"
+          ]
+        }
+      }
+    },
+    "rollback_point": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "recovery": {
+      "type": "object"
+    },
+    "execution_enabled": {
+      "const": false
+    }
+  }
+}

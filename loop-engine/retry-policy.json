@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "loop-policy-only",
+  "execution_enabled": false,
+  "default_max_iterations": 3,
+  "max_retries": 2,
+  "warning_action": "continue",
+  "status_actions": {
+    "FAILED": "regenerate-task",
+    "WARNING": "continue-loop",
+    "PASS": "advance-to-next-phase"
+  }
+}

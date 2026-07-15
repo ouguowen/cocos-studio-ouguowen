@@ -1,0 +1,29 @@
+{
+  "id": "artist",
+  "display_name": "Artist",
+  "canonical_agent_id": null,
+  "status": "prototype",
+  "responsibilities": [
+    "asset requirements",
+    "visual content inventory",
+    "placeholder and production asset boundary planning"
+  ],
+  "accepts": [
+    "asset-requirements"
+  ],
+  "capabilities": [
+    "asset-requirements"
+  ],
+  "tool_ids": [
+    "asset-requirement-catalog"
+  ],
+  "produces": [
+    "asset requirements list"
+  ],
+  "constraints": [
+    "planning only",
+    "does not create real assets",
+    "does not import assets into Cocos"
+  ],
+  "execution_enabled": false
+}

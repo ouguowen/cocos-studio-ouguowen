@@ -1,15 +1,42 @@
 {
   "name": "cocos-studio-ouguowen",
-  "version": "0.3.0-alpha.16",
+  "version": "1.0.0-rc.1",
   "private": true,
-  "description": "AI Game Studio skill for multi-game-type Cocos Creator 3.8.8 workflows, agents, config validation, runtime templates, and provider-neutral local automation guidance.",
+  "packageManager": "pnpm@10.34.5",
+  "description": "Provider-neutral AI Game Studio architecture and safe orchestration prototypes for Cocos Creator workflows.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ouguowen/cocos-studio-ouguowen.git"
+  },
+  "homepage": "https://github.com/ouguowen/cocos-studio-ouguowen#readme",
+  "bugs": {
+    "url": "https://github.com/ouguowen/cocos-studio-ouguowen/issues"
+  },
+  "keywords": [
+    "ai-game-studio",
+    "cocos-creator",
+    "codex-skill",
+    "multi-agent",
+    "game-development",
+    "orchestration",
+    "provider-neutral"
+  ],
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
   "scripts": {
+    "test": "node scripts/run-tests.js",
+    "test:e2e": "node scripts/test-studio-e2e.js",
+    "validate:docs": "python scripts/validate_skill_docs.py",
     "validate:example": "node scripts/validate-level-config.js examples/attack-defense-city/level-config",
     "export:example": "node scripts/export-level-config.js examples/attack-defense-city/level-config examples/attack-defense-city/generated-level-config.json",
     "types:example": "node scripts/export-level-types.js examples/attack-defense-city/generated-config-types.ts",
     "check:generated": "node scripts/check-generated-artifacts.js",
     "validate:runtime": "node scripts/validate-runtime-template.js",
-    "check": "npm run validate:example && npm run check:generated && npm run validate:runtime"
+    "check": "pnpm run validate:example && pnpm run check:generated && pnpm run validate:runtime",
+    "ci": "pnpm run validate:docs && pnpm run check && pnpm test"
   },
   "devDependencies": {
     "typescript": "^5.5.0"

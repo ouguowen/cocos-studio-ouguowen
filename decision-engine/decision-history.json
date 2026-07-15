@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "decision-history-only",
+  "execution_enabled": false,
+  "decisions": [
+    {
+      "decision_id": "decision-0001",
+      "input_context": {
+        "project_id": "modern-city-defense",
+        "project_phase": "production",
+        "project_status": "at-risk",
+        "completion_rate": 50,
+        "current_issues": [
+          {
+            "id": "asset-production-not-started",
+            "severity": "medium",
+            "description": "Asset requirements exist as metadata, but no real asset production is permitted in this phase."
+          }
+        ],
+        "feedback_capabilities": [
+          "image-generation",
+          "system-implementation-plan"
+        ],
+        "historical_decision_count": 2,
+        "memory_asset_count": 5
+      },
+      "candidate_actions": [
+        {
+          "task_id": "implement-core-systems",
+          "action": "Prepare core system implementation scope",
+          "agent": "cocos-programmer",
+          "capability": "system-implementation-plan",
+          "status": "in-progress",
+          "base_priority": 3,
+          "blocked_by": [],
+          "risk_level": "low",
+          "feedback_score": 94,
+          "memory_relevance": 1,
+          "priority_score": 89.4
+        },
+        {
+          "task_id": "prepare-asset-requirements",
+          "action": "Prepare asset requirements",
+          "agent": "artist",
+          "capability": "asset-requirements",
+          "status": "pending",
+          "base_priority": 4,
+          "blocked_by": [],
+          "risk_level": "medium",
+          "feedback_score": null,
+          "memory_relevance": 2,
+          "priority_score": 69
+        }
+      ],
+      "priority_score": 89.4,
+      "selected_action": {
+        "task_id": "implement-core-systems",
+        "action": "Prepare core system implementation scope",
+        "agent": "cocos-programmer",
+        "capability": "system-implementation-plan",
+        "status": "in-progress",
+        "base_priority": 3,
+        "blocked_by": [],
+        "risk_level": "low",
+        "feedback_score": 94,
+        "memory_relevance": 1,
+        "priority_score": 89.4
+      },
+      "reason": "Prepare core system implementation scope has the highest calculated priority; all dependencies are satisfied; risk is low.",
+      "confidence": 82,
+      "execution_enabled": false
+    }
+  ]
+}

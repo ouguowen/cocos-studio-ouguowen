@@ -1,0 +1,15 @@
+{
+  "id": "qwen-image",
+  "name": "Qwen Image Provider",
+  "type": "image",
+  "capabilities": [
+    "asset-requirements",
+    "image-generation",
+    "concept-art"
+  ],
+  "adapter": "qwen-image-adapter",
+  "execution_enabled": false,
+  "priority": 85,
+  "speed": 95,
+  "quality": 92
+}

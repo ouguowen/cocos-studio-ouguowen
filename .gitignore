@@ -20,6 +20,9 @@ coverage/
 examples/attack-defense-city/generated-level-config.json
 examples/attack-defense-city/generated-config-types.ts
 
+# Repeatable AI Game Studio runtime and test outputs
+generated/
+
 # Temporary files
 *.tmp
 *.temp

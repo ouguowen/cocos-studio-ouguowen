@@ -1,0 +1,29 @@
+{
+  "id": "qa",
+  "display_name": "QA",
+  "canonical_agent_id": "cocos-qa",
+  "status": "prototype",
+  "responsibilities": [
+    "validation checklist",
+    "dependency and acceptance review",
+    "blocker identification"
+  ],
+  "accepts": [
+    "validation-checklist"
+  ],
+  "capabilities": [
+    "validation-checklist"
+  ],
+  "tool_ids": [
+    "validation-checklist-builder"
+  ],
+  "produces": [
+    "validation checklist"
+  ],
+  "constraints": [
+    "planning only",
+    "does not execute runtime validation",
+    "does not approve release"
+  ],
+  "execution_enabled": false
+}

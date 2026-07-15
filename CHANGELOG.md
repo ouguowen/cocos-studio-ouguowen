@@ -4,6 +4,90 @@ All notable changes to `cocos-studio-ouguowen` will be documented in this file.
 
 ## Unreleased
 
+## v1.0.0-rc.1 - 2026-07-14
+
+### Release Validation
+
+- Added release architecture, registration, execution-contract, runtime, memory, feedback, recovery, and CI validation.
+- Added the v1.0.0 release checklist and audit record.
+- Normalized the package version to the public `1.0.0-rc.1` release candidate line.
+- Kept all external execution disabled and the release runtime mode at `preview`.
+
+### Release Scope
+
+- v1.0.0 validates the provider-neutral architecture, deterministic prototypes, safety gates, and local preview execution foundation.
+- It does not enable Cocos, MCP, image APIs, external Providers, or autonomous production writes.
+
+## v10.2.0-rc.1 - 2026-07-14
+
+### Repository Engineering
+
+- Added the canonical AI Game Studio architecture overview.
+- Added a deterministic test runner covering all prototype and end-to-end test paths.
+- Standardized CI and contributor commands on pnpm.
+- Classified generated JSON as reproducible output and moved release audit evidence into `docs/audits/`.
+- Completed package metadata for an open-source, non-published repository.
+
+### Not Included
+
+- No Planner, Agent, Executor, Runtime, Integration, Provider, Memory, Feedback, Validation, Decision, or Loop behavior changed.
+- No real Cocos, MCP, Provider, external API, or production execution was enabled.
+
+## v10.1.0-rc.1 - 2026-07-14
+
+### Added
+
+- Added the unified Studio Orchestrator from natural-language request to simulated development loop.
+- Added end-to-end acceptance coverage for tower-defense capability matching, Blueprint and Task Graph generation, Agent scheduling, Provider selection, mock execution, Runtime and Integration routing, validation, feedback, memory, project intelligence, decision, and loop convergence.
+- Added fail-fast, traceability, temporary-project, stale-output isolation, and formal-store immutability checks.
+- Added the Release Candidate Architecture Audit.
+
+### Changed
+
+- Replaced the default concrete image Adapter dependency with a provider-neutral Adapter.
+- Routed mock Runtime events through Integration without enabling production execution.
+
+## v10.0.0 - 2026-07-14
+
+### Added
+
+- Added the Real Integration Layer interfaces for Cocos, assets, code, and Git.
+- Kept all concrete environment connections disabled and mock-first.
+
+## v9.0.0 - 2026-07-14
+
+### Added
+
+- Added the pluggable Production Runtime architecture for Cocos, assets, code, and Git.
+- Added mock/production mode contracts with production execution disabled by default.
+
+## v8.0.0 - 2026-07-14
+
+### Added
+
+- Added the Autonomous Development Loop prototype connecting decision, task generation, mock execution, validation, and feedback.
+- Added explicit iteration, retry, warning, failure-repair, and pass transitions.
+
+## v7.0.0 - v7.3.0 - 2026-07-14
+
+### Added
+
+- Added Project Intelligence and shared project context.
+- Added the Autonomous Decision Engine and priority calculation.
+- Added the read-only Project Scanner for assets, code, and scenes.
+- Added the rule-based Validation Agent with `PASS`, `WARNING`, and `FAILED` outcomes.
+
+## v6.0.0 - v6.9.0 - 2026-07-14
+
+### Added
+
+- Added Capability Registry loading and keyword matching.
+- Added Game Planner and Game Blueprint generation.
+- Added Agent Task Graph generation, Agent Registry, and dependency-aware scheduling.
+- Added Capability-to-Tool binding and mock Agent execution.
+- Added disabled Adapter and Provider registries with feedback-based ranking.
+- Added Project Memory for design, style, assets, and decision history.
+
 ## v0.3.0-alpha.16 - 2026-07-10
 
 ### Changed

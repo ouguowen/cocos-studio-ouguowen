@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "architecture-metadata-only",
+  "providers": [
+    {
+      "id": "comfyui",
+      "file": "image/comfyui.json"
+    },
+    {
+      "id": "gpt-image",
+      "file": "image/gpt-image.json"
+    },
+    {
+      "id": "qwen-image",
+      "file": "image/qwen-image.json"
+    },
+    {
+      "id": "cocos",
+      "file": "engine/cocos.json"
+    }
+  ]
+}

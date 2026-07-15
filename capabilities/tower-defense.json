@@ -1,0 +1,27 @@
+{
+  "id": "tower-defense",
+  "name": "Tower Defense",
+  "description": "Routes tower-defense planning requests to the smallest relevant Agent and context set.",
+  "category": "game-genre",
+  "keywords": [
+    "塔防",
+    "防守游戏",
+    "tower defense"
+  ],
+  "game_genres": [
+    "tower-defense"
+  ],
+  "required_agents": [
+    "cocos-game-designer",
+    "cocos-architect",
+    "cocos-config-designer"
+  ],
+  "context_files": [
+    "design/game-classifier.md",
+    "design/game-type-templates.md",
+    "architecture/map-model-router.md",
+    "architecture/level-data-models.md"
+  ],
+  "dependencies": [],
+  "priority": 100
+}

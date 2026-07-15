@@ -1,0 +1,14 @@
+{
+  "id": "cocos",
+  "name": "Cocos Creator Provider",
+  "type": "engine",
+  "capabilities": [
+    "system-implementation-plan",
+    "engine-planning"
+  ],
+  "adapter": "cocos-adapter",
+  "execution_enabled": false,
+  "priority": 100,
+  "speed": 80,
+  "quality": 90
+}

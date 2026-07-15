@@ -1,0 +1,29 @@
+{
+  "id": "game-designer",
+  "display_name": "Game Designer",
+  "canonical_agent_id": "cocos-game-designer",
+  "status": "prototype",
+  "responsibilities": [
+    "game design",
+    "gameplay loop specification",
+    "MVP scope and design acceptance criteria"
+  ],
+  "accepts": [
+    "game-design"
+  ],
+  "capabilities": [
+    "game-design"
+  ],
+  "tool_ids": [
+    "blueprint-design-reader"
+  ],
+  "produces": [
+    "game design specification"
+  ],
+  "constraints": [
+    "planning only",
+    "does not approve implementation",
+    "does not modify Cocos projects"
+  ],
+  "execution_enabled": false
+}

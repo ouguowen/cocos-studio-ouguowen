@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "project-context-memory-only",
+  "execution_enabled": false,
+  "projects": [
+    {
+      "project_memory": {
+        "project_id": "modern-city-defense",
+        "project_name": "modern-city-defense",
+        "game_type": "tower-defense",
+        "genre": "tower-defense",
+        "platform": "mobile",
+        "design_rules": [
+          "Defend the city core through readable lane decisions.",
+          "Tower roles must remain visually distinct.",
+          "Character assets must preserve the shared project palette."
+        ],
+        "technical_constraints": [
+          "Memory framework must not modify a Cocos project.",
+          "All execution integrations remain disabled."
+        ],
+        "art_direction": {
+          "style": "modern sci-fi",
+          "color": "cyan yellow",
+          "lighting": "high contrast"
+        },
+        "audio_direction": {
+          "style": "electronic tactical",
+          "mood": "urgent but controlled"
+        },
+        "ui_direction": {
+          "style": "clean tactical HUD",
+          "color": "cyan yellow on charcoal",
+          "layout": "thumb-reachable mobile controls"
+        }
+      },
+      "style_memory": {
+        "visual_style": "modern sci-fi city defense",
+        "color_palette": [
+          "cyan",
+          "yellow",
+          "charcoal",
+          "white"
+        ],
+        "character_style": "clean armored silhouettes with readable team colors",
+        "environment_style": "dense modern city blocks with controlled neon accents",
+        "ui_style": "high-contrast tactical panels with compact mobile spacing",
+        "animation_style": "short readable anticipation, impact, and recovery timing"
+      },
+      "assets": [
+        {
+          "asset_id": "hero_001",
+          "asset_type": "character",
+          "related_assets": [
+            "idle_animation",
+            "attack_animation",
+            "portrait_hero_001"
+          ],
+          "version": "1.0.0",
+          "description": "Primary city-defense hero specification.",
+          "usage_context": [
+            "character-generation",
+            "gameplay"
+          ]
+        },
+        {
+          "asset_id": "idle_animation",
+          "asset_type": "animation",
+          "related_assets": [
+            "hero_001"
+          ],
+          "version": "1.0.0",
+          "description": "Idle animation relationship for hero_001.",
+          "usage_context": [
+            "character-generation"
+          ]
+        },
+        {
+          "asset_id": "attack_animation",
+          "asset_type": "animation",
+          "related_assets": [
+            "hero_001"
+          ],
+          "version": "1.0.0",
+          "description": "Attack animation relationship for hero_001.",
+          "usage_context": [
+            "character-generation"
+          ]
+        },
+        {
+          "asset_id": "portrait_hero_001",
+          "asset_type": "portrait",
+          "related_assets": [
+            "hero_001"
+          ],
+          "version": "1.0.0",
+          "description": "UI portrait relationship for hero_001.",
+          "usage_context": [
+            "character-generation",
+            "ui-design"
+          ]
+        },
+        {
+          "asset_id": "city_scene_001",
+          "asset_type": "scene",
+          "related_assets": [],
+          "version": "1.0.0",
+          "description": "Modern city battlefield scene specification.",
+          "usage_context": [
+            "scene-generation"
+          ]
+        }
+      ],
+      "decision_history": [
+        {
+          "decision_id": "character-style-001",
+          "task_id": "character-generation",
+          "decision": "Use modern sci-fi character silhouettes with cyan team markers.",
+          "reason": "Matches project art direction and keeps combat roles readable.",
+          "related_agents": [
+            "game-designer",
+            "artist"
+          ],
+          "timestamp": "2026-01-01T00:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cocos-studio-ouguowen.local/schemas/project-scan-report.json",
+  "title": "Real Project Scan Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project",
+    "engine",
+    "assets",
+    "code",
+    "scenes",
+    "warnings",
+    "completion_estimate",
+    "execution_enabled"
+  ],
+  "properties": {
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "engine": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_files",
+        "image_count",
+        "animation_count",
+        "ui_resource_count",
+        "audio_count",
+        "prefab_count",
+        "resource_count",
+        "directories"
+      ],
+      "properties": {
+        "total_files": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "image_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "animation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ui_resource_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "audio_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "prefab_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "resource_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "directories": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assets",
+            "scripts",
+            "scenes",
+            "prefabs",
+            "resources"
+          ],
+          "properties": {
+            "assets": {
+              "type": "boolean"
+            },
+            "scripts": {
+              "type": "boolean"
+            },
+            "scenes": {
+              "type": "boolean"
+            },
+            "prefabs": {
+              "type": "boolean"
+            },
+            "resources": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "code": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "script_count",
+        "module_count",
+        "todo_count"
+      ],
+      "properties": {
+        "script_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "module_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "todo_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "scenes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scene_count",
+        "node_count"
+      ],
+      "properties": {
+        "scene_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "node_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "completion_estimate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "execution_enabled": {
+      "const": false
+    }
+  }
+}

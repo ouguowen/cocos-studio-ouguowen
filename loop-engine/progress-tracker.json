@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "autonomous-loop-simulation",
+  "execution_enabled": false,
+  "iteration_id": "iteration-0003",
+  "max_iterations": 3,
+  "current_iteration": 3,
+  "current_status": "completed",
+  "retry_count": 1,
+  "completed_tasks": [
+    "system-implementation-plan"
+  ],
+  "failed_tasks": [
+    "system-implementation-plan"
+  ],
+  "iterations": [
+    {
+      "iteration_id": "iteration-0001",
+      "decision_id": "decision-0001",
+      "task_id": "system-implementation-plan",
+      "validation_status": "FAILED",
+      "next_action": "regenerate-task",
+      "execution_mode": "mock",
+      "execution_enabled": false,
+      "task_regenerated": false
+    },
+    {
+      "iteration_id": "iteration-0002",
+      "decision_id": "decision-0002",
+      "task_id": "system-implementation-plan",
+      "validation_status": "WARNING",
+      "next_action": "continue-loop",
+      "execution_mode": "mock",
+      "execution_enabled": false,
+      "task_regenerated": true
+    },
+    {
+      "iteration_id": "iteration-0003",
+      "decision_id": "decision-0003",
+      "task_id": "system-implementation-plan",
+      "validation_status": "PASS",
+      "next_action": "advance-to-next-phase",
+      "execution_mode": "mock",
+      "execution_enabled": false,
+      "task_regenerated": false
+    }
+  ]
+}

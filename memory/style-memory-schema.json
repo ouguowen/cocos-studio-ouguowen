@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cocos-studio-ouguowen.local/schemas/style-memory.json",
+  "title": "Style Memory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "visual_style",
+    "color_palette",
+    "character_style",
+    "environment_style",
+    "ui_style",
+    "animation_style"
+  ],
+  "properties": {
+    "visual_style": {
+      "type": "string",
+      "minLength": 1
+    },
+    "color_palette": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "character_style": {
+      "type": "string",
+      "minLength": 1
+    },
+    "environment_style": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ui_style": {
+      "type": "string",
+      "minLength": 1
+    },
+    "animation_style": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0.0",
+  "target_version": "1.0.0",
+  "accepted_package_versions": [
+    "1.0.0-rc.1",
+    "1.0.0"
+  ],
+  "runtime_mode": "preview",
+  "execution_enabled": false,
+  "minimum_registered_tests": 22,
+  "checks": [
+    {
+      "id": "architecture-completeness",
+      "required": true,
+      "paths": [
+        "SKILL.md",
+        "docs/architecture.md",
+        "orchestrator/studio-orchestrator.js",
+        "execution/workspace-manager.js",
+        "execution-contract/execution-schema.json",
+        "execution-history/execution-record-schema.json"
+      ]
+    },
+    {
+      "id": "module-registration",
+      "required": true,
+      "paths": [
+        "capabilities/index.json",
+        "agents/registry.json",
+        "providers/registry.json",
+        "scripts/run-tests.js"
+      ]
+    },
+    {
+      "id": "execution-contract-chain",
+      "required": true,
+      "paths": [
+        "execution-contract/capability-executor.js",
+        "execution-contract/execution-router.js",
+        "execution-contract/execution-policy.js",
+        "execution-contract/execution-result.js"
+      ]
+    },
+    {
+      "id": "runtime-chain",
+      "required": true,
+      "paths": [
+        "executor/agent-executor.js",
+        "runtime/runtime-manager.js",
+        "execution/file-operation.js",
+        "execution/rollback-manager.js"
+      ]
+    },
+    {
+      "id": "memory-chain",
+      "required": true,
+      "paths": [
+        "memory/memory-manager.js",
+        "memory/memory-query.js",
+        "memory/project-memory-store.json"
+      ]
+    },
+    {
+      "id": "feedback-chain",
+      "required": true,
+      "paths": [
+        "feedback/execution-feedback.js",
+        "feedback/provider-ranking.js",
+        "feedback/performance-store.json"
+      ]
+    },
+    {
+      "id": "recovery-chain",
+      "required": true,
+      "paths": [
+        "execution-history/execution-history-store.js",
+        "execution-history/transaction-journal.js",
+        "execution-history/recovery-manager.js",
+        "execution-history/audit-log.js"
+      ]
+    },
+    {
+      "id": "ci-all-tests",
+      "required": true,
+      "paths": [
+        ".github/workflows/ci.yml",
+        "package.json",
+        "scripts/validate_skill_docs.py"
+      ]
+    }
+  ],
+  "release_boundaries": {
+    "external_provider_execution": false,
+    "cocos_execution": false,
+    "mcp_execution": false,
+    "external_api_execution": false,
+    "production_runtime": false
+  }
+}

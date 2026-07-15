@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "prototype-metadata-only",
+  "capabilities": [
+    {
+      "id": "game-design",
+      "description": "Produce a game design specification from Blueprint design data."
+    },
+    {
+      "id": "system-implementation-plan",
+      "description": "Produce implementation planning without generating game code."
+    },
+    {
+      "id": "asset-requirements",
+      "description": "Produce a resource requirement list without creating assets."
+    },
+    {
+      "id": "validation-checklist",
+      "description": "Produce a validation checklist from prior planning artifacts."
+    }
+  ],
+  "tools": [
+    {
+      "id": "blueprint-design-reader",
+      "description": "Read design metadata already embedded in a Task Graph input.",
+      "capabilities": [
+        "game-design"
+      ],
+      "allowed_agents": [
+        "game-designer"
+      ],
+      "external": false,
+      "execution_enabled": false
+    },
+    {
+      "id": "blueprint-system-planner",
+      "description": "Transform Blueprint system metadata into planning requirements only.",
+      "capabilities": [
+        "system-implementation-plan"
+      ],
+      "allowed_agents": [
+        "cocos-programmer"
+      ],
+      "external": false,
+      "execution_enabled": false
+    },
+    {
+      "id": "asset-requirement-catalog",
+      "description": "Organize Blueprint asset names into a non-executable requirement catalog.",
+      "capabilities": [
+        "asset-requirements"
+      ],
+      "allowed_agents": [
+        "artist"
+      ],
+      "external": false,
+      "execution_enabled": false
+    },
+    {
+      "id": "validation-checklist-builder",
+      "description": "Build a static validation checklist from planning metadata.",
+      "capabilities": [
+        "validation-checklist"
+      ],
+      "allowed_agents": [
+        "qa"
+      ],
+      "external": false,
+      "execution_enabled": false
+    }
+  ]
+}

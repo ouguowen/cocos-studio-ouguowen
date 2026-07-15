@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0.0",
+  "audit_version": "v10.1",
+  "audit_date": "2026-07-14",
+  "architecture_status": "PASS_WITH_KNOWN_ISSUES",
+  "e2e_status": "PASS",
+  "tested_modules": [
+    "capability-loader",
+    "game-planner",
+    "task-generator",
+    "agent-scheduler",
+    "capability-binding",
+    "provider-selector",
+    "agent-executor",
+    "runtime-manager",
+    "integration-manager",
+    "project-scanner",
+    "validation-agent",
+    "feedback-system",
+    "memory-system",
+    "project-intelligence",
+    "decision-engine",
+    "loop-engine"
+  ],
+  "missing_modules": [],
+  "dependency_issues": [
+    {
+      "severity": "medium",
+      "id": "manager-concrete-class-static-cycles",
+      "description": "Runtime and Integration managers lazily load concrete classes while those classes import their manager module for the base class. Node.js resolves the cycle because loading is delayed, but the dependency direction remains bidirectional.",
+      "affected_paths": [
+        "runtime/runtime-manager.js",
+        "runtime/cocos-runtime.js",
+        "runtime/asset-runtime.js",
+        "runtime/code-runtime.js",
+        "runtime/git-runtime.js",
+        "integration/integration-manager.js",
+        "integration/cocos-integration.js",
+        "integration/asset-integration.js",
+        "integration/code-integration.js",
+        "integration/git-integration.js"
+      ],
+      "recommendation": "Extract BaseRuntime and BaseIntegration into dependency-neutral modules in a later, separately reviewed refactor."
+    },
+    {
+      "severity": "high",
+      "id": "provider-selection-not-in-execution-contract",
+      "description": "Provider selection is validated and recorded, but the selected Provider identity is not carried through the Adapter, Runtime, and Integration request contract. Mock execution therefore proves routing, not that the selected Provider would be the one executed.",
+      "affected_paths": [
+        "providers/provider-selector.js",
+        "executor/agent-executor.js",
+        "runtime/runtime-manager.js",
+        "integration/integration-manager.js"
+      ],
+      "recommendation": "Add a provider_id and provider capability contract before any real execution is enabled."
+    }
+  ],
+  "duplicated_responsibilities": [
+    {
+      "severity": "medium",
+      "id": "distributed-capability-routing-metadata",
+      "description": "Agent capability declarations, Tool capability mappings, Provider capability mappings, and Runtime capability lists are stored independently and can drift.",
+      "recommendation": "Add a cross-registry compatibility validator before consolidating any registries."
+    },
+    {
+      "severity": "low",
+      "id": "provider-selection-call-sites",
+      "description": "The Orchestrator and Loop Controller each perform Provider selection for their own lifecycle stage.",
+      "recommendation": "Keep the behavior for the prototype, but route both call sites through one small selection policy service if ranking policy expands."
+    }
+  ],
+  "stale_generated_files": [],
+  "generated_files_classification": {
+    "A_repeatable_temporary_artifacts": [
+      "generated/bound-execution-plan.json",
+      "generated/decision-report.json",
+      "generated/execution-plan.json",
+      "generated/execution-results.json",
+      "generated/feedback-report.json",
+      "generated/game-blueprint.json",
+      "generated/integration-report.json",
+      "generated/loop-report.json",
+      "generated/memory-report.json",
+      "generated/project-report.json",
+      "generated/project-scan-report.json",
+      "generated/runtime-report.json",
+      "generated/studio-e2e-report.json",
+      "generated/task-graph.json",
+      "generated/validation-report.json"
+    ],
+    "B_formal_examples_or_test_fixtures": [],
+    "C_canonical_versioned_data": [
+      "docs/audits/v10.1-release-candidate-audit.json"
+    ]
+  },
+  "repository_hygiene_recommendations": [
+    "Ignore repeatable generated/*.json runtime artifacts and archive approved release audit evidence under docs/audits/.",
+    "Move future deterministic test inputs to tests/fixtures/ instead of reading generated outputs.",
+    "Move future curated user-facing output samples to examples/ and keep them separate from test-generated reports.",
+    "Track schemas, registries, policies, templates, and approved RC audit evidence; do not track ordinary run outputs.",
+    "Split the current v3-v10 uncommitted worktree into reviewed, dependency-ordered commits before release."
+  ],
+  "production_blockers": [
+    "All Runtime, Integration, Provider, Adapter, Agent, and loop execution gates remain disabled by design.",
+    "No Integration has a production implementation or external environment validation.",
+    "The selected Provider is not yet part of the end-to-end execution request contract.",
+    "Direct Integration APIs are public and rely on execution_enabled checks rather than an authenticated Runtime authorization token.",
+    "The acceptance test covers one tower-defense scenario in mock mode and cannot prove Cocos, asset, code, Git, or external Provider behavior.",
+    "Repository generated-output policy and commit decomposition are not yet resolved."
+  ],
+  "recommended_commit_scope": [
+    "Commit package-manager normalization and validation compatibility separately.",
+    "Commit architecture documentation separately from executable prototypes.",
+    "Commit v6-v8 prototype modules in dependency order with their tests and canonical data.",
+    "Commit v9-v10 Runtime and Integration interfaces with their tests.",
+    "Commit v10.1 boundary fixes, Orchestrator, E2E test, and audit evidence as one reviewable scope.",
+    "Resolve generated artifact ignore and fixture migration policy before the final release candidate commit."
+  ],
+  "evidence": {
+    "node_test_files_present": 18,
+    "node_test_files_missing": 0,
+    "node_tests_passed": 18,
+    "skill_docs_validation": "PASS",
+    "pnpm_check": "PASS",
+    "pnpm_runtime_version": "11.7.0",
+    "pnpm_launcher_note": "The primary Codex pnpm shim was broken; validation used the bundled fallback pnpm entry with a process-local PATH override.",
+    "e2e_stage_count": 16,
+    "e2e_validation_sequence": [
+      "FAILED",
+      "WARNING",
+      "PASS"
+    ],
+    "e2e_fail_fast_verified": true,
+    "old_generated_inputs_used": false,
+    "formal_stores_modified_by_e2e": false,
+    "runtime_mode": "mock",
+    "execution_enabled": false,
+    "external_calls": false
+  },
+  "ready_to_commit": false,
+  "ready_for_real_execution": false
+}

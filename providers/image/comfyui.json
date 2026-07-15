@@ -1,0 +1,15 @@
+{
+  "id": "comfyui",
+  "name": "ComfyUI Image Provider",
+  "type": "image",
+  "capabilities": [
+    "asset-requirements",
+    "image-generation",
+    "concept-art"
+  ],
+  "adapter": "comfyui-adapter",
+  "execution_enabled": false,
+  "priority": 80,
+  "speed": 65,
+  "quality": 88
+}

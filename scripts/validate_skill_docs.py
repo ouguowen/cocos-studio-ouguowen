@@ -8,6 +8,7 @@ in GitHub Actions without extra dependency installation.
 from __future__ import annotations
 
 import os
+import json
 import re
 import subprocess
 import sys
@@ -23,6 +24,7 @@ ALLOWED_ROOT_FILES = {
     "CONTRIBUTING.md",
     "LICENSE",
     "package.json",
+    "pnpm-lock.yaml",
     "README.md",
     "README.zh-CN.md",
     "SECURITY.md",
@@ -142,7 +144,6 @@ CONTENT_CHECKS = {
     "package.json": [
         "check:generated",
         "scripts/check-generated-artifacts.js",
-        "npm run validate:example && npm run check:generated && npm run validate:runtime",
     ],
     "SKILL.md": [
         "core/context-loading-policy.md",
@@ -782,12 +783,44 @@ def check_required_content() -> list[str]:
     ):
         errors.append("README.md: missing negative full-game-complete statement")
 
+    errors.extend(check_package_json_check_script())
+
     issue_template_config = ROOT / ".github/ISSUE_TEMPLATE/config.yml"
     if issue_template_config.exists():
         for line in read_text(issue_template_config).splitlines():
             if line.strip() == "url: https://github.com/":
                 errors.append("Issue template config uses generic GitHub contact link.")
     return errors
+
+
+def check_package_json_check_script() -> list[str]:
+    path = ROOT / "package.json"
+    if not path.exists():
+        return []
+
+    try:
+        package_json = json.loads(read_text(path))
+    except json.JSONDecodeError as error:
+        return [f"package.json: invalid JSON: {error}"]
+
+    scripts = package_json.get("scripts", {})
+    if not isinstance(scripts, dict):
+        return ["package.json: scripts must be an object"]
+
+    check_script = scripts.get("check")
+    if not isinstance(check_script, str):
+        return ["package.json: missing scripts.check"]
+
+    allowed_check_scripts = {
+        "npm run validate:example && npm run check:generated && npm run validate:runtime",
+        "pnpm run validate:example && pnpm run check:generated && pnpm run validate:runtime",
+    }
+    if check_script not in allowed_check_scripts:
+        return [
+            "package.json: scripts.check must run validate:example, check:generated, and validate:runtime through npm or pnpm"
+        ]
+
+    return []
 
 
 def strip_anchor(target: str) -> str:

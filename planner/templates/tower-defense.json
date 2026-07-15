@@ -1,0 +1,110 @@
+{
+  "id": "tower-defense",
+  "status": "implemented",
+  "project": {
+    "default_name": "Modern City Tower Defense",
+    "engine": "Cocos Creator",
+    "platform": "mobile"
+  },
+  "gameplay": {
+    "default_theme": "modern-city",
+    "camera": "top-down",
+    "gameplay_loop": [
+      "inspect incoming enemy waves",
+      "place or upgrade defensive towers",
+      "defend city routes during the wave",
+      "earn resources from completed waves",
+      "prepare the next defensive layout"
+    ]
+  },
+  "systems": [
+    {
+      "id": "battle-system",
+      "priority": 1
+    },
+    {
+      "id": "tower-system",
+      "priority": 2
+    },
+    {
+      "id": "enemy-system",
+      "priority": 3
+    },
+    {
+      "id": "wave-system",
+      "priority": 4
+    },
+    {
+      "id": "economy-system",
+      "priority": 5
+    }
+  ],
+  "assets": {
+    "characters": [
+      "defense-tower-set",
+      "enemy-unit-set",
+      "city-defense-commander"
+    ],
+    "scenes": [
+      "modern-city-battlefield",
+      "game-bootstrap",
+      "battle-result"
+    ],
+    "ui": [
+      "battle-hud",
+      "tower-selection-panel",
+      "wave-status-panel",
+      "battle-result-panel"
+    ],
+    "audio": [
+      "battle-music",
+      "tower-attack-sfx",
+      "enemy-hit-sfx",
+      "ui-feedback-sfx"
+    ]
+  },
+  "agents": [
+    {
+      "role": "cocos-game-designer",
+      "responsibility": "Define the tower-defense loop, level intent, wave pressure, and MVP acceptance criteria."
+    },
+    {
+      "role": "cocos-architect",
+      "responsibility": "Define system boundaries, state ownership, route data, and Cocos integration constraints."
+    },
+    {
+      "role": "cocos-config-designer",
+      "responsibility": "Define wave, tower, enemy, and prototype economy configuration requirements."
+    },
+    {
+      "role": "cocos-dev",
+      "responsibility": "Implement only a separately approved development story after design and runtime readiness."
+    },
+    {
+      "role": "cocos-qa",
+      "responsibility": "Validate blueprint coverage, gameplay acceptance criteria, and future regression evidence."
+    }
+  ],
+  "validation": {
+    "required_systems": [
+      "battle-system",
+      "tower-system",
+      "enemy-system",
+      "wave-system",
+      "economy-system"
+    ],
+    "required_agents": [
+      "cocos-game-designer",
+      "cocos-architect",
+      "cocos-config-designer",
+      "cocos-qa"
+    ],
+    "checks": [
+      "capability-matched",
+      "blueprint-schema-valid",
+      "no-game-code-generated",
+      "no-assets-created",
+      "human-approval-required-before-implementation"
+    ]
+  }
+}
