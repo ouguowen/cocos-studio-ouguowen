@@ -123,6 +123,7 @@ function runTests() {
     assert.match(report.iteration_id, /^iteration-\d{4}$/);
 
     const requiredStages = [
+      "blueprint-manager",
       "task-router",
       "agent-router",
       "capability-loader",
@@ -143,6 +144,8 @@ function runTests() {
       "loop-engine",
     ];
     assert.deepStrictEqual(report.stages.map((stage) => stage.stage), requiredStages);
+    assert.strictEqual(report.blueprint_context.execution_enabled, false);
+    assert.strictEqual(report.blueprint_context.blueprint_version, "0.1.0");
     assert.strictEqual(report.routing.level, "L3");
     assert.strictEqual(report.routing.execution_path, "studio");
     assert.strictEqual(report.agent_selection.full_agent_chain, true);
@@ -197,13 +200,15 @@ function runTests() {
     assert.strictEqual(failed.report.status, "FAILED");
     assert.strictEqual(failed.report.failed_stage, "capability-loader");
     assert.strictEqual(failed.report.acceptance.fail_fast, true);
-    assert.strictEqual(failed.report.stages.length, 3, "Only routers may run before capability matching fails.");
-    assert.strictEqual(failed.report.stages[0].stage, "task-router");
+    assert.strictEqual(failed.report.stages.length, 4, "Only Blueprint Manager and routers may run before capability matching fails.");
+    assert.strictEqual(failed.report.stages[0].stage, "blueprint-manager");
     assert.strictEqual(failed.report.stages[0].status, "PASS");
-    assert.strictEqual(failed.report.stages[1].stage, "agent-router");
+    assert.strictEqual(failed.report.stages[1].stage, "task-router");
     assert.strictEqual(failed.report.stages[1].status, "PASS");
-    assert.strictEqual(failed.report.stages[2].stage, "capability-loader");
-    assert.strictEqual(failed.report.stages[2].status, "FAILED");
+    assert.strictEqual(failed.report.stages[2].stage, "agent-router");
+    assert.strictEqual(failed.report.stages[2].status, "PASS");
+    assert.strictEqual(failed.report.stages[3].stage, "capability-loader");
+    assert.strictEqual(failed.report.stages[3].status, "FAILED");
     assert.strictEqual(stageByName(failed.report, "game-planner"), undefined);
 
     const outputPath = writeStudioReport(report);
@@ -216,6 +221,7 @@ function runTests() {
       matched_capability: report.acceptance.matched_capability,
       stage_count: report.stages.length,
       first_stage: report.stages[0].stage,
+      blueprint_version: report.blueprint_context.blueprint_version,
       routing_level: report.routing.level,
       selected_agents: report.agent_selection.selected_agents,
       validation_sequence: report.acceptance.validation_statuses,

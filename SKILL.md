@@ -44,14 +44,30 @@ Use:
 - `GATE_CONTEXT` for pre-write approval, QA, release, stage transition, runtime proof, and safety gates.
 - `AUDIT_CONTEXT` for repository audits, validation-script review, release governance, and Skill self-tests.
 
-## Task Router Entry
+## Shared Context And Router Entry
 
-AI Game Studio execution starts with the Task Router, not the full Studio Pipeline.
+AI Game Studio execution starts with a shared Blueprint context, then routes the task and activates only relevant Agents.
 
+Shared Blueprint context lives in [blueprint/blueprint-manager.js](blueprint/blueprint-manager.js).
+Incremental dependency impact lives in [dependency-graph/dependency-graph.js](dependency-graph/dependency-graph.js).
 Routing policy lives in [config/task-routing.json](config/task-routing.json).
 Runtime routing code lives in [task-router/task-router.js](task-router/task-router.js).
+Adaptive execution routing chooses Fast Path or Full Pipeline from task complexity and dependency impact.
 Fast Lane validation lives in [task-router/fast-execution-path.js](task-router/fast-execution-path.js).
 Dynamic Agent activation lives in [agent-router/agent-router.js](agent-router/agent-router.js).
+
+Default flow:
+
+```text
+Request
+-> Blueprint Manager
+-> Dependency Graph impact
+-> Task Router
+-> Adaptive Execution Router
+-> Agent Router
+-> Selected Agent Context
+-> Executor or existing Studio Pipeline
+```
 
 Levels:
 
@@ -63,10 +79,20 @@ Levels:
 Execution paths:
 
 - `L0` and `L1` may use Fast Lane when policy allows.
-- Fast Lane may run only `task-router`, `agent-router`, `capability-loader`, `agent-executor`, and `validation-agent`.
+- Fast Lane may run only `blueprint-manager`, `task-router`, `agent-router`, `capability-loader`, `agent-executor`, and `validation-agent`.
 - Fast Lane must bypass Planner, Task Graph, Scheduler, and Loop.
 - `L2`, `L3`, unknown requests, release requests, production requests, and force-full signals must enter the existing Studio Pipeline.
 - `execution_enabled` remains `false`; default execution mode remains `mock`.
+
+Blueprint context is shared, versioned, and sectioned by Agent:
+
+- `artist`: visual, assets, ui
+- `cocos-programmer`: systems, code, components
+- `game-designer`: design, gameplay
+- `qa`: validation, test
+
+Dependency impact maps Blueprint changes to affected Agents so small updates do
+not reactivate unrelated roles.
 
 ## Operation Routing
 

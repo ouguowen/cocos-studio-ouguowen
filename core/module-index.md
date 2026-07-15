@@ -33,8 +33,13 @@ evolution/governance expansion.
 
 - [design/game-classifier.md](../design/game-classifier.md): classify the game before template choice
 - [design/game-type-templates.md](../design/game-type-templates.md): select the closest genre or loop template
+- [blueprint/blueprint-manager.js](../blueprint/blueprint-manager.js): shared versioned Blueprint context before task and Agent routing
+- [blueprint/game-blueprint.schema.json](../blueprint/game-blueprint.schema.json): schema for project-level Blueprint context sections
+- [dependency-graph/dependency-graph.js](../dependency-graph/dependency-graph.js): incremental Blueprint-to-Agent/File/System dependency impact engine
+- [dependency-graph/dependency-schema.json](../dependency-graph/dependency-schema.json): schema for dependency nodes and directed edges
 - [config/task-routing.json](../config/task-routing.json): Task Router policy for L0/L1 Fast Lane and L2/L3 Studio Pipeline routing
 - [task-router/task-router.js](../task-router/task-router.js): deterministic task-level router used by the Studio Orchestrator
+- [task-router/task-router.js](../task-router/task-router.js): Adaptive Execution Router decision point for Fast Path versus Full Pipeline
 - [task-router/fast-execution-path.js](../task-router/fast-execution-path.js): Fast Lane binding and validation for Capability, Executor, and Validation only
 - [agent-router/agent-router.js](../agent-router/agent-router.js): dynamic Agent activation after Task Router and before execution
 - [agent-router/activation-policy.json](../agent-router/activation-policy.json): Agent selection rules for UI, code, battle, testing, and full-production tasks

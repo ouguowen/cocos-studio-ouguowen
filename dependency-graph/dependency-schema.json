@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dependency-schema.json",
+  "title": "AI Game Studio Game Dependency Graph",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "execution_enabled",
+    "nodes",
+    "dependencies"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "execution_enabled": {
+      "const": false
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "blueprint",
+              "agent",
+              "file",
+              "system",
+              "asset",
+              "validation"
+            ]
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

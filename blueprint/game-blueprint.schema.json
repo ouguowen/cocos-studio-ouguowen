@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "game-blueprint.schema.json",
+  "title": "AI Game Studio Shared Game Blueprint",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "blueprint_version",
+    "execution_enabled",
+    "project",
+    "source_request",
+    "sections"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "blueprint_version": {
+      "type": "string"
+    },
+    "execution_enabled": {
+      "const": false
+    },
+    "project": {
+      "type": "object",
+      "required": [
+        "project_id",
+        "genre",
+        "engine",
+        "platform"
+      ]
+    },
+    "source_request": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "object",
+      "required": [
+        "design",
+        "gameplay",
+        "visual",
+        "assets",
+        "ui",
+        "systems",
+        "code",
+        "components",
+        "validation",
+        "test"
+      ]
+    },
+    "dependency_impact": {
+      "type": "object",
+      "required": [
+        "execution_enabled",
+        "changed_nodes",
+        "affected_nodes",
+        "affected_agents"
+      ],
+      "properties": {
+        "execution_enabled": {
+          "const": false
+        },
+        "changed_nodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "affected_nodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "affected_agents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

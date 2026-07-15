@@ -100,6 +100,7 @@ function runTests() {
   assert.ifError(uiRun.error);
   assert.strictEqual(validateStudioReport(uiRun.report), true);
   assert.deepStrictEqual(stageNames(uiRun.report), [
+    "blueprint-manager",
     "task-router",
     "agent-router",
     "capability-loader",
@@ -107,6 +108,8 @@ function runTests() {
     "validation-agent",
   ]);
   assertSameMembers(uiRun.report.agent_selection.selected_agents, ["artist", "cocos-programmer"], "UI run should stay limited.");
+  assert.deepStrictEqual(Object.keys(uiRun.report.agent_selection.blueprint_context).sort(), ["artist", "cocos-programmer"]);
+  assert.deepStrictEqual(Object.keys(uiRun.report.agent_selection.blueprint_context.artist.sections).sort(), ["assets", "ui", "visual"]);
 
   const codeRun = runStudioOrchestrator("tower defense code bug fix", {
     runId: "run-agent-router-code",
@@ -136,7 +139,7 @@ function runTests() {
       ui_agents: uiRun.report.agent_selection.selected_agents,
       code_fix_agents: codeRun.report.agent_selection.selected_agents,
       full_chain_agents: fullRun.report.agent_selection.selected_agents,
-      fast_lane_stages: stageNames(uiRun.report),
+    fast_lane_stages: stageNames(uiRun.report),
       full_pipeline_stage_count: fullRun.report.stages.length,
       execution_enabled: false,
     }, null, 2));

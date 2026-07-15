@@ -86,12 +86,30 @@ function validateTaskRoutingConfig(config) {
     throw new Error("Fast Lane may only allow L0 and L1 tasks.");
   }
   assertStringArray(fastLane.allowed_stages, "Fast Lane allowed_stages");
-  const requiredStages = ["task-router", "agent-router", "capability-loader", "agent-executor", "validation-agent"];
+  const requiredStages = ["blueprint-manager", "task-router", "agent-router", "capability-loader", "agent-executor", "validation-agent"];
   if (requiredStages.some((stage) => !fastLane.allowed_stages.includes(stage))) {
     throw new Error("Fast Lane must retain routing, capability, executor, and validation stages.");
   }
   for (const level of fastLane.allowed_levels) {
     validateBinding(fastLane.bindings?.[level], level);
+  }
+  const adaptive = config.adaptive_execution;
+  if (!adaptive || typeof adaptive !== "object" || Array.isArray(adaptive)) {
+    throw new Error("Task routing adaptive_execution must be an object.");
+  }
+  if (adaptive.enabled !== true
+    || adaptive.fast_path !== "fast_path"
+    || adaptive.full_pipeline !== "full_pipeline") {
+    throw new Error("Adaptive Execution Router must define fast_path and full_pipeline routes.");
+  }
+  for (const field of ["max_fast_complexity", "max_fast_affected_agents", "max_fast_affected_nodes"]) {
+    if (!Number.isInteger(adaptive[field]) || adaptive[field] < 0) {
+      throw new Error(`Adaptive Execution Router ${field} must be a non-negative integer.`);
+    }
+  }
+  assertStringArray(adaptive.full_pipeline_levels, "Adaptive Execution Router full_pipeline_levels");
+  if (adaptive.full_pipeline_levels.some((level) => !levelIds.includes(level))) {
+    throw new Error("Adaptive Execution Router full_pipeline_levels references an invalid level.");
   }
   assertStringArray(config.force_full_pipeline_signals, "Task routing force_full_pipeline_signals");
   return true;
@@ -130,6 +148,77 @@ function findSignal(normalizedRequest, signals) {
   return signals.find((signal) => containsSignal(normalizedRequest, signal)) || null;
 }
 
+function normalizeDependencyImpact(dependencyImpact = null) {
+  if (dependencyImpact === null || dependencyImpact === undefined) {
+    return {
+      changed_nodes: [],
+      affected_nodes: [],
+      affected_agents: [],
+    };
+  }
+  if (!dependencyImpact || typeof dependencyImpact !== "object" || Array.isArray(dependencyImpact)) {
+    throw new Error("Task Router dependencyImpact must be an object.");
+  }
+  for (const field of ["changed_nodes", "affected_nodes", "affected_agents"]) {
+    if (!Array.isArray(dependencyImpact[field])
+      || dependencyImpact[field].some((item) => typeof item !== "string" || item.trim().length === 0)) {
+      throw new Error(`Task Router dependencyImpact.${field} must be a string array.`);
+    }
+  }
+  return {
+    changed_nodes: [...new Set(dependencyImpact.changed_nodes)],
+    affected_nodes: [...new Set(dependencyImpact.affected_nodes)],
+    affected_agents: [...new Set(dependencyImpact.affected_agents)],
+  };
+}
+
+function calculateTaskComplexity(level, dependencyImpact, forcedSignal = null) {
+  const levelRank = levelIds.indexOf(level);
+  const affectedAgentPenalty = dependencyImpact.affected_agents.length > 2 ? 1 : 0;
+  const affectedNodePenalty = dependencyImpact.affected_nodes.length > 8 ? 1 : 0;
+  const forcedPenalty = forcedSignal ? 2 : 0;
+  return {
+    level,
+    level_rank: levelRank,
+    affected_agent_count: dependencyImpact.affected_agents.length,
+    affected_node_count: dependencyImpact.affected_nodes.length,
+    score: levelRank + affectedAgentPenalty + affectedNodePenalty + forcedPenalty,
+  };
+}
+
+function chooseAdaptiveExecution(config, selectedLevel, fastLaneAllowed, dependencyImpact, forcedSignal) {
+  const adaptive = config.adaptive_execution;
+  const complexity = calculateTaskComplexity(selectedLevel, dependencyImpact, forcedSignal);
+  const blocks = [];
+  if (!fastLaneAllowed) {
+    blocks.push("fast-lane-not-allowed");
+  }
+  if (adaptive.full_pipeline_levels.includes(selectedLevel)) {
+    blocks.push(`level-${selectedLevel}-requires-full-pipeline`);
+  }
+  if (complexity.score > adaptive.max_fast_complexity) {
+    blocks.push("task-complexity-exceeds-fast-path");
+  }
+  if (complexity.affected_agent_count > adaptive.max_fast_affected_agents) {
+    blocks.push("too-many-affected-agents");
+  }
+  if (complexity.affected_node_count > adaptive.max_fast_affected_nodes) {
+    blocks.push("too-many-affected-nodes");
+  }
+  const mode = blocks.length === 0 ? "fast" : "full";
+  return {
+    route_type: mode === "fast" ? adaptive.fast_path : adaptive.full_pipeline,
+    execution_path: mode === "fast" ? "fast" : "studio",
+    execution_mode: {
+      mode,
+      agents: [...dependencyImpact.affected_agents],
+    },
+    runtime_mode: "mock",
+    task_complexity: complexity,
+    decision_reasons: blocks.length === 0 ? ["adaptive-fast-path-approved"] : blocks,
+  };
+}
+
 function routeTask(request, options = {}) {
   assertNonEmptyString(request, "Task Router request");
   const config = options.config || loadTaskRoutingConfig(options.configPath);
@@ -153,7 +242,15 @@ function routeTask(request, options = {}) {
 
   const fastLaneAllowed = config.fast_lane.enabled
     && config.fast_lane.allowed_levels.includes(selectedLevel);
-  const executionPath = fastLaneAllowed ? "fast" : "studio";
+  const dependencyImpact = normalizeDependencyImpact(options.dependencyImpact);
+  const adaptiveDecision = chooseAdaptiveExecution(
+    config,
+    selectedLevel,
+    fastLaneAllowed,
+    dependencyImpact,
+    forcedSignal,
+  );
+  const executionPath = adaptiveDecision.execution_path;
   const reason = forcedSignal
     ? `Force-full signal matched: ${forcedSignal}`
     : matchedSignal
@@ -163,13 +260,18 @@ function routeTask(request, options = {}) {
   return {
     level: selectedLevel,
     execution_path: executionPath,
+    route_type: adaptiveDecision.route_type,
     reason,
     matched_signal: matchedSignal,
-    fast_lane_allowed: fastLaneAllowed,
-    binding: fastLaneAllowed ? clone(config.fast_lane.bindings[selectedLevel]) : null,
-    allowed_stages: fastLaneAllowed ? [...config.fast_lane.allowed_stages] : [],
+    adaptive_reasons: adaptiveDecision.decision_reasons,
+    task_complexity: adaptiveDecision.task_complexity,
+    dependency_impact: clone(dependencyImpact),
+    fast_lane_allowed: executionPath === "fast",
+    binding: executionPath === "fast" ? clone(config.fast_lane.bindings[selectedLevel]) : null,
+    allowed_stages: executionPath === "fast" ? [...config.fast_lane.allowed_stages] : [],
     validation_required: true,
-    execution_mode: "mock",
+    runtime_mode: adaptiveDecision.runtime_mode,
+    execution_mode: adaptiveDecision.execution_mode,
     execution_enabled: false,
   };
 }
@@ -179,5 +281,6 @@ module.exports = {
   loadTaskRoutingConfig,
   normalizeText,
   routeTask,
+  calculateTaskComplexity,
   validateTaskRoutingConfig,
 };

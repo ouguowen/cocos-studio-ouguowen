@@ -37,7 +37,7 @@ function buildFastBoundExecutionPlan(routing, capability, registry, catalog, age
   if (!new Set(["L0", "L1"]).has(routing.level)) {
     throw new Error("Fast Execution Path only accepts L0 and L1 tasks.");
   }
-  if (routing.execution_mode !== "mock" || routing.execution_enabled !== false
+  if (routing.runtime_mode !== "mock" || routing.execution_enabled !== false
     || routing.validation_required !== true) {
     throw new Error("Fast Execution Path must remain mock, disabled, and validation-required.");
   }

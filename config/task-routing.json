@@ -17,6 +17,7 @@
     "execution_mode": "mock",
     "validation_required": true,
     "allowed_stages": [
+      "blueprint-manager",
       "task-router",
       "agent-router",
       "capability-loader",
@@ -38,6 +39,18 @@
       }
     }
   },
+  "adaptive_execution": {
+    "enabled": true,
+    "fast_path": "fast_path",
+    "full_pipeline": "full_pipeline",
+    "max_fast_complexity": 2,
+    "max_fast_affected_agents": 2,
+    "max_fast_affected_nodes": 8,
+    "full_pipeline_levels": [
+      "L2",
+      "L3"
+    ]
+  },
   "levels": {
     "L0": {
       "rank": 0,
@@ -47,6 +60,8 @@
         "minor tweak",
         "adjust parameter",
         "config value",
+        "ui",
+        "color",
         "button color",
         "copy text",
         "ui spacing",
@@ -54,6 +69,8 @@
         "\u8c03\u6574\u53c2\u6570",
         "\u4fee\u6539\u6570\u503c",
         "\u4fee\u6539\u914d\u7f6e",
+        "\u4fee\u6539ui",
+        "\u989c\u8272",
         "\u6309\u94ae\u989c\u8272",
         "\u6587\u6848\u4fee\u6539",
         "\u8c03\u6574\u95f4\u8ddd"

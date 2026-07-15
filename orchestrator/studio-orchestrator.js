@@ -5,6 +5,7 @@
 const fs = require("fs");
 const path = require("path");
 
+const { createGameBlueprint } = require("../blueprint/blueprint-manager");
 const { createDefaultAdapterRegistry } = require("../executor/agent-executor");
 const {
   executeBoundPlan,
@@ -107,6 +108,8 @@ function createStudioReport(request, options = {}) {
     execution_enabled: false,
     task_id: null,
     iteration_id: null,
+    execution_mode: null,
+    blueprint_context: null,
     routing: null,
     agent_selection: null,
     stages: [],
@@ -294,20 +297,34 @@ function validateStudioReport(report) {
     throw new Error("Studio E2E Report has invalid top-level fields.");
   }
   const failedStages = report.stages.filter((stage) => stage.status === "FAILED");
-  if (report.stages.length === 0 || report.stages[0].stage !== "task-router") {
-    throw new Error("Studio E2E Report must start with the Task Router stage.");
+  if (report.stages.length === 0 || report.stages[0].stage !== "blueprint-manager") {
+    throw new Error("Studio E2E Report must start with the Blueprint Manager stage.");
   }
-  const routerPassed = report.stages[0].status === "PASS";
+  const blueprintPassed = report.stages[0].status === "PASS";
+  if (blueprintPassed && (!report.blueprint_context
+    || report.blueprint_context.execution_enabled !== false
+    || typeof report.blueprint_context.blueprint_version !== "string")) {
+    throw new Error("Studio E2E Report contains an invalid Blueprint context.");
+  }
+  const routerPassed = report.stages.length > 1
+    && report.stages[1].stage === "task-router"
+    && report.stages[1].status === "PASS";
   if (routerPassed) {
-    if (report.stages.length < 2 || report.stages[1].stage !== "agent-router") {
+    if (report.stages.length < 3 || report.stages[2].stage !== "agent-router") {
       throw new Error("Studio E2E Report must run Agent Router after Task Router.");
     }
     if (!report.routing || !new Set(["L0", "L1", "L2", "L3"]).has(report.routing.level)
       || !new Set(["fast", "studio"]).has(report.routing.execution_path)
+      || !new Set(["fast_path", "full_pipeline"]).has(report.routing.route_type)
       || report.routing.execution_enabled !== false) {
       throw new Error("Studio E2E Report contains an invalid routing decision.");
     }
-    if (report.stages[1].status === "PASS") {
+    if (!report.execution_mode
+      || !new Set(["fast", "full"]).has(report.execution_mode.mode)
+      || !Array.isArray(report.execution_mode.agents)) {
+      throw new Error("Studio E2E Report contains an invalid execution_mode decision.");
+    }
+    if (report.stages[2].status === "PASS") {
       if (!report.agent_selection
         || !Array.isArray(report.agent_selection.selected_agents)
         || report.agent_selection.selected_agents.length === 0
@@ -473,25 +490,47 @@ function runFastExecutionPipeline(request, options, report) {
 function runStudioOrchestrator(request, options = {}) {
   const report = createStudioReport(request, options);
   try {
+    const blueprintContext = runStage(report, "blueprint-manager", { request }, () => createGameBlueprint(request, {
+      version: options.blueprintVersion,
+      projectId: options.projectId,
+      genre: options.blueprintGenre,
+      platform: options.blueprintPlatform,
+    }), (result) => ({
+      blueprint_version: result.blueprint_version,
+      project_id: result.project.project_id,
+      genre: result.project.genre,
+      section_count: Object.keys(result.sections).length,
+      execution_enabled: result.execution_enabled,
+    }));
+    report.blueprint_context = clone(blueprintContext);
+
     const routing = runStage(report, "task-router", { request }, () => routeTask(request, {
       configPath: options.taskRoutingConfigPath,
+      dependencyImpact: blueprintContext.dependency_impact,
     }), (result) => ({
       level: result.level,
       execution_path: result.execution_path,
+      route_type: result.route_type,
+      execution_mode: result.execution_mode,
+      task_complexity: result.task_complexity,
       reason: result.reason,
       execution_enabled: result.execution_enabled,
     }));
     report.routing = clone(routing);
+    report.execution_mode = clone(routing.execution_mode);
     const agentSelection = runStage(report, "agent-router", {
       request,
       route_level: routing.level,
       execution_path: routing.execution_path,
+      execution_mode: routing.execution_mode,
     }, () => routeAgents(request, routing, {
       registryPath: options.agentRouterRegistryPath,
       policyPath: options.agentActivationPolicyPath,
+      blueprint: blueprintContext,
     }), (result) => ({
       policy_id: result.policy_id,
       selected_agents: result.selected_agents,
+      context_agents: Object.keys(result.blueprint_context),
       full_agent_chain: result.full_agent_chain,
       execution_enabled: result.execution_enabled,
     }));
@@ -797,6 +836,7 @@ function runFullStudioPipeline(request, options, report) {
     report.iteration_id = loop.report.iteration;
     report.acceptance = {
       matched_capability: capability.id,
+      blueprint_version: report.blueprint_context.blueprint_version,
       selected_agents: [...report.agent_selection.selected_agents],
       blueprint_valid: planner.blueprint.project.genre === capability.id,
       task_graph_valid: taskGraph.tasks.length > 0,

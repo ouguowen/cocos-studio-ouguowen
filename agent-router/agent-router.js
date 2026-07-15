@@ -4,6 +4,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { buildAgentBlueprintContexts } = require("../blueprint/blueprint-manager");
 
 const root = path.resolve(__dirname, "..");
 const agentRouterDir = path.join(root, "agent-router");
@@ -165,6 +166,16 @@ function sortSelectedAgents(agentIds, registry) {
   });
 }
 
+function resolveAffectedAgents(options) {
+  const affectedAgents = options.affectedAgents
+    || options.blueprint?.dependency_impact?.affected_agents
+    || [];
+  if (!Array.isArray(affectedAgents)) {
+    throw new Error("Agent Router affectedAgents must be an array when provided.");
+  }
+  return new Set(affectedAgents);
+}
+
 function routeAgents(request, routing, options = {}) {
   assertNonEmptyString(request, "Agent Router request");
   if (!routing || !levelIds.has(routing.level) || !new Set(["fast", "studio"]).has(routing.execution_path)) {
@@ -190,7 +201,17 @@ function routeAgents(request, routing, options = {}) {
     : routing.execution_path === "studio"
       ? policy.full_pipeline_agents
       : policy.default_agents;
-  const sortedAgents = sortSelectedAgents(selectedAgents, registry);
+  const affectedAgents = resolveAffectedAgents(options);
+  const impactedSelection = affectedAgents.size > 0
+    ? selectedAgents.filter((agentId) => affectedAgents.has(agentId))
+    : selectedAgents;
+  const sortedAgents = sortSelectedAgents(
+    impactedSelection.length > 0 ? impactedSelection : selectedAgents,
+    registry,
+  );
+  const blueprint_context = options.blueprint
+    ? buildAgentBlueprintContexts(options.blueprint, sortedAgents)
+    : {};
 
   return {
     schema_version: registry.schema_version,
@@ -198,7 +219,9 @@ function routeAgents(request, routing, options = {}) {
     route_level: routing.level,
     execution_path: routing.execution_path,
     policy_id: matchedRule ? matchedRule.id : "default-agent-selection",
+    dependency_impact: options.blueprint?.dependency_impact ? clone(options.blueprint.dependency_impact) : null,
     selected_agents: sortedAgents,
+    blueprint_context,
     selected_capabilities: sortedAgents.flatMap((agentId) => {
       const agent = registry.agents.find((entry) => entry.id === agentId);
       return agent.capabilities;
