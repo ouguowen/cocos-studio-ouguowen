@@ -63,7 +63,7 @@ evolution/governance expansion.
 ## 6. Validation, release, and repository health
 
 - [scripts/validate_skill_docs.py](../scripts/validate_skill_docs.py): docs, links, commands, and safety validation
-- [.github/workflows/validate-skill-docs.yml](../.github/workflows/validate-skill-docs.yml): canonical CI workflow for docs validation and npm checks
+- [.github/workflows/ci.yml](../.github/workflows/ci.yml): canonical CI workflow for docs validation, pnpm checks, and the complete test suite
 - [docs/validation/automation.md](../docs/validation/automation.md): local and GitHub Actions validation guide
 - [docs/release/strategy.md](../docs/release/strategy.md): release lanes, gates, blockers, and post-release review
 - [docs/release/checklist.md](../docs/release/checklist.md): release readiness checklist

@@ -34,7 +34,7 @@ It protects the repository from accidental regressions such as:
 
 ## When GitHub Actions runs
 
-The workflow [../../.github/workflows/validate-skill-docs.yml](../../.github/workflows/validate-skill-docs.yml) runs on:
+The workflow [../../.github/workflows/ci.yml](../../.github/workflows/ci.yml) runs on:
 
 - `push`
 - `pull_request`
@@ -43,16 +43,22 @@ The workflow uses:
 
 - `ubuntu-latest`
 - `actions/checkout`
+- `pnpm/action-setup`
+- `actions/setup-node`
 - `actions/setup-python`
+- Node.js 20
 - Python 3.11
 
 It runs:
 
 ```text
-python scripts/validate_skill_docs.py
+pnpm install --frozen-lockfile
+pnpm run validate:docs
+pnpm run check
+pnpm test
 ```
 
-No npm install, third-party Python package, or external link checker is required.
+No third-party Python package or external link checker is required.
 
 ## What the script checks
 
@@ -217,13 +223,13 @@ It validates Skill documentation and safety rules only.
 
 ## Side-effect-free package check
 
-`npm run check` validates the example level config, generated artifact pipeline, and runtime template without writing generated outputs into the repository.
+`pnpm run check` validates the example level config, generated artifact pipeline, and runtime template without writing generated outputs into the repository.
 
 Manual generation remains available through:
 
 ```text
-npm run export:example
-npm run types:example
+pnpm run export:example
+pnpm run types:example
 ```
 
 ## Handling failures
