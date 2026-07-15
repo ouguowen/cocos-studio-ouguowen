@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "prototype-routing-only",
+  "execution_enabled": false,
+  "agents": [
+    {
+      "id": "game-designer",
+      "name": "Game Designer",
+      "capabilities": [
+        "game-design"
+      ],
+      "activation_tags": [
+        "design",
+        "gameplay",
+        "battle",
+        "system"
+      ],
+      "priority": 80
+    },
+    {
+      "id": "cocos-programmer",
+      "name": "Cocos Programmer",
+      "capabilities": [
+        "system-implementation-plan"
+      ],
+      "activation_tags": [
+        "code",
+        "fix",
+        "component",
+        "ui",
+        "battle",
+        "system"
+      ],
+      "priority": 90
+    },
+    {
+      "id": "artist",
+      "name": "Artist",
+      "capabilities": [
+        "asset-requirements"
+      ],
+      "activation_tags": [
+        "ui",
+        "visual",
+        "art",
+        "asset",
+        "style"
+      ],
+      "priority": 70
+    },
+    {
+      "id": "qa",
+      "name": "QA",
+      "capabilities": [
+        "validation-checklist"
+      ],
+      "activation_tags": [
+        "test",
+        "qa",
+        "validate",
+        "release"
+      ],
+      "priority": 60
+    }
+  ]
+}

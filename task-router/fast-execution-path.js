@@ -4,7 +4,33 @@
 
 const { requireRegisteredAgent } = require("../scheduler/agent-registry");
 
-function buildFastBoundExecutionPlan(routing, capability, registry, catalog) {
+function buildFastTaskEntry(agentId, registry, catalog, fallbackBinding) {
+  const agent = requireRegisteredAgent(registry, agentId);
+  if (agent.execution_enabled !== false) {
+    throw new Error(`Fast Lane Agent must keep execution disabled: ${agentId}.`);
+  }
+  const capability = agent.capabilities[0] || fallbackBinding.capability;
+  const toolId = agent.tool_ids.find((candidate) => {
+    const tool = catalog.toolsById.get(candidate);
+    return tool
+      && tool.external === false
+      && tool.execution_enabled === false
+      && tool.allowed_agents.includes(agent.id)
+      && tool.capabilities.includes(capability);
+  });
+  if (!agent.capabilities.includes(capability) || !toolId) {
+    throw new Error(`Fast Lane Agent binding is invalid: ${agent.id}.`);
+  }
+  return {
+    task_id: capability,
+    agent: agent.id,
+    required_capabilities: [capability],
+    matched_tools: [toolId],
+    execution_status: "bound-not-executed",
+  };
+}
+
+function buildFastBoundExecutionPlan(routing, capability, registry, catalog, agentSelection = null) {
   if (!routing || routing.execution_path !== "fast" || !routing.fast_lane_allowed) {
     throw new Error("Fast Execution Path requires an approved Fast Lane routing decision.");
   }
@@ -20,28 +46,15 @@ function buildFastBoundExecutionPlan(routing, capability, registry, catalog) {
   }
 
   const binding = routing.binding;
-  const agent = requireRegisteredAgent(registry, binding.agent);
-  const tool = catalog.toolsById.get(binding.tool_id);
-  if (agent.execution_enabled !== false
-    || !agent.capabilities.includes(binding.capability)
-    || !agent.tool_ids.includes(binding.tool_id)) {
-    throw new Error(`Fast Lane Agent binding is invalid: ${binding.agent}.`);
-  }
-  if (!tool || tool.external !== false || tool.execution_enabled !== false
-    || !tool.allowed_agents.includes(agent.id)
-    || !tool.capabilities.includes(binding.capability)) {
-    throw new Error(`Fast Lane Tool binding is unsafe: ${binding.tool_id}.`);
-  }
+  const selectedAgents = Array.isArray(agentSelection?.selected_agents)
+    && agentSelection.selected_agents.length > 0
+    ? agentSelection.selected_agents
+    : [binding.agent];
+  const boundTasks = selectedAgents.map((agentId) => buildFastTaskEntry(agentId, registry, catalog, binding));
 
   return {
     project: capability.id,
-    bound_execution_plan: [{
-      task_id: binding.task_id,
-      agent: binding.agent,
-      required_capabilities: [binding.capability],
-      matched_tools: [binding.tool_id],
-      execution_status: "bound-not-executed",
-    }],
+    bound_execution_plan: boundTasks,
   };
 }
 

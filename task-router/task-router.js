@@ -86,7 +86,7 @@ function validateTaskRoutingConfig(config) {
     throw new Error("Fast Lane may only allow L0 and L1 tasks.");
   }
   assertStringArray(fastLane.allowed_stages, "Fast Lane allowed_stages");
-  const requiredStages = ["task-router", "capability-loader", "agent-executor", "validation-agent"];
+  const requiredStages = ["task-router", "agent-router", "capability-loader", "agent-executor", "validation-agent"];
   if (requiredStages.some((stage) => !fastLane.allowed_stages.includes(stage))) {
     throw new Error("Fast Lane must retain routing, capability, executor, and validation stages.");
   }

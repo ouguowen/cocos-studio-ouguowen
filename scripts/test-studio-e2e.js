@@ -124,6 +124,7 @@ function runTests() {
 
     const requiredStages = [
       "task-router",
+      "agent-router",
       "capability-loader",
       "game-planner",
       "task-generator",
@@ -144,6 +145,7 @@ function runTests() {
     assert.deepStrictEqual(report.stages.map((stage) => stage.stage), requiredStages);
     assert.strictEqual(report.routing.level, "L3");
     assert.strictEqual(report.routing.execution_path, "studio");
+    assert.strictEqual(report.agent_selection.full_agent_chain, true);
     for (const stage of report.stages) {
       assert.strictEqual(stage.status, "PASS", `${stage.stage} should pass.`);
       assert.notStrictEqual(stage.input, null, `${stage.stage} should trace its input.`);
@@ -195,11 +197,13 @@ function runTests() {
     assert.strictEqual(failed.report.status, "FAILED");
     assert.strictEqual(failed.report.failed_stage, "capability-loader");
     assert.strictEqual(failed.report.acceptance.fail_fast, true);
-    assert.strictEqual(failed.report.stages.length, 2, "Only Task Router may run before capability matching fails.");
+    assert.strictEqual(failed.report.stages.length, 3, "Only routers may run before capability matching fails.");
     assert.strictEqual(failed.report.stages[0].stage, "task-router");
     assert.strictEqual(failed.report.stages[0].status, "PASS");
-    assert.strictEqual(failed.report.stages[1].stage, "capability-loader");
-    assert.strictEqual(failed.report.stages[1].status, "FAILED");
+    assert.strictEqual(failed.report.stages[1].stage, "agent-router");
+    assert.strictEqual(failed.report.stages[1].status, "PASS");
+    assert.strictEqual(failed.report.stages[2].stage, "capability-loader");
+    assert.strictEqual(failed.report.stages[2].status, "FAILED");
     assert.strictEqual(stageByName(failed.report, "game-planner"), undefined);
 
     const outputPath = writeStudioReport(report);
@@ -213,6 +217,7 @@ function runTests() {
       stage_count: report.stages.length,
       first_stage: report.stages[0].stage,
       routing_level: report.routing.level,
+      selected_agents: report.agent_selection.selected_agents,
       validation_sequence: report.acceptance.validation_statuses,
       fail_fast: true,
       stale_generated_inputs_used: false,

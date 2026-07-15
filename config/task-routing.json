@@ -18,6 +18,7 @@
     "validation_required": true,
     "allowed_stages": [
       "task-router",
+      "agent-router",
       "capability-loader",
       "agent-executor",
       "validation-agent"

@@ -36,6 +36,8 @@ evolution/governance expansion.
 - [config/task-routing.json](../config/task-routing.json): Task Router policy for L0/L1 Fast Lane and L2/L3 Studio Pipeline routing
 - [task-router/task-router.js](../task-router/task-router.js): deterministic task-level router used by the Studio Orchestrator
 - [task-router/fast-execution-path.js](../task-router/fast-execution-path.js): Fast Lane binding and validation for Capability, Executor, and Validation only
+- [agent-router/agent-router.js](../agent-router/agent-router.js): dynamic Agent activation after Task Router and before execution
+- [agent-router/activation-policy.json](../agent-router/activation-policy.json): Agent selection rules for UI, code, battle, testing, and full-production tasks
 - [production/game-readiness-gate.md](../production/game-readiness-gate.md): decide whether real implementation is ready, blocked, or needs scope repair
 - [production/first-mvp-success-pipeline.md](../production/first-mvp-success-pipeline.md): first-MVP command chain from brief to acceptance
 - [production/task-decomposition.md](../production/task-decomposition.md): production-safe task splitting

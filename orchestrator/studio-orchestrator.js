@@ -54,6 +54,7 @@ const {
   buildFastBoundExecutionPlan,
   validateFastExecutionPath,
 } = require("../task-router/fast-execution-path");
+const { routeAgents } = require("../agent-router/agent-router");
 const { routeTask } = require("../task-router/task-router");
 const { runValidationAgent } = require("../validation-agent/validation-agent");
 
@@ -107,6 +108,7 @@ function createStudioReport(request, options = {}) {
     task_id: null,
     iteration_id: null,
     routing: null,
+    agent_selection: null,
     stages: [],
     acceptance: {},
   };
@@ -297,10 +299,21 @@ function validateStudioReport(report) {
   }
   const routerPassed = report.stages[0].status === "PASS";
   if (routerPassed) {
+    if (report.stages.length < 2 || report.stages[1].stage !== "agent-router") {
+      throw new Error("Studio E2E Report must run Agent Router after Task Router.");
+    }
     if (!report.routing || !new Set(["L0", "L1", "L2", "L3"]).has(report.routing.level)
       || !new Set(["fast", "studio"]).has(report.routing.execution_path)
       || report.routing.execution_enabled !== false) {
       throw new Error("Studio E2E Report contains an invalid routing decision.");
+    }
+    if (report.stages[1].status === "PASS") {
+      if (!report.agent_selection
+        || !Array.isArray(report.agent_selection.selected_agents)
+        || report.agent_selection.selected_agents.length === 0
+        || report.agent_selection.execution_enabled !== false) {
+        throw new Error("Studio E2E Report contains an invalid Agent Router decision.");
+      }
     }
     if (report.routing.execution_path === "fast") {
       if (!new Set(["L0", "L1"]).has(report.routing.level)) {
@@ -392,12 +405,14 @@ function runFastExecutionPipeline(request, options, report) {
       route_level: report.routing.level,
       capability_id: capability.id,
       runtime_mode: "mock",
+      selected_agents: report.agent_selection.selected_agents,
     }, () => {
       boundPlan = buildFastBoundExecutionPlan(
         report.routing,
         capability,
         agentRegistry,
         toolCatalog,
+        report.agent_selection,
       );
       const results = executeBoundPlan(
         boundPlan,
@@ -435,6 +450,7 @@ function runFastExecutionPipeline(request, options, report) {
       routing_level: report.routing.level,
       execution_path: "fast",
       matched_capability: capability.id,
+      selected_agents: [...report.agent_selection.selected_agents],
       executor_mock: executionResults.mode === "mock",
       validation_status: validation.status,
       planner_skipped: !report.stages.some((stage) => stage.stage === "game-planner"),
@@ -466,6 +482,20 @@ function runStudioOrchestrator(request, options = {}) {
       execution_enabled: result.execution_enabled,
     }));
     report.routing = clone(routing);
+    const agentSelection = runStage(report, "agent-router", {
+      request,
+      route_level: routing.level,
+      execution_path: routing.execution_path,
+    }, () => routeAgents(request, routing, {
+      registryPath: options.agentRouterRegistryPath,
+      policyPath: options.agentActivationPolicyPath,
+    }), (result) => ({
+      policy_id: result.policy_id,
+      selected_agents: result.selected_agents,
+      full_agent_chain: result.full_agent_chain,
+      execution_enabled: result.execution_enabled,
+    }));
+    report.agent_selection = clone(agentSelection);
     if (routing.execution_path === "fast") {
       return runFastExecutionPipeline(request, options, report);
     }
@@ -767,6 +797,7 @@ function runFullStudioPipeline(request, options, report) {
     report.iteration_id = loop.report.iteration;
     report.acceptance = {
       matched_capability: capability.id,
+      selected_agents: [...report.agent_selection.selected_agents],
       blueprint_valid: planner.blueprint.project.genre === capability.id,
       task_graph_valid: taskGraph.tasks.length > 0,
       agents_resolved: executionPlan.execution_plan.every((entry) => agentRegistry.byId.has(entry.agent)),

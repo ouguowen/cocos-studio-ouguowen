@@ -74,6 +74,7 @@ function assertFastLane(request, expectedLevel) {
   assert.strictEqual(result.report.execution_enabled, false);
   assert.deepStrictEqual(stageNames(result.report), [
     "task-router",
+    "agent-router",
     "capability-loader",
     "agent-executor",
     "validation-agent",
@@ -97,6 +98,7 @@ function assertFullPipeline(request, expectedLevel, fixtureRoot) {
   assert.strictEqual(result.report.routing.level, expectedLevel);
   assert.strictEqual(result.report.routing.execution_path, "studio");
   assert.strictEqual(stageNames(result.report)[0], "task-router");
+  assert.strictEqual(stageNames(result.report)[1], "agent-router");
   assert.ok(stageNames(result.report).includes("game-planner"));
   assert.ok(stageNames(result.report).includes("task-generator"));
   assert.ok(stageNames(result.report).includes("agent-scheduler"));

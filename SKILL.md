@@ -51,6 +51,7 @@ AI Game Studio execution starts with the Task Router, not the full Studio Pipeli
 Routing policy lives in [config/task-routing.json](config/task-routing.json).
 Runtime routing code lives in [task-router/task-router.js](task-router/task-router.js).
 Fast Lane validation lives in [task-router/fast-execution-path.js](task-router/fast-execution-path.js).
+Dynamic Agent activation lives in [agent-router/agent-router.js](agent-router/agent-router.js).
 
 Levels:
 
@@ -62,7 +63,7 @@ Levels:
 Execution paths:
 
 - `L0` and `L1` may use Fast Lane when policy allows.
-- Fast Lane may run only `task-router`, `capability-loader`, `agent-executor`, and `validation-agent`.
+- Fast Lane may run only `task-router`, `agent-router`, `capability-loader`, `agent-executor`, and `validation-agent`.
 - Fast Lane must bypass Planner, Task Graph, Scheduler, and Loop.
 - `L2`, `L3`, unknown requests, release requests, production requests, and force-full signals must enter the existing Studio Pipeline.
 - `execution_enabled` remains `false`; default execution mode remains `mock`.
