@@ -123,6 +123,7 @@ function runTests() {
     assert.match(report.iteration_id, /^iteration-\d{4}$/);
 
     const requiredStages = [
+      "task-router",
       "capability-loader",
       "game-planner",
       "task-generator",
@@ -141,6 +142,8 @@ function runTests() {
       "loop-engine",
     ];
     assert.deepStrictEqual(report.stages.map((stage) => stage.stage), requiredStages);
+    assert.strictEqual(report.routing.level, "L3");
+    assert.strictEqual(report.routing.execution_path, "studio");
     for (const stage of report.stages) {
       assert.strictEqual(stage.status, "PASS", `${stage.stage} should pass.`);
       assert.notStrictEqual(stage.input, null, `${stage.stage} should trace its input.`);
@@ -192,8 +195,11 @@ function runTests() {
     assert.strictEqual(failed.report.status, "FAILED");
     assert.strictEqual(failed.report.failed_stage, "capability-loader");
     assert.strictEqual(failed.report.acceptance.fail_fast, true);
-    assert.strictEqual(failed.report.stages.length, 1, "No stage may run after capability matching fails.");
-    assert.strictEqual(failed.report.stages[0].status, "FAILED");
+    assert.strictEqual(failed.report.stages.length, 2, "Only Task Router may run before capability matching fails.");
+    assert.strictEqual(failed.report.stages[0].stage, "task-router");
+    assert.strictEqual(failed.report.stages[0].status, "PASS");
+    assert.strictEqual(failed.report.stages[1].stage, "capability-loader");
+    assert.strictEqual(failed.report.stages[1].status, "FAILED");
     assert.strictEqual(stageByName(failed.report, "game-planner"), undefined);
 
     const outputPath = writeStudioReport(report);
@@ -205,6 +211,8 @@ function runTests() {
       natural_language_to_loop: true,
       matched_capability: report.acceptance.matched_capability,
       stage_count: report.stages.length,
+      first_stage: report.stages[0].stage,
+      routing_level: report.routing.level,
       validation_sequence: report.acceptance.validation_statuses,
       fail_fast: true,
       stale_generated_inputs_used: false,

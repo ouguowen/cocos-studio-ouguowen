@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0.0",
+  "execution_enabled": false,
+  "default_level": "L3",
+  "level_order": [
+    "L0",
+    "L1",
+    "L2",
+    "L3"
+  ],
+  "fast_lane": {
+    "enabled": true,
+    "allowed_levels": [
+      "L0",
+      "L1"
+    ],
+    "execution_mode": "mock",
+    "validation_required": true,
+    "allowed_stages": [
+      "task-router",
+      "capability-loader",
+      "agent-executor",
+      "validation-agent"
+    ],
+    "bindings": {
+      "L0": {
+        "task_id": "system-implementation-plan",
+        "agent": "cocos-programmer",
+        "capability": "system-implementation-plan",
+        "tool_id": "blueprint-system-planner"
+      },
+      "L1": {
+        "task_id": "system-implementation-plan",
+        "agent": "cocos-programmer",
+        "capability": "system-implementation-plan",
+        "tool_id": "blueprint-system-planner"
+      }
+    }
+  },
+  "levels": {
+    "L0": {
+      "rank": 0,
+      "description": "Small parameter, UI, copy, or configuration adjustment.",
+      "signals": [
+        "small change",
+        "minor tweak",
+        "adjust parameter",
+        "config value",
+        "button color",
+        "copy text",
+        "ui spacing",
+        "\u5c0f\u4fee\u6539",
+        "\u8c03\u6574\u53c2\u6570",
+        "\u4fee\u6539\u6570\u503c",
+        "\u4fee\u6539\u914d\u7f6e",
+        "\u6309\u94ae\u989c\u8272",
+        "\u6587\u6848\u4fee\u6539",
+        "\u8c03\u6574\u95f4\u8ddd"
+      ]
+    },
+    "L1": {
+      "rank": 1,
+      "description": "Normal feature, interaction, component, or localized bug fix.",
+      "signals": [
+        "feature",
+        "interaction",
+        "component",
+        "panel",
+        "page",
+        "bug fix",
+        "add pause",
+        "\u666e\u901a\u529f\u80fd",
+        "\u65b0\u589e\u529f\u80fd",
+        "\u4ea4\u4e92",
+        "\u7ec4\u4ef6",
+        "\u9762\u677f",
+        "\u9875\u9762",
+        "\u4fee\u590d\u95ee\u9898",
+        "\u6682\u505c\u529f\u80fd"
+      ]
+    },
+    "L2": {
+      "rank": 2,
+      "description": "System-level, architectural, cross-module, or runtime development.",
+      "signals": [
+        "system",
+        "architecture",
+        "refactor",
+        "cross module",
+        "runtime",
+        "framework",
+        "pipeline",
+        "\u7cfb\u7edf\u7ea7",
+        "\u67b6\u6784",
+        "\u91cd\u6784",
+        "\u8de8\u6a21\u5757",
+        "\u8fd0\u884c\u65f6",
+        "\u6846\u67b6",
+        "\u6d41\u6c34\u7ebf"
+      ]
+    },
+    "L3": {
+      "rank": 3,
+      "description": "Complete production, full game, release, or end-to-end request.",
+      "signals": [
+        "complete game",
+        "full game",
+        "production task",
+        "from scratch",
+        "end to end",
+        "release",
+        "mobile game",
+        "\u5b8c\u6574\u6e38\u620f",
+        "\u5b8c\u6574\u751f\u4ea7",
+        "\u4ece\u96f6\u521b\u5efa",
+        "\u7aef\u5230\u7aef",
+        "\u53d1\u5e03",
+        "\u4e0a\u7ebf",
+        "\u624b\u6e38"
+      ]
+    }
+  },
+  "force_full_pipeline_signals": [
+    "production",
+    "release",
+    "end to end",
+    "full pipeline",
+    "\u751f\u4ea7\u73af\u5883",
+    "\u6b63\u5f0f\u53d1\u5e03",
+    "\u5b8c\u6574\u6d41\u7a0b",
+    "\u5168\u6d41\u7a0b"
+  ]
+}

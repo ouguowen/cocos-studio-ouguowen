@@ -50,6 +50,11 @@ const {
   loadCapabilities,
   matchCapability,
 } = require("../scripts/capability-loader");
+const {
+  buildFastBoundExecutionPlan,
+  validateFastExecutionPath,
+} = require("../task-router/fast-execution-path");
+const { routeTask } = require("../task-router/task-router");
 const { runValidationAgent } = require("../validation-agent/validation-agent");
 
 const root = path.resolve(__dirname, "..");
@@ -89,6 +94,22 @@ function runStage(report, stage, input, operation, summarize) {
     error.failedStage = stage;
     throw error;
   }
+}
+
+function createStudioReport(request, options = {}) {
+  return {
+    run_id: options.runId || `run-${Date.now()}`,
+    request,
+    status: "RUNNING",
+    failed_stage: null,
+    runtime_mode: "mock",
+    execution_enabled: false,
+    task_id: null,
+    iteration_id: null,
+    routing: null,
+    stages: [],
+    acceptance: {},
+  };
 }
 
 function findProviderSelection(boundExecutionPlan, providerRegistry) {
@@ -271,6 +292,30 @@ function validateStudioReport(report) {
     throw new Error("Studio E2E Report has invalid top-level fields.");
   }
   const failedStages = report.stages.filter((stage) => stage.status === "FAILED");
+  if (report.stages.length === 0 || report.stages[0].stage !== "task-router") {
+    throw new Error("Studio E2E Report must start with the Task Router stage.");
+  }
+  const routerPassed = report.stages[0].status === "PASS";
+  if (routerPassed) {
+    if (!report.routing || !new Set(["L0", "L1", "L2", "L3"]).has(report.routing.level)
+      || !new Set(["fast", "studio"]).has(report.routing.execution_path)
+      || report.routing.execution_enabled !== false) {
+      throw new Error("Studio E2E Report contains an invalid routing decision.");
+    }
+    if (report.routing.execution_path === "fast") {
+      if (!new Set(["L0", "L1"]).has(report.routing.level)) {
+        throw new Error("Fast Lane reports may only contain L0 or L1 routing decisions.");
+      }
+      const unexpectedStages = report.stages
+        .map((stage) => stage.stage)
+        .filter((stage) => !report.routing.allowed_stages.includes(stage));
+      if (unexpectedStages.length > 0) {
+        throw new Error(`Fast Lane report contains forbidden stages: ${unexpectedStages.join(", ")}.`);
+      }
+    } else if (!new Set(["L2", "L3"]).has(report.routing.level)) {
+      throw new Error("Studio Pipeline reports require an L2 or L3 routing decision.");
+    }
+  }
   if (report.status === "PASS") {
     if (failedStages.length > 0 || report.stages.some((stage) => stage.status !== "PASS")) {
       throw new Error("Passing Studio E2E Report contains a failed or incomplete stage.");
@@ -298,19 +343,139 @@ function writeStudioReport(report, reportPath = defaultReportPath) {
   return resolvedPath;
 }
 
-function runStudioOrchestrator(request, options = {}) {
-  const report = {
-    run_id: options.runId || `run-${Date.now()}`,
-    request,
-    status: "RUNNING",
-    failed_stage: null,
-    runtime_mode: "mock",
-    execution_enabled: false,
-    task_id: null,
-    iteration_id: null,
-    stages: [],
-    acceptance: {},
+function completeFailedStudioRun(report, error, options) {
+  report.status = "FAILED";
+  report.failed_stage = error.failedStage || report.stages.at(-1)?.stage || "orchestrator";
+  report.acceptance = {
+    fail_fast: true,
+    completed_stage_count: report.stages.filter((stage) => stage.status === "PASS").length,
+    failed_stage_count: report.stages.filter((stage) => stage.status === "FAILED").length,
   };
+  validateStudioReport(report);
+  const reportPath = options.write === false
+    ? null
+    : writeStudioReport(report, options.reportPath || defaultReportPath);
+  return { report, reportPath, error };
+}
+
+function resolveFastCapability(request, options = {}) {
+  const capabilities = loadCapabilities(options.capabilityOptions);
+  const matched = matchCapability(request, capabilities);
+  if (matched) {
+    return matched;
+  }
+  if (options.activeCapabilityId) {
+    const active = capabilities.find((capability) => capability.id === options.activeCapabilityId);
+    if (active) {
+      return active;
+    }
+  }
+  throw new Error("No capability matched the Fast Lane request.");
+}
+
+function runFastExecutionPipeline(request, options, report) {
+  try {
+    const capability = runStage(report, "capability-loader", {
+      request,
+      active_capability_id: options.activeCapabilityId || null,
+    }, () => resolveFastCapability(request, options), (result) => ({
+      capability_id: result.id,
+    }));
+
+    const agentRegistry = loadAgentRegistry();
+    const toolCatalog = loadToolCatalog();
+    const adapterRegistry = createDefaultAdapterRegistry({
+      mockAdapterOptions: { clock: () => "2026-01-01T00:00:00.000Z" },
+    });
+    let boundPlan;
+    const executionResults = runStage(report, "agent-executor", {
+      route_level: report.routing.level,
+      capability_id: capability.id,
+      runtime_mode: "mock",
+    }, () => {
+      boundPlan = buildFastBoundExecutionPlan(
+        report.routing,
+        capability,
+        agentRegistry,
+        toolCatalog,
+      );
+      const results = executeBoundPlan(
+        boundPlan,
+        agentRegistry,
+        toolCatalog,
+        adapterRegistry,
+        "mock",
+      );
+      validateExecutionResults(results, agentRegistry, toolCatalog, boundPlan);
+      return results;
+    }, (result) => ({
+      task_results: result.results.map((entry) => ({ task_id: entry.task_id, status: entry.status })),
+      mode: result.mode,
+    }));
+
+    const validation = runStage(report, "validation-agent", {
+      route_level: report.routing.level,
+      capability_id: capability.id,
+      execution_mode: executionResults.mode,
+    }, () => validateFastExecutionPath({
+      routing: report.routing,
+      capability,
+      executionResults,
+      stageNames: report.stages.map((stage) => stage.stage),
+    }), (result) => ({
+      status: result.status,
+      scope: result.scope,
+      checks: result.checks,
+    }));
+
+    report.status = "PASS";
+    report.task_id = executionResults.results[0].task_id;
+    report.iteration_id = "fast-iteration-0001";
+    report.acceptance = {
+      routing_level: report.routing.level,
+      execution_path: "fast",
+      matched_capability: capability.id,
+      executor_mock: executionResults.mode === "mock",
+      validation_status: validation.status,
+      planner_skipped: !report.stages.some((stage) => stage.stage === "game-planner"),
+      task_graph_skipped: !report.stages.some((stage) => stage.stage === "task-generator"),
+      scheduler_skipped: !report.stages.some((stage) => stage.stage === "agent-scheduler"),
+      loop_skipped: !report.stages.some((stage) => stage.stage === "loop-engine"),
+      full_validation_required_before_release: validation.full_validation_required_before_release,
+      trace_complete: report.stages.every((stage) => stage.status === "PASS"),
+    };
+    validateStudioReport(report);
+    const reportPath = options.write === false
+      ? null
+      : writeStudioReport(report, options.reportPath || defaultReportPath);
+    return { report, reportPath };
+  } catch (error) {
+    return completeFailedStudioRun(report, error, options);
+  }
+}
+
+function runStudioOrchestrator(request, options = {}) {
+  const report = createStudioReport(request, options);
+  try {
+    const routing = runStage(report, "task-router", { request }, () => routeTask(request, {
+      configPath: options.taskRoutingConfigPath,
+    }), (result) => ({
+      level: result.level,
+      execution_path: result.execution_path,
+      reason: result.reason,
+      execution_enabled: result.execution_enabled,
+    }));
+    report.routing = clone(routing);
+    if (routing.execution_path === "fast") {
+      return runFastExecutionPipeline(request, options, report);
+    }
+    return runFullStudioPipeline(request, options, report);
+  } catch (error) {
+    return completeFailedStudioRun(report, error, options);
+  }
+}
+
+function runFullStudioPipeline(request, options, report) {
   try {
     const capability = runStage(report, "capability-loader", { request }, () => {
       const capabilities = loadCapabilities(options.capabilityOptions);

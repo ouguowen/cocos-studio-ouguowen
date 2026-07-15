@@ -37,6 +37,7 @@ const tests = [
   "test-execution-contract.js",
   "test-execution-history.js",
   "test-release-validation.js",
+  "test-task-router.js",
   "test-studio-e2e.js",
 ];
 

@@ -33,6 +33,9 @@ evolution/governance expansion.
 
 - [design/game-classifier.md](../design/game-classifier.md): classify the game before template choice
 - [design/game-type-templates.md](../design/game-type-templates.md): select the closest genre or loop template
+- [config/task-routing.json](../config/task-routing.json): Task Router policy for L0/L1 Fast Lane and L2/L3 Studio Pipeline routing
+- [task-router/task-router.js](../task-router/task-router.js): deterministic task-level router used by the Studio Orchestrator
+- [task-router/fast-execution-path.js](../task-router/fast-execution-path.js): Fast Lane binding and validation for Capability, Executor, and Validation only
 - [production/game-readiness-gate.md](../production/game-readiness-gate.md): decide whether real implementation is ready, blocked, or needs scope repair
 - [production/first-mvp-success-pipeline.md](../production/first-mvp-success-pipeline.md): first-MVP command chain from brief to acceptance
 - [production/task-decomposition.md](../production/task-decomposition.md): production-safe task splitting
