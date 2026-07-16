@@ -23,6 +23,9 @@
           "fingerprint",
           "route_type",
           "execution_mode",
+          "score",
+          "success_count",
+          "failure_count",
           "route_score"
         ],
         "properties": {
@@ -41,6 +44,19 @@
               "mode",
               "agents"
             ]
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "success_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "failure_count": {
+            "type": "integer",
+            "minimum": 0
           },
           "route_score": {
             "type": "object",

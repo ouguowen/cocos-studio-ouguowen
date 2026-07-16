@@ -45,6 +45,9 @@ evolution/governance expansion.
 - [execution-cache/execution-cache.js](../execution-cache/execution-cache.js): repeated-task route cache for Fast Path suggestions
 - [execution-cache/task-fingerprint.js](../execution-cache/task-fingerprint.js): stable natural-language task fingerprint generation
 - [execution-cache/route-score.js](../execution-cache/route-score.js): success, failure, and execution-time score metadata
+- [execution-feedback/feedback-engine.js](../execution-feedback/feedback-engine.js): execution feedback loop for route confidence updates
+- [execution-feedback/execution-score.js](../execution-feedback/execution-score.js): scoring rules for success, validation, speed, and errors
+- [execution-feedback/failure-memory.js](../execution-feedback/failure-memory.js): failure pattern memory for avoiding repeated fast-path mistakes
 - [task-router/fast-execution-path.js](../task-router/fast-execution-path.js): Fast Lane binding and validation for Capability, Executor, and Validation only
 - [agent-router/agent-router.js](../agent-router/agent-router.js): dynamic Agent activation after Task Router and before execution
 - [agent-router/activation-policy.json](../agent-router/activation-policy.json): Agent selection rules for UI, code, battle, testing, and full-production tasks

@@ -55,6 +55,14 @@ function validateExecutionCacheEntry(entry, expectedFingerprint = null) {
   if (!new Set(["fast_path", "full_pipeline"]).has(entry.route_type)) {
     throw new Error("Execution Cache entry route_type must be fast_path or full_pipeline.");
   }
+  if (!Number.isFinite(entry.score) || entry.score < 0 || entry.score > 100) {
+    throw new Error("Execution Cache entry score must be between 0 and 100.");
+  }
+  for (const field of ["success_count", "failure_count"]) {
+    if (!Number.isInteger(entry[field]) || entry[field] < 0) {
+      throw new Error(`Execution Cache entry ${field} must be a non-negative integer.`);
+    }
+  }
   createRouteScore(entry.route_score || {});
   return true;
 }
@@ -81,6 +89,9 @@ function lookupExecutionCache(request, store = createEmptyExecutionCache()) {
     execution_enabled: false,
     execution_mode: clone(entry.execution_mode),
     route_type: entry.route_type,
+    score: entry.score,
+    success_count: entry.success_count,
+    failure_count: entry.failure_count,
     route_score: createRouteScore(entry.route_score),
     entry: clone(entry),
   };
@@ -107,12 +118,21 @@ function updateExecutionCache(request, routeDecision, result = {}, store = creat
     fingerprint,
     route_type: routeDecision.route_type,
     execution_mode: routeDecision.execution_mode,
+    score: 0,
+    success_count: 0,
+    failure_count: 0,
     route_score: createRouteScore(),
   };
+  const success = (result.status || "success") === "success";
   const entry = {
     fingerprint,
     route_type: routeDecision.route_type,
     execution_mode: clone(routeDecision.execution_mode),
+    score: Number.isFinite(result.score)
+      ? Math.max(0, Math.min(100, result.score))
+      : existing.score,
+    success_count: existing.success_count + (success ? 1 : 0),
+    failure_count: existing.failure_count + (success ? 0 : 1),
     route_score: updateRouteScore(existing.route_score, result),
     last_status: result.status || "success",
     updated_at: result.timestamp || "2026-01-01T00:00:00.000Z",

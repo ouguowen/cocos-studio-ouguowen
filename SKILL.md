@@ -55,6 +55,7 @@ Runtime routing code lives in [task-router/task-router.js](task-router/task-rout
 Adaptive execution routing chooses Fast Path or Full Pipeline from task complexity and dependency impact.
 Execution Memory records route decisions in [execution-memory/execution-memory.js](execution-memory/execution-memory.js).
 Execution Cache accelerates repeated routes in [execution-cache/execution-cache.js](execution-cache/execution-cache.js).
+Execution Feedback Loop improves future routing in [execution-feedback/feedback-engine.js](execution-feedback/feedback-engine.js).
 Fast Lane validation lives in [task-router/fast-execution-path.js](task-router/fast-execution-path.js).
 Dynamic Agent activation lives in [agent-router/agent-router.js](agent-router/agent-router.js).
 
@@ -68,6 +69,7 @@ Request
 -> Adaptive Execution Router
 -> Execution Cache
 -> Execution Memory
+-> Execution Feedback Loop
 -> Agent Router
 -> Selected Agent Context
 -> Executor or existing Studio Pipeline
@@ -97,6 +99,8 @@ Blueprint context is shared, versioned, and sectioned by Agent:
 
 Dependency impact maps Blueprint changes to affected Agents so small updates do
 not reactivate unrelated roles.
+
+Execution results are evaluated and used to improve future routing decisions.
 
 ## Operation Routing
 

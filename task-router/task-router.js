@@ -8,6 +8,7 @@ const {
   buildCacheHitExecutionMode,
   lookupExecutionCache,
 } = require("../execution-cache/execution-cache");
+const { buildFeedbackRoutingContext } = require("../execution-feedback/feedback-engine");
 const { buildExecutionMemoryContext } = require("../execution-memory/execution-memory");
 
 const root = path.resolve(__dirname, "..");
@@ -191,7 +192,39 @@ function calculateTaskComplexity(level, dependencyImpact, forcedSignal = null) {
   };
 }
 
-function chooseAdaptiveExecution(config, selectedLevel, fastLaneAllowed, dependencyImpact, forcedSignal) {
+function clampConfidence(value) {
+  return Math.max(0, Math.min(1, value));
+}
+
+function applyFeedbackToAdaptiveDecision(decision, feedbackContext) {
+  const feedbackDelta = feedbackContext?.confidence_delta || 0;
+  const confidence = clampConfidence(decision.confidence + feedbackDelta);
+  if (decision.execution_path === "fast" && confidence < 0.5) {
+    return {
+      ...decision,
+      route_type: "full_pipeline",
+      execution_path: "studio",
+      execution_mode: {
+        ...decision.execution_mode,
+        mode: "full",
+      },
+      confidence,
+      decision_reasons: [
+        ...decision.decision_reasons,
+        "feedback-confidence-below-fast-threshold",
+      ],
+    };
+  }
+  return {
+    ...decision,
+    confidence,
+    decision_reasons: feedbackDelta === 0
+      ? decision.decision_reasons
+      : [...decision.decision_reasons, `feedback-confidence-delta:${feedbackDelta.toFixed(2)}`],
+  };
+}
+
+function chooseAdaptiveExecution(config, selectedLevel, fastLaneAllowed, dependencyImpact, forcedSignal, feedbackContext = null) {
   const adaptive = config.adaptive_execution;
   const complexity = calculateTaskComplexity(selectedLevel, dependencyImpact, forcedSignal);
   const blocks = [];
@@ -211,7 +244,7 @@ function chooseAdaptiveExecution(config, selectedLevel, fastLaneAllowed, depende
     blocks.push("too-many-affected-nodes");
   }
   const mode = blocks.length === 0 ? "fast" : "full";
-  return {
+  const decision = {
     route_type: mode === "fast" ? adaptive.fast_path : adaptive.full_pipeline,
     execution_path: mode === "fast" ? "fast" : "studio",
     execution_mode: {
@@ -220,8 +253,10 @@ function chooseAdaptiveExecution(config, selectedLevel, fastLaneAllowed, depende
     },
     runtime_mode: "mock",
     task_complexity: complexity,
+    confidence: mode === "fast" ? 0.8 : 0.65,
     decision_reasons: blocks.length === 0 ? ["adaptive-fast-path-approved"] : blocks,
   };
+  return applyFeedbackToAdaptiveDecision(decision, feedbackContext);
 }
 
 function resolveExecutionMemoryContext(request, options = {}) {
@@ -254,6 +289,20 @@ function resolveExecutionCacheContext(request, options = {}) {
   };
 }
 
+function resolveExecutionFeedbackContext(request, options = {}) {
+  if (options.executionFeedbackContext) {
+    return clone(options.executionFeedbackContext);
+  }
+  if (options.executionFeedback === false) {
+    return null;
+  }
+  return buildFeedbackRoutingContext(request, {
+    successPatterns: options.successPatterns,
+    successPatternsPath: options.successPatternsPath,
+    failureMemory: options.failureMemory,
+  });
+}
+
 function routeTask(request, options = {}) {
   assertNonEmptyString(request, "Task Router request");
   const config = options.config || loadTaskRoutingConfig(options.configPath);
@@ -261,19 +310,24 @@ function routeTask(request, options = {}) {
   const normalizedRequest = normalizeText(request);
   const executionMemory = resolveExecutionMemoryContext(request, options);
   const executionCache = resolveExecutionCacheContext(request, options);
+  const executionFeedback = resolveExecutionFeedbackContext(request, options);
 
   const forcedSignal = findSignal(normalizedRequest, config.force_full_pipeline_signals);
   const cachedExecutionMode = executionCache.status === "hit" && !forcedSignal
     ? buildCacheHitExecutionMode(executionCache)
     : null;
   if (cachedExecutionMode) {
+    const cacheConfidence = clampConfidence(0.9 + (executionFeedback?.confidence_delta || 0));
+    const cacheAllowsFast = cacheConfidence >= 0.5;
     return {
       level: "L0",
-      execution_path: "fast",
-      route_type: "fast_path",
+      execution_path: cacheAllowsFast ? "fast" : "studio",
+      route_type: cacheAllowsFast ? "fast_path" : "full_pipeline",
       reason: `Execution Cache hit: ${executionCache.fingerprint}`,
       matched_signal: "execution-cache-hit",
-      adaptive_reasons: ["execution-cache-fast-path-hit"],
+      adaptive_reasons: cacheAllowsFast
+        ? ["execution-cache-fast-path-hit"]
+        : ["execution-cache-hit-feedback-confidence-below-fast-threshold"],
       task_complexity: {
         level: "L0",
         level_rank: 0,
@@ -283,13 +337,18 @@ function routeTask(request, options = {}) {
       },
       dependency_impact: normalizeDependencyImpact(options.dependencyImpact),
       execution_cache: executionCache,
+      execution_feedback: executionFeedback,
       execution_memory: executionMemory,
-      fast_lane_allowed: true,
-      binding: clone(config.fast_lane.bindings.L0),
-      allowed_stages: [...config.fast_lane.allowed_stages],
+      fast_lane_allowed: cacheAllowsFast,
+      binding: cacheAllowsFast ? clone(config.fast_lane.bindings.L0) : null,
+      allowed_stages: cacheAllowsFast ? [...config.fast_lane.allowed_stages] : [],
       validation_required: true,
       runtime_mode: "mock",
-      execution_mode: cachedExecutionMode,
+      execution_mode: {
+        ...cachedExecutionMode,
+        mode: cacheAllowsFast ? "fast" : "full",
+        confidence: cacheConfidence,
+      },
       execution_enabled: false,
     };
   }
@@ -317,6 +376,7 @@ function routeTask(request, options = {}) {
     fastLaneAllowed,
     dependencyImpact,
     forcedSignal,
+    executionFeedback,
   );
   const executionPath = adaptiveDecision.execution_path;
   const reason = forcedSignal
@@ -335,13 +395,17 @@ function routeTask(request, options = {}) {
     task_complexity: adaptiveDecision.task_complexity,
     dependency_impact: clone(dependencyImpact),
     execution_cache: executionCache,
+    execution_feedback: executionFeedback,
     execution_memory: executionMemory,
     fast_lane_allowed: executionPath === "fast",
     binding: executionPath === "fast" ? clone(config.fast_lane.bindings[selectedLevel]) : null,
     allowed_stages: executionPath === "fast" ? [...config.fast_lane.allowed_stages] : [],
     validation_required: true,
     runtime_mode: adaptiveDecision.runtime_mode,
-    execution_mode: adaptiveDecision.execution_mode,
+    execution_mode: {
+      ...adaptiveDecision.execution_mode,
+      confidence: adaptiveDecision.confidence,
+    },
     execution_enabled: false,
   };
 }
@@ -352,6 +416,7 @@ module.exports = {
   normalizeText,
   routeTask,
   calculateTaskComplexity,
+  resolveExecutionFeedbackContext,
   resolveExecutionCacheContext,
   resolveExecutionMemoryContext,
   validateTaskRoutingConfig,

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "feedback-schema.json",
+  "title": "AI Game Studio Execution Feedback",
+  "type": "object",
+  "required": [
+    "score",
+    "learning_signal",
+    "route_update",
+    "execution_enabled"
+  ],
+  "properties": {
+    "score": {
+      "type": "object",
+      "required": [
+        "score",
+        "success",
+        "validation_passed",
+        "error_type"
+      ]
+    },
+    "learning_signal": {
+      "enum": [
+        "prefer-route",
+        "avoid-route",
+        "observe-route"
+      ]
+    },
+    "route_update": {
+      "type": "object",
+      "required": [
+        "fingerprint",
+        "route",
+        "confidence_delta"
+      ]
+    },
+    "execution_enabled": {
+      "const": false
+    }
+  }
+}

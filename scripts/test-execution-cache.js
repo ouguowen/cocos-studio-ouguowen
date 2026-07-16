@@ -35,9 +35,13 @@ function runTests() {
   }, {
     status: "success",
     execution_time: 12,
+    score: 95,
     timestamp: "2026-01-01T00:00:00.000Z",
   }, emptyCache);
   assert.strictEqual(validateExecutionCacheStore(updated.store), true);
+  assert.strictEqual(updated.entry.score, 95);
+  assert.strictEqual(updated.entry.success_count, 1);
+  assert.strictEqual(updated.entry.failure_count, 0);
   assert.strictEqual(updated.entry.route_score.success, 1);
   assert.strictEqual(updated.entry.route_score.fail, 0);
   assert.strictEqual(updated.entry.route_score.execution_time, 12);
@@ -83,6 +87,9 @@ function runTests() {
     fingerprint,
     cache_miss: miss.status,
     cache_hit: hit.status,
+    score: hit.score,
+    success_count: hit.success_count,
+    failure_count: hit.failure_count,
     cached_mode: route.execution_mode,
     miss_keeps_router_flow: cacheMissRoute.execution_cache.status,
     route_score: failScore,
