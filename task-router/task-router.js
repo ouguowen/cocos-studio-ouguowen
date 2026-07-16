@@ -4,6 +4,11 @@
 
 const fs = require("fs");
 const path = require("path");
+const {
+  buildCacheHitExecutionMode,
+  lookupExecutionCache,
+} = require("../execution-cache/execution-cache");
+const { buildExecutionMemoryContext } = require("../execution-memory/execution-memory");
 
 const root = path.resolve(__dirname, "..");
 const configDir = path.join(root, "config");
@@ -219,13 +224,76 @@ function chooseAdaptiveExecution(config, selectedLevel, fastLaneAllowed, depende
   };
 }
 
+function resolveExecutionMemoryContext(request, options = {}) {
+  if (options.executionMemoryContext) {
+    return clone(options.executionMemoryContext);
+  }
+  if (options.executionMemory || options.executionMemoryStore || options.executionMemoryHistoryPath) {
+    return buildExecutionMemoryContext(request, {
+      store: options.executionMemoryStore || options.executionMemory,
+      historyPath: options.executionMemoryHistoryPath,
+    });
+  }
+  return null;
+}
+
+function resolveExecutionCacheContext(request, options = {}) {
+  if (options.executionCacheResult) {
+    return clone(options.executionCacheResult);
+  }
+  if (options.executionCacheStore || options.executionCache) {
+    return lookupExecutionCache(request, options.executionCacheStore || options.executionCache);
+  }
+  return {
+    status: "disabled",
+    hit: false,
+    fingerprint: null,
+    execution_enabled: false,
+    execution_mode: null,
+    entry: null,
+  };
+}
+
 function routeTask(request, options = {}) {
   assertNonEmptyString(request, "Task Router request");
   const config = options.config || loadTaskRoutingConfig(options.configPath);
   validateTaskRoutingConfig(config);
   const normalizedRequest = normalizeText(request);
+  const executionMemory = resolveExecutionMemoryContext(request, options);
+  const executionCache = resolveExecutionCacheContext(request, options);
 
   const forcedSignal = findSignal(normalizedRequest, config.force_full_pipeline_signals);
+  const cachedExecutionMode = executionCache.status === "hit" && !forcedSignal
+    ? buildCacheHitExecutionMode(executionCache)
+    : null;
+  if (cachedExecutionMode) {
+    return {
+      level: "L0",
+      execution_path: "fast",
+      route_type: "fast_path",
+      reason: `Execution Cache hit: ${executionCache.fingerprint}`,
+      matched_signal: "execution-cache-hit",
+      adaptive_reasons: ["execution-cache-fast-path-hit"],
+      task_complexity: {
+        level: "L0",
+        level_rank: 0,
+        affected_agent_count: cachedExecutionMode.agents.length,
+        affected_node_count: 0,
+        score: 0,
+      },
+      dependency_impact: normalizeDependencyImpact(options.dependencyImpact),
+      execution_cache: executionCache,
+      execution_memory: executionMemory,
+      fast_lane_allowed: true,
+      binding: clone(config.fast_lane.bindings.L0),
+      allowed_stages: [...config.fast_lane.allowed_stages],
+      validation_required: true,
+      runtime_mode: "mock",
+      execution_mode: cachedExecutionMode,
+      execution_enabled: false,
+    };
+  }
+
   let selectedLevel = forcedSignal ? "L3" : null;
   let matchedSignal = forcedSignal;
   if (!selectedLevel) {
@@ -266,6 +334,8 @@ function routeTask(request, options = {}) {
     adaptive_reasons: adaptiveDecision.decision_reasons,
     task_complexity: adaptiveDecision.task_complexity,
     dependency_impact: clone(dependencyImpact),
+    execution_cache: executionCache,
+    execution_memory: executionMemory,
     fast_lane_allowed: executionPath === "fast",
     binding: executionPath === "fast" ? clone(config.fast_lane.bindings[selectedLevel]) : null,
     allowed_stages: executionPath === "fast" ? [...config.fast_lane.allowed_stages] : [],
@@ -282,5 +352,7 @@ module.exports = {
   normalizeText,
   routeTask,
   calculateTaskComplexity,
+  resolveExecutionCacheContext,
+  resolveExecutionMemoryContext,
   validateTaskRoutingConfig,
 };

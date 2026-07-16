@@ -53,6 +53,8 @@ Incremental dependency impact lives in [dependency-graph/dependency-graph.js](de
 Routing policy lives in [config/task-routing.json](config/task-routing.json).
 Runtime routing code lives in [task-router/task-router.js](task-router/task-router.js).
 Adaptive execution routing chooses Fast Path or Full Pipeline from task complexity and dependency impact.
+Execution Memory records route decisions in [execution-memory/execution-memory.js](execution-memory/execution-memory.js).
+Execution Cache accelerates repeated routes in [execution-cache/execution-cache.js](execution-cache/execution-cache.js).
 Fast Lane validation lives in [task-router/fast-execution-path.js](task-router/fast-execution-path.js).
 Dynamic Agent activation lives in [agent-router/agent-router.js](agent-router/agent-router.js).
 
@@ -64,6 +66,8 @@ Request
 -> Dependency Graph impact
 -> Task Router
 -> Adaptive Execution Router
+-> Execution Cache
+-> Execution Memory
 -> Agent Router
 -> Selected Agent Context
 -> Executor or existing Studio Pipeline

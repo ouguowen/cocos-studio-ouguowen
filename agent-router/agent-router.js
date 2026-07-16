@@ -202,7 +202,8 @@ function routeAgents(request, routing, options = {}) {
       ? policy.full_pipeline_agents
       : policy.default_agents;
   const affectedAgents = resolveAffectedAgents(options);
-  const impactedSelection = affectedAgents.size > 0
+  const shouldUseImpactFilter = !(routing.execution_path === "studio" && routing.level === "L3");
+  const impactedSelection = shouldUseImpactFilter && affectedAgents.size > 0
     ? selectedAgents.filter((agentId) => affectedAgents.has(agentId))
     : selectedAgents;
   const sortedAgents = sortSelectedAgents(

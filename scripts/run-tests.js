@@ -39,6 +39,8 @@ const tests = [
   "test-release-validation.js",
   "test-blueprint-manager.js",
   "test-dependency-graph.js",
+  "test-execution-cache.js",
+  "test-execution-memory.js",
   "test-execution-router.js",
   "test-task-router.js",
   "test-agent-router.js",

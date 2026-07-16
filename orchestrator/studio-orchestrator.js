@@ -36,6 +36,10 @@ const { createDefaultIntegrationManager } = require("../integration/integration-
 const { runDevelopmentLoop } = require("../loop-engine/loop-controller");
 const { planGame } = require("../planner/game-planner");
 const {
+  createEmptyExecutionMemory,
+  recordExecutionMemoryDecision,
+} = require("../execution-memory/execution-memory");
+const {
   loadProviderRegistry,
   selectProvider,
 } = require("../providers/provider-selector");
@@ -109,6 +113,7 @@ function createStudioReport(request, options = {}) {
     task_id: null,
     iteration_id: null,
     execution_mode: null,
+    execution_memory: null,
     blueprint_context: null,
     routing: null,
     agent_selection: null,
@@ -324,6 +329,11 @@ function validateStudioReport(report) {
       || !Array.isArray(report.execution_mode.agents)) {
       throw new Error("Studio E2E Report contains an invalid execution_mode decision.");
     }
+    if (report.execution_memory
+      && (report.execution_memory.execution_enabled !== false
+        || !Number.isInteger(report.execution_memory.record_count))) {
+      throw new Error("Studio E2E Report contains an invalid execution_memory summary.");
+    }
     if (report.stages[2].status === "PASS") {
       if (!report.agent_selection
         || !Array.isArray(report.agent_selection.selected_agents)
@@ -507,17 +517,43 @@ function runStudioOrchestrator(request, options = {}) {
     const routing = runStage(report, "task-router", { request }, () => routeTask(request, {
       configPath: options.taskRoutingConfigPath,
       dependencyImpact: blueprintContext.dependency_impact,
+      executionMemoryStore: options.executionMemoryStore,
+      executionMemoryHistoryPath: options.executionMemoryHistoryPath,
     }), (result) => ({
       level: result.level,
       execution_path: result.execution_path,
       route_type: result.route_type,
       execution_mode: result.execution_mode,
       task_complexity: result.task_complexity,
+      execution_memory: result.execution_memory,
       reason: result.reason,
       execution_enabled: result.execution_enabled,
     }));
     report.routing = clone(routing);
     report.execution_mode = clone(routing.execution_mode);
+    const memoryState = recordExecutionMemoryDecision({
+      run_id: report.run_id,
+      request,
+      route_type: routing.route_type,
+      execution_mode: routing.execution_mode,
+      level: routing.level,
+      reason: routing.reason,
+      adaptive_reasons: routing.adaptive_reasons,
+      task_complexity: routing.task_complexity,
+      dependency_impact: routing.dependency_impact,
+      status: "planned",
+      timestamp: options.clock ? options.clock() : "2026-01-01T00:00:00.000Z",
+    }, {
+      store: options.executionMemoryStore || createEmptyExecutionMemory(),
+      historyPath: options.executionMemoryHistoryPath,
+      write: options.writeExecutionMemory === true,
+    });
+    report.execution_memory = {
+      execution_enabled: false,
+      record_count: memoryState.store.records.length,
+      latest_route_type: memoryState.record.route_type,
+      store_written: memoryState.storePath !== null,
+    };
     const agentSelection = runStage(report, "agent-router", {
       request,
       route_level: routing.level,

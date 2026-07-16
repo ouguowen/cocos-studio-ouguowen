@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cache-schema.json",
+  "title": "AI Game Studio Execution Cache",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "execution_enabled",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "execution_enabled": {
+      "const": false
+    },
+    "entries": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "fingerprint",
+          "route_type",
+          "execution_mode",
+          "route_score"
+        ],
+        "properties": {
+          "fingerprint": {
+            "type": "string"
+          },
+          "route_type": {
+            "enum": [
+              "fast_path",
+              "full_pipeline"
+            ]
+          },
+          "execution_mode": {
+            "type": "object",
+            "required": [
+              "mode",
+              "agents"
+            ]
+          },
+          "route_score": {
+            "type": "object",
+            "required": [
+              "success",
+              "fail",
+              "execution_time"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

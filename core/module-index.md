@@ -40,6 +40,11 @@ evolution/governance expansion.
 - [config/task-routing.json](../config/task-routing.json): Task Router policy for L0/L1 Fast Lane and L2/L3 Studio Pipeline routing
 - [task-router/task-router.js](../task-router/task-router.js): deterministic task-level router used by the Studio Orchestrator
 - [task-router/task-router.js](../task-router/task-router.js): Adaptive Execution Router decision point for Fast Path versus Full Pipeline
+- [execution-memory/execution-memory.js](../execution-memory/execution-memory.js): execution route memory for historical Fast Path and Full Pipeline decisions
+- [execution-memory/execution-history.json](../execution-memory/execution-history.json): disabled-by-default execution route history store
+- [execution-cache/execution-cache.js](../execution-cache/execution-cache.js): repeated-task route cache for Fast Path suggestions
+- [execution-cache/task-fingerprint.js](../execution-cache/task-fingerprint.js): stable natural-language task fingerprint generation
+- [execution-cache/route-score.js](../execution-cache/route-score.js): success, failure, and execution-time score metadata
 - [task-router/fast-execution-path.js](../task-router/fast-execution-path.js): Fast Lane binding and validation for Capability, Executor, and Validation only
 - [agent-router/agent-router.js](../agent-router/agent-router.js): dynamic Agent activation after Task Router and before execution
 - [agent-router/activation-policy.json](../agent-router/activation-policy.json): Agent selection rules for UI, code, battle, testing, and full-production tasks
